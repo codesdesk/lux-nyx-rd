@@ -60,6 +60,12 @@
               assign footer_grid_class = 'grid--3-col-tablet'
             endif
           -%}
+              {% if section.settings.sub_heading !=blank %}
+            <div class="subheading">
+              <h5 class="news_letter">{{ section.settings.sub_heading }}</h5>
+              </div>
+            <div>
+            {% endif %}
           <div
             class="footer__blocks-wrapper grid grid--2-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
@@ -115,9 +121,12 @@
                                 id="Subscribe"
                                 aria-label="{{ 'newsletter.button_label' | t }}"
                               >
-                                <span class="svg-wrapper">
+                                <span class="svg-wrapper hidden">
                                   {{- 'icon-arrow.svg' | inline_asset_content -}}
                                 </span>
+                                
+                              {{ 'newsletter.button_label' | t }}
+                            
                               </button>
                             </div>
                             {%- if form.errors -%}
@@ -158,7 +167,7 @@
 
               </div>
             </div>
-            <div class="ss">
+            <div class="inner_menus">
             {%- for block in section.blocks -%}
           
               <div
@@ -405,7 +414,7 @@
                       aria-label="{{ 'newsletter.button_label' | t }}"
                     >
                       <span class="svg-wrapper">
-                        {{- 'icon-arrow.svg' | inline_asset_content -}}
+                       {{- 'icon-arrow.svg' | inline_asset_content -}} 
                       </span>
                     </button>
                   </div>
@@ -692,6 +701,11 @@
       "id": "newsletter_heading",
       "default": "t:sections.footer.settings.newsletter_heading.default",
       "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "sub_heading",
+      "label": "Newsletter"
     },
     {
       "type": "header",

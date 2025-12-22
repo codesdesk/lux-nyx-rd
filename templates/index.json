@@ -1,1 +1,122 @@
-{"sections":{"home_image_banner_cmUP6c":{"type":"home-image-banner","blocks":{"heading_8aR3px":{"type":"heading","settings":{"heading":"Carry what <em>matters<\/em>, beautifully.","heading_size":"h0"}},"buttons_EghBTC":{"type":"buttons","settings":{"button_label_1":"Explore the collection","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_8aR3px","buttons_EghBTC"],"name":"Home Image Banner","settings":{"image":"shopify:\/\/shop_images\/Frame_550.png","mobile_image":"shopify:\/\/shop_images\/Frame_237.png","image_overlay_opacity":0,"image_height":"adapt","image_behavior":"none","desktop_content_position":"bottom-center","desktop_content_alignment":"center","show_text_box":false,"color_scheme":"scheme-3","stack_images_on_mobile":true,"mobile_content_alignment":"center","show_text_below":false}},"founders_note_DCrrYP":{"type":"founders-note","name":"Founder's Note","settings":{"eyebrow":"FOUNDER’S NOTE","shop_btn_label":"Shop Now","shop_btn_link":"#","quote":"<p><strong>Too often, bags were either beautiful or practical—rarely both.<\/strong> I created bags <em>for those who refuse to compromise<\/em>—on presence, on purpose, on how they show up.<\/p>","author":"Lisa Hu, Founder","image":"shopify:\/\/shop_images\/Frame_541.png","supporting_text":"Did you know as few as 7% of products marketed toward women are actually designed by women?","button_label":"About Us","button_link":"shopify:\/\/pages\/about-us-1","background_color":"#f9f7f6","text_color":"#111111","eyebrow_color":"#555555","supporting_text_color":"#444444","button_text":"#111111","button_border":"#111111","quote_size":42,"image_radius":0,"padding_top":80,"padding_bottom":80}},"featured_collection":{"type":"featured-collection","disabled":true,"settings":{"collection":"all","products_to_show":8,"title":"Featured products","heading_size":"h2","description":"","show_description":false,"description_style":"body","columns_desktop":4,"enable_desktop_slider":false,"full_width":false,"show_view_all":true,"view_all_style":"solid","color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":false,"padding_top":44,"padding_bottom":36}}},"order":["home_image_banner_cmUP6c","founders_note_DCrrYP","featured_collection"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "home_image_banner_cmUP6c": {
+      "type": "home-image-banner",
+      "blocks": {
+        "heading_8aR3px": {
+          "type": "heading",
+          "settings": {
+            "heading": "Carry what <em>matters</em>, beautifully.",
+            "heading_size": "h0"
+          }
+        },
+        "buttons_EghBTC": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Explore the collection",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_8aR3px",
+        "buttons_EghBTC"
+      ],
+      "name": "Home Image Banner",
+      "settings": {
+        "image": "shopify://shop_images/Frame_550.png",
+        "mobile_image": "shopify://shop_images/Frame_237.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "founders_note_DCrrYP": {
+      "type": "founders-note",
+      "name": "Founder's Note",
+      "settings": {
+        "eyebrow": "FOUNDER’S NOTE",
+        "shop_btn_label": "Shop Now",
+        "shop_btn_link": "#",
+        "quote": "<p>“Too often, bags were either beautiful or practical—rarely both. I created bags <em>for those who refuse to compromise</em>—on presence, on purpose, on how they show up.”<strong>—Lisa Hu, Founder</strong></p>",
+        "author": "",
+        "image": "shopify://shop_images/Frame_541.png",
+        "supporting_text": "Did you know as few as 7% of products marketed towards women are actually designed by women? Did you know of products you know marketed towards women are actually designed.",
+        "button_label": "About Us",
+        "button_link": "shopify://pages/about-us-1",
+        "background_color": "#f9f7f6",
+        "text_color": "#1f1f1f",
+        "eyebrow_color": "#000000",
+        "supporting_text_color": "#1f1f1f",
+        "button_text": "#1f1f1f",
+        "button_border": "#000000",
+        "quote_size": 56,
+        "image_radius": 0,
+        "padding_top": 20,
+        "padding_bottom": 27
+      }
+    },
+    "design_ethos_9qQ7aG": {
+      "type": "design-ethos",
+      "blocks": {
+        "item_R8Xftn": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Frame_540.png",
+            "overlay_title": "SMART DESIGN",
+            "overlay_button": "Our Design Philosophy",
+            "overlay_link": "#",
+            "product_title": "Origami Belt Bag",
+            "product_price": "$288.00",
+            "product_link": "shopify://products/origami-belt-bag"
+          }
+        },
+        "item_C99reG": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Frame_541_abf6348d-3b54-4557-b047-7f836176fc4c.png",
+            "overlay_title": "Materials & Craftsmanship",
+            "overlay_button": "Our Design Philosophy",
+            "overlay_link": "#",
+            "product_title": "Origami Belt Bag",
+            "product_price": "$288.00",
+            "product_link": "shopify://products/origami-belt-bag"
+          }
+        }
+      },
+      "block_order": [
+        "item_R8Xftn",
+        "item_C99reG"
+      ],
+      "name": "Design Ethos",
+      "settings": {
+        "section_title": "Design Ethos"
+      }
+    }
+  },
+  "order": [
+    "home_image_banner_cmUP6c",
+    "founders_note_DCrrYP",
+    "design_ethos_9qQ7aG"
+  ]
+}
