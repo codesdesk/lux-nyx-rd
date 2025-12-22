@@ -2768,8 +2768,12 @@ input[type='checkbox'] {
     justify-self: end;
     line-height: 16px;
     align-items: center;
+<<<<<<< Updated upstream
   }
 
+=======
+}
+>>>>>>> Stashed changes
 .header__icons .shopify-app-block {
   max-width: 4.4rem;
   max-height: 4.4rem;
