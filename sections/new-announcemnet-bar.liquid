@@ -1,0 +1,179 @@
+{% if section.settings.enable_bar %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+<style>
+.announcement-wrapper {
+  background: {{ section.settings.bg_color }};
+  color: {{ section.settings.text_color }};
+  font-size: {{ section.settings.font_size }}px;
+  padding: 5px 20px;
+  width: 100%;
+}
+
+.announcement-desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.announcement-left,
+.announcement-right {
+  white-space: nowrap;
+}
+
+.announcement-left strong {
+  font-weight: 600;
+}
+
+/* Mobile */
+.announcement-mobile {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .announcement-desktop {
+    display: none;
+  }
+  .announcement-mobile {
+    display: block;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+}
+</style>
+
+<div class="announcement-wrapper">
+
+  <!-- Desktop -->
+  <div class="announcement-desktop">
+    <div class="announcement-left">
+      {{ section.settings.desktop_left_text }}
+    </div>
+    <div class="announcement-right">
+      {{ section.settings.desktop_middle_text }}
+    </div>
+    <div class="announcement-right">
+      {{ section.settings.desktop_right_text }}
+    </div>
+  </div>
+
+  <!-- Mobile Slider -->
+  <div class="announcement-mobile">
+    <div class="swiper announcement-swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            {{ block.settings.text }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.innerWidth <= 768) {
+    new Swiper('.announcement-swiper', {
+      loop: true,
+      autoplay: {
+        delay: {{ section.settings.autoplay_speed }},
+        disableOnInteraction: false,
+      },
+      speed: 600,
+    });
+  }
+});
+</script>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "Custom Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_bar",
+      "label": "Enable Announcement Bar",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font Size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "inline_richtext",
+      "id": "desktop_left_text",
+      "label": "Desktop Left Text",
+      "default": "<strong>Get 10% off</strong> your first purchase"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "desktop_middle_text",
+      "label": "Desktop Middle Text",
+      "default": "Free shipping  & return"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "desktop_right_text",
+      "label": "Desktop Right Text",
+      "default": "Get $25 with referrals"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Mobile Slider Autoplay Speed (ms)",
+      "min": 2000,
+      "max": 8000,
+      "step": 500,
+      "default": 3000
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Mobile Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Slide Text",
+          "default": "Get 10% off your first purchase"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar Custom"
+    }
+  ]
+}
+{% endschema %}

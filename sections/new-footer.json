@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "Custom Footer",
+  "type": "footer",
+  "sections": {
+    "newsletter_8nakwL": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_CpTB9V": {
+          "type": "heading",
+          "settings": {
+            "heading": "GET MORE PURSE-PECTIVE",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_8WQcNr": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Sign up for insider promotions, behind-the-scenes looks, and private invitations to vote on new product features.</p>"
+          }
+        },
+        "email_form_VwriK3": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_CpTB9V",
+        "paragraph_8WQcNr",
+        "email_form_VwriK3"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "custom-footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter_bxnMA4": {
+          "type": "newsletter",
+          "settings": {
+            "newsletter_enable": true,
+            "newsletter_heading": "Subscribe to our emails"
+          }
+        },
+        "link_list_ncgFnP": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "shop"
+          }
+        },
+        "link_list_L8QLRE": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Customers",
+            "menu": "customers"
+          }
+        },
+        "link_list_cFCNd4": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "About us",
+            "menu": "about-us"
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_bxnMA4",
+        "link_list_ncgFnP",
+        "link_list_L8QLRE",
+        "link_list_cFCNd4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-d43178f4-0533-4f61-9823-fa24836b7949",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    }
+  },
+  "order": [
+    "newsletter_8nakwL",
+    "custom-footer"
+  ]
+}

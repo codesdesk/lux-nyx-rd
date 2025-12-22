@@ -1,0 +1,289 @@
+{% comment %}
+  Founder’s Note – Fully Customizable Section
+{% endcomment %}
+
+<section class="founders-note-section">
+  <div class="founders-note-container">
+    <div class="founders-note-wrapper">
+        {% if section.settings.eyebrow != blank %}
+        <p class="founders-note-eyebrow">
+          {{ section.settings.eyebrow }}
+        </p>
+      {% endif %}
+      <a href="{{ section.settings.shop_btn_link }}">{{ section.settings.shop_btn_label }}</a>
+    </div>
+
+    <!-- Left Content -->
+    <div class="founders-note-text">     
+
+      {% if section.settings.quote != blank %}
+        <blockquote class="founders-note-quote">
+          {{ section.settings.quote }}
+        </blockquote>
+      {% endif %}
+
+      {% if section.settings.author != blank %}
+        <p class="founders-note-author">
+          — {{ section.settings.author }}
+        </p>
+      {% endif %}
+    </div>
+
+    <!-- Right Content -->
+    <div class="founders-note-media">
+      {% if section.settings.image != blank %}
+        <img
+          src="{{ section.settings.image | image_url: width: 800 }}"
+          alt="{{ section.settings.author | escape }}"
+          loading="lazy"
+        >
+      {% endif %}
+
+      {% if section.settings.supporting_text != blank %}
+        <p class="founders-note-supporting">
+          {{ section.settings.supporting_text }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}"
+           class="founders-note-button">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.founders-note-section {
+  padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  background: {{ section.settings.background_color }};
+}
+.founders-note-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.founders-note-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  {% comment %} display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px; {% endcomment %}
+  align-items: center;
+}
+
+.founders-note-eyebrow {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+  color: {{ section.settings.eyebrow_color }};
+}
+
+.founders-note-quote {
+  font-size: {{ section.settings.quote_size }}px;
+  line-height: 1.3;
+  font-weight: 400;
+  margin: 0 0 16px;
+  color: {{ section.settings.text_color }};
+  border:0;
+}
+
+.founders-note-quote em {
+  font-family: serif;
+  font-style: italic;
+}
+
+.founders-note-author {
+  font-size: 14px;
+  font-weight: 600;
+  color: {{ section.settings.text_color }};
+}
+
+.founders-note-media img {
+  width: 100%;
+  max-width: 417px;
+  height: auto;
+  border-radius: {{ section.settings.image_radius }}px;
+  margin-bottom: 16px;
+}
+
+.founders-note-supporting {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  color: {{ section.settings.supporting_text_color }};
+}
+
+.founders-note-button {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid {{ section.settings.button_border }};
+  color: {{ section.settings.button_text }};
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.founders-note-button:hover {
+  background: {{ section.settings.button_border }};
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .founders-note-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Founder's Note",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Top label",
+      "default": "FOUNDER’S NOTE"
+    },
+    {
+      "type": "text",
+      "id": "shop_btn_label",
+      "label": "Shop Button"
+    },
+    {
+      "type": "url",
+      "id": "shop_btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "richtext",
+      "id": "quote",
+      "label": "Quote text",
+      "default": "<p><strong>Too often, bags were either beautiful or practical—rarely both.</strong> I created bags <em>for those who refuse to compromise</em>—on presence, on purpose, on how they show up.</p>"
+    },
+    {
+      "type": "text",
+      "id": "author",
+      "label": "Author",
+      "default": "Lisa Hu, Founder"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Founder image"
+    },
+    {
+      "type": "textarea",
+      "id": "supporting_text",
+      "label": "Supporting text",
+      "default": "Did you know as few as 7% of products marketed toward women are actually designed by women?"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "About Us"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f7f5f2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Main text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "supporting_text_color",
+      "label": "Supporting text color",
+      "default": "#444444"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Button text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "button_border",
+      "label": "Button border color",
+      "default": "#111111"
+    },
+
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "quote_size",
+      "label": "Quote font size",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 20,
+      "max": 160,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 20,
+      "max": 160,
+      "step": 10,
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founder's Note"
+    }
+  ]
+}
+{% endschema %}
