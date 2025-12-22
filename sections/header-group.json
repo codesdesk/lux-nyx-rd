@@ -1,1 +1,129 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement_wPRHCT":{"type":"announcement","settings":{"text":"Welcome to our store","link":""}},"announcement-bar-0":{"type":"announcement","settings":{"text":"Free Shipping & Returns","link":""}},"announcement_3LbNkw":{"type":"announcement","settings":{"text":"Get $25 off on your first purchase","link":""}}},"block_order":["announcement_wPRHCT","announcement-bar-0","announcement_3LbNkw"],"disabled":true,"settings":{"auto_rotate":false,"change_slides_speed":5,"color_scheme":"scheme-3","show_line_separator":true,"show_social":false,"enable_country_selector":false,"enable_language_selector":false}},"new_announcemnet_bar_TFKULm":{"type":"new-announcemnet-bar","blocks":{"slide_zyp7Qj":{"type":"slide","settings":{"text":"Get 10% off your first purchase"}},"slide_CAjDYb":{"type":"slide","settings":{"text":"Free shipping  & return"}},"slide_fprgCa":{"type":"slide","settings":{"text":"Get $25 with referrals"}}},"block_order":["slide_zyp7Qj","slide_CAjDYb","slide_fprgCa"],"name":"Announcement Bar Custom","settings":{"enable_bar":true,"bg_color":"#111111","text_color":"#ffffff","font_size":14,"desktop_left_text":"Get 10% off your first purchase","desktop_middle_text":"<em>Free shipping  & return<\/em>","desktop_right_text":"Get $25 with referrals","autoplay_speed":2000}},"header":{"type":"header","settings":{"logo_position":"middle-center","mobile_logo_position":"center","menu":"lux-and-nyx-menu","menu_type_desktop":"mega","sticky_header_type":"on-scroll-up","show_line_separator":true,"color_scheme":"scheme-1","menu_color_scheme":"scheme-1","enable_country_selector":false,"enable_language_selector":false,"enable_customer_avatar":true,"margin_bottom":0,"padding_top":20,"padding_bottom":20}}},"order":["announcement-bar","new_announcemnet_bar_TFKULm","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_wPRHCT": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        },
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Shipping & Returns",
+            "link": ""
+          }
+        },
+        "announcement_3LbNkw": {
+          "type": "announcement",
+          "settings": {
+            "text": "Get $25 off on your first purchase",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_wPRHCT",
+        "announcement-bar-0",
+        "announcement_3LbNkw"
+      ],
+      "disabled": true,
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-3",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "new_announcemnet_bar_TFKULm": {
+      "type": "new-announcemnet-bar",
+      "blocks": {
+        "slide_zyp7Qj": {
+          "type": "slide",
+          "settings": {
+            "text": "Get 10% off your first purchase"
+          }
+        },
+        "slide_CAjDYb": {
+          "type": "slide",
+          "settings": {
+            "text": "Free shipping  & return"
+          }
+        },
+        "slide_fprgCa": {
+          "type": "slide",
+          "settings": {
+            "text": "Get $25 with referrals"
+          }
+        }
+      },
+      "block_order": [
+        "slide_zyp7Qj",
+        "slide_CAjDYb",
+        "slide_fprgCa"
+      ],
+      "name": "Announcement Bar Custom",
+      "settings": {
+        "enable_bar": true,
+        "bg_color": "#111111",
+        "text_color": "#ffffff",
+        "font_size": 14,
+        "desktop_left_text": "Get 10% off your first purchase",
+        "desktop_middle_text": "<em>Free shipping  & return</em>",
+        "desktop_right_text": "Get $25 with referrals",
+        "autoplay_speed": 2000
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "image_7CtUmF": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_7CtUmF"
+      ],
+      "settings": {
+        "logo_position": "middle-center",
+        "mobile_logo_position": "center",
+        "menu": "lux-and-nyx-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "logo": "shopify://shop_images/Frame_540.png"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "new_announcemnet_bar_TFKULm",
+    "header"
+  ]
+}

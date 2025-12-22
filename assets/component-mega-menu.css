@@ -56,7 +56,6 @@
 
 .mega-menu__link--level-2 {
   font-weight: bold;
-  font-weight: 700;
   line-height: 17px;
   padding: 0px;
   margin-bottom: 1.8rem;
@@ -76,8 +75,8 @@
 
 .mega-menu__link:hover,
 .mega-menu__link--active {
-  color: none;
-  text-decoration: none;
+  color: rgb(var(--color-accent));
+  text-decoration: underline;
 }
 
 .mega-menu__link--active:hover {
