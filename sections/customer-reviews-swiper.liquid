@@ -1,0 +1,349 @@
+<section class="customer-reviews">
+  <div class="page-width">
+    <div class="reviews-header">
+      <h2>{{ section.settings.heading }}</h2>
+      {% if section.settings.shop_link != blank %}
+        <a href="{{ section.settings.shop_link }}" class="shop-link">
+          {{ section.settings.shop_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="swiper reviews-swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide review-slide">
+            <div class="review-card">
+              <div class="review-image">
+                {% if block.settings.image %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 800 }}"
+                    alt="{{ block.settings.name }}"
+                  >
+                {% endif %}
+              </div>
+
+              <div class="review-content">
+                <div class="review-content-items">
+                {% if block.settings.star_image != blank %}
+                <div class="review-stars">
+                  <img src="{{ block.settings.star_image | img_url:"master" }}">
+                </div>
+                {% endif %}
+                {% if block.settings.date != blank %}
+                  <div class="review-date">
+                    {{ block.settings.date }}
+                  </div>
+                {% endif %}
+                </div>
+
+                <p class="review-text">
+                  {{ block.settings.review }}
+                </p>
+
+                <div class="review-meta">
+                  <span class="review-name">
+                     {{ block.settings.name }}
+                  </span>
+
+                  {% if block.settings.verified %}
+                    <span class="verified">                      
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.3977 1.0987C19.1395 0.686145 18.7591 0.364351 18.3095 0.178114C17.8598 -0.00812219 17.3633 -0.0495348 16.8891 0.0596425L13.5231 0.832854C13.1782 0.912143 12.8197 0.912143 12.4748 0.832854L9.1088 0.0596425C8.63454 -0.0495348 8.13805 -0.00812219 7.68843 0.178114C7.2388 0.364351 6.85842 0.686145 6.60024 1.0987L4.76562 4.0268C4.57842 4.32634 4.32569 4.57909 4.02616 4.76818L1.09826 6.60292C0.686437 6.86089 0.365135 7.24067 0.178951 7.68956C-0.00723372 8.13844 -0.0490652 8.63416 0.0592626 9.1079L0.832424 12.4778C0.911422 12.8222 0.911422 13.18 0.832424 13.5244L0.0592626 16.8924C-0.0494862 17.3664 -0.00786526 17.8626 0.178339 18.3118C0.364544 18.7611 0.686081 19.1412 1.09826 19.3993L4.02616 21.234C4.32569 21.4212 4.57842 21.674 4.7675 21.9735L6.60212 24.9016C7.13004 25.746 8.13721 26.1635 9.1088 25.9407L12.4748 25.1675C12.8197 25.0882 13.1782 25.0882 13.5231 25.1675L16.891 25.9407C17.3649 26.0494 17.861 26.0078 18.3103 25.8216C18.7595 25.6354 19.1396 25.3138 19.3977 24.9016L21.2323 21.9735C21.4195 21.674 21.6722 21.4212 21.9717 21.234L24.9015 19.3993C25.3137 19.1408 25.6351 18.7603 25.821 18.3107C26.0069 17.861 26.048 17.3647 25.9386 16.8906L25.1673 13.5244C25.0881 13.1794 25.0881 12.8209 25.1673 12.476L25.9405 9.1079C26.0494 8.63408 26.0081 8.13809 25.8222 7.68884C25.6364 7.2396 25.3152 6.85939 24.9034 6.60105L21.9736 4.76631C21.6745 4.57875 21.4217 4.32593 21.2341 4.0268L19.3977 1.0987ZM18.456 8.8252C18.5718 8.61227 18.6005 8.36272 18.536 8.12907C18.4716 7.89541 18.319 7.69587 18.1105 7.57241C17.9019 7.44896 17.6536 7.41123 17.4177 7.46715C17.1819 7.52307 16.977 7.66829 16.846 7.87226L11.9506 16.1585L8.99461 13.3278C8.90691 13.2377 8.80198 13.1663 8.68608 13.1177C8.57017 13.069 8.44565 13.0443 8.31997 13.0448C8.19428 13.0454 8.06998 13.0712 7.9545 13.1209C7.83902 13.1705 7.73472 13.2429 7.64782 13.3337C7.56091 13.4245 7.49318 13.5319 7.44867 13.6494C7.40416 13.767 7.38378 13.8923 7.38875 14.0179C7.39371 14.1435 7.42392 14.2668 7.47757 14.3805C7.53122 14.4941 7.60721 14.5958 7.70101 14.6795L11.5088 18.3284C11.6107 18.4258 11.7333 18.499 11.8675 18.5424C12.0016 18.5858 12.1438 18.5984 12.2835 18.5791C12.4232 18.5599 12.5567 18.5093 12.6741 18.4312C12.7915 18.3531 12.8898 18.2495 12.9615 18.1281L18.456 8.8252Z" fill="black"/>
+                        </svg>
+                        Verified buyer 
+                    </span>
+                  {% endif %}
+                </div>
+
+                
+
+                {% if section.settings.more_reviews_link != blank %}
+                  <a href="{{ section.settings.more_reviews_link }}"
+                     class="more-reviews-btn small-hide">
+                    {{ section.settings.more_reviews_text }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <!-- BOTTOM LINES -->
+    <div class="review-lines">
+        {% for block in section.blocks %}
+            <span class="review-line{% if forloop.first %} active{% endif %}"></span>
+        {% endfor %}
+        </div>
+  </div>
+</section>
+<style>
+.customer-reviews {
+  padding: 12px 0 73px;
+  background: {{ section.settings.bg_color }};
+}
+.review-content-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reviews-header h2 {
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin: 0;
+    color:#000000;
+}
+.shop-link {
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: 0;
+    text-align: right;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-offset: 0%;
+    text-decoration-thickness: 0%;
+    color: #000000;
+}
+
+.review-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  align-items: center;
+}
+
+.review-image img {
+  width: 100%;
+  display: block;
+}
+.review-text {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: 0;
+    color:#1F1F1F;
+}
+.review-name,
+.verified {
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: 0;
+    color:#2C2C2C;
+}
+.review-meta {
+    display: flex;
+    gap: 19px;
+    align-items: baseline;
+}
+
+
+
+.review-date {
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 0;
+    color: #2F2F2F;
+}
+.more-reviews-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    border: 1px solid #000;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0;
+    color: #1F1F1F;
+    border-radius: 4px;
+}
+.review-content {
+    text-align: left;
+}
+.review-stars img {
+    display: block;
+    width: 100%;
+    max-width: 124px;
+}
+.review-lines {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.review-line {
+  width: 296px;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+.review-line.active {
+  background: #000;
+}
+@media (max-width: 768px) {
+  .review-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+    .review-line {
+      width: 61px;
+      height:2px;
+    }
+  .reviews-header h2,
+  .shop-link{
+    font-size:14px;
+}
+.review-text {
+    margin: 19px 0;
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 0;
+    color: #2F2F2F;
+}
+.review-name, .verified {
+    font-size: 14px;
+    color: #2F2F2F;
+}
+.verified svg {
+    width: 17px;
+    height: 17px;
+}
+.review-lines {
+    gap: 11.75px;
+    margin-top: 24px;
+}
+.customer-reviews {
+    padding: 8px 0 59px;
+}
+}
+</style>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  new Swiper(".reviews-swiper", {
+    loop: true,
+    spaceBetween: 30,
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1.2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 55,
+      }
+    }
+  });
+});
+
+</script>
+
+
+
+
+{% schema %}
+{
+  "name": "Customer Reviews Swiper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Customer Reviews"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "url",
+      "id": "shop_link",
+      "label": "Shop link"
+    },
+    {
+      "type": "text",
+      "id": "shop_text",
+      "label": "Shop link text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "more_reviews_link",
+      "label": "More reviews link"
+    },
+    {
+      "type": "text",
+      "id": "more_reviews_text",
+      "label": "More reviews button text",
+      "default": "More reviews (100+)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Customer image"
+        },
+        {
+          "type": "image_picker",
+          "id": "star_image",
+          "label": "Star Image"
+        },
+        {
+          "type": "textarea",
+          "id": "review",
+          "label": "Review text"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer name"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Verified buyer",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Review date",
+          "default": "Aug 30, 2024"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Reviews Swiper"
+    }
+  ]
+}
+{% endschema %}

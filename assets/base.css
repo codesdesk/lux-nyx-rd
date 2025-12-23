@@ -334,9 +334,9 @@ em{
 /* base */
 
 .page-width {
-  max-width: var(--page-width);
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.2rem;
 }
 
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
@@ -359,7 +359,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 @media screen and (min-width: 750px) {
   .page-width {
-    padding: 0 1.5rem;
+    padding: 0 2rem;
   }
 
   .header.page-width,
@@ -590,7 +590,7 @@ h3,
 
 h4,
 .h4 {
-  font-family: var(--font-heading-family);
+  font-family: var(--custom-font-heading-body);
   font-style: var(--font-heading-style);
   font-size: calc(var(--font-heading-scale) * 1.5rem);
 }
@@ -2358,6 +2358,135 @@ input[type='checkbox'] {
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
+/* start-css-collection-page */
+
+.breadcrumb .back {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    color: #1F1F1F;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.breadcrumb .path {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    color: #1F1F1F80;
+}
+
+.breadcrumb .divide {
+    color: #1F1F1F80;
+}
+
+.product-grid-container .card-wrapper .card__heading {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    text-transform: uppercase;
+    color: #454545;
+}
+
+.facets-container-drawer .product-count {
+    display: none;
+}
+
+.facets-container-drawer .mobile-facets__wrapper {
+    margin-left: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mobile-facets__wrapper span {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.facets-container .mobile-facets__wrapper span {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    color: #1F1F1F;
+}
+
+.card-wrapper .card__information {
+    display: flex;
+}
+.card-wrapper .card-information {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-wrapper .price__container {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    color: #454545;
+}
+.card-wrapper .rating-star {
+    --letter-spacing: 0.1 !important;
+}
+
+
+.facet-filters .facet-filters__label label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    text-transform: math-auto;
+    color: #1F1F1F;
+}
+.backpacks {
+    font-family: Helvetica Neue;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin: 0px;
+}
+.filter_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.collection-hero__text-wrapper {
+    flex-basis: 100%;
+    display: none;
+}
+.product-grid-container .card__heading a::after {
+    content: unset;
+}
+.product-grid-container .swiper-button-next:after, .product-grid-container  .swiper-button-prev:after {
+    content: unset;
+}
+.product-grid-container .swiper-button-next, .product-grid-container .swiper-button-prev {
+    color: #000;
+    width: 27px;
+    height: 27px;
+}
+.product-grid-container .card__inner:has(.swiper-initialized) .card__media {
+    z-index: 2;
+}
+.product-grid-container s.price-item.price-item--regular {
+    display: none;
+}
+.card-wrapper .card__content .card__information {
+    padding: 10px 8px;
+}
+.swiper-collection:not(.swiper-initialized) .swiper-slide {
+  display: none;
+}
+.swiper-collection:not(.swiper-initialized) .swiper-slide:first-child {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* end-css-collection-page */
+
 @media screen and (min-width: 990px) {
   .utility-bar--bottom-border-social-only {
     border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
@@ -2976,6 +3105,10 @@ details[open] .modal-overlay::after {
   .search-modal__content {
     padding: 0 6rem;
   }
+
+  .facets-container-drawer {
+    align-items: normal !important;
+}
 }
 
 @media screen and (min-width: 990px) {

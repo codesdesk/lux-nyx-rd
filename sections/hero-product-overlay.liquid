@@ -1,0 +1,173 @@
+{% stylesheet %}
+.hero-product-overlay {
+  position: relative;
+  width: 100%;
+}
+
+.hero-product-overlay img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-overlay-card {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #fff;
+    padding: 20px;
+    max-width: 380px;
+    width: 100%;
+    border-radius: 6px;
+    backdrop-filter: blur(26.600000381469727px);
+}
+
+.hero-overlay-card h4 {
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: -0.02px;
+    text-transform: uppercase;
+    color: #1F1F1F;
+    margin: 0;
+}
+.hero_card_items {
+    display: flex;
+    column-gap: 19px;
+}
+.hero-overlay-card .price {
+   font-size: 14px;
+    line-height: normal;
+    letter-spacing: -0.02px;
+    text-transform: uppercase;
+    color: #1F1F1F;
+}
+
+.hero-rating {
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 8px 10px;
+    border: 1px solid #1F1F1F;
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0;
+    border-radius: 4px;
+}
+
+.hero-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-overlay-card {
+    position: absolute;
+    margin: 0;
+    max-width: 126px;
+    width: 100%;
+    top: unset;
+    left: unset;
+    bottom: 12px;
+    right:12px;
+    padding: 12px 15px 12px 12px;
+}
+.hero_card_items {
+    column-gap: 19px;
+    flex-direction: column;
+}
+.hero-overlay-card .price,
+.hero-overlay-card h4 {
+    font-size: 12px;
+}
+.hero-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 115.99999999999999%;
+    margin-top: 8px;
+}
+}
+{% endstylesheet %}
+
+<section class="hero-product-overlay">
+  {% if section.settings.desktop_image %}
+    <picture>
+      {% if section.settings.mobile_image %}
+        <source media="(max-width: 768px)" srcset="{{ section.settings.mobile_image | image_url: width: 800 }}">
+      {% endif %}
+      <img src="{{ section.settings.desktop_image | image_url: width: 2000 }}" alt="Hero Image">
+    </picture>
+  {% endif %}
+
+  {% if section.settings.product != blank %}
+    {% assign product = all_products[section.settings.product] %}
+    <div class="hero-overlay-card">
+        <div class="hero_card_items">
+      <h4>{{ product.title }}
+        <div class="hero-rating">
+        ★★★★★ ({{ section.settings.review_count }})
+      </div>
+      </h4>
+
+      <div class="price">
+        {{ product.price | money }}
+      </div>
+
+     
+
+      <a href="{{ product.url }}" class="hero-btn">
+        {{ section.settings.button_text }}
+      </a>
+</div>
+       
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Hero Product Overlay",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop now"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review Count",
+      "default": "17"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Image with Product Card"
+    }
+  ]
+}
+{% endschema %}

@@ -28,6 +28,13 @@
   endif
 -%}
 
+<div class="filter_main">
+<div class="filters-heading">
+  {% if section.settings.filter_heading !=blank %}
+  <h5 class="backpacks">{{ section.settings.filter_heading }}</h5>
+  {% endif %}
+</div>
+
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
   {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
     <facet-filters-form class="facets small-hide">
@@ -446,9 +453,7 @@
     <details class="mobile-facets__disclosure disclosure-has-popup">
       <summary class="mobile-facets__open-wrapper focus-offset">
         <span class="mobile-facets__open{% if filter_type == 'drawer' and enable_filtering == false %} medium-hide large-up-hide{% endif %}">
-          <span class="svg-wrapper">
-            {{- 'icon-filter.svg' | inline_asset_content -}}
-          </span>
+          
           <span class="mobile-facets__open-label button-label medium-hide large-up-hide">
             {%- if enable_filtering and enable_sorting -%}
               {{ 'products.facets.filter_and_sort' | t }}
@@ -458,10 +463,14 @@
               {{ 'products.facets.sort_button' | t }}
             {%- endif -%}
           </span>
+          
           <span class="mobile-facets__open-label button-label small-hide">
             {%- if enable_filtering -%}
               {{ 'products.facets.filter_button' | t }}
             {%- endif -%}
+          </span>
+          <span class="svg-wrapper">
+            {{- 'icon-filter.svg' | inline_asset_content -}}
           </span>
         </span>
         <span tabindex="0" class="mobile-facets__close">
@@ -934,4 +943,6 @@
       </form>
     </facet-filters-form>
   {%- endif -%}
+</div>
+
 </div>

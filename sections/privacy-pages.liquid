@@ -1,0 +1,163 @@
+<section class="lux-privacy">
+  <div class="lux-privacy__container">
+
+    <!-- Sidebar -->
+    <aside class="lux-privacy__sidebar">
+      <h4 class="lux-privacy__sidebar-title">
+        {{ section.settings.sidebar_title }}
+      </h4>
+
+      <ul class="lux-privacy__nav">
+        {% for block in section.blocks %}
+          <li>
+            <a href="#" class="lux-privacy__link">
+              {{ block.settings.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <!-- Page Content -->
+    <div class="lux-privacy__content">
+      <h1 class="lux-privacy__title">{{ page.title }}</h1>
+
+      <div class="lux-privacy__page-content">
+        {{ page.content }}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('.lux-privacy__link');
+  const headings = document.querySelectorAll('.lux-privacy__page-content h2');
+
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const text = this.textContent.trim().toLowerCase();
+
+      headings.forEach(heading => {
+        if (heading.textContent.trim().toLowerCase() === text) {
+          heading.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  });
+});
+</script>
+
+<style>
+.lux-privacy {
+  padding: 60px 20px;
+  font-family: serif;
+}
+
+.lux-privacy__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 50px;
+}
+
+.lux-privacy__sidebar {
+  position: sticky;
+  top: 100px;
+  border-right: 1px solid #ddd;
+  padding-right: 20px;
+}
+
+.lux-privacy__sidebar-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.lux-privacy__nav {
+  list-style: none;
+  padding: 0;
+}
+
+.lux-privacy__nav li {
+  margin-bottom: 10px;
+}
+
+.lux-privacy__nav a {
+  font-size: 14px;
+  color: #111;
+  text-decoration: none;
+}
+
+.lux-privacy__nav a:hover {
+  text-decoration: underline;
+}
+
+.lux-privacy__title {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.lux-privacy__page-content h2 {
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.lux-privacy__page-content p,
+.lux-privacy__page-content li {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .lux-privacy__container {
+    grid-template-columns: 1fr;
+  }
+
+  .lux-privacy__sidebar {
+    position: relative;
+    border-right: none;
+    margin-bottom: 30px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Privacy Policy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sidebar_title",
+      "label": "Sidebar title",
+      "default": "Contents"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "toc",
+      "name": "Navigation Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading text (must match page heading)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Privacy Policy Page"
+    }
+  ]
+}
+{% endschema %}
