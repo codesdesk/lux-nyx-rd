@@ -11,11 +11,13 @@
       class="header__icon header__icon--menu header__icon--summary link focus-inset"
       aria-label="{{ 'sections.header.menu' | t }}"
     >
-      <span>
-        {{- 'icon-hamburger.svg' | inline_asset_content -}}
-        {{- 'icon-close.svg' | inline_asset_content -}}
+      <span class="menu-drawer__icon-open svg-wrapper">
+        MENU
       </span>
+        {% comment %} {{- 'icon-hamburgers.svg' | inline_asset_content -}}
+        {{- 'icon-close.svg' | inline_asset_content -}} {% endcomment %}
     </summary>
+    
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
@@ -49,7 +51,7 @@
                             </span>
                             {{ link.title | escape }}
                           </button>
-                          <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                           <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
                               <li>
                                 {%- if childlink.links == blank -%}
@@ -115,11 +117,17 @@
                                 {%- endif -%}
                               </li>
                             {%- endfor -%}
-                          </ul>
+                          </ul> 
+
+
+
+
+
                         </div>
                       </div>
                     </details>
                   {%- else -%}
+                    
                     <a
                       id="HeaderDrawer-{{ link.handle }}"
                       href="{{ link.url }}"

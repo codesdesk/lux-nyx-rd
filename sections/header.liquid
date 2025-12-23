@@ -45,10 +45,16 @@
     padding: 0;
     margin: 0;
   }
-
+  @media only screen and (max-width: 989px) {
+    .list-menu {
+      display: flex;
+      text-transform: uppercase;
+      flex-direction: column-reverse
+}
+  }
   .list-menu--inline {
     display: inline-flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 52px;
     text-transform: uppercase;
   }
@@ -76,6 +82,7 @@
     text-decoration: none;
     color: #454545;
     line-height: 16px;
+    padding: 0px;
   }
 
   .list-menu__item--link {
@@ -91,6 +98,9 @@
       padding-top: 0.5rem;
     }
   }
+
+
+  
 </style>
 
 {%- style -%}
@@ -220,7 +230,7 @@
             {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
             {{
               settings.logo
-              | image_url: width: 600
+              | image_url: width: 800
               | image_tag:
                 class: 'header__heading-logo',
                 widths: widths,
@@ -268,7 +278,7 @@
         <div class="custom_menu_right_wrap">
           <ul>
             <li>
-              <a href="#">About</a>
+              <a href="#">About us</a>
             </li>
             <li>
               <a href="#">Help</a>
@@ -309,6 +319,7 @@
           </ul>
         </div>
       </div>
+      <div class="header_icon-container">
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {% comment %} {%- if shop.customer_accounts_enabled -%}
@@ -363,6 +374,7 @@
           </div>
         {%- endif -%}
       </a>
+      </div>
     </div>
   </header>
 </{{ header_tag }}>

@@ -8,10 +8,12 @@
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
+      
       <li>
         {%- if link.links != blank -%}
           <header-menu>
             <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+               
               <summary
                 id="HeaderMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
@@ -30,10 +32,12 @@
                 class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
+                <div class="mega-menu-image-correction">
                 <ul
                   class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
                   role="list"
                 >
+                  <div class="mega-menu_button"><a href="/collections/all" class="mega-menu_button_link">View All</a></div> 
                   {%- for childlink in link.links -%}
                     <li>
                       <a
@@ -65,13 +69,10 @@
                         </ul>
                       {%- endif -%}
                     </li>
-                    
-                        <li>
-                          <img src="{{ section.settings.logo | image_url: width: 150, height: 75 }}" alt="Lux Nyx Logo">
-                        </li>
-                   
                   {%- endfor -%}
                 </ul>
+                <img src="{{ section.settings.logo | image_url: width: 208, height: 353 }}" alt="Lux Nyx Logo">
+                </div>
               </div>
             </details>
           </header-menu>

@@ -8,6 +8,7 @@
   {% render 'header-search', input_id: 'My-Id'%}
 {% endcomment %}
 
+{%- assign input_id = input_id | default: 'Header-Search-Input' -%}
 <details-modal class="header__search">
   <details>
     <summary
