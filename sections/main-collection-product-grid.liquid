@@ -1,6 +1,9 @@
+
+
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -36,7 +39,12 @@
   }
 {%- endstyle -%}
 
+
+
+
+
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
+  {% include 'breadcrumbs' %}  
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
@@ -143,6 +151,7 @@
             class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
           >
             <div class="loading-overlay gradient"></div>
+
             <ul
               id="product-grid"
               data-id="{{ section.id }}"
@@ -181,6 +190,7 @@
                 {%- assign skip_card_product_styles = true -%}
               {%- endfor -%}
             </ul>
+    
 
             {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}
@@ -200,6 +210,11 @@
   "name": "t:sections.main-collection-product-grid.name",
   "class": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "filter_heading",
+      "label": "Filter Headings"
+    },
     {
       "type": "range",
       "id": "products_per_page",

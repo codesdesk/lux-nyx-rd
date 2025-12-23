@@ -1,0 +1,57 @@
+  <div class="container">
+    <div class="collection-top">
+      {% include 'breadcrumbs' %}   
+    </div> 
+    <div class="filter-box ">
+      <div class="filterCollapse">
+        <p>Filter By<span>{%include 'filter'%}</span></p>
+      </div>
+      <div class="sort_collections">
+        <div class="toogle_filter"><label class="init">sort by{% include 'sort_icon' %}</label></div>
+        <div class="tb-none">{% include 'sort_by' %}</div>
+      </div>
+    </div>
+    <div class="collection-products ">
+      <div class="dt-none">{% include 'sort_by' %}</div>
+      <h1 class="section-heading text-center d-none">{{ collection.title }}</h1>
+      {% paginate collection.products by 40 %}
+      <div class="d-flex d-wrap margin-minus filterOverlay">
+        {% include 'filter-collection' %}
+        <div class="cdk_collections d-flex d-wrap">
+          {% for product in collection.products %}
+          <div class="cdk-products-items cdk-item-2 cdk-item-md-2 cdk-item-sm-1 cdk-item-xs-1">{%- include 'product' -%}</div>
+          {% else %}
+          <p class="no_collection">Sorry, there are no results.</p>
+          {% endfor %}
+        </div>
+      </div>
+      {%- include 'pagination' -%}
+      {% endpaginate %}
+    </div>
+</div>
+  
+{% schema %}
+  {
+    "name": "Collection",
+    "settings": [],
+    "blocks": [
+      {
+      "name": "Filter",
+      "type": "filter",
+      "settings":
+        [
+          {
+          "type": "text",
+          "id": "name",
+          "label": "name"
+          },
+          {
+          "type": "textarea",
+          "id": "options",
+          "label": "options"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %} 
