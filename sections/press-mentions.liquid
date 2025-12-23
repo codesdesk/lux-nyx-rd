@@ -1,0 +1,248 @@
+<section class="press-mentions" style="
+  background: {{ section.settings.bg_color }};
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+">
+  <div class="page-width">
+
+    <!-- Top Row -->
+    <div class="press-header">
+      <span class="press-label">{{ section.settings.label }}</span>
+
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="press-btn">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <!-- Quote -->
+    <div class="press-quote">
+      {{ section.settings.quote }}
+    </div>
+
+    <!-- Logos -->
+    <div class="press-logos">
+      {% for block in section.blocks %}
+        {% if block.settings.logo != blank %}
+          <div class="press-logo">
+            <img
+              src="{{ block.settings.logo | image_url: width: 300 }}"
+              alt="Press logo"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.press-mentions {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.press-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.press-label {
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: 0.03px;
+    text-transform: uppercase;
+  color: {{ section.settings.label_color }};
+}
+
+.press-btn {
+  font-size: 18px;
+    line-height: normal;
+    letter-spacing: 0;
+    text-align: right;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-offset: 0%;
+    text-decoration-thickness: 0%;
+    color: {{ section.settings.button_color }};
+}
+
+.press-quote {
+  font-size: {{ section.settings.quote_size }}px;
+  line-height: normal;
+  font-weight: 500;
+  margin-bottom: 56px;
+  text-indent: 200px;
+  color: #1F1F1F;
+}
+.press-quote p {
+    margin: 0;
+}
+.press-quote em {
+  font-style: italic;
+}
+
+.press-logos {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1133px;
+    width: 100%;
+    margin: 0 auto;
+    text-indent:80px;
+}
+
+.press-logo img {
+  max-height: {{ section.settings.logo_height }}px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .press-header {
+    gap: 12px;
+  }
+
+  .press-quote {
+    font-size: {{ section.settings.quote_size_mobile }}px;
+    text-indent:0;
+    margin-bottom:28px;
+  }
+
+  .press-logos {
+    column-gap: 29.5px;
+    text-indent: 0;
+    row-gap: 22px;
+    justify-content: center;
+}
+  .press-label, .press-btn {
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 0;
+}
+.press-logo img {
+    max-height: 20px !important;
+}
+.press-mentions{
+    padding-top:8px;
+    padding-bottom:57px;
+}
+}
+</style>
+
+{% schema %}
+{
+  "name": "Press Mentions",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "PRESS MENTIONS"
+    },
+    {
+      "type": "richtext",
+      "id": "quote",
+      "label": "Quote Text",
+      "default": "<p><em>We use ethically-sourced materials</em> and uplift communities through both design and giving back.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "range",
+      "id": "quote_size",
+      "label": "Quote Font Size (Desktop)",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "quote_size_mobile",
+      "label": "Quote Font Size (Mobile)",
+      "min": 18,
+      "max": 36,
+      "step": 2,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "label": "Logo Height",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Press Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press Mentions"
+    }
+  ]
+}
+{% endschema %}

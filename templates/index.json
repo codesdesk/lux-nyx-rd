@@ -84,6 +84,7 @@
           "settings": {
             "image": "shopify://shop_images/Frame_540.png",
             "overlay_title": "SMART DESIGN",
+            "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
             "overlay_button": "Our Design Philosophy",
             "overlay_link": "#",
             "product_title": "Origami Belt Bag",
@@ -96,6 +97,33 @@
           "settings": {
             "image": "shopify://shop_images/Frame_541_abf6348d-3b54-4557-b047-7f836176fc4c.png",
             "overlay_title": "Materials & Craftsmanship",
+            "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
+            "overlay_button": "Our Design Philosophy",
+            "overlay_link": "#",
+            "product_title": "Origami Belt Bag",
+            "product_price": "$288.00",
+            "product_link": "shopify://products/origami-belt-bag"
+          }
+        },
+        "item_C3zC8q": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Frame_540.png",
+            "overlay_title": "SMART DESIGN",
+            "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
+            "overlay_button": "Our Design Philosophy",
+            "overlay_link": "#",
+            "product_title": "Origami Belt Bag",
+            "product_price": "$288.00",
+            "product_link": "shopify://products/origami-belt-bag"
+          }
+        },
+        "item_Qjw9BV": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Frame_541_abf6348d-3b54-4557-b047-7f836176fc4c.png",
+            "overlay_title": "Materials & Craftsmanship",
+            "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
             "overlay_button": "Our Design Philosophy",
             "overlay_link": "#",
             "product_title": "Origami Belt Bag",
@@ -106,17 +134,322 @@
       },
       "block_order": [
         "item_R8Xftn",
-        "item_C99reG"
+        "item_C99reG",
+        "item_C3zC8q",
+        "item_Qjw9BV"
       ],
       "name": "Design Ethos",
       "settings": {
-        "section_title": "Design Ethos"
+        "addclass": "",
+        "section_title": "Design Ethos",
+        "header_link_text": "Design Philosophy",
+        "header_link": "#"
+      }
+    },
+    "collections_grid_PnaFfE": {
+      "type": "collections-grid",
+      "blocks": {
+        "small_card_XKyc3w": {
+          "type": "small_card",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC6448_highres.png",
+            "title": "Crossbody Bags",
+            "link": "shopify://collections/womens-crossbody-bags",
+            "button_text": "Shop now"
+          }
+        },
+        "small_card_ALegpR": {
+          "type": "small_card",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC7376_highres.png",
+            "title": "Totes",
+            "link": "shopify://collections/womens-tote-bags",
+            "button_text": "Shop now"
+          }
+        },
+        "small_card_AbxDt8": {
+          "type": "small_card",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC7656_highres.png",
+            "title": "Backpacks",
+            "link": "shopify://collections/womens-backpacks",
+            "button_text": "Shop now"
+          }
+        },
+        "small_card_wj9N3H": {
+          "type": "small_card",
+          "settings": {
+            "title": "",
+            "link": "shopify://collections/womens-backpacks",
+            "button_text": "Shop All Products"
+          }
+        },
+        "large_card_3BKYEz": {
+          "type": "large_card",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC7222_highres.png",
+            "title": "Belt Bags",
+            "description": "Redefining the way you carry essentials hands-free. This belt bag empowers you to freely seize life's adventures being fully present, embracing moments that matter most.",
+            "link": "shopify://collections/belt-bags",
+            "button_text": "Shop now"
+          }
+        }
+      },
+      "block_order": [
+        "small_card_XKyc3w",
+        "small_card_ALegpR",
+        "small_card_AbxDt8",
+        "small_card_wj9N3H",
+        "large_card_3BKYEz"
+      ],
+      "name": "Collections Grid",
+      "settings": {
+        "heading": "Collections",
+        "view_all_text": "See more",
+        "view_all_link": "shopify://collections"
+      }
+    },
+    "press_mentions_LcCkMF": {
+      "type": "press-mentions",
+      "blocks": {
+        "logo_BnPHbQ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group_947.png"
+          }
+        },
+        "logo_PV4wqN": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group.png"
+          }
+        },
+        "logo_dyaMcp": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group_89e2c09c-8aca-4293-a63c-4981a6506fc5.png"
+          }
+        },
+        "logo_RbLWDF": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Vector_2a749187-05ac-468e-a6b5-967aff074d37.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_BnPHbQ",
+        "logo_PV4wqN",
+        "logo_dyaMcp",
+        "logo_RbLWDF"
+      ],
+      "name": "Press Mentions",
+      "settings": {
+        "label": "PRESS MENTIONS",
+        "quote": "<p>“<em>We use ethically-sourced materials</em> and uplift communities through both design and giving back.”</p>",
+        "button_text": "Shop Now",
+        "button_link": "#",
+        "quote_size": 56,
+        "quote_size_mobile": 32,
+        "logo_height": 30,
+        "bg_color": "#f9f7f6",
+        "label_color": "#1f1f1f",
+        "button_color": "#1f1f1f",
+        "padding_top": 20,
+        "padding_bottom": 72
+      }
+    },
+    "customer_reviews_swiper_8qTRnK": {
+      "type": "customer-reviews-swiper",
+      "blocks": {
+        "review_iha8C3": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Frame_50.png",
+            "star_image": "shopify://shop_images/Group_381_40981505-fd76-46a0-8b70-d99c36c6d974.png",
+            "review": "“An origami construction and spacious inside separate this versatile weekend bag from the (bag) pack. ”",
+            "name": "-Lisa D.",
+            "verified": true,
+            "date": "Aug 30, 2024"
+          }
+        },
+        "review_kMPyd8": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Frame_504.png",
+            "star_image": "shopify://shop_images/Group_381_40981505-fd76-46a0-8b70-d99c36c6d974.png",
+            "review": "“An origami construction and spacious inside separate this versatile weekend bag from the (bag) pack. ”",
+            "name": "-Lisa D.",
+            "verified": true,
+            "date": "Aug 30, 2024"
+          }
+        },
+        "review_xjdU97": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Frame_50.png",
+            "star_image": "shopify://shop_images/Group_381_40981505-fd76-46a0-8b70-d99c36c6d974.png",
+            "review": "“An origami construction and spacious inside separate this versatile weekend bag from the (bag) pack. ”",
+            "name": "-Lisa D.",
+            "verified": true,
+            "date": "Aug 30, 2024"
+          }
+        },
+        "review_EYJ6iN": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Frame_504.png",
+            "star_image": "shopify://shop_images/Group_381_40981505-fd76-46a0-8b70-d99c36c6d974.png",
+            "review": "“An origami construction and spacious inside separate this versatile weekend bag from the (bag) pack. ”",
+            "name": "-Lisa D.",
+            "verified": true,
+            "date": "Aug 30, 2024"
+          }
+        },
+        "review_AnNVW8": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Frame_50.png",
+            "star_image": "shopify://shop_images/Group_381_40981505-fd76-46a0-8b70-d99c36c6d974.png",
+            "review": "“An origami construction and spacious inside separate this versatile weekend bag from the (bag) pack. ”",
+            "name": "-Lisa D.",
+            "verified": true,
+            "date": "Aug 30, 2024"
+          }
+        }
+      },
+      "block_order": [
+        "review_iha8C3",
+        "review_kMPyd8",
+        "review_xjdU97",
+        "review_EYJ6iN",
+        "review_AnNVW8"
+      ],
+      "name": "Customer Reviews Swiper",
+      "settings": {
+        "heading": "Customer Reviews",
+        "bg_color": "#ffffff",
+        "shop_link": "#",
+        "shop_text": "Shop now",
+        "more_reviews_link": "#",
+        "more_reviews_text": "More reviews (100+)"
+      }
+    },
+    "hero_product_overlay_GJaHpD": {
+      "type": "hero-product-overlay",
+      "name": "Hero Image with Product Card",
+      "settings": {
+        "desktop_image": "shopify://shop_images/LUX_AND_NYX__DSC7354_highres.png",
+        "mobile_image": "shopify://shop_images/Frame_150.png",
+        "product": "origami-belt-bag",
+        "button_text": "Shop now",
+        "review_count": "17"
+      }
+    },
+    "founders_note_FVJMiU": {
+      "type": "founders-note",
+      "name": "Founder's Note",
+      "settings": {
+        "eyebrow": "Our story",
+        "shop_btn_label": "Shop Now",
+        "shop_btn_link": "#",
+        "quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led point of view</em>—for those who move through life with intention and show up with clarity.</p>",
+        "author": "",
+        "supporting_text": "Did you know as few as 7% of products marketed towards women are actually designed by women? Did you know of products you know marketed towards women are actually designed.",
+        "button_label": "Read Out Story",
+        "button_link": "shopify://pages/about-us-1",
+        "background_color": "#ffffff",
+        "text_color": "#1f1f1f",
+        "eyebrow_color": "#000000",
+        "supporting_text_color": "#1f1f1f",
+        "button_text": "#1f1f1f",
+        "button_border": "#000000",
+        "quote_size": 56,
+        "image_radius": 0,
+        "padding_top": 20,
+        "padding_bottom": 27
+      }
+    },
+    "design_ethos_FeGkH4": {
+      "type": "design-ethos",
+      "blocks": {
+        "item_EjcqbF": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC7333_highres.png",
+            "overlay_title": "",
+            "overlay_content": "",
+            "overlay_button": "",
+            "overlay_link": "#",
+            "product_title": "Origami Belt Bag",
+            "product_price": "$288.00",
+            "product_link": "shopify://products/origami-belt-bag"
+          }
+        },
+        "item_gbRamT": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC7207_highres.png",
+            "overlay_title": "",
+            "overlay_content": "",
+            "overlay_button": "",
+            "overlay_link": "",
+            "product_title": "Origami Belt Bag",
+            "product_price": "$288.00",
+            "product_link": "shopify://products/origami-belt-bag"
+          }
+        },
+        "item_8MbNC8": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC7333_highres.png",
+            "overlay_title": "",
+            "overlay_content": "",
+            "overlay_button": "",
+            "overlay_link": "#",
+            "product_title": "Origami Belt Bag",
+            "product_price": "$288.00",
+            "product_link": "shopify://products/origami-belt-bag"
+          }
+        },
+        "item_DH4Umx": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC7207_highres.png",
+            "overlay_title": "",
+            "overlay_content": "",
+            "overlay_button": "",
+            "overlay_link": "",
+            "product_title": "Origami Belt Bag",
+            "product_price": "$288.00",
+            "product_link": "shopify://products/origami-belt-bag"
+          }
+        }
+      },
+      "block_order": [
+        "item_EjcqbF",
+        "item_gbRamT",
+        "item_8MbNC8",
+        "item_DH4Umx"
+      ],
+      "name": "Design Ethos",
+      "settings": {
+        "addclass": "homedesign_bottom",
+        "section_title": "",
+        "header_link_text": "",
+        "header_link": ""
       }
     }
   },
   "order": [
     "home_image_banner_cmUP6c",
     "founders_note_DCrrYP",
-    "design_ethos_9qQ7aG"
+    "design_ethos_9qQ7aG",
+    "collections_grid_PnaFfE",
+    "press_mentions_LcCkMF",
+    "customer_reviews_swiper_8qTRnK",
+    "hero_product_overlay_GJaHpD",
+    "founders_note_FVJMiU",
+    "design_ethos_FeGkH4"
   ]
 }
