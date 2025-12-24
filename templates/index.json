@@ -62,6 +62,7 @@
         "author": "",
         "image": "shopify://shop_images/Frame_541.png",
         "supporting_text": "Did you know as few as 7% of products marketed towards women are actually designed by women? Did you know of products you know marketed towards women are actually designed.",
+        "show_icon": true,
         "button_label": "About Us",
         "button_link": "shopify://pages/about-us-1",
         "background_color": "#f9f7f6",
@@ -86,6 +87,7 @@
             "overlay_title": "SMART DESIGN",
             "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
             "overlay_button": "Our Design Philosophy",
+            "enable_border": true,
             "overlay_link": "#",
             "product_title": "Origami Belt Bag",
             "product_price": "$288.00",
@@ -99,6 +101,7 @@
             "overlay_title": "Materials & Craftsmanship",
             "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
             "overlay_button": "Our Design Philosophy",
+            "enable_border": true,
             "overlay_link": "#",
             "product_title": "Origami Belt Bag",
             "product_price": "$288.00",
@@ -112,6 +115,7 @@
             "overlay_title": "SMART DESIGN",
             "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
             "overlay_button": "Our Design Philosophy",
+            "enable_border": true,
             "overlay_link": "#",
             "product_title": "Origami Belt Bag",
             "product_price": "$288.00",
@@ -125,6 +129,7 @@
             "overlay_title": "Materials & Craftsmanship",
             "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
             "overlay_button": "Our Design Philosophy",
+            "enable_border": true,
             "overlay_link": "#",
             "product_title": "Origami Belt Bag",
             "product_price": "$288.00",
@@ -154,6 +159,7 @@
           "settings": {
             "image": "shopify://shop_images/LUX_AND_NYX__DSC6448_highres.png",
             "title": "Crossbody Bags",
+            "content": "",
             "link": "shopify://collections/womens-crossbody-bags",
             "button_text": "Shop now"
           }
@@ -163,6 +169,7 @@
           "settings": {
             "image": "shopify://shop_images/LUX_AND_NYX__DSC7376_highres.png",
             "title": "Totes",
+            "content": "",
             "link": "shopify://collections/womens-tote-bags",
             "button_text": "Shop now"
           }
@@ -172,6 +179,7 @@
           "settings": {
             "image": "shopify://shop_images/LUX_AND_NYX__DSC7656_highres.png",
             "title": "Backpacks",
+            "content": "",
             "link": "shopify://collections/womens-backpacks",
             "button_text": "Shop now"
           }
@@ -180,6 +188,7 @@
           "type": "small_card",
           "settings": {
             "title": "",
+            "content": "",
             "link": "shopify://collections/womens-backpacks",
             "button_text": "Shop All Products"
           }
@@ -204,6 +213,7 @@
       ],
       "name": "Collections Grid",
       "settings": {
+        "addclass": "",
         "heading": "Collections",
         "view_all_text": "See more",
         "view_all_link": "shopify://collections"
@@ -356,6 +366,7 @@
         "quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led point of view</em>—for those who move through life with intention and show up with clarity.</p>",
         "author": "",
         "supporting_text": "Did you know as few as 7% of products marketed towards women are actually designed by women? Did you know of products you know marketed towards women are actually designed.",
+        "show_icon": false,
         "button_label": "Read Out Story",
         "button_link": "shopify://pages/about-us-1",
         "background_color": "#ffffff",
@@ -380,7 +391,8 @@
             "overlay_title": "",
             "overlay_content": "",
             "overlay_button": "",
-            "overlay_link": "#",
+            "enable_border": false,
+            "overlay_link": "shopify://products/origami-belt-bag",
             "product_title": "Origami Belt Bag",
             "product_price": "$288.00",
             "product_link": "shopify://products/origami-belt-bag"
@@ -393,7 +405,8 @@
             "overlay_title": "",
             "overlay_content": "",
             "overlay_button": "",
-            "overlay_link": "",
+            "enable_border": false,
+            "overlay_link": "shopify://products/origami-belt-bag",
             "product_title": "Origami Belt Bag",
             "product_price": "$288.00",
             "product_link": "shopify://products/origami-belt-bag"
@@ -406,7 +419,8 @@
             "overlay_title": "",
             "overlay_content": "",
             "overlay_button": "",
-            "overlay_link": "#",
+            "enable_border": false,
+            "overlay_link": "shopify://products/origami-belt-bag",
             "product_title": "Origami Belt Bag",
             "product_price": "$288.00",
             "product_link": "shopify://products/origami-belt-bag"
@@ -419,7 +433,8 @@
             "overlay_title": "",
             "overlay_content": "",
             "overlay_button": "",
-            "overlay_link": "",
+            "enable_border": false,
+            "overlay_link": "shopify://products/origami-belt-bag",
             "product_title": "Origami Belt Bag",
             "product_price": "$288.00",
             "product_link": "shopify://products/origami-belt-bag"
@@ -439,6 +454,35 @@
         "header_link_text": "",
         "header_link": ""
       }
+    },
+    "featured_collection_9rKUkA": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "everything2",
+        "products_to_show": 25,
+        "title": "Explore",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -450,6 +494,7 @@
     "customer_reviews_swiper_8qTRnK",
     "hero_product_overlay_GJaHpD",
     "founders_note_FVJMiU",
-    "design_ethos_FeGkH4"
+    "design_ethos_FeGkH4",
+    "featured_collection_9rKUkA"
   ]
 }
