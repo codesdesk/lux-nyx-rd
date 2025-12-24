@@ -48,10 +48,11 @@
       {% if section.settings.button_label != blank %}
         <a href="{{ section.settings.button_link }}"
            class="founders-note-button">
-           
+           {%  if section.settings.show_icon %}
       <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M9.043 3.354L6.396 0.708L7.104 0L10.957 3.854L7.104 7.708L6.396 7.001L9.043 4.354H0V3.354H9.043Z" fill="#1F1F1F"/>
       </svg>
+      {% endif %}
 
           {{ section.settings.button_label }}
         </a>
@@ -175,6 +176,9 @@
   background: {{ section.settings.button_border }};
   color: #fff;
 }
+.founders-note-button:hover svg path {
+    fill: #fff;
+}
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -252,6 +256,12 @@
       "id": "supporting_text",
       "label": "Supporting text",
       "default": "Did you know as few as 7% of products marketed toward women are actually designed by women?"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show Button Icon",
+      "default": false
     },
     {
       "type": "text",

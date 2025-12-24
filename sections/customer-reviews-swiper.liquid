@@ -72,13 +72,14 @@
 
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
     </div>
     <!-- BOTTOM LINES -->
-    <div class="review-lines">
+    {% comment %} <div class="review-lines">
         {% for block in section.blocks %}
             <span class="review-line{% if forloop.first %} active{% endif %}"></span>
         {% endfor %}
-        </div>
+        </div> {% endcomment %}
   </div>
 </section>
 <style>
@@ -169,6 +170,10 @@
     color: #1F1F1F;
     border-radius: 4px;
 }
+.more-reviews-btn:hover{
+  background: #000;
+  color:#fff;
+}
 .review-content {
     text-align: left;
 }
@@ -193,7 +198,42 @@
 .review-line.active {
   background: #000;
 }
+.customer-reviews .swiper-pagination {
+    position: unset;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap:32px;
+    left: unset;
+    right: unset;
+    margin: 0;
+    transform: unset !important;
+    margin: 0 auto;
+    margin-top:46px;
+    width:100% !important;
+}
+.customer-reviews .swiper-pagination-bullet{
+  width:296px;
+  height:2px;
+  border-radius:0;
+  position: unset !important;
+}
+.customer-reviews .swiper-pagination-bullet-active{
+  background:#1F1F1F;
+}
+.customer-reviews .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next,
+.customer-reviews .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev,
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main,
+.customer-reviews .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+    transform: unset !important;
+}
+.customer-reviews  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+  margin:0;
+}
 @media (max-width: 768px) {
+  .customer-reviews .swiper-pagination {
+    column-gap:11.75px;
+  }
   .review-card {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -237,7 +277,11 @@ document.addEventListener("DOMContentLoaded", function () {
   new Swiper(".reviews-swiper", {
     loop: true,
     spaceBetween: 30,
-
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",

@@ -55,8 +55,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: .5s ease-in-out;
 }
-
+.collection-card img:hover {
+    transform: scale(1.1);
+}
 .collection-overlay {
     position: absolute;
     bottom: 16px;
@@ -99,11 +102,40 @@
     border-radius: 4px;
     line-height: 115.99999999999999%;
 }
-
+.collection-overlay a:hover{
+  background: #000;
+  border-color:#000;
+}
 .large-card {
   height: 100%;
 }
+.custom_product_coll_grid .collection-overlay {
+    position: unset;
+    color: #1F1F1F;
+    display: block;
+}
 
+.custom_product_coll_grid .collection-overlay h3 {
+    font-size: 28.58px;
+    line-height: normal;
+    letter-spacing: 0.02px;
+    color: #1F1F1F;
+}
+
+.custom_product_coll_grid .collection-overlay p {
+    font-size: 14.29px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0;
+    color: #454545;
+}
+
+.custom_product_coll_grid .collection-card img {
+    height: unset;
+}
+
+.custom_product_coll_grid .collection-card {
+    overflow: unset;
+}
 
 /* Responsive */
 @media(max-width: 900px) {
@@ -225,7 +257,7 @@
 
 {% endstylesheet %}
 
-<section class="collections-grid">
+<section class="collections-grid {{ section.settings.addclass }}">
   <div class="collections-header">
     <h2>{{ section.settings.heading }}</h2>
     {% if section.settings.view_all_link != blank %}
@@ -240,11 +272,14 @@
         {% if block.type == 'small_card' %}
           <div class="collection-card">
             {% if block.settings.image %}
+              <a href="{{ block.settings.link }}">
               <img src="{{ block.settings.image | image_url: width: 800 }}" alt="">
+              </a>
             {% endif %}
             <div class="collection-overlay">
-              <h3>{{ block.settings.title }}</h3>
-              <a href="{{ block.settings.link }}">{{ block.settings.button_text }}</a>
+              {% if block.settings.title != blank %}<h3>{{ block.settings.title }}</h3>{% endif %}
+             {% if block.settings.content != blank %} {{ block.settings.content }}{% endif %}
+              {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{{ block.settings.button_text }}</a>{% endif %}
             </div>
           </div>
         {% endif %}
@@ -273,6 +308,11 @@
 {
   "name": "Collections Grid",
   "settings": [
+    {
+      "type": "text",
+      "id": "addclass",
+      "label": "AddClass"
+    },
     {
       "type": "text",
       "id": "heading",
@@ -306,6 +346,11 @@
           "id": "title",
           "label": "Title",
           "default": "Collection name"
+        },
+         {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
         },
         {
           "type": "url",
