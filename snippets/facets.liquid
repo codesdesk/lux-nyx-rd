@@ -418,7 +418,7 @@
                     {%- endfor -%}
                   </select>
                   <span class="svg-wrapper">
-                    {{- 'icon-caret.svg' | inline_asset_content -}}
+                    {{- 'icon-sortby.svg' | inline_asset_content -}}
                   </span>
                 </div>
               </div>
@@ -475,14 +475,19 @@
         </span>
         <span tabindex="0" class="mobile-facets__close">
           <span class="svg-wrapper">
-            {{- 'icon-close.svg' | inline_asset_content -}}
+           {{- 'icon-close.svg' | inline_asset_content -}}
           </span>
         </span>
       </summary>
       <facet-filters-form>
         <form id="FacetFiltersFormMobile" class="mobile-facets">
           <div class="mobile-facets__inner gradient">
-            <div class="mobile-facets__header">
+            
+            <div
+              id="FacetsWrapperMobile"
+              class="mobile-facets__main has-submenu gradient"
+            >
+              <div class="mobile-facets__header">
               <div class="mobile-facets__header-inner">
                 <h2 class="mobile-facets__heading medium-hide large-up-hide">
                   {%- if enable_filtering and enable_sorting -%}
@@ -512,10 +517,6 @@
                 </p>
               </div>
             </div>
-            <div
-              id="FacetsWrapperMobile"
-              class="mobile-facets__main has-submenu gradient"
-            >
               {%- if enable_filtering -%}
                 {%- for filter in results.filters -%}
                   {% liquid
@@ -538,7 +539,7 @@
                           <div>
                             <span>{{ filter.label | escape }}</span>
                             <span class="mobile-facets__arrow">
-                              {{- 'icon-arrow.svg' | inline_asset_content -}}
+                              {{- 'icon-plus.svg' | inline_asset_content -}}
                             </span>
                           </div>
                         </summary>
@@ -680,7 +681,7 @@
                           <div>
                             <span>{{ filter.label | escape }}</span>
                             <span class="mobile-facets__arrow">
-                              {{- 'icon-arrow.svg' | inline_asset_content -}}
+                              {{- 'icon-plus.svg' | inline_asset_content -}}
                             </span>
                           </div>
                         </summary>
@@ -753,12 +754,26 @@
                           {%- endfor -%}
                         </select>
                         <span class="svg-wrapper">
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                          {{- 'icon-sortby.svg' | inline_asset_content -}}
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
+               
+                <button class="mobile-facets__count bottom">
+                  {%- if results.results_count -%}
+                    View
+                    {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
+                  {%- elsif results.products_count == results.all_products_count -%}
+                    View {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
+                  {%- else -%}
+                    View {{
+                      'products.facets.product_count'
+                      | t: product_count: results.products_count, count: results.all_products_count
+                    }}
+                  {%- endif -%}
+                </button>
               {%- endif -%}
 
               <div class="mobile-facets__footer">
@@ -860,7 +875,7 @@
                 {%- endfor -%}
               </select>
               <span class="svg-wrapper">
-                {{- 'icon-caret.svg' | inline_asset_content -}}
+                {{- 'icon-sortby.svg' | inline_asset_content -}}
               </span>
             </div>
           </div>
