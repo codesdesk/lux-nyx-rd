@@ -479,6 +479,7 @@
           </span>
         </span>
       </summary>
+    
       
       <facet-filters-form>
         <form id="FacetFiltersFormMobile" class="mobile-facets">
@@ -773,6 +774,7 @@
         </form>
       </facet-filters-form>
     </details>
+
     <div
                   id="Details-Mobile-SortBy-{{ section.id }}"
                   class="mobile-facets__details js-filter{% if filter_type == 'drawer' %} medium-hide large-up-hide{% endif %}"
@@ -848,6 +850,14 @@
       </a>
     </facet-remove>
   </div>
+  <div class="icon-product-grid"> 
+    <span class="all-products">
+    {{- 'icon-main-products.svg' | inline_asset_content -}}
+    </span>
+    <span class="products-grid">
+    {{- 'icon-product-grid.svg' | inline_asset_content -}}
+    </span>
+   </div>
   {% comment %} Sort, product count and filter pills at the end when filter is type of Drawer for the correct tabbing order {% endcomment %}
   {%- if enable_sorting and filter_type == 'drawer' -%}
     <facet-filters-form class="facets small-hide">
@@ -894,6 +904,7 @@
       </form>
     </facet-filters-form>
   {%- endif -%}
+  
   <div
     class="product-count light{% if filter_type == 'vertical' or filter_type == 'horizontal' %} medium-hide large-up-hide{% endif %}"
     role="status"
