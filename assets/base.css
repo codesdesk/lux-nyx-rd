@@ -364,6 +364,8 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
   .header.page-width,
   .utility-bar__grid.page-width {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
   }
 
   .page-width--narrow {
