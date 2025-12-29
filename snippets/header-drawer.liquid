@@ -11,9 +11,11 @@
       class="header__icon header__icon--menu header__icon--summary link focus-inset"
       aria-label="{{ 'sections.header.menu' | t }}"
     >
-      <span class="menu-drawer__icon-open svg-wrapper">
-        MENU
+      <span class="header__menu-text">
+      <span id="menuText">MENU</span>
+      <span id="closeText" style="display:none;">CLOSE</span>
       </span>
+
         {% comment %} {{- 'icon-hamburgers.svg' | inline_asset_content -}}
         {{- 'icon-close.svg' | inline_asset_content -}} {% endcomment %}
     </summary>
@@ -21,9 +23,64 @@
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
-          <nav class="menu-drawer__navigation">
-            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
-              {%- for link in section.settings.menu.links -%}
+          {% comment %} <nav class="menu-drawer__navigation">    {% endcomment %}
+            <div class="uni-women-container">
+            <div class="uni-women-wrapper">
+              <a href="/categories/shop all" class="uni-women-link">WOMEN</a>
+              <a href="/categories/shop all" class="uni-women-link">UNISEX</a>
+            </div>
+            <button class="mobile-button">Shop All</button>
+          </div>
+
+          <div class="mobile-menu-accordion">
+            <button class="accordion-button">categories</button>
+            <div class="panel">
+                <a href="#">shop all</a>
+                <a href="#">totes</a>
+                <a href="#">backpacks</a>
+                <a href="#">crossbody</a>
+                <a href="#">wallets</a>
+                <a href="#">clutches</a>
+                <a href="#">belt bag</a>
+                <a href="#">accessories</a>
+            </div>
+            <button class="accordion-button">lifestyle</button>
+            <div class="panel">
+                <a href="#">shop all</a>
+                <a href="#">totes</a>
+                <a href="#">backpacks</a>
+                <a href="#">crossbody</a>
+                <a href="#">wallets</a>
+                <a href="#">clutches</a>
+                <a href="#">belt bag</a>
+                <a href="#">accessories</a>
+            </div>
+            <button class="accordion-button">functions</button>
+            <div class="panel">
+                <a href="#">shop all</a>
+                <a href="#">totes</a>
+                <a href="#">backpacks</a>
+                <a href="#">crossbody</a>
+                <a href="#">wallets</a>
+                <a href="#">clutches</a>
+                <a href="#">belt bag</a>
+                <a href="#">accessories</a>
+            </div>
+            <button class="accordion-button">collections</button>
+            <div class="panel">
+                <a href="#">shop all</a>
+                <a href="#">totes</a>
+                <a href="#">backpacks</a>
+                <a href="#">crossbody</a>
+                <a href="#">wallets</a>
+                <a href="#">clutches</a>
+                <a href="#">belt bag</a>
+                <a href="#">accessories</a>
+            </div>
+          </div>
+            {% comment %} <ul class="menu-drawer__menu has-submenu list-menu" role="list"> {% endcomment %}
+              {% comment %} {%- for link in section.settings.menu.links -%} {% endcomment %}
+                {% comment %} {% for link in linklists.lux-and-nyx-mobile.links -%}
                 <li>
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
@@ -52,6 +109,7 @@
                             {{ link.title | escape }}
                           </button>
                            <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                            <div class="mobile-menu-container">
                             {%- for childlink in link.links -%}
                               <li>
                                 {%- if childlink.links == blank -%}
@@ -116,7 +174,9 @@
                                   </details>
                                 {%- endif -%}
                               </li>
+                              
                             {%- endfor -%}
+                            </div>
                           </ul> 
 
 
@@ -127,7 +187,7 @@
                       </div>
                     </details>
                   {%- else -%}
-                    
+                      
                     <a
                       id="HeaderDrawer-{{ link.handle }}"
                       href="{{ link.url }}"
@@ -142,6 +202,7 @@
                 </li>
               {%- endfor -%}
             </ul>
+          
           </nav>
           <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
@@ -295,7 +356,7 @@
                 </li>
               {%- endif -%}
             </ul>
-          </div>
+          </div> {% endcomment %}
         </div>
       </div>
     </div>
