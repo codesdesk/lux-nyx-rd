@@ -19,7 +19,7 @@
 <style>
   header-drawer {
     justify-self: start;
-    margin-left: -1.2rem;
+    {% comment %} margin-left: -1.2rem;  {% endcomment %}
   }
 
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
@@ -49,7 +49,7 @@
     .list-menu {
       display: flex;
       text-transform: uppercase;
-      flex-direction: column-reverse
+      flex-direction: column;
 }
   }
   .list-menu--inline {
@@ -84,6 +84,13 @@
     line-height: 16px;
     padding: 0px;
   }
+  @media only screen and (max-width: 989px) {
+   .list-menu__item{
+      color: #1f1f1f;
+      font-size: 1.4rem;
+      line-height: 15px;
+    }
+  }
 
   .list-menu__item--link {
     text-decoration: none;
@@ -91,6 +98,29 @@
     padding-top: 1rem;
     line-height: calc(1 + 0.8 / var(--font-body-scale));
   }
+  {% comment %} New {% endcomment %}
+.uni-women-container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.uni-women-wrapper {
+    display: flex;
+    color: black;
+    justify-content: space-between;
+}
+button.mobile-button {
+    line-height: 13px;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    color: white;
+    background-color: #1f1f1f;
+    padding: 6px 30px 6px 30px;
+}
+a.uni-women-link {
+    color: black;
+}
 
   @media screen and (min-width: 750px) {
     .list-menu__item--link {
@@ -742,3 +772,41 @@
   ]
 }
 {% endschema %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuButton = document.querySelector('.header__icon--menu');
+    const menuText = document.getElementById('menuText');
+    const closeText = document.getElementById('closeText');
+
+    if (!menuButton) return;
+
+    menuButton.addEventListener('click', function () {
+      const isMenuVisible = menuText.style.display !== 'none';
+
+      if (isMenuVisible) {
+        menuText.style.display = 'none';
+        closeText.style.display = 'inline';
+      } else {
+        menuText.style.display = 'inline';
+        closeText.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+<script>
+  var acc=document.getElementsByClassName("accordion-button");
+  var i;
+  for(i=0; i<acc.length;i++){
+    acc[i].addEventListener("click",function(){
+    this.classList.toggle("active");
+    var panel=this.nextElementSibling;
+    if(panel.style.maxHeight){
+      panel.style.maxHeight=null;
+    } else {
+      panel.style.maxHeight=panel.scrollHeight+"px";
+    }});
+  }
+  >)
+</script>
