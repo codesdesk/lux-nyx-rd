@@ -690,6 +690,12 @@ table:not([class]) th {
   .small-hide {
     display: none !important;
   }
+  .facets-container .icon-product-grid.mobile {
+    display: block;
+  }
+  .icon-product-grid.desktop{
+    display: none;
+  }
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
@@ -2359,6 +2365,46 @@ input[type='checkbox'] {
 }
 
 /* start-css-collection-page */
+    .icon-product-grid.mobile {
+     display: none;
+    }
+    .facets-container .mobile-facets__header {
+      border-bottom: unset;
+    }
+    facet-filters-form .active-facets__button-wrapper {
+     padding-top: 0px;
+    }
+    facet-filters-form .active-facets__button {
+      display: block;
+      margin-right: 1.2rem;
+      margin-top: 12px;
+     padding: 4px 8px;
+      text-decoration: none;
+      border: 1px solid #000;
+      border-radius: 4px;
+    }
+    facet-remove .active-facets__button--light:hover .active-facets__button-inner {
+     box-shadow: unset;
+    }
+    .filter_custom{
+      display: ruby;
+    }
+    .active-facets .active-facets__button-remove {
+      padding: 0px;
+      padding-top:12px;
+      padding-bottom: 12px;
+    }
+    .active-facets .active-facets__button-wrapper {
+     margin-left: 0px;
+    }
+
+  .facets-container .mobile-facets__wrapper span {
+    padding: 0px;
+}
+  facet-remove .active-facets__button--light .active-facets__button-inner {
+    box-shadow: unset;
+}
+
 
 .breadcrumb .back {
     font-weight: 500;
@@ -2620,6 +2666,9 @@ input[type='checkbox'] {
   .utility-bar--bottom-border-social-only {
     border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
   }
+  .facets-containe .facet-filters {
+    padding-left: 0px;
+  }
 }
 
 .utility-bar__grid {
@@ -2638,6 +2687,9 @@ input[type='checkbox'] {
 @media screen and (max-width: 989px) {
   .utility-bar .utility-bar__grid .list-social {
     display: none;
+  }
+  facet-filters-form .active-facets {
+    margin: 0px;
   }
 }
 
@@ -3538,6 +3590,11 @@ details-disclosure > details {
 }
   .filter_main .facets-container.facets-container-drawer {
     display: block;
+    max-width: 100%;
+  }
+  #FacetsWrapperMobile {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .backpacks {
@@ -3664,6 +3721,8 @@ select#SortBy-mobile {
     .grid--peek .grid__item {
       padding-left: var(--grid-mobile-horizontal-spacing);
     }
+
+
 
   }
 
