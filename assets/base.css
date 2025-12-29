@@ -2405,6 +2405,15 @@ input[type='checkbox'] {
     box-shadow: unset;
 }
 
+#FacetFiltersFormMobile .mobile-facets__item svg {
+    display: none;
+}
+#FacetFiltersFormMobile .mobile-facets__item span.facet-checkbox__text {
+    border: 1px solid #000;
+    padding: 4px 8px !important;
+    border-radius: 4px;
+}
+
 
 .breadcrumb .back {
     font-weight: 500;
