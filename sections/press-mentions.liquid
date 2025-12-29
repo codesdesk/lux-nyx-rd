@@ -17,24 +17,30 @@
     </div>
 
     <!-- Quote -->
-    <div class="press-quote">
-      {{ section.settings.quote }}
-    </div>
+   <div class="press-quote" id="pressQuote">
+  {{ section.settings.quote }}
+</div>
+
 
     <!-- Logos -->
-    <div class="press-logos">
-      {% for block in section.blocks %}
-        {% if block.settings.logo != blank %}
-          <div class="press-logo">
-            <img
-              src="{{ block.settings.logo | image_url: width: 300 }}"
-              alt="Press logo"
-              loading="lazy"
-            >
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
+  <div class="press-logos">
+  {% for block in section.blocks %}
+    {% if block.settings.logo != blank %}
+      <button
+        class="press-logo {% if forloop.first %}active{% endif %}"
+        data-quote="{{ block.settings.logo_quote | escape }}"
+        {{ block.shopify_attributes }}
+      >
+        <img
+          src="{{ block.settings.logo | image_url: width: 300 }}"
+          alt="Press logo"
+          loading="lazy"
+        >
+      </button>
+    {% endif %}
+  {% endfor %}
+</div>
+
 
   </div>
 </section>
@@ -92,6 +98,7 @@
     gap: 40px;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-around;
     max-width: 1133px;
     width: 100%;
     margin: 0 auto;
@@ -100,6 +107,19 @@
 
 .press-logo img {
   max-height: {{ section.settings.logo_height }}px;
+}
+.press-logo {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.press-logo.active,
+.press-logo:hover {
+  opacity: 1;
 }
 
 /* Mobile */
@@ -134,6 +154,29 @@
 }
 }
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const logos = document.querySelectorAll(".press-logo");
+  const quoteBox = document.getElementById("pressQuote");
+
+  logos.forEach((logo) => {
+    logo.addEventListener("click", function () {
+      // Change quote
+      const newQuote = this.getAttribute("data-quote");
+      if (newQuote && quoteBox) {
+        quoteBox.innerHTML = newQuote;
+      }
+
+      // Active state
+      logos.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+});
+</script>
+
+
 
 {% schema %}
 {
@@ -227,18 +270,24 @@
     }
   ],
   "blocks": [
-    {
-      "type": "logo",
-      "name": "Press Logo",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Logo Image"
-        }
-      ]
-    }
-  ],
+  {
+    "type": "logo",
+    "name": "Press Logo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo Image"
+      },
+      {
+        "type": "richtext",
+        "id": "logo_quote",
+        "label": "Quote for this logo",
+        "default": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
+      }
+    ]
+  }
+],
   "presets": [
     {
       "name": "Press Mentions"
