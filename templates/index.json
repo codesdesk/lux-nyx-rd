@@ -225,25 +225,29 @@
         "logo_BnPHbQ": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Group_947.png"
+            "logo": "shopify://shop_images/Group_947.png",
+            "logo_quote": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
           }
         },
         "logo_PV4wqN": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Group.png"
+            "logo": "shopify://shop_images/Group.png",
+            "logo_quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led.</em></p>"
           }
         },
         "logo_dyaMcp": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Group_89e2c09c-8aca-4293-a63c-4981a6506fc5.png"
+            "logo": "shopify://shop_images/Group_89e2c09c-8aca-4293-a63c-4981a6506fc5.png",
+            "logo_quote": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
           }
         },
         "logo_RbLWDF": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Vector_2a749187-05ac-468e-a6b5-967aff074d37.png"
+            "logo": "shopify://shop_images/Vector_2a749187-05ac-468e-a6b5-967aff074d37.png",
+            "logo_quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led.</em></p>"
           }
         }
       },
@@ -476,7 +480,7 @@
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
