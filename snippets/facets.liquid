@@ -539,7 +539,8 @@
                 <facet-remove>
                   <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
                     <span class="active-facets__button-inner button button--tertiary">
-                      {{ filter.label | escape }}: {{ value.label | escape }}
+                      {% comment %} {{ filter.label | escape }}: {% endcomment %} 
+                       {{ value.label | escape }} 
                       <span class="svg-wrapper">
                         {{- 'icon-remove.svg' | inline_asset_content -}}
                       </span>
@@ -568,7 +569,7 @@
               {%- endif -%}
            
             {%- endfor -%}
-             </div>
+            
         
      
             <facet-remove class="active-facets__button-wrapper">
@@ -576,6 +577,7 @@
                 <span>{{ 'products.facets.clear_all' | t }}</span>
               </a>
             </facet-remove>
+             </div>
       
        
         </div>
@@ -669,7 +671,7 @@
                                 </span>
                               {%- endcapture -%}
 
-                              <li class="mobile-facets__item list-menu__item">
+                              <li class="mobile-facets__item list-menu__item sss">
                                 {% if presentation == 'swatch' %}
                                   <div class="{{ label_class }}">
                                     <div class="swatch-input-wrapper">
