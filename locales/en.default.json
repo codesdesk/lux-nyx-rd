@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -58,9 +67,9 @@
     }
   },
   "newsletter": {
-    "label": "Email",
+    "label": "Type your email here",
     "success": "Thanks for subscribing",
-    "button_label": "Subscribe"
+    "button_label": "Sent"
   },
   "accessibility": {
     "skip_to_text": "Skip to content",
@@ -190,9 +199,9 @@
       "clear": "Clear",
       "clear_all": "Remove all",
       "from": "From",
-      "filter_and_sort": "Filter and sort",
+      "filter_and_sort": "Filter by",
       "filter_by_label": "Filter:",
-      "filter_button": "Filter",
+      "filter_button": "Filter by",
       "filters_selected": {
         "one": "{{ count }} selected",
         "other": "{{ count }} selected"
@@ -211,7 +220,7 @@
       },
       "reset": "Reset",
       "sort_button": "Sort",
-      "sort_by_label": "Sort by:",
+      "sort_by_label": "Sort by",
       "to": "To",
       "clear_filter": "Remove filter"
     }
@@ -274,7 +283,6 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",

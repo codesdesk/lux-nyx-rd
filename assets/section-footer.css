@@ -738,6 +738,10 @@
         margin-top: 32px;
         row-gap: 22px;
 }
+.custom_footer .newsletter-form__field-wrapper .field__input{
+   margin: 0px;
+}
+
 .custom_footer .footer-block__heading {
     margin-top: 0px;
 }
