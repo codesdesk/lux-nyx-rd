@@ -2351,7 +2351,7 @@ input[type='checkbox'] {
   align-items: center;
   font-size: 0.9rem;
   bottom: 0.8rem;
-  left: 2.2rem;
+  left: 1.2rem;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 
@@ -2520,13 +2520,16 @@ input[type='checkbox'] {
     flex-basis: 100%;
     display: none;
 }
-.product-grid-container .card__heading a::after {
+.product-grid-container .card__heading a::after,
+.section-featured-collection .card__heading a::after {
     content: unset;
 }
-.product-grid-container .swiper-button-next:after, .product-grid-container  .swiper-button-prev:after {
+.product-grid-container .swiper-button-next:after, .product-grid-container  .swiper-button-prev:after,
+.section-featured-collection .swiper-button-next:after, .section-featured-collection  .swiper-button-prev:after {
     content: unset;
 }
-.product-grid-container .swiper-button-next, .product-grid-container .swiper-button-prev {
+.product-grid-container .swiper-button-next, .product-grid-container .swiper-button-prev,
+.section-featured-collection .swiper-button-next, .section-featured-collection .swiper-button-prev {
     color: #000;
     width: 27px;
     height: 27px;

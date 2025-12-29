@@ -232,21 +232,21 @@
         "logo_PV4wqN": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Group.png",
+            "logo": "shopify://shop_images/Group_2.png",
             "logo_quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led.</em></p>"
           }
         },
         "logo_dyaMcp": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Group_89e2c09c-8aca-4293-a63c-4981a6506fc5.png",
+            "logo": "shopify://shop_images/Group_3.png",
             "logo_quote": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
           }
         },
         "logo_RbLWDF": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Vector_2a749187-05ac-468e-a6b5-967aff074d37.png",
+            "logo": "shopify://shop_images/Vector_5.png",
             "logo_quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led.</em></p>"
           }
         }
@@ -466,12 +466,14 @@
         "collection": "everything2",
         "products_to_show": 25,
         "title": "Explore",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/everything2",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
-        "enable_desktop_slider": true,
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",

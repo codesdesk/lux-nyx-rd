@@ -22,11 +22,7 @@
             <div class="product-card">
               <div class="product-title">{{ block.settings.product_title }} 
                 <p class="product-rating">★★★★★ (17)</p>
-                <!-- Start of Judge.me code --> 
-                  <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'> 
-                    {{ product.metafields.judgeme.badge }} 
-                </div> 
-                <!-- End of Judge.me code -->
+                 <div class="product-rating-wrapper"><div data-bv-show="inline_rating" data-bv-product-id="{{ product.id }}" data-bv-redirect-url="{{ shop.secure_url }}{{ product.url }}" data-bv-seo="false"></div></div>
 
             </div>
              
