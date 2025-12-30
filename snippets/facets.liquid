@@ -531,8 +531,9 @@
     <facet-filters-form class="facets facets-pill ">
       <form id="FacetFiltersPillsForm" class="facets__form">
         <div class="active-facets active-facets-desktop">
-                 <div class="filter_custom">
-          {%- for filter in results.filters -%}
+          <div class="filter_custom">
+          
+            {%- for filter in results.filters -%}
       
             {%- for value in filter.active_values -%}
    
@@ -569,17 +570,17 @@
               {%- endif -%}
            
             {%- endfor -%}
+        
             
         
-     
+             
             <facet-remove class="active-facets__button-wrapper">
               <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
                 <span>{{ 'products.facets.clear_all' | t }}</span>
               </a>
             </facet-remove>
-             </div>
-      
-       
+          
+         </div>
         </div>
       </form>
     </facet-filters-form>
@@ -671,7 +672,7 @@
                                 </span>
                               {%- endcapture -%}
 
-                              <li class="mobile-facets__item list-menu__item sss">
+                              <li class="mobile-facets__item list-menu__item">
                                 {% if presentation == 'swatch' %}
                                   <div class="{{ label_class }}">
                                     <div class="swatch-input-wrapper">
