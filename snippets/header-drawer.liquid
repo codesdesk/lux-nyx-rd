@@ -26,15 +26,13 @@
           {% comment %} <nav class="menu-drawer__navigation">    {% endcomment %}
             <div class="uni-women-container">
             <div class="uni-women-wrapper">
-              <a href="/categories/shop all" class="uni-women-link">WOMEN</a>
-              <a href="/categories/shop all" class="uni-women-link">UNISEX</a>
+              <a href="/collections/all" class="uni-women-link">WOMEN</a>
+              <a href="/collections/all" class="uni-women-link">UNISEX</a>
             </div>
-            <a href="/categories/shop-all" class="mobile-button">Shop All</a>
-
-
+            <a href="/collections/all" class="mobile-button">Shop All</a>
 
              <div class="mobile-menu-accordion">
-            <button class="accordion-button">categories</button>
+            <button class="accordion-button">categories<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
             <div class="panel">
                 <a href="#" class="category-shop-link">shop all</a>
                 <a href="#" div class="category-items-link">totes</a>
@@ -45,7 +43,7 @@
                 <a href="#" div class="category-items-link">belt bag</a>
                 <a href="#" div class="category-items-link">accessories</a>
             </div>
-            <button class="accordion-button">lifestyle</button>
+            <button class="accordion-button">lifestyle<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
             <div class="panel">
                 <a href="#" class="category-shop-link">shop all</a>
                 <a href="#" div class="category-items-link">totes</a>
@@ -56,7 +54,7 @@
                 <a href="#" div class="category-items-link">belt bag</a>
                 <a href="#" div class="category-items-link">accessories</a>
             </div>
-            <button class="accordion-button">functions</button>
+            <button class="accordion-button">functions<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
             <div class="panel">
                 <a href="#" class="category-shop-link">shop all</a>
                 <a href="#" div class="category-items-link">totes</a>
@@ -67,7 +65,7 @@
                 <a href="#" div class="category-items-link">belt bag</a>
                 <a href="#" div class="category-items-link">accessories</a>
             </div>
-            <button class="accordion-button">collections</button>
+            <button class="accordion-button">collections<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
             <div class="panel">
                 <a href="#" class="category-shop-link">shop all</a>
                 <a href="#" div class="category-items-link">totes</a>
@@ -389,9 +387,9 @@
 
       if (isMenuVisible) {
         menuText.style.display = 'none';
-        closeText.style.display = 'inline';
+        closeText.style.display = 'flex';
       } else {
-        menuText.style.display = 'inline';
+        menuText.style.display = 'flex';
         closeText.style.display = 'none';
       }
     });

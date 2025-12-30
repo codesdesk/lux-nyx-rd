@@ -58,19 +58,9 @@
     gap: 52px;
     text-transform: uppercase;
   }
-  a#HeaderMenu-shop-categories-shop-all {
-    text-decoration: underline;
-  } 
-  a#HeaderMenu-shop-lifestyle-shop-all {
+  .custom-no-1 {
     text-decoration: underline;
   }
-  a#HeaderMenu-shop-functions-view-all {
-    text-decoration: underline;
-  }
-  a#HeaderMenu-shop-collections-view-all {
-    text-decoration: underline;
-  }
-
   summary.list-menu__item {
     padding-right: 0px;
   }
@@ -125,6 +115,10 @@ a.mobile-button {
 }
 a.uni-women-link {
     color: black;
+    text-decoration: none;
+}
+a.uni-women-link:hover {
+    text-decoration: underline;
 }
 .mobile-menu-accordion {
     display: flex;
@@ -136,7 +130,7 @@ a.uni-women-link {
     display: flex;
     width: 100%;
     max-width: calc(100% - 3px);
-    gap: 82px;
+    justify-content: space-between;
     flex-wrap: wrap;
     height: 106px;
     align-content: center;
