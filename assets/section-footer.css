@@ -695,6 +695,9 @@
     text-decoration:none;
     margin-right:14px;
 }
+ .custom_footer .field__input:not(:placeholder-shown) ~ .field__label {
+  display: none;
+}
 @media (max-width:767px){
   .custom_1 {
     order: 4;
@@ -741,6 +744,9 @@
 .custom_footer .newsletter-form__field-wrapper .field__input{
    margin: 0px;
 }
+
+
+
 
 .custom_footer .footer-block__heading {
     margin-top: 0px;
