@@ -101,6 +101,7 @@
   {% comment %} New {% endcomment %}
 .uni-women-container {
     display: flex;
+    padding: 0px 12px;
     gap: 20px;
     flex-direction: column;
     margin-bottom: 20px;
@@ -110,18 +111,77 @@
     color: black;
     justify-content: space-between;
 }
-button.mobile-button {
+a.mobile-button {
+    cursor: pointer;
     line-height: 13px;
     border-radius: 4px;
     font-size: 1.4rem;
+    text-align: center;
+    text-decoration: none;
     color: white;
     background-color: #1f1f1f;
+    line-height: 17px;
     padding: 6px 30px 6px 30px;
 }
 a.uni-women-link {
     color: black;
 }
+.mobile-menu-accordion {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
+.support-link-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: calc(100% - 3px);
+    gap: 82px;
+    flex-wrap: wrap;
+    height: 106px;
+    align-content: center;
+}
+.query-container {
+    width: 100%;
+    max-width: 115px;
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+}
+.login-options-container {
+    width:100%;
+    max-width: 151px;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+button.login-button {
+    width: 100%;
+    background: white;
+    max-width: 69px;
+    padding: 6px 16px;
+    font-weight: var(--custom-font-body-weight);
+    font-family: var(--custom-font-heading-body);
+    border-radius: 4px;
+    line-height: 13px;
+    font-size: 14px;
+}
+button.account-button {
+    padding: 6px 16px;
+    background: white;
+    letter-spacing: -0.3px;
+    border-radius: 4px;
+    line-height: 13px;
+    font-weight: var(--custom-font-body-weight);
+    font-family: var(--custom-font-heading-body);
+    font-size: 14px;
+}
+a.support-link {
+    font-size: 14px;
+    color: #1F1F1F;
+    text-decoration: none;
+    line-height: 17px;
+}
   @media screen and (min-width: 750px) {
     .list-menu__item--link {
       padding-bottom: 0.5rem;
@@ -773,40 +833,3 @@ a.uni-women-link {
 }
 {% endschema %}
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuButton = document.querySelector('.header__icon--menu');
-    const menuText = document.getElementById('menuText');
-    const closeText = document.getElementById('closeText');
-
-    if (!menuButton) return;
-
-    menuButton.addEventListener('click', function () {
-      const isMenuVisible = menuText.style.display !== 'none';
-
-      if (isMenuVisible) {
-        menuText.style.display = 'none';
-        closeText.style.display = 'inline';
-      } else {
-        menuText.style.display = 'inline';
-        closeText.style.display = 'none';
-      }
-    });
-  });
-</script>
-
-<script>
-  var acc=document.getElementsByClassName("accordion-button");
-  var i;
-  for(i=0; i<acc.length;i++){
-    acc[i].addEventListener("click",function(){
-    this.classList.toggle("active");
-    var panel=this.nextElementSibling;
-    if(panel.style.maxHeight){
-      panel.style.maxHeight=null;
-    } else {
-      panel.style.maxHeight=panel.scrollHeight+"px";
-    }});
-  }
-  >)
-</script>

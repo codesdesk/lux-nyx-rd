@@ -29,55 +29,69 @@
               <a href="/categories/shop all" class="uni-women-link">WOMEN</a>
               <a href="/categories/shop all" class="uni-women-link">UNISEX</a>
             </div>
-            <button class="mobile-button">Shop All</button>
-          </div>
+            <a href="/categories/shop-all" class="mobile-button">Shop All</a>
 
-          <div class="mobile-menu-accordion">
+
+
+             <div class="mobile-menu-accordion">
             <button class="accordion-button">categories</button>
             <div class="panel">
-                <a href="#">shop all</a>
-                <a href="#">totes</a>
-                <a href="#">backpacks</a>
-                <a href="#">crossbody</a>
-                <a href="#">wallets</a>
-                <a href="#">clutches</a>
-                <a href="#">belt bag</a>
-                <a href="#">accessories</a>
+                <a href="#" class="category-shop-link">shop all</a>
+                <a href="#" div class="category-items-link">totes</a>
+                <a href="#" div class="category-items-link">backpacks</a>
+                <a href="#" div class="category-items-link">crossbody</a>
+                <a href="#" div class="category-items-link">wallets</a>
+                <a href="#" div class="category-items-link">clutches</a>
+                <a href="#" div class="category-items-link">belt bag</a>
+                <a href="#" div class="category-items-link">accessories</a>
             </div>
             <button class="accordion-button">lifestyle</button>
             <div class="panel">
-                <a href="#">shop all</a>
-                <a href="#">totes</a>
-                <a href="#">backpacks</a>
-                <a href="#">crossbody</a>
-                <a href="#">wallets</a>
-                <a href="#">clutches</a>
-                <a href="#">belt bag</a>
-                <a href="#">accessories</a>
+                <a href="#" class="category-shop-link">shop all</a>
+                <a href="#" div class="category-items-link">totes</a>
+                <a href="#" div class="category-items-link">backpacks</a>
+                <a href="#" div class="category-items-link">crossbody</a>
+                <a href="#" div class="category-items-link">wallets</a>
+                <a href="#" div class="category-items-link">clutches</a>
+                <a href="#" div class="category-items-link">belt bag</a>
+                <a href="#" div class="category-items-link">accessories</a>
             </div>
             <button class="accordion-button">functions</button>
             <div class="panel">
-                <a href="#">shop all</a>
-                <a href="#">totes</a>
-                <a href="#">backpacks</a>
-                <a href="#">crossbody</a>
-                <a href="#">wallets</a>
-                <a href="#">clutches</a>
-                <a href="#">belt bag</a>
-                <a href="#">accessories</a>
+                <a href="#" class="category-shop-link">shop all</a>
+                <a href="#" div class="category-items-link">totes</a>
+                <a href="#" div class="category-items-link">backpacks</a>
+                <a href="#" div class="category-items-link">crossbody</a>
+                <a href="#" div class="category-items-link">wallets</a>
+                <a href="#" div class="category-items-link">clutches</a>
+                <a href="#" div class="category-items-link">belt bag</a>
+                <a href="#" div class="category-items-link">accessories</a>
             </div>
             <button class="accordion-button">collections</button>
             <div class="panel">
-                <a href="#">shop all</a>
-                <a href="#">totes</a>
-                <a href="#">backpacks</a>
-                <a href="#">crossbody</a>
-                <a href="#">wallets</a>
-                <a href="#">clutches</a>
-                <a href="#">belt bag</a>
-                <a href="#">accessories</a>
+                <a href="#" class="category-shop-link">shop all</a>
+                <a href="#" div class="category-items-link">totes</a>
+                <a href="#" div class="category-items-link">backpacks</a>
+                <a href="#" div class="category-items-link">crossbody</a>
+                <a href="#" div class="category-items-link">wallets</a>
+                <a href="#" div class="category-items-link">clutches</a>
+                <a href="#" div class="category-items-link">belt bag</a>
+                <a href="#" div class="category-items-link">accessories</a>
             </div>
           </div>
+          <div class="support-link-wrapper">
+            <div class="query-container">
+              <a href="#" class="support-link">About Us</a>
+              <a href="/pages/faq" class="support-link">FAQ</a>
+              <a href="#" class="support-link">Ask us a question</a>
+            </div>
+            <div class="login-options-container">
+              <button class="login-button">Login</button>
+              <button class="account-button">Create an account</button>
+            </div>
+          </div>
+          </div>
+
             {% comment %} <ul class="menu-drawer__menu has-submenu list-menu" role="list"> {% endcomment %}
               {% comment %} {%- for link in section.settings.menu.links -%} {% endcomment %}
                 {% comment %} {% for link in linklists.lux-and-nyx-mobile.links -%}
@@ -362,3 +376,39 @@
     </div>
   </details>
 </header-drawer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuButton = document.querySelector('.header__icon--menu');
+    const menuText = document.getElementById('menuText');
+    const closeText = document.getElementById('closeText');
+
+    if (!menuButton || !menuText || !closeText) return;
+
+    menuButton.addEventListener('click', function () {
+      const isMenuVisible = menuText.style.display !== 'none';
+
+      if (isMenuVisible) {
+        menuText.style.display = 'none';
+        closeText.style.display = 'inline';
+      } else {
+        menuText.style.display = 'inline';
+        closeText.style.display = 'none';
+      }
+    });
+  });
+
+  var acc = document.getElementsByClassName("accordion-button");
+
+  for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+</script>
