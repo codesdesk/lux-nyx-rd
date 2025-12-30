@@ -20,22 +20,35 @@
         <span class="svg-wrapper">
           {{- 'icon-search.svg' | inline_asset_content -}}
         </span>
-        <span class="svg-wrapper header__icon-close">
+        <span class="svg-wrapper header__icon-close hidden">
           {{- 'icon-close.svg' | inline_asset_content -}}
         </span>
       </span>
     </summary>
     <div
-      class="search-modal modal__content gradient"
+      class="search-drawer modal__content gradient"
       role="dialog"
       aria-modal="true"
       aria-label="{{ 'general.search.search' | t }}"
     >
-      <div class="modal-overlay"></div>
+      <div class="search-drawer__overlay modal-overlay"></div>
       <div
-        class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}"
+        class="search-drawer__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}"
         tabindex="-1"
       >
+        <div class="search_drawer_wrapper">
+        <h2 class="search_drawer_heading small-hide">What are you looking for?</h2>
+         <button
+          type="button"
+          class="search-drawer__close modal__close-button link link--text focus-inset"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          <span class="svg-wrapper">
+            {% comment %} {{- 'icon-close.svg' | inline_asset_content -}} {% endcomment %}
+             Close
+          </span>
+        </button>
+        </div>
         {%- if settings.predictive_search_enabled -%}
           <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
         {%- else -%}
@@ -71,7 +84,12 @@
               aria-label="{{ 'general.search.reset' | t }}"
             >
               <span class="svg-wrapper">
-                {{- 'icon-reset.svg' | inline_asset_content -}}
+                {% comment %} {{- 'icon-reset.svg' | inline_asset_content -}} {% endcomment %}
+                
+              <svg class="icon icon-close" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z" fill="#1F1F1F"/>
+              </svg>
+
               </span>
             </button>
             <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
@@ -94,15 +112,7 @@
         {%- else -%}
           </search-form>
         {%- endif -%}
-        <button
-          type="button"
-          class="search-modal__close-button modal__close-button link link--text focus-inset"
-          aria-label="{{ 'accessibility.close' | t }}"
-        >
-          <span class="svg-wrapper">
-            {{- 'icon-close.svg' | inline_asset_content -}}
-          </span>
-        </button>
+       
       </div>
     </div>
   </details>

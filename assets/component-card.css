@@ -640,12 +640,14 @@
 }
 
 .section-featured-collection .price {
-  font-size: 13px;
-  font-weight: 500;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0;
+    text-transform: uppercase;
 }
 
 .section-featured-collection .rating {
-  margin-top: 6px;
+  margin-top: 0;
 }
 .section-featured-collection .card__media{
   left: 0;
@@ -677,6 +679,9 @@
   text-decoration-offset: 0;
   text-decoration-thickness: 0;
   color: #000000;
+}
+.section-featured-collection .custom_swiper_button.swiper-button-disabled {
+    display: none;
 }
 /* Mobile */
 @media screen and (max-width: 749px) {

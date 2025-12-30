@@ -240,8 +240,8 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   new Swiper(".section-{{ section.id }}", {
-    slidesPerView: {{ section.settings.columns_desktop }},
-    spaceBetween: 24,
+    slidesPerView: 1,
+    spaceBetween: 8,
     loop: false,
 
     
@@ -249,23 +249,14 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: ".section-{{ section.id }} .swiper-button-next",
       prevEl: ".section-{{ section.id }} .swiper-button-prev",
     },
-
-
-    {% if section.settings.show_dots %}
-    pagination: {
-      el: ".section-{{ section.id }} .swiper-pagination",
-      clickable: true,
-    },
-    {% endif %}
-
     breakpoints: {
       0: {
-        slidesPerView: 1.2,
-        spaceBetween: 16,
+        slidesPerView: 1,
+        spaceBetween: 8,
       },
       750: {
-        slidesPerView: {{ section.settings.columns_desktop }},
-        spaceBetween: 24,
+        slidesPerView: 4,
+        spaceBetween: 4,
       }
     }
   });
