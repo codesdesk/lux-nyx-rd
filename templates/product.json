@@ -158,11 +158,93 @@
         "view_all_text": "See more",
         "view_all_link": ""
       }
+    },
+    "founders_note_DCrrYP": {
+      "type": "founders-note",
+      "name": "Founder's Note",
+      "settings": {
+        "eyebrow": "FOUNDER’S NOTE",
+        "shop_btn_label": "Shop Now",
+        "shop_btn_link": "#",
+        "quote": "<p>“Too often, bags were either beautiful or practical—rarely both. I created bags <em>for those who refuse to compromise</em>—on presence, on purpose, on how they show up.”<strong>—Lisa Hu, Founder</strong></p>",
+        "author": "",
+        "image": "shopify://shop_images/Frame_541.png",
+        "supporting_text": "Did you know as few as 7% of products marketed towards women are actually designed by women? Did you know of products you know marketed towards women are actually designed.",
+        "show_icon": true,
+        "button_label": "About Us",
+        "button_link": "shopify://pages/about-us-1",
+        "background_color": "#f9f7f6",
+        "text_color": "#1f1f1f",
+        "eyebrow_color": "#000000",
+        "supporting_text_color": "#1f1f1f",
+        "button_text": "#1f1f1f",
+        "button_border": "#000000",
+        "quote_size": 56,
+        "image_radius": 0,
+        "padding_top": 20,
+        "padding_bottom": 27
+      }
+    },
+    "press_mentions_LcCkMF": {
+      "type": "press-mentions",
+      "blocks": {
+        "logo_BnPHbQ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group_947.png",
+            "logo_quote": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
+          }
+        },
+        "logo_PV4wqN": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group.png",
+            "logo_quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led.</em></p>"
+          }
+        },
+        "logo_dyaMcp": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group_89e2c09c-8aca-4293-a63c-4981a6506fc5.png",
+            "logo_quote": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
+          }
+        },
+        "logo_RbLWDF": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Vector_2a749187-05ac-468e-a6b5-967aff074d37.png",
+            "logo_quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "logo_BnPHbQ",
+        "logo_PV4wqN",
+        "logo_dyaMcp",
+        "logo_RbLWDF"
+      ],
+      "name": "Press Mentions",
+      "settings": {
+        "label": "PRESS MENTIONS",
+        "quote": "<p>“<em>We use ethically-sourced materials</em> and uplift communities through both design and giving back.”</p>",
+        "button_text": "Shop Now",
+        "button_link": "#",
+        "quote_size": 56,
+        "quote_size_mobile": 32,
+        "logo_height": 30,
+        "bg_color": "#f9f7f6",
+        "label_color": "#1f1f1f",
+        "button_color": "#1f1f1f",
+        "padding_top": 20,
+        "padding_bottom": 72
+      }
     }
   },
   "order": [
     "main",
     "related-products",
-    "collections_grid_nW7Mxt"
+    "collections_grid_nW7Mxt",
+    "founders_note_DCrrYP",
+    "press_mentions_LcCkMF"
   ]
 }

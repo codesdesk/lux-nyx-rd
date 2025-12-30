@@ -65,7 +65,7 @@
 -%}
 
 <div
-  class="color-{{ section.settings.color_scheme }} isolate gradient"
+  class="color-{{ section.settings.color_scheme }} isolate gradient section-featured-collection"
 >
   <div
     class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
@@ -73,11 +73,16 @@
     data-id="{{ section.id }}"
   >
     <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
+      <div class="custom_col_title">
       {%- if section.settings.title != blank -%}
         <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {{ section.settings.title }}
         </h2>
       {%- endif -%}
+      {% if section.settings.button_link != blank %}
+      <a href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+      {% endif %}
+      </div>
       {%- if section.settings.description != blank
         or section.settings.show_description
         and section.settings.collection.description != empty
@@ -92,11 +97,12 @@
       {%- endif -%}
     </div>
 
-    <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      <ul
+    {% comment %} <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"> {% endcomment %}
+    <div class="swiper featured-collection-swiper section-{{ section.id }}"> 
+    <ul
         id="Slider-{{ section.id }}"
         data-id="{{ section.id }}"
-        class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+        class="swiper-wrapper product-grid"
         role="list"
         aria-label="{{ 'general.slider.name' | t }}"
       >
@@ -111,24 +117,24 @@
               {% endif %}
               <li
                 id="Slide-{{ section.id }}-{{ forloop.index }}"
-                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="swiper-slide grid__item"
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {% render 'card-product',
-                  card_product: product,
-                  media_aspect_ratio: section.settings.image_ratio,
-                  image_shape: section.settings.image_shape,
-                  lazy_load: lazy_load,
-                  show_secondary_image: section.settings.show_secondary_image,
-                  show_vendor: section.settings.show_vendor,
-                  show_rating: section.settings.show_rating,
-                  skip_styles: skip_card_product_styles,
-                  section_id: section.id,
-                  quick_add: section.settings.quick_add
-                %}
+                {% render 'card-product-slider',
+                    card_product: product,
+                    media_aspect_ratio: section.settings.image_ratio,
+                    image_shape: section.settings.image_shape,
+                    show_secondary_image: section.settings.show_secondary_image,
+                    show_vendor: section.settings.show_vendor,
+                    show_rating: section.settings.show_rating,
+                    lazy_load: lazy_load,
+                    skip_styles: skip_card_product_styles,
+                    quick_add: section.settings.quick_add,
+                    section_id: section.id
+                  %}
               </li>
               {%- assign skip_card_product_styles = true -%}
             {%- endfor -%}
@@ -152,7 +158,7 @@
                 endcase
               %}
               {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
-              {% render 'card-product',
+              {% render 'card-product-slider',
                 show_vendor: section.settings.show_vendor,
                 media_aspect_ratio: section.settings.image_ratio,
                 image_shape: section.settings.image_shape,
@@ -163,6 +169,22 @@
           {%- endfor -%}
         {%- endif -%}
       </ul>
+      
+      <div class="swiper-button-prev custom_swiper_button custom_swiper_button_prev">
+        
+        <svg width="15" height="44" viewBox="0 0 15 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.9349 0.413933L0.934875 21.9139L13.9349 43.4139" stroke="#1F1F1F" stroke-width="1.6"/>
+        </svg>
+
+      </div>
+      <div class="swiper-button-next custom_swiper_button custom_swiper_button_next">
+        
+        <svg width="15" height="44" viewBox="0 0 15 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.684571 43.4141L13.6846 21.9141L0.684573 0.414062" stroke="#1F1F1F" stroke-width="1.6"/>
+        </svg>
+
+      </div>
+     
       {%- if show_mobile_slider or show_desktop_slider -%}
         <div class="slider-buttons">
           <button
@@ -195,7 +217,8 @@
           </button>
         </div>
       {%- endif -%}
-    </slider-component>
+    {% comment %} </slider-component> {% endcomment %}
+     </div>
 
     {%- if section.settings.show_view_all and more_in_collection -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -213,6 +236,42 @@
     {%- endif -%}
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  new Swiper(".section-{{ section.id }}", {
+    slidesPerView: {{ section.settings.columns_desktop }},
+    spaceBetween: 24,
+    loop: false,
+
+    
+    navigation: {
+      nextEl: ".section-{{ section.id }} .swiper-button-next",
+      prevEl: ".section-{{ section.id }} .swiper-button-prev",
+    },
+
+
+    {% if section.settings.show_dots %}
+    pagination: {
+      el: ".section-{{ section.id }} .swiper-pagination",
+      clickable: true,
+    },
+    {% endif %}
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+      },
+      750: {
+        slidesPerView: {{ section.settings.columns_desktop }},
+        spaceBetween: 24,
+      }
+    }
+  });
+});
+</script>
+
 
 {% schema %}
 {
@@ -246,6 +305,16 @@
       "id": "title",
       "default": "t:sections.featured-collection.settings.title.default",
       "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
     },
     {
       "type": "select",
