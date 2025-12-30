@@ -4228,31 +4228,55 @@ select#SortBy-mobile {
 }
 /* Accordion */
 .accordion-button {
-  background-color: #f1f1f1;
-  color: #454545;
+  background-color: #fff;
+  text-transform: uppercase;
+  color: #1F1F1F;
+  border-top: 1px solid !important;
+  font-weight: var(--custom-font-body-weight);
+  font-family: var(--custom-font-heading-body);
   cursor: pointer;
-  padding: 18px;
+  padding-top: 8px;
+  padding-left: 0px;
+  padding-right: 0px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
   font-size: 15px;
+  line-height: 14px;
 }
 
+a.category-shop-link {
+    color: #1F1F1F;
+    text-transform: capitalize;
+    line-height: 15px;
+    font-weight: var(--custom-font-body-weight);
+}
+
+a.category-items-link {
+    color: #1F1F1F;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding-top: 12px;
+    line-height: 15px;
+}
 .panel {
-  padding: 0 18px;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   max-height: 0px;
   overflow: hidden;
+  margin-bottom: 20px;
   transition: max-height 0.2s ease-out;
 }
-.active, .accordion-button:hover {
-  background-color: #cccc;
+ .active, .accordion-button:hover {
+  /* background-color: #cccc; */
+  margin-bottom: 20px;
 }
 .accordion-button::after {
   content: '\002B';
   color: #1F1F1F;
-  font-weight: 500;
+  font-weight: var(--custom-font-body-weight);
   float: right;
 }
 .panel.show {
