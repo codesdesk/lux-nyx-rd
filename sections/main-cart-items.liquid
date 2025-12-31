@@ -455,6 +455,11 @@
       </p>
     </form>
   </div>
+
+  <div class="liked_products_cart">
+        <h1 class="cart-title">you may also like</h1>
+        {% render 'cart-drawer-product' %}
+      </div>
 </cart-items>
 
 {% schema %}
@@ -468,9 +473,15 @@
       "default": "scheme-1"
     },
     {
+        "type":"collection",
+        "id":"collection",
+        "label":"collection"
+    },
+    {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
     },
+    
     {
       "type": "range",
       "id": "padding_top",

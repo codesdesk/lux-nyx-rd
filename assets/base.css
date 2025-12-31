@@ -2727,6 +2727,7 @@ input[type='checkbox'] {
     font-size: 28px;
     line-height: 115.99999999999999%;
     text-transform: uppercase;
+    margin-bottom: 0px;
 }
 .cart-drawer .drawer__header {
     padding: 1.4rem 0;
@@ -2759,6 +2760,9 @@ input[type='checkbox'] {
 }
 .cart-drawer cart-drawer-items {
     flex: unset;
+}
+.cart-drawer .cart-items thead {
+    display: none;
 }
 
 

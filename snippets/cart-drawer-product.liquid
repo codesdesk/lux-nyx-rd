@@ -1,0 +1,30 @@
+{% comment %} <div class="cart-product">
+  <div class="liked cart d-flex mobile-slider space-bt mb-none">
+    {% assign featured_collection = collections[section.settings.collection] %}
+    {% for product in featured_collection.products limit:4 %}
+    <div class="carousel-cell collection d-flex al-center space-bt">
+    <div class="product">
+        <a href="{{product.url}}" class="d-flex d-row al-center">
+        <div class="position-r">
+            <img class="backround-img" src="{{product.featured_image | img_url: '1200x'}}" alt="{{product.title}}">
+        </div>
+        <div class="product_detail">
+            <h3>{{product.title}}</h3>
+    <!--         <p>Black with Gold Hardware</p> -->
+            <span>Color : Black </span>
+        </div>
+        </a>
+    </div>
+    <div class="icon cdk-addToCart" data-item-quantity="1" data-varient-id="{{product.first_available_variant.id}}" >{% include 'plus' %}</div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="dt-none">
+    <div class="liked cart d-flex mobile-slider cdk-slider-block space-bt ">
+      {% assign featured_collection = collections[section.settings.collection] %}
+      {% for product in featured_collection.products limit:4 %}
+  
+      {% endfor %}
+    </div>
+  </div>
+</div> {% endcomment %}
