@@ -1,0 +1,169 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_policies_C9ipCi": {
+      "type": "custom-policies",
+      "blocks": {
+        "term_AtfXJB": {
+          "type": "term",
+          "settings": {
+            "heading": "Use of Our Website",
+            "content": "<p>By accessing our Site, you represent that you are at least the age of majority in your jurisdiction, or you have obtained parental consent for any minor dependents to use the Site.  You may not use the Site or our products for any illegal or unauthorized purpose, nor may you violate any local, state, national, or international laws.  We reserve the right to refuse service or terminate accounts for any reason at any time.</p>"
+          }
+        },
+        "term_nQjgXN": {
+          "type": "term",
+          "settings": {
+            "heading": "Orders, Pricing & Payment",
+            "content": "<p>All orders placed through our Site are subject to acceptance by Lux & Nyx. We reserve the right to limit or refuse any order, including those we suspect of fraud or resale.  Prices are displayed in U.S. dollars unless otherwise noted, and we reserve the right to change prices or discontinue products at any time without notice.  Our online store is hosted by Shopify Inc., which processes your payments via secure, PCI DSS–compliant payment gateways. Credit card details are always encrypted during transfer.  For international orders, you are responsible for paying any customs duties or taxes applicable in your country.</p>"
+          }
+        },
+        "term_dd69tk": {
+          "type": "term",
+          "settings": {
+            "heading": "Return & Refund Policy",
+            "content": "<p>Except with respect to final sale items or as otherwise noted on our Site, you may return unused products within 30 days of shipment confirmation for a refund, subject to our Return Policy [link to full Return Policy].  We reserve the right to charge handling or restocking fees, and you remain responsible for return shipping unless stated otherwise.  If you suspect product defects, please see our Warranty Policy [link to Warranty Policy].</p>"
+          }
+        },
+        "term_G87xyq": {
+          "type": "term",
+          "settings": {
+            "heading": "Shipping & Delivery",
+            "content": "<p>Shipping times are estimates only. We are not liable for delays due to customs clearance or carrier issues outside our control. Ownership of goods transfers to you once we deliver to the carrier.</p>"
+          }
+        },
+        "term_bjFjyU": {
+          "type": "term",
+          "settings": {
+            "heading": "User Submissions & Reviews",
+            "content": "<p>If you submit any reviews, photos, testimonials, or other content to our Site (“User Submissions”), you agree that:</p><ul><li>You grant Lux & Nyx a worldwide, nonexclusive, royalty-free, transferable, perpetual license to use, display, reproduce, modify, distribute, and sublicense your content in all media.</li><li>You warrant your submission is your own, lawful, non-infringing, and does not violate any third-party rights.</li><li>You acknowledge we may moderate, remove, or refuse to display any content in our sole discretion, especially if it violates these Terms, our Privacy Policy, or any applicable law.</li></ul><p>For clarity, you retain ownership of your User Submission, but grant us these broad rights to operate our website and marketing fairly.</p>"
+          }
+        },
+        "term_tyNmhj": {
+          "type": "term",
+          "settings": {
+            "heading": "Intellectual Property",
+            "content": "<p>All content on the Site, including but not limited to text, images, logos, product designs, videos, and graphics, is the property of Lux & Nyx or its licensors, protected under U.S. and international intellectual property laws.  You may not copy, modify, distribute, display, transmit, or exploit any of our content without our prior written permission.</p>"
+          }
+        },
+        "term_3GCeDN": {
+          "type": "term",
+          "settings": {
+            "heading": "Accessibility & Inclusive Design",
+            "content": "<p>Lux & Nyx strives to make its Site accessible in accordance with the Americans with Disabilities Act (ADA), WCAG 2.2 guidelines, and other relevant accessibility standards. If you need an alternative format, please contact us at <a href=\"mailto:hello@luxandnyx.com\" title=\"mailto:hello@luxandnyx.com\">hello@luxandnyx.com</a>.</p>"
+          }
+        },
+        "term_N4BtH4": {
+          "type": "term",
+          "settings": {
+            "heading": "Third-Party Services & Links",
+            "content": "<p>Our Site may link to third-party websites or services we do not control. We are not responsible for their content, policies, or practices, and you access them at your own risk.</p>"
+          }
+        },
+        "term_yLBFTU": {
+          "type": "term",
+          "settings": {
+            "heading": "Disclaimer of Warranties",
+            "content": "<p>The Site, products, and services are provided “as is” and “as available” without warranties of any kind, whether express or implied.  To the fullest extent permitted by law, Lux & Nyx disclaims any warranties of merchantability, fitness for a particular purpose, non-infringement, and any other warranties implied by statute or course of dealing.</p>"
+          }
+        },
+        "term_hKPwcg": {
+          "type": "term",
+          "settings": {
+            "heading": "Limitation of Liability",
+            "content": "<p>To the fullest extent allowed by applicable law, Lux & Nyx, its officers, employees, and affiliates shall not be liable for any indirect, incidental, punitive, or consequential damages arising from your use of the Site or any products, even if advised of the possibility of such damages.  Our maximum liability for any direct damages shall not exceed the total amount you paid for the product or service giving rise to the claim.</p>"
+          }
+        },
+        "term_LqpjrT": {
+          "type": "term",
+          "settings": {
+            "heading": "Indemnification",
+            "content": "<p>You agree to indemnify, defend, and hold harmless Lux & Nyx, its affiliates, officers, directors, agents, employees, and contractors from any claims, liabilities, damages, losses, or expenses arising out of your violation of these Terms or your unlawful use of our Services.</p>"
+          }
+        },
+        "term_XrHedj": {
+          "type": "term",
+          "settings": {
+            "heading": "Dispute Resolution & Governing Law",
+            "content": "<p>These Terms and any dispute arising under them shall be governed by the laws of the State of Missouri, without regard to conflict of laws principles.  We encourage you to contact us first if you have an issue, so we can resolve it informally. If unresolved, you agree to submit any claims exclusively to the state or federal courts located in Missouri, unless required otherwise by mandatory consumer laws in your country.  If you are in the EU/UK, you may also submit disputes through the EU Online Dispute Resolution platform (ODR): https://ec.europa.eu/consumers/odr/</p>"
+          }
+        },
+        "term_awMCa8": {
+          "type": "term",
+          "settings": {
+            "heading": "Termination",
+            "content": "<p>We may suspend or terminate your access at any time for violations of these Terms, or for any reason we reasonably believe necessary to protect our interests, Site integrity, or other users.</p>"
+          }
+        },
+        "term_GUPVrc": {
+          "type": "term",
+          "settings": {
+            "heading": "Prohibited Uses",
+            "content": "<p>You agree not to use the Site or its content for:</p><ul><li>unlawful purposes</li><li>infringing the intellectual property rights of others</li><li>harassing, abusing, or discriminating</li><li>introducing malicious code</li><li>data harvesting or scraping</li><li>interfering with security features</li></ul><p><br/>We reserve the right to block or remove any activity violating these conditions.</p>"
+          }
+        },
+        "term_kxMacG": {
+          "type": "term",
+          "settings": {
+            "heading": "Changes to These Terms",
+            "content": "<p>We may update these Terms at any time by posting the changes on this page. The “Last Updated” date reflects the latest revision. Continued use of the Site after changes means you accept the updated Terms.</p>"
+          }
+        },
+        "term_mxTenr": {
+          "type": "term",
+          "settings": {
+            "heading": "Contact Us",
+            "content": "<p>Questions about these Terms should be sent to:</p><p>Lux & Nyx, LLC</p><p>3630 Corporate Trail Drive </p><p>Earth City, MO 63045, USA</p><p>Email: hello@luxandnyx.com</p>"
+          }
+        }
+      },
+      "block_order": [
+        "term_AtfXJB",
+        "term_nQjgXN",
+        "term_dd69tk",
+        "term_G87xyq",
+        "term_bjFjyU",
+        "term_tyNmhj",
+        "term_3GCeDN",
+        "term_N4BtH4",
+        "term_yLBFTU",
+        "term_hKPwcg",
+        "term_LqpjrT",
+        "term_XrHedj",
+        "term_awMCa8",
+        "term_GUPVrc",
+        "term_kxMacG",
+        "term_mxTenr"
+      ],
+      "name": "Policies Section",
+      "settings": {
+        "title": "Lux & Nyx Terms & Conditions",
+        "last_updated": "July 2, 2025",
+        "term_maincontent": "These Terms and Conditions (“Terms”) govern your use of our website located at https://www.luxandnyx.com (the “Site”), and all related services, features, content, or products offered by Lux and Nyx LLC, a Missouri limited liability company doing business as Lux & Nyx (“Lux & Nyx,” “we,” “us,” or “our”). By accessing or using our Site or purchasing our products, you agree to these Terms, including our Privacy Policy, Cookie Policy, and any additional terms linked within these Terms.  If you do not agree, you must not use the Site.",
+        "bg_color": "#ffffff",
+        "padding_top": 30,
+        "padding_bottom": 45
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_policies_C9ipCi"
+  ]
+}
