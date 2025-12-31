@@ -116,6 +116,10 @@
                     </tr>
                   </thead>
 
+                  <p class="cart-items-count">
+                     ({{ cart.item_count }} ITEM ) 
+                  </p>
+
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
                       <tr
@@ -261,7 +265,43 @@
                               {% render 'unit-price', price: item.unit_price, measurement: item.unit_price_measurement %}
                             {%- endif -%}
                           </div>
+                          <cart-remove-button
+                                id="CartDrawer-Remove-{{ item.index | plus: 1 }}"
+                                data-index="{{ item.index | plus: 1 }}"
+                              >
+                                <button
+                                  type="button"
+                                  class="button button--tertiary cart-remove-button"
+                                  aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
+                                  data-variant-id="{{ item.variant.id }}"
+                                  {% if item.instructions and item.instructions.can_remove == false %}
+                                    class="hidden"
+                                  {% endif %}
+                                >
+                                  <span class="svg-wrapper">
+                                    {{- 'icon-remove.svg' | inline_asset_content -}}
+                                  </span>
+                                </button>
+                              </cart-remove-button>
                         </td>
+                        {% comment %} <cart-remove-button
+                                id="CartDrawer-Remove-{{ item.index | plus: 1 }}"
+                                data-index="{{ item.index | plus: 1 }}"
+                              >
+                                <button
+                                  type="button"
+                                  class="button button--tertiary cart-remove-button"
+                                  aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
+                                  data-variant-id="{{ item.variant.id }}"
+                                  {% if item.instructions and item.instructions.can_remove == false %}
+                                    class="hidden"
+                                  {% endif %}
+                                >
+                                  <span class="svg-wrapper">
+                                    {{- 'icon-remove.svg' | inline_asset_content -}}
+                                  </span>
+                                </button>
+                              </cart-remove-button> {% endcomment %}
                         {%- liquid
                           assign has_qty_rules = false
                           if item.variant.quantity_rule.increment > 1 or item.variant.quantity_rule.min > 1 or item.variant.quantity_rule.max != null
@@ -344,7 +384,7 @@
                                   </button>
                                 </quantity-input>
                               </div>
-                              <cart-remove-button
+                              {% comment %} <cart-remove-button
                                 id="CartDrawer-Remove-{{ item.index | plus: 1 }}"
                                 data-index="{{ item.index | plus: 1 }}"
                               >
@@ -361,7 +401,7 @@
                                     {{- 'icon-remove.svg' | inline_asset_content -}}
                                   </span>
                                 </button>
-                              </cart-remove-button>
+                              </cart-remove-button> {% endcomment %}
                             </div>
                             {%- if has_qty_rules or has_vol_pricing -%}
                               <button
@@ -512,6 +552,26 @@
               </ul>
             {%- endif -%}
           </div>
+          <div class="cart-product">
+          <p class="cart-items-count">
+           PRODUCT : ({{ cart.item_count }} ITEM ) 
+          </p>
+          <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+          </div>
+
+          <div class="shipping_heading">
+            <div class="shipping_text">
+              {% if settings.shipping_text %}
+               <h5>{{  settings.shipping_text }}</h5>
+              {% endif %}
+              {% if settings.free_shipping_text %}
+               <h5>{{  settings.free_shipping_text }}</h5>
+              {% endif %}
+            </div>
+          </div>
+
+         
+      
 
           <div class="totals" role="status">
             <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
@@ -557,6 +617,11 @@
               {%- endif -%}
             {%- endif -%}
           </small>
+          <div class="secure_checkout_text">
+            {% if settings.secure_checkout %}
+              {{ settings.secure_checkout }}
+            {% endif %}
+          </div>
         </div>
 
         <!-- CTAs -->

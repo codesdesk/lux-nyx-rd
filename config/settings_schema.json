@@ -1454,6 +1454,21 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
+      },
+      {
+      "type": "text",
+      "id": "shipping_text",
+      "label": "Est. Shipping & Handling :"
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_text",
+        "label": "Free Shipping Qualified!"
+      },
+      {
+        "type": "richtext",
+        "id": "secure_checkout",
+        "label": "Secure Checkout"
       }
     ]
   }
