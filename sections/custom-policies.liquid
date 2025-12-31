@@ -1,0 +1,292 @@
+<section class="terms-wrapper" style="
+  background: {{ section.settings.bg_color }};
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+">
+  <div class="page-width terms-grid">
+
+    <div class="large-up-hide medium-hide">
+        {% render 'breadcrumbs' %}
+        </div>
+    
+    {% if section.settings.title != blank %}<h1 class="terms-title large-up-hide medium-hide">{{ section.settings.title }}</h1>{% endif %}
+       <div class="terms-contet-wrapper large-up-hide medium-hide">
+      {% if section.settings.last_updated != blank %}
+      <p class="terms-updated">
+        Last Updated: {{ section.settings.last_updated }}
+      </p>
+      {% endif %}
+      {% if section.settings.term_maincontent != blank %}
+      <p class="terms-content">
+       {{ section.settings.term_maincontent }}
+      </p>
+      {% endif %}
+      </div>
+
+    <!-- LEFT SIDEBAR -->
+
+
+
+    <aside class="terms-sidebar">
+      <div class="small-hide">
+        {% render 'breadcrumbs' %}
+        </div>
+
+      <ul>
+        {% for block in section.blocks %}
+          <li>
+            <a href="#term-{{ forloop.index }}">
+              {{ forloop.index }}. {{ block.settings.heading }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <div class="terms-content">
+       
+      {% if section.settings.title != blank %}<h1 class="terms-title small-hide">{{ section.settings.title }}</h1>{% endif %}
+       <div class="terms-contet-wrapper small-hide">
+      {% if section.settings.last_updated != blank %}
+      <p class="terms-updated">
+        Last Updated: {{ section.settings.last_updated }}
+      </p>
+      {% endif %}
+      {% if section.settings.term_maincontent != blank %}
+      <p class="terms-content">
+       {{ section.settings.term_maincontent }}
+      </p>
+      {% endif %}
+      </div>
+      <div class="terms-items-manage">
+      {% for block in section.blocks %}
+        <div id="term-{{ forloop.index }}" class="terms-item">
+          <h3>{{ forloop.index }}. {{ block.settings.heading }}</h3>
+          <div class="terms-text">
+            {{ block.settings.content }}
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+{% style %}
+.terms-grid {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 200px;
+}
+.terms-sidebar .page-width {
+    padding: 0;
+}
+.terms-sidebar {
+  position: sticky;
+  top: 100px;
+}
+.terms-contet-wrapper {
+    margin-bottom: 64px;
+    max-width:842px;
+    width:100%;
+}
+.terms-items-manage {
+    max-width: 842px;
+    width: 100%;
+}
+.terms-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+}
+
+.terms-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+}
+
+.terms-sidebar li {
+  margin-bottom: 4px;
+}
+
+.terms-sidebar a {
+    color: #1F1F1F;
+    font-family: 'Helvetica Neue LT Pro';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-offset: 0;
+    text-decoration-thickness: 0;
+}
+
+.terms-sidebar a:hover {
+  text-decoration: underline;
+}
+
+.terms-title {
+  font-family: var(--custom-font-heading-family);
+  font-weight:400;
+  font-style:Italic;
+  font-size: 72px;
+  line-height: normal;
+  letter-spacing: 0;
+  color:#1F1F1F;
+  text-transform:capitalize;
+  margin:0;
+}
+
+.terms-updated,
+.terms-content {
+    color: #1F1F1F;
+    font-family: 'Helvetica Neue LT Pro';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0;
+    margin: 6px 0;
+}
+
+.terms-item {
+    margin-bottom: 46px;
+    border-top: 1px solid #8A938D;
+}
+
+.terms-item h3 {
+    font-family: 'Helvetica Neue LT Pro';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin: 8px 0 4px;
+}
+
+.terms-text {
+    color: #2F2F2F;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0;
+    font-family: 'Helvetica Neue LT Pro';
+    padding-left:100px;
+}
+.terms-text ul {
+    padding-inline-start: 16px;
+}
+.terms-text p{
+    margin:4px 0;
+}
+.terms-text a {
+    color: #2F2F2F;
+    text-decoration: none;
+}
+/* MOBILE */
+@media screen and (max-width: 990px) {
+  .terms-grid {
+    grid-template-columns: 1fr;
+    gap:0;
+  }
+
+  .terms-sidebar {
+    position: relative;
+    top: auto;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width:767px){
+    .terms-title{
+        font-size:32px;
+    }
+    .terms-text{
+        padding-left:0;
+    }
+    .terms-contet-wrapper,
+    .terms-sidebar {
+        margin-bottom: 56px;
+    }
+    .terms-sidebar ul{
+        margin:0;
+    }
+}
+{% endstyle %}
+{% schema %}
+{
+  "name": "Policies Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Page Title",
+      "default": "Terms & Conditions"
+    },
+    {
+      "type": "text",
+      "id": "last_updated",
+      "label": "Last Updated Text",
+      "default": "July 2, 2025"
+    },
+    {
+      "type": "text",
+      "id": "term_maincontent",
+      "label": "Content"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 20,
+      "max": 150,
+      "step": 5,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 20,
+      "max": 150,
+      "step": 5,
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "term",
+      "name": "Term Section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Section Heading",
+          "default": "Use of Our Website"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Section Content",
+          "default": "<p>Add your content here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Policies Section"
+    }
+  ]
+}
+{% endschema %}
