@@ -1,1 +1,68 @@
-{"sections":{"main":{"type":"main-404","settings":{}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {}
+    },
+    "image_category_pXDHrM": {
+      "type": "image-category",
+      "blocks": {
+        "image_category_block_rHh4YY": {
+          "type": "image_category_block",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC7376_highres.png",
+            "title": "tote",
+            "link": ""
+          }
+        },
+        "image_category_block_d8yjPk": {
+          "type": "image_category_block",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC7656_highres.png",
+            "title": "backpack",
+            "link": ""
+          }
+        },
+        "image_category_block_rqwabg": {
+          "type": "image_category_block",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC6448_highres.png",
+            "title": "wallet",
+            "link": ""
+          }
+        },
+        "image_category_block_aVXeQK": {
+          "type": "image_category_block",
+          "settings": {
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC7222_highres.png",
+            "title": "crossbody",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_category_block_rHh4YY",
+        "image_category_block_d8yjPk",
+        "image_category_block_rqwabg",
+        "image_category_block_aVXeQK"
+      ],
+      "name": "Image Category Section",
+      "settings": {
+        "heading": "Looking for something else?"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_category_pXDHrM"
+  ]
+}
