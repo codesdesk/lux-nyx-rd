@@ -128,6 +128,9 @@
     "show_cart_note": false,
     "cart_drawer_collection": "everything2",
     "cart_color_scheme": "scheme-1",
+    "shipping_text": "Est. Shipping & Handling :",
+    "free_shipping_text": "Free Shipping Qualified!",
+    "secure_checkout": "<p>Secure Checkout</p>",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
