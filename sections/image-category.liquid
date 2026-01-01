@@ -8,10 +8,8 @@
             {% if block.settings.image != blank %} 
                 <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.image.alt | escape }}" class="image-category-image">
             {% endif %} 
-            
             {% if block.settings.title != blank %} 
-                <h3 class="image-category-title">{{ block.settings.title }}</h3>
-                
+                <h3 class="image-category-title">{{ block.settings.title }}</h3> 
             {% endif %}
             </a>
         {% endfor %}
