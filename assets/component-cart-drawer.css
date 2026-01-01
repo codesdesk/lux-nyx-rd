@@ -1,14 +1,19 @@
 .drawer {
+  --section-height: calc((var(--announcement-height) + var(--header-height)) - 1px);
   position: fixed;
   z-index: 1000;
   left: 0;
-  top: 0;
+  top: var(--section-height);
   width: 100vw;
   height: 100%;
   display: flex;
   justify-content: flex-end;
   background-color: rgba(var(--color-foreground), 0.5);
   transition: visibility var(--duration-default) ease;
+}
+
+body:has(.scrolled-past-header) .drawer {
+  top: calc(var(--header-height) - 1px);
 }
 
 .drawer.active {
