@@ -10,14 +10,122 @@
   }
 </style> {% endcomment %}
 
-<div class="template-404 page-width page-margin center">
-
-  <h1 class="heading-title">oops!</h1>
-    <div class="item-container">
-      <p class="not-found-paragraph"> 404 - page not found</p>
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top  }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  @media only screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_mobile_top  }}px;
+      padding-bottom: {{ section.settings.padding_mobile_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+  <div class="template-custom page-width center">
+    {%if section.settings.heading !=blank%}
+      <h1 class="heading-title_wrapper">{{ section.settings.heading }}</h1>
+    {%endif%}
+      <div class="item-container">
+        {%if section.settings.title !=blank%}
+          <p class="not-found-paragraph">{{ section.settings.title }}</p>
+        {%endif%}
         <div class="items-divider">
-          <h2 class="para-title"><span class="top-heading">This link couldn't keep up with you.</span> <span class="bottom-heading">Let's Get Back To Something That Can.</span></h2>
-          <a href="{{ routes.all_products_collection_url }}" class="back-button"> <img src="https://cdn.shopify.com/s/files/1/2984/4850/files/lux-and-nyx-arrow.svg?v=1767248981" >Back To Shop</a>
+          <div class="divider-line">
+            {% if section.settings.text != blank %}
+              <div class="bottom-subheading">{{ section.settings.text }}</div>
+            {% endif %}
+          </div>
+          {%- if section.settings.button_label != blank -%}
+            <a class="back-button"  href="{{ section.settings.button_link }}">
+              {%- if section.settings.icon != blank -%}
+                <img src="{{ section.settings.icon | img_url: 'master' }}" alt="{{ section.settings.icon.alt }}" class="left-arrow-icon">
+              {% endif %}
+              {{ section.settings.button_label }}
+            </a>
+          {% endif %}
         </div>
-    </div>
+      </div>
+  </div>
 </div>
+{% schema %}
+{
+  "name": "Main 404 Section", 
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Page Not Found"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Button Icon"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "header",
+      "content": "Padding Settings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "padding  top",
+      "default": 10
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "padding bottom",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding Settings"
+    },
+    {
+      "type": "number",
+      "id": "padding_mobile_top",
+      "label": "padding mobile top",
+      "default": 10
+    },
+    {
+      "type": "number",
+      "id": "padding_mobile_bottom",
+      "label": "padding mobile bottom",
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main 404 Section",
+      "category": "Custom Section"
+    }
+  ]
+}
+{% endschema %}

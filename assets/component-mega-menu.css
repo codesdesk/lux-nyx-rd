@@ -35,7 +35,7 @@
   padding: 12px 20px 11px 20px
 }
 
-.mega-menu__list {
+header .mega-menu__list {
   display: grid;
   width: 100%;
   max-width: 904px;
