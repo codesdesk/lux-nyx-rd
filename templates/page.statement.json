@@ -1,0 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_page_dyfXR4": {
+      "type": "custom-page",
+      "name": "Custom page",
+      "settings": {
+        "title": "Accessibility Statement",
+        "last_updated": "",
+        "term_maincontent": "<p>Lux & Nyx is committed to making our website and digital content accessible and user-friendly to everyone, including people with disabilities.<br/>If you have difficulty viewing or navigating any part of our website, or notice any content, feature, or functionality that you believe is not fully accessible, please contact us by email at hello@luxandnyx.com with “Accessibility Feedback” in the subject line and describe the specific concern or suggestion for improvement.<br/>We take your feedback seriously and will consider it as we continue to evaluate ways to accommodate all of our customers and maintain inclusive design standards.<br/>While we do not control third-party vendors or digital platforms that may be linked from our website, we strongly encourage those partners to provide accessible and user-friendly content as well.<br/>Lux & Nyx aims to follow the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA standards, and will incorporate updates toward WCAG 2.3 as those standards evolve, consistent with the Americans with Disabilities Act (ADA) Title III, and relevant international accessibility laws.<br/>If you need information or services in an alternative format, or require any other accommodation, please reach out to us at hello@luxandnyx.com.<br/>We will respond to accessibility feedback within 10 business days whenever possible and let you know what actions we are taking.</p>",
+        "page_links": "content_links",
+        "page_menu_links": "",
+        "show_index": true,
+        "bg_color": "#ffffff",
+        "padding_top": 30,
+        "padding_bottom": 45
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_page_dyfXR4"
+  ]
+}

@@ -1,0 +1,263 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_UJxP9M": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_gAGin4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_wtaFwt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_irr7VQ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_gAGin4",
+        "text_wtaFwt",
+        "button_irr7VQ"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/rewards_desktop_banner_image.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_multicolumn_xrjHtG": {
+      "type": "custom-multicolumn",
+      "blocks": {
+        "column_ckx8Pj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/currency.svg",
+            "title": "",
+            "text": "<p>1 High-Achiever Point per 1 $ spend</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_RaTtAJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/people.svg",
+            "title": "",
+            "text": "<p>Bonus Point for SignUp & More</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_y7KbwB": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bday.svg",
+            "title": "",
+            "text": "<p>Birthday reward</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_bwWdBm": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/promos.svg",
+            "title": "",
+            "text": "<p>Member Only Early Access and Promos</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_it8WMV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Events.svg",
+            "title": "",
+            "text": "<p>Member Only Events</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_ckx8Pj",
+        "column_RaTtAJ",
+        "column_y7KbwB",
+        "column_bwWdBm",
+        "column_it8WMV"
+      ],
+      "name": "Custom multicolumn",
+      "settings": {
+        "title": "Instant rockstar reward benefits",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "square",
+        "button_label": "Join Now",
+        "button_link": "",
+        "columns_desktop": 5,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "custom_background": "linear-gradient(#000000, #000000)",
+        "custom_color": "#ffffff",
+        "enable_top_border": true,
+        "grid_gap": 48,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 12,
+        "padding_bottom": 56
+      }
+    },
+    "custom_multicolumn_q3NyPj": {
+      "type": "custom-multicolumn",
+      "blocks": {
+        "column_znMLLh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/currency_icon_2.svg",
+            "title": "1  Point",
+            "text": "<p>Every $1 spend<br/><br/></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_eJmPfE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/complete_profile.svg",
+            "title": "50 Points",
+            "text": "<p>Complete profile</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_9wJXKD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/refer_a_friend.svg",
+            "title": "250 Points",
+            "text": "<p>Refer a friend<br/><br/></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_FP4fcE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/birthday_rewards.svg",
+            "title": "250 Points",
+            "text": "<p>Birthday reward</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_W3KNyV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/share_facebook.svg",
+            "title": "25  Points",
+            "text": "<p>Share us on Facebook </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_RJKXkP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/review_a_product.svg",
+            "title": "25  Points",
+            "text": "<p>Review a product</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rbin8M": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/follow_us_on_social_media.svg",
+            "title": "25 Points",
+            "text": "<p>Like us on Facebook / Follow  us on Instagram / Follow  us on Twitter</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_znMLLh",
+        "column_eJmPfE",
+        "column_9wJXKD",
+        "column_FP4fcE",
+        "column_W3KNyV",
+        "column_RJKXkP",
+        "column_rbin8M"
+      ],
+      "name": "Custom multicolumn",
+      "settings": {
+        "title": "Ways to earn High-Achiever Points",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "Button label",
+        "button_link": "#",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "custom_color",
+        "color_scheme": "scheme-1",
+        "custom_background": "#F9F7F6",
+        "custom_color": "#1f1f1f",
+        "enable_top_border": true,
+        "grid_gap": 4,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_UJxP9M",
+    "custom_multicolumn_xrjHtG",
+    "custom_multicolumn_q3NyPj"
+  ]
+}

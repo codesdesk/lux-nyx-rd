@@ -1,14 +1,172 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "custom_page_C9ipCi": {
+      "type": "custom-page",
+      "blocks": {
+        "term_AtfXJB": {
+          "type": "term",
+          "settings": {
+            "heading": "Who We Are",
+            "content": "<p>Lux & Nyx<br/>3630 Corporate Trail Drive<br/>Earth City, MO 63045, USA<br/>Email: hello@luxandnyx.com<br/>For the purposes of the General Data Protection Regulation (GDPR) and the UK Data Protection Act, Lux & Nyx is the “data controller” of your Personal Information.<br/>If you are based in the EEA or UK and have questions about your personal data, you may contact us at hello@luxandnyx.com. We are in the process of appointing an EU/UK data protection representative in accordance with Article 27 of the GDPR and UK GDPR. Once designated, their contact details will be published here.</p>"
+          }
+        },
+        "term_nQjgXN": {
+          "type": "term",
+          "settings": {
+            "heading": "What Personal Information We Collect",
+            "content": "<p>We may collect the following categories of Personal Information:</p><ul><li>Identifiers (e.g., name, email address, postal address, phone number)</li><li>Account credentials (e.g., username, password)</li><li>Payment data (handled by our payment providers)</li><li>Purchase history and preferences</li><li>Device and technical data (e.g., IP address, browser type, operating system, location data)</li><li>Usage data (e.g., pages viewed, clickstream data, referring URLs)</li><li>Marketing and communication preferences</li><li>User-submitted content (e.g., product reviews, ratings, uploaded images)</li><li>Cookies, pixels, web beacons, and similar tracking data</li></ul><p>We may also collect limited demographic information (such as age ranges or gender) if you choose to provide it.</p>"
+          }
+        },
+        "term_dd69tk": {
+          "type": "term",
+          "settings": {
+            "heading": "How We Collect Personal Information",
+            "content": "<p>We collect Personal Information:<br/>✅ directly from you, when you:</p><ul><li>create an account</li><li>place an order</li><li>subscribe to emails or newsletters</li><li>participate in promotions or surveys</li><li>contact customer support</li><li>opt into mobile messaging</li></ul><p>✅ automatically, through:</p><ul><li>cookies (session and persistent)</li><li>web beacons and pixels</li><li>server logs</li><li>SDKs in our apps</li></ul><p>✅ from third parties, including marketing partners, analytics providers, or social networks, consistent with your settings on those platforms.</p>"
+          }
+        },
+        "term_G87xyq": {
+          "type": "term",
+          "settings": {
+            "heading": "Lawful Basis for Processing",
+            "content": "<p>Depending on your location, we process your Personal Information based on:<br/></p><ul><li>performance of a contract (e.g., to fulfill purchases)</li><li>your consent (e.g., marketing communications, optional cookies)</li><li>legitimate interests (e.g., fraud prevention, service improvement), balanced against your data rights</li><li>compliance with legal obligations (e.g., consumer protection, tax laws)</li></ul>"
+          }
+        },
+        "term_bjFjyU": {
+          "type": "term",
+          "settings": {
+            "heading": "How We Use Your Personal Information",
+            "content": "<p>We may use your Personal Information to:<br/></p><ul><li>process and fulfill your orders</li><li>manage your account and provide customer service</li><li>send you transactional and administrative messages</li><li>send you marketing communications, if permitted</li><li>personalize your shopping experience</li><li>analyze usage trends and improve our Services</li><li>detect and prevent fraud or security incidents</li><li>comply with applicable laws and regulations</li></ul><p>If we use profiling or algorithmic personalization (e.g., product recommendations), we do so transparently and give you a choice to opt out where required by law. We do not perform fully automated decision-making with legal or similarly significant effects.</p>"
+          }
+        },
+        "term_tyNmhj": {
+          "type": "term",
+          "settings": {
+            "heading": "Cookies and Tracking Technologies",
+            "content": "<p>We use first-party and third-party cookies, pixels, and similar tools for:</p><ul><li>essential website functions</li><li>remembering your preferences</li><li>performance analytics (e.g., Google Analytics)</li><li>interest-based advertising (e.g., Meta Pixel, TikTok Pixel)</li></ul><p>For example, our store uses these cookies:</p><ul><li>_session_id, unique token, sessional — stores session info</li><li>_shopify_visit, no data held, persistent for 30 minutes</li><li>_shopify_uniq, no data held, expires midnight next day</li><li>cart, unique token, persistent for 2 weeks</li><li>_secure_session_id, unique token, sessional</li><li>storefront_digest, unique token, indefinite — store password gate info</li></ul><p>Your Choices:</p><ul><li>manage preferences via our cookie banner and consent center</li><li>set browser preferences to block or delete cookies</li><li>use opt-out tools from industry groups (e.g., NAI, DAA, YourOnlineChoices)</li><li>exercise “Do Not Track” or Global Privacy Control signals, which we honor to the extent required by applicable law</li></ul><p>For a full list of cookies and trackers, please see our [Cookie Policy link if separate].</p>"
+          }
+        },
+        "term_UE7zBp": {
+          "type": "term",
+          "settings": {
+            "heading": "How We Share Personal Information",
+            "content": "<p>We may share your Personal Information with:<br/></p><ul><li>service providers (e.g., payment processors, shipping providers, customer support tools)</li><li>marketing and advertising partners, if you have not opted out</li><li>affiliates, subsidiaries, and contractors</li><li>third parties in the event of a merger, acquisition, or sale of our business</li><li>government authorities or law enforcement, where required by law</li></ul><p>Shopify Hosting & Payments</p><p>Our online store is hosted by Shopify Inc., which provides the platform enabling our online sales. Your data may be processed through Shopify’s systems in accordance with their privacy policies. Shopify’s payment gateways are PCI DSS–compliant, and your transaction data is stored only as long as necessary to complete your purchase. For details, please see Shopify’s Privacy Statement.</p><p><br/>Cross-Border Considerations <br/>Personal Information processed by third-party service providers may be subject to the laws of the jurisdictions in which they operate and may be accessible to government authorities under lawful orders in those regions. </p><p>When transferring Personal Information internationally, we rely on Standard Contractual Clauses, adequacy decisions, or other recognized safeguards under GDPR and UK GDPR. We also conduct Transfer Impact Assessments where required.</p>"
+          }
+        },
+        "term_3GCeDN": {
+          "type": "term",
+          "settings": {
+            "heading": "Data Retention",
+            "content": "<p>We retain Personal Information for as long as reasonably necessary to:<br/></p><ul><li>provide Services and complete transactions</li><li>comply with legal or regulatory requirements</li><li>resolve disputes</li><li>enforce our agreements</li></ul><p>When no longer needed, we securely delete or anonymize Personal Information. To learn more about specific retention periods, contact <a href=\"mailto:hello@luxandnyx.com\" title=\"mailto:hello@luxandnyx.com\">hello@luxandnyx.com</a>.</p>"
+          }
+        },
+        "term_N4BtH4": {
+          "type": "term",
+          "settings": {
+            "heading": "Children’s Privacy",
+            "content": "<p>Our Services are not intended for children under 16 (or a lower age if permitted by local law, but never under 13). By using this site, you represent that you are at least the age of majority in your state or country of residence, or that you are the age of majority in your state or country of residence and have provided consent for your minor dependents to use this site, subject to any stricter age requirements under applicable law.  We do not knowingly collect Personal Information from children under these age thresholds. If you believe we have collected such data, please contact us so we can promptly delete it.<br/><br/></p>"
+          }
+        },
+        "term_yLBFTU": {
+          "type": "term",
+          "settings": {
+            "heading": "Your Privacy Rights",
+            "content": "<p>Depending on your location, you may have the right to:<br/></p><ul><li>access your Personal Information</li><li>correct inaccuracies</li><li>request deletion</li><li>restrict or object to certain processing</li><li>request data portability</li><li>opt out of marketing or profiling</li><li>lodge a complaint with your local supervisory authority</li></ul><p>To exercise these rights, contact us at <a href=\"mailto:hello@luxandnyx.com\" title=\"mailto:hello@luxandnyx.com\">hello@luxandnyx.com</a> with “Personal Information Request” in the subject line. We may ask you to verify your identity. </p><p>For EEA/UK residents, you can also contact your local data protection authority: EU Supervisory Authority List or the UK Information Commissioner’s Office. </p><p>If after opting in you change your mind, you may withdraw your consent at any time by contacting us as above.</p>"
+          }
+        },
+        "term_hKPwcg": {
+          "type": "term",
+          "settings": {
+            "heading": "Data Security",
+            "content": "<p>We use reasonable technical and organizational measures, including:<br/></p><ul><li>SSL encryption</li><li>AES-256 encryption for payment data</li><li>PCI DSS–compliant processing</li><li>firewalls and intrusion detection</li><li>role-based access controls</li></ul><p>While no security system is 100% secure, we continuously improve our safeguards to protect your Personal Information.</p>"
+          }
+        },
+        "term_rV9Lmt": {
+          "type": "term",
+          "settings": {
+            "heading": "International Data Transfers",
+            "content": "<p>If you are located outside the United States, please note your Personal Information may be transferred to, stored in, and processed in the United States. Where legally required, we rely on Standard Contractual Clauses, adequacy decisions, or other lawful transfer mechanisms.<br/><br/></p>"
+          }
+        },
+        "term_LqpjrT": {
+          "type": "term",
+          "settings": {
+            "heading": "Third-Party Links",
+            "content": "<p>Our Services may link to third-party websites or applications we do not control. We are not responsible for their privacy practices, and encourage you to read their policies before sharing your Personal Information with them.</p>"
+          }
+        },
+        "term_kxMacG": {
+          "type": "term",
+          "settings": {
+            "heading": "Changes to These Terms",
+            "content": "<p>We may update these Terms at any time by posting the changes on this page. The “Last Updated” date reflects the latest revision. Continued use of the Site after changes means you accept the updated Terms.</p>"
+          }
+        },
+        "term_XrHedj": {
+          "type": "term",
+          "settings": {
+            "heading": "Accessibility and Alternative Formats",
+            "content": "<p>If you need this policy in an alternative format due to a disability, please contact us at <a href=\"mailto:hello@luxandnyx.com\" title=\"mailto:hello@luxandnyx.com\">hello@luxandnyx.com</a>, and we will provide a suitable version consistent with applicable accessibility laws.</p>"
+          }
+        },
+        "term_mxTenr": {
+          "type": "term",
+          "settings": {
+            "heading": "Contact Us",
+            "content": "<p>If you have any questions, requests, or concerns about this Privacy Policy or your Personal Information, please contact us:<br/></p><p>Lux & Nyx Privacy Rights</p><p>Lux & Nyx, LLC</p><p>3630 Corporate Trail Drive </p><p>Earth City, MO 63045, USA</p><p>Email:<a href=\"mailto:hello@luxandnyx.com\" title=\"mailto:hello@luxandnyx.com\"> hello@luxandnyx.com</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "term_AtfXJB",
+        "term_nQjgXN",
+        "term_dd69tk",
+        "term_G87xyq",
+        "term_bjFjyU",
+        "term_tyNmhj",
+        "term_UE7zBp",
+        "term_3GCeDN",
+        "term_N4BtH4",
+        "term_yLBFTU",
+        "term_hKPwcg",
+        "term_rV9Lmt",
+        "term_LqpjrT",
+        "term_kxMacG",
+        "term_XrHedj",
+        "term_mxTenr"
+      ],
+      "name": "Custom page",
+      "settings": {
+        "title": "Lux & Nyx Privacy Policy",
+        "last_updated": "",
+        "term_maincontent": "<p>Lux and Nyx, LLC, a Missouri limited liability company doing business as Lux & Nyx (“Lux & Nyx,” “we,” “us,” or “our”), is committed to protecting your privacy. This Privacy Policy describes how we collect, use, disclose, store, and protect your Personal Information when you visit or interact with our website at https://www.luxandnyx.com, use our mobile applications, or otherwise engage with our products, services, or marketing communications (collectively, the “Services”).By accessing or using our Services, you acknowledge and agree that we may process your Personal Information as described in this Privacy Policy, subject to your rights under applicable law.</p>",
+        "page_links": "content_links",
+        "page_menu_links": "",
+        "show_index": true,
+        "bg_color": "#ffffff",
+        "padding_top": 30,
+        "padding_bottom": 45
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_page_C9ipCi"
   ]
 }
