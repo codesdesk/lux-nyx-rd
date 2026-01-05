@@ -38,9 +38,9 @@
         </cart-note>
       {%- endif -%}
 
-      {% if section.settings.cart_heading !=blank %}
+      {% if section.cart_heading !=blank %}
       <div class="cart-heading">
-        {{ section.settings.cart_heading }}
+        {{ section.cart_heading }}
       </div>
       {% endif %}
 
@@ -59,21 +59,15 @@
         </div>
         <div class="shipping_heading">
             <div class="shipping_text">
-              {% if section.settings.shipping_text %}
-               <h5>{{  section.settings.shipping_text }}</h5>
+              {% if section.shipping_text %}
+               <h5>{{  section.shipping_text }}</h5>
               {% endif %}
-              {% if section.settings.free_shipping_text %}
-               <h5>{{  section.settings.free_shipping_text }}</h5>
+              {% if section.free_shipping_text %}
+               <h5>{{  section.free_shipping_text }}</h5>
               {% endif %}
             </div>
           </div>
-
-        {% for block in section.blocks %}
-          {%- case block.type -%}
-            {%- when '@app' -%}
-              {% render block %}
-            {%- when 'subtotal' -%}
-              <div class="js-contents" {{ block.shopify_attributes }}>
+          <div class="js-contents" {{ block.shopify_attributes }}>
                 <div>
                   {%- if cart.cart_level_discount_applications.size > 0 -%}
                     <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
@@ -135,36 +129,43 @@
                   {%- endif -%}
                 </small> {% endcomment %}
                 <small class="tax-note caption-large rte">
-            Final tax and shipping calculated at checkout
-          </small>
+                    Final tax and shipping calculated at checkout
+                </small>
           
               </div>
-            {%- else -%}
-              <div class="cart__ctas" {{ block.shopify_attributes }}>
-                <button
-                  type="submit"
-                  id="checkout"
-                  class="cart__checkout-button button"
-                  name="checkout"
-                  {% if cart == empty %}
-                    disabled
-                  {% endif %}
-                  form="cart"
-                >
-                  {{ 'sections.cart.checkout' | t }}
-                </button>
-              </div>
-              <div class="secure_checkout_text">
-                {% if section.settings.secure_checkout %}
-                  {{ section.settings.secure_checkout }}
-                {% endif %}
-              </div>
-
-              {%- if additional_checkout_buttons -%}
-                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
-                  {{ content_for_additional_checkout_buttons }}
+                <div class="cart__ctas" {{ block.shopify_attributes }}>
+                    <button
+                        type="submit"
+                        id="checkout"
+                        class="cart__checkout-button button"
+                        name="checkout"
+                        {% if cart == empty %}
+                        disabled
+                        {% endif %}
+                        form="cart"
+                    >
+                        {{ 'sections.cart.checkout' | t }}
+                    </button>
                 </div>
-              {%- endif -%}
+                <div class="secure_checkout_text">
+                    {% if section.settings.secure_checkout %}
+                        {{ section.settings.secure_checkout }}
+                    {% endif %}
+                </div>
+
+                {%- if additional_checkout_buttons -%}
+                    <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                    {{ content_for_additional_checkout_buttons }}
+                    </div>
+                {%- endif -%}
+              
+
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'subtotal' -%}
+              
           {%- endcase -%}
         {% endfor %}
 

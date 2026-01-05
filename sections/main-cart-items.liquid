@@ -468,7 +468,7 @@
               {{ 'accessibility.loading' | t }}
             </p>
           </form>
-          {% render 'main-cart-footer' %}
+          {% render 'main-cart-footer' section:section.settings %}
         </div>
       </div>
    <div class="collection-right">
@@ -547,6 +547,30 @@
         "type":"collection",
         "id":"collection",
         "label":"collection"
+    },
+    {
+      "type": "header",
+      "content": "Payment content"
+    },
+    {
+      "type": "text",
+      "id": "cart_heading",
+      "label": "Order summary"
+    },
+    {
+      "type": "text",
+      "id": "shipping_text",
+      "label": "Est. Shipping & Handling : "
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_text",
+      "label": "Free U.S. Shipping"
+    },
+    {
+      "type": "richtext",
+      "id": "secure_checkout",
+      "label": "secure checkout"
     },
     {
       "type": "header",
