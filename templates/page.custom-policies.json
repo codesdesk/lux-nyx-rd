@@ -17,8 +17,8 @@
         "padding_bottom": 28
       }
     },
-    "custom_policies_C9ipCi": {
-      "type": "custom-policies",
+    "custom_page_C9ipCi": {
+      "type": "custom-page",
       "blocks": {
         "term_AtfXJB": {
           "type": "term",
@@ -151,11 +151,14 @@
         "term_kxMacG",
         "term_mxTenr"
       ],
-      "name": "Policies Section",
+      "name": "Custom page",
       "settings": {
         "title": "Lux & Nyx Terms & Conditions",
         "last_updated": "July 2, 2025",
-        "term_maincontent": "These Terms and Conditions (“Terms”) govern your use of our website located at https://www.luxandnyx.com (the “Site”), and all related services, features, content, or products offered by Lux and Nyx LLC, a Missouri limited liability company doing business as Lux & Nyx (“Lux & Nyx,” “we,” “us,” or “our”). By accessing or using our Site or purchasing our products, you agree to these Terms, including our Privacy Policy, Cookie Policy, and any additional terms linked within these Terms.  If you do not agree, you must not use the Site.",
+        "term_maincontent": "<p>These Terms and Conditions (“Terms”) govern your use of our website located at https://www.luxandnyx.com (the “Site”), and all related services, features, content, or products offered by Lux and Nyx LLC, a Missouri limited liability company doing business as Lux & Nyx (“Lux & Nyx,” “we,” “us,” or “our”). By accessing or using our Site or purchasing our products, you agree to these Terms, including our Privacy Policy, Cookie Policy, and any additional terms linked within these Terms. <br/>If you do not agree, you must not use the Site.</p>",
+        "page_links": "content_links",
+        "page_menu_links": "",
+        "show_index": true,
         "bg_color": "#ffffff",
         "padding_top": 30,
         "padding_bottom": 45
@@ -164,6 +167,6 @@
   },
   "order": [
     "main",
-    "custom_policies_C9ipCi"
+    "custom_page_C9ipCi"
   ]
 }

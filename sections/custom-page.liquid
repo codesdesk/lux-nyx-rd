@@ -17,9 +17,9 @@
       </p>
       {% endif %}
       {% if section.settings.term_maincontent != blank %}
-      <p class="terms-content">
+      <div class="terms-content">
        {{ section.settings.term_maincontent }}
-      </p>
+      </div>
       {% endif %}
       </div>
 
@@ -33,13 +33,23 @@
         </div>
 
       <ul>
-        {% for block in section.blocks %}
-          <li>
-            <a href="#term-{{ forloop.index }}">
-              {{ forloop.index }}. {{ block.settings.heading }}
-            </a>
-          </li>
-        {% endfor %}
+        {% if section.settings.page_links == 'content_links' %}
+          {% for block in section.blocks %}
+            <li>
+              <a href="#term-{{ forloop.index }}" class="{% if link.active %}active{% endif %}">
+              {% if section.settings.show_index  %}  {{ forloop.index }}. {% endif %}{{ block.settings.heading }}
+              </a>
+            </li>
+          {% endfor %}
+        {% else %}
+          {% for link in section.settings.page_menu_links.links %}
+            <li>
+              <a href="{{ link.url }}" title="{{ link.title | escape }}" class="{% if link.active %}active{% endif %}">
+                {{ link.title | escape }}
+              </a>
+            </li>
+          {% endfor %}
+        {% endif %}
       </ul>
     </aside>
 
@@ -54,15 +64,15 @@
       </p>
       {% endif %}
       {% if section.settings.term_maincontent != blank %}
-      <p class="terms-content">
+      <div class="terms-content">
        {{ section.settings.term_maincontent }}
-      </p>
+      </div>
       {% endif %}
       </div>
       <div class="terms-items-manage">
       {% for block in section.blocks %}
         <div id="term-{{ forloop.index }}" class="terms-item">
-          <h3>{{ forloop.index }}. {{ block.settings.heading }}</h3>
+          <h3>{% if section.settings.show_index %}{{ forloop.index }}. {% endif %}{{ block.settings.heading }}</h3>
           <div class="terms-text">
             {{ block.settings.content }}
           </div>
@@ -84,7 +94,13 @@
 }
 .terms-sidebar {
   position: sticky;
+  align-self:start;
   top: 100px;
+  transition: top .2s ease-in-out;
+}
+
+body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
+  top: 0;
 }
 .terms-contet-wrapper {
     margin-bottom: 64px;
@@ -144,7 +160,7 @@
 }
 
 .terms-updated,
-.terms-content {
+.terms-content > p {
     color: #1F1F1F;
     font-family: 'Helvetica Neue LT Pro';
     font-weight: 500;
@@ -219,7 +235,7 @@
 {% endstyle %}
 {% schema %}
 {
-  "name": "Policies Section",
+  "name": "Custom page",
   "settings": [
     {
       "type": "text",
@@ -234,9 +250,41 @@
       "default": "July 2, 2025"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "term_maincontent",
       "label": "Content"
+    },
+    {
+      "type": "header",
+      "content": "Page settings"
+    },
+    {
+      "type": "select",
+      "id": "page_links",
+      "label": "Page links",
+      "options": [
+        {
+          "value": "content_links",
+          "label": "Content Links"
+        },
+        {
+          "value": "custom_links",
+          "label": "Custom Links"
+        }
+      ],
+      "default": "content_links"
+    },
+    {
+      "type": "link_list",
+      "id": "page_menu_links",
+      "label": "Page menu",
+      "visible_if": "{{ section.settings.page_links == 'custom_links' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_index",
+      "label": "Show label index",
+      "default":true
     },
     {
       "type": "color",
@@ -285,7 +333,7 @@
   ],
   "presets": [
     {
-      "name": "Policies Section"
+      "name": "Custom page"
     }
   ]
 }

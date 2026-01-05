@@ -1,14 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "custom_page_C9ipCi": {
+      "type": "custom-page",
+      "blocks": {
+        "term_AtfXJB": {
+          "type": "term",
+          "settings": {
+            "heading": "Limited Warranty",
+            "content": "<p>Lux & Nyx products are designed and manufactured to high standards of quality, durability, and performance. We stand behind our craftsmanship.<br/><br/>What is Covered?  Lux & Nyx warrants its products against defects in materials and workmanship under normal use for one (1) year from the original date of purchase. This limited warranty applies only to the original purchaser and is not transferable.<br/><br/>What is Not Covered?<br/>This warranty does not cover:<br/></p><ul><li>damage caused by normal wear and tear, including fading, scuffing, or scratches</li><li>accidental damage (e.g., spills, cuts, rips, or punctures)</li><li>misuse, abuse, or neglect (including overloading or commercial use)</li><li>unauthorized alterations, modifications, or repairs</li><li>damage caused by failure to follow care or cleaning instructions</li><li>damage resulting from airline handling, third-party shipping carriers, or lost/stolen products </li></ul>"
+          }
+        },
+        "term_nQjgXN": {
+          "type": "term",
+          "settings": {
+            "heading": "How to Make a Warranty Claim",
+            "content": "<p>If you believe your Lux & Nyx product has a defect covered under this warranty, please contact us at hello@luxandnyx.com with the following information:</p><ul><li>your order number</li><li>a detailed description of the issue</li><li>clear photos showing the defect</li></ul><p>We may ask you to return the product for inspection before we repair or replace it. You are responsible for shipping the product to us, but if the defect is confirmed, we will cover reasonable return shipping costs within the U.S.</p><p>Lux & Nyx will, at its discretion, either:</p><ul><li>repair the product,</li><li>replace it with the same item or a comparable one if the same is unavailable,</li><li>or refund the purchase price (in cases where repair or replacement is impractical).</li></ul>"
+          }
+        },
+        "term_dd69tk": {
+          "type": "term",
+          "settings": {
+            "heading": "Consumer Rights",
+            "content": "<p>Some jurisdictions, including certain states in the United States and countries in the European Union and the United Kingdom, provide mandatory consumer rights that cannot be limited or excluded by contract. This Warranty Policy does not affect those rights.</p><p>If you are a consumer in the EU or UK, you have the legal right to remedies if goods do not conform to your contract of sale, including the right to a minimum two-year conformity period under applicable consumer law.</p>"
+          }
+        },
+        "term_G87xyq": {
+          "type": "term",
+          "settings": {
+            "heading": "Limitation of Liability",
+            "content": "<p>To the fullest extent permitted by law, Lux & Nyx shall not be liable for any indirect, incidental, or consequential damages arising from the use of our products, even if we were advised of the possibility of such damages.</p><p>Our total liability shall be limited to the purchase price paid for the product giving rise to the claim.</p>"
+          }
+        },
+        "term_mxTenr": {
+          "type": "term",
+          "settings": {
+            "heading": "Contact Us",
+            "content": "<p>If you have any questions about this Warranty Policy or wish to start a claim, please contact us:</p><p>Lux & Nyx, LLC</p><p>3630 Corporate Trail Drive </p><p>Earth City, MO 63045, USA</p><p>Email: hello@luxandnyx.com</p>"
+          }
+        }
+      },
+      "block_order": [
+        "term_AtfXJB",
+        "term_nQjgXN",
+        "term_dd69tk",
+        "term_G87xyq",
+        "term_mxTenr"
+      ],
+      "name": "Custom page",
+      "settings": {
+        "title": "Lux & Nyx Warranty Policy",
+        "last_updated": "",
+        "term_maincontent": "",
+        "page_links": "content_links",
+        "page_menu_links": "",
+        "show_index": false,
+        "bg_color": "#ffffff",
+        "padding_top": 30,
+        "padding_bottom": 45
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_page_C9ipCi"
   ]
 }
