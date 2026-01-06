@@ -3385,7 +3385,8 @@ input[type='checkbox'] {
 }
 
 .header-wrapper--border-bottom {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  box-shadow: 0px 1px 3px 0px #00000026;
+  border-bottom: #00000026 0.1rem solid;
 }
 
 .header {
@@ -3544,6 +3545,7 @@ header .header__icons {
     display: flex;
     grid-area: icons;
     justify-self: end;
+    padding-right: 1.43rem;
     line-height: 16px;
     align-items: center;
 }
@@ -4071,8 +4073,8 @@ details-disclosure > details {
     }
     
   .header {
-    padding: 16px 1.2rem 16px 1.2rem !important;
-}
+    padding: 16px 2rem 14.49px !important;
+  }
   .backpacks {
     font-size: 20px;
   }
@@ -4734,6 +4736,7 @@ header .custom_menu_right_wrap ul{
 header .custom_menu_right_wrap a {
   font-size: 14px;
   color: #454545;
+  letter-spacing: 0.39px;
   text-decoration: none;
 }
 header .custom_menu_right_wrap ul li{
@@ -4745,9 +4748,17 @@ header .custom_menu_right_wrap ul li{
     display: none;
   }
 }
-@media only screen and (max-width: 1149px) {
+@media only screen and (max-width: 1299px) {
   header .custom_menu_right_wrap ul {
     gap: 25px;
+  }
+  header .header__icons {
+    width: 100%;
+    max-width: fit-content;
+    padding-right: 0px;
+  }
+  .header account-icon {
+    margin-right: 25px;
   }
 }
 /* Mega-menu */
@@ -4876,9 +4887,9 @@ span.minus {
 .template-custom .bottom-subheading {
     margin: 0px;
     line-height: 22px;
+    letter-spacing: -0.4px;
     font-size: 18px;
     color: #1F1F1F;
-    text-transform: capitalize;
 }
 .template-custom p {
     margin: 0px;
@@ -4933,12 +4944,13 @@ section.image-category-section {
 .image-category-section .image-grid-item{
     width: 100%;
     max-width: 143px;
+    text-decoration: none;
 }
 .image-category-section .image-category-image {
     width: 100%;
 }
 .image-category-section .image-category-title {
-    margin: 8px 0 0;
+    margin: -3px 0 0;
     font-size: 14px;
     font-weight: var(--custom-font-body-weight);
     color: #000000;
@@ -4952,7 +4964,8 @@ section.image-category-section {
 @media only screen and (max-width:749px) {
   .template-custom .heading-title_wrapper {
     font-size: 144.39px;
-
+    margin-bottom: 25px;
+    line-height: 185px;
   }
   .template-custom .not-found-paragraph {
     font-size: 24px;
@@ -4963,6 +4976,7 @@ section.image-category-section {
   }
   .template-custom .bottom-subheading {
     line-height: 19px;
+    font-size: 16px;
   }
   .template-custom .breadcrumbs {
     display: block;
@@ -4986,16 +5000,65 @@ section.image-category-section {
     width: 100%;
     max-width: 290px;
     gap: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 6px;
   }
   .image-category-section .image-grid-item {
     width: 100%;
     max-width: calc(100% - 147.38px);
+    height: 199px;
+    margin-bottom: 10px;
 } 
     .image-category-section .image-category-image {
     width: 100%;
+    height: 173px;
 }
-
+}
+/* Thank You Page */
+.thankyou-custom .thanks-heading {
+    font-family: var(--custom-font-heading-family);
+    font-weight: var(--font-heading-weight);
+    font-style: italic;
+    font-size: 109.95px;
+    margin: 0px;
+}
+.thankyou-custom.page-width.center {
+    display: flex;
+    gap: 106px;
+    flex-direction: column;
+}
+.thankyou-custom .thanks-text-container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.thankyou-custom h2 {
+    margin: 0px;
+}
+.thankyou-custom .paragraph-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+.thankyou-custom p {
+    margin: 0px;
+}
+.thankyou-custom .thanks-button {
+    text-decoration: none;
+    width: 100%;
+    font-size: 13px;
+    max-width: 181px;
+    color: #1F1F1F;
+    line-height: 27px;
+    border-radius: 4px;
+    padding-top: 6px;
+    padding-right: 12px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    letter-spacing: -0.1px;
+    border: 1px solid #1F1F1F;
+    font-weight: var(--custom-font-body-weight);
+    font-family: var(--custom-font-heading-body);
 }
 /* Search Page */
 /* .template-search .filter_main{

@@ -11,7 +11,18 @@
   "sections": {
     "main": {
       "type": "main-404",
-      "settings": {}
+      "settings": {
+        "heading": "oops!",
+        "title": "404 - page not found",
+        "text": "<p>This link couldn't keep up with you. </p><p>Let's Get Back To Something That Can.</p>",
+        "icon": "shopify://shop_images/lux-and-nyx-arrow.svg",
+        "button_link": "#",
+        "button_label": "Back to Shop",
+        "padding_top": 92,
+        "padding_bottom": 111,
+        "padding_mobile_top": 45,
+        "padding_mobile_bottom": 102
+      }
     },
     "image_category_pXDHrM": {
       "type": "image-category",
