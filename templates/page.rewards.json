@@ -17,52 +17,69 @@
         "padding_bottom": 28
       }
     },
-    "image_with_text_UJxP9M": {
-      "type": "image-with-text",
+    "custom_image_with_text_EJaKHM": {
+      "type": "custom-image-with-text",
       "blocks": {
-        "heading_gAGin4": {
-          "type": "heading",
+        "step_nYxTAD": {
+          "type": "step",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "step_title": "JOIN",
+            "step_description": "Create an account and start earning."
           }
         },
-        "text_wtaFwt": {
-          "type": "text",
+        "step_KEQhaQ": {
+          "type": "step",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
+            "step_title": "EARN",
+            "step_description": "Earn points every time you shop."
           }
         },
-        "button_irr7VQ": {
-          "type": "button",
+        "step_34TViP": {
+          "type": "step",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
+            "step_title": "REDEEM",
+            "step_description": "Redeem points for exclusive discounts."
           }
         }
       },
       "block_order": [
-        "heading_gAGin4",
-        "text_wtaFwt",
-        "button_irr7VQ"
+        "step_nYxTAD",
+        "step_KEQhaQ",
+        "step_34TViP"
       ],
-      "name": "t:sections.image-with-text.presets.name",
+      "name": "Custom image with text",
       "settings": {
+        "section_padding_top": 0,
+        "section_padding_bottom": 35,
+        "section_padding_horizontal": 0,
+        "background_color": "#ffffff",
+        "section_text_color": "#1f1f1f",
+        "section_text_color-mobile": "#ffffff",
+        "section_full_width": true,
         "image": "shopify://shop_images/rewards_desktop_banner_image.png",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "mobile_content_alignment": "center",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "image_background_color": "rgba(0,0,0,0)",
+        "mobile_image": "shopify://shop_images/banner_image_mobile.png",
+        "overlay_color": "#1f1f1f",
+        "overlay_opacity": 35,
+        "title": "Rockstar rewards",
+        "title_font_size": 56,
+        "title_font_size_mobile": 36,
+        "intro_text": "Getting started is easy, just create an account online. The program is entirely free to join - there's no minimum spending amount required. So go ahead, get in on those benefits!",
+        "intro_font_size": 16,
+        "intro_font_size_mobile": 14,
+        "content_background_color": "#ffffff",
+        "button_text": "Join Now",
+        "button_link": "",
+        "button_background_color": "#000000",
+        "button_text_color": "#eee9e5",
+        "button_background_color_mobile": "#ffffff",
+        "button_text_color_mobile": "#000000",
+        "button_font_size": 16,
+        "button_border_radius": 4,
+        "step_title_font_size": 24,
+        "step_title_font_size_mobile": 16,
+        "step_description_font_size": 16,
+        "step_description_font_size_mobile": 14
       }
     },
     "custom_multicolumn_xrjHtG": {
@@ -75,7 +92,8 @@
             "title": "",
             "text": "<p>1 High-Achiever Point per 1 $ spend</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         },
         "column_RaTtAJ": {
@@ -85,7 +103,8 @@
             "title": "",
             "text": "<p>Bonus Point for SignUp & More</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         },
         "column_y7KbwB": {
@@ -95,7 +114,8 @@
             "title": "",
             "text": "<p>Birthday reward</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         },
         "column_bwWdBm": {
@@ -105,7 +125,8 @@
             "title": "",
             "text": "<p>Member Only Early Access and Promos</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         },
         "column_it8WMV": {
@@ -115,7 +136,8 @@
             "title": "",
             "text": "<p>Member Only Events</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         }
       },
@@ -142,6 +164,9 @@
         "custom_color": "#ffffff",
         "enable_top_border": true,
         "grid_gap": 48,
+        "grid_gap_mobile": 25,
+        "desktop_image_width": 80,
+        "mobile_image_width": 80,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 12,
@@ -156,9 +181,10 @@
           "settings": {
             "image": "shopify://shop_images/currency_icon_2.svg",
             "title": "1  Point",
-            "text": "<p>Every $1 spend<br/><br/></p>",
+            "text": "<p>Every $1 spend</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         },
         "column_eJmPfE": {
@@ -168,7 +194,8 @@
             "title": "50 Points",
             "text": "<p>Complete profile</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         },
         "column_9wJXKD": {
@@ -176,9 +203,10 @@
           "settings": {
             "image": "shopify://shop_images/refer_a_friend.svg",
             "title": "250 Points",
-            "text": "<p>Refer a friend<br/><br/></p>",
+            "text": "<p>Refer a friend</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         },
         "column_FP4fcE": {
@@ -188,7 +216,8 @@
             "title": "250 Points",
             "text": "<p>Birthday reward</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         },
         "column_W3KNyV": {
@@ -198,7 +227,8 @@
             "title": "25  Points",
             "text": "<p>Share us on Facebook </p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         },
         "column_RJKXkP": {
@@ -208,7 +238,8 @@
             "title": "25  Points",
             "text": "<p>Review a product</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": false
           }
         },
         "column_rbin8M": {
@@ -218,7 +249,8 @@
             "title": "25 Points",
             "text": "<p>Like us on Facebook / Follow  us on Instagram / Follow  us on Twitter</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "block_full_width": true
           }
         }
       },
@@ -247,17 +279,242 @@
         "custom_color": "#1f1f1f",
         "enable_top_border": true,
         "grid_gap": 4,
-        "columns_mobile": "1",
+        "grid_gap_mobile": 16,
+        "desktop_image_width": 66,
+        "mobile_image_width": 54,
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "rewards_banner_jhn7p8": {
+      "type": "rewards-banner",
+      "blocks": {
+        "step_NpDCfU": {
+          "type": "step",
+          "settings": {
+            "points": "100 High-Achiever Points",
+            "reward": "10% Off"
+          }
+        },
+        "step_VCaQ6f": {
+          "type": "step",
+          "settings": {
+            "points": "250 High-Achiever Points",
+            "reward": "25$ Store note"
+          }
+        },
+        "step_aYmgLr": {
+          "type": "step",
+          "settings": {
+            "points": "450 High-Achiever Points",
+            "reward": "50$ Store note"
+          }
+        },
+        "step_8t9prj": {
+          "type": "step",
+          "settings": {
+            "points": "600 High-Achiever Points",
+            "reward": "75$ Store note"
+          }
+        },
+        "step_4zQtPJ": {
+          "type": "step",
+          "settings": {
+            "points": "1000 High-Achiever Points",
+            "reward": "150$ Store note"
+          }
+        }
+      },
+      "block_order": [
+        "step_NpDCfU",
+        "step_VCaQ6f",
+        "step_aYmgLr",
+        "step_8t9prj",
+        "step_4zQtPJ"
+      ],
+      "name": "Rewards Banner",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/Rewards_Banner_Image.png",
+        "section_bg": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "padding_top": 0,
+        "padding_bottom": 34,
+        "title": "How does the reward program work?",
+        "title_size_desktop": 64,
+        "title_size_mobile": 24,
+        "intro": "Reward point redemption tiers",
+        "enable_border_top": true,
+        "border_top_color": "#8a938d",
+        "intro_size_desktop": 18,
+        "intro_size_mobile": 16,
+        "text_color_desktop": "#1f1f1f",
+        "text_color_mobile": "#1f1f1f",
+        "button_text": "Join now",
+        "button_link": "",
+        "button_text_color": "#1f1f1f",
+        "button_font_size": 16,
+        "step_font_size_desktop": 18,
+        "step_font_size_mobile": 12
+      }
+    },
+    "image_banner_PekLAq": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_mcLU9n": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join us!",
+            "heading_size": "h1"
+          }
+        },
+        "text_m7F3mF": {
+          "type": "text",
+          "settings": {
+            "text": "Getting started is easy, just create an account online. The program is entirely free to join - there's no minimum spending amount required. So go ahead, get in on those benefits!",
+            "text_style": "body"
+          }
+        },
+        "buttons_CEXyUQ": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Create an Account",
+            "button_link_1": "#",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_mcLU9n",
+        "text_m7F3mF",
+        "buttons_CEXyUQ"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "addclass": "rewards-image-banner",
+        "image": "shopify://shop_images/create_account_banner.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "rewards_banner_m8mPNH": {
+      "type": "rewards-banner",
+      "blocks": {
+        "accordion_BteVc7": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is Rockstar Rewards Program?",
+            "content": "<p>You earn points by shopping, signing up, and completing activities.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_NFCrm9": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is Rockstar Rewards Program?",
+            "content": "<p>You earn points by shopping, signing up, and completing activities.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_PG9XVy": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is Rockstar Rewards Program?",
+            "content": "<p>You earn points by shopping, signing up, and completing activities.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_dyTLig": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is Rockstar Rewards Program?",
+            "content": "<p>You earn points by shopping, signing up, and completing activities.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_y7BkKQ": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is Rockstar Rewards Program?",
+            "content": "<p>You earn points by shopping, signing up, and completing activities.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_tn8G6t": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is Rockstar Rewards Program?",
+            "content": "<p>You earn points by shopping, signing up, and completing activities.</p>",
+            "open_by_default": false
+          }
+        },
+        "accordion_XPGVVK": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is Rockstar Rewards Program?",
+            "content": "<p>You earn points by shopping, signing up, and completing activities.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_BteVc7",
+        "accordion_NFCrm9",
+        "accordion_PG9XVy",
+        "accordion_dyTLig",
+        "accordion_y7BkKQ",
+        "accordion_tn8G6t",
+        "accordion_XPGVVK"
+      ],
+      "name": "Rewards Banner",
+      "settings": {
+        "full_width": true,
+        "image": "shopify://shop_images/Rewards_Banner_Image.png",
+        "section_bg": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 35,
+        "padding_top": 0,
+        "padding_bottom": 34,
+        "title": "How does the reward program work?",
+        "title_size_desktop": 64,
+        "title_size_mobile": 24,
+        "intro": "Reward point redemption tiers",
+        "enable_border_top": true,
+        "border_top_color": "#8a938d",
+        "intro_size_desktop": 18,
+        "intro_size_mobile": 16,
+        "text_color_desktop": "#1f1f1f",
+        "text_color_mobile": "#1f1f1f",
+        "button_text": "Join now",
+        "button_link": "",
+        "button_text_color": "#1f1f1f",
+        "button_font_size": 16,
+        "step_font_size_desktop": 18,
+        "step_font_size_mobile": 12
       }
     }
   },
   "order": [
     "main",
-    "image_with_text_UJxP9M",
+    "custom_image_with_text_EJaKHM",
     "custom_multicolumn_xrjHtG",
-    "custom_multicolumn_q3NyPj"
+    "custom_multicolumn_q3NyPj",
+    "rewards_banner_jhn7p8",
+    "image_banner_PekLAq",
+    "rewards_banner_m8mPNH"
   ]
 }

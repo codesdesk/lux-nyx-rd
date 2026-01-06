@@ -1,0 +1,609 @@
+<div class="rockstar-rewards-section">
+  {% unless section.settings.section_full_width %}
+      <div class="page-width ">
+{% endunless %}
+<div class="rockstar-rewards-container">
+    <!-- Left Panel - Image -->
+    <div class="rockstar-rewards-image-wrapper">
+      {% if section.settings.image != blank %}
+        <img 
+          src="{{ section.settings.image | img_url: 'master' }}"
+          alt="{{ section.settings.image.alt | default: section.settings.title }}"
+          class="rockstar-rewards-image"
+          width="100%"
+          height="100%"
+          loading="lazy"
+        >
+      {% else %}
+        <div class="rockstar-rewards-placeholder">
+          <svg width="400" height="600" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="600" fill="#F5F5DC"/>
+            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="18" fill="#999">Image Placeholder</text>
+          </svg>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Right Panel - Content -->
+    <div class="rockstar-rewards-content">
+      {% if section.settings.title != blank %}
+        <h2 class="rockstar-rewards-title">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.intro_text != blank %}
+        <p class="rockstar-rewards-intro">{{ section.settings.intro_text }}</p>
+      {% endif %}
+      <div class="rockstar-rewards-steps">
+        {% if step_count != 0 %}
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'step' %}
+                    <div class="rockstar-rewards-step" {{ block.shopify_attributes }}>
+                        <div class="rockstar-rewards-step-number">{{ forloop.index }}</div>
+                        <div class="rockstar-rewards-step-content">
+                        <h3 class="rockstar-rewards-step-title">{{ block.settings.step_title }}</h3>
+                        <p class="rockstar-rewards-step-description">{{ block.settings.step_description }}</p>
+                        </div>
+                    </div>
+                {% endcase %}
+            {% endfor %}
+        {% endif %}
+      </div>
+
+      {% if section.settings.button_text != blank %}
+        <a 
+          href="{{ section.settings.button_link | default: '#' }}"
+          class="rockstar-rewards-button"
+        >
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+    {% unless section.settings.section_full_width %}
+      </div>
+    {% endunless %}
+</div>
+
+<style>
+.rockstar-rewards-section {
+  width: 100%;
+  padding: {{ section.settings.section_padding_top }}px {{ section.settings.section_padding_horizontal }}px {{ section.settings.section_padding_bottom }}px;
+  background-color: {{ section.settings.background_color | default: '#FFFFFF' }};
+  --section-text-color: {{ section.settings.section_text_color }};
+}
+
+.rockstar-rewards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+.rockstar-rewards-image-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: {{ section.settings.image_background_color | default: '#F5F5DC' }};
+}
+
+.rockstar-rewards-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rockstar-rewards-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rockstar-rewards-content {
+  padding: 60px 50px;
+  background-color: {{ section.settings.content_background_color | default: '#FFFFFF' }};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 567px;
+  margin: 0px auto;
+}
+
+.rockstar-rewards-title {
+  font-size: {{ section.settings.title_font_size | default: 48 }}px;
+  font-weight: bold;
+  color: var(--section-text-color);
+  margin: 0 0 16px 0;
+  line-height: 1.35;
+  text-transform: unset;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.rockstar-rewards-intro {
+  font-size: {{ section.settings.intro_font_size | default: 16 }}px;
+  color: var(--section-text-color);
+  margin: 0 0 56px 0;
+  line-height: 1.1;
+  width: 100%;
+  max-width: 405px;
+  text-align: center;
+}
+
+.rockstar-rewards-steps {
+  margin-bottom: 40px;
+}
+
+.rockstar-rewards-step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  gap: 20px;
+}
+
+.rockstar-rewards-step:last-child {
+  margin-bottom: 0;
+}
+
+.rockstar-rewards-step-number {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--section-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--section-text-color);
+}
+
+.rockstar-rewards-step-content {
+  flex: 1;
+}
+
+.rockstar-rewards-step-title {
+  font-size: {{ section.settings.step_title_font_size | default: 20 }}px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--section-text-color);
+  margin: 0 0 4px 0;
+}
+
+.rockstar-rewards-step-description {
+  font-size: {{ section.settings.step_description_font_size | default: 16 }}px;
+  color: var(--section-text-color);
+  margin: 0;
+  line-height: 100%;
+}
+
+.rockstar-rewards-button {
+  display: inline-block;
+  padding: 9px 35px;
+  background-color: {{ section.settings.button_background_color | default: '#000000' }};
+  color: {{ section.settings.button_text_color | default: '#FFFFFF' }};
+  text-decoration: none;
+  border-radius: {{ section.settings.button_border_radius | default: 8 }}px;
+  font-size: {{ section.settings.button_font_size | default: 16 }}px;
+  font-weight: {{ section.settings.button_font_weight | default: 'normal' }};
+  text-align: center;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.rockstar-rewards-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 749px) {
+  .rockstar-rewards-container {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  .rockstar-rewards-content {
+    padding: 100px 30px 52px;
+  }
+
+  {% if section.settings.mobile_image %}
+    .rockstar-rewards-content{
+        background-image: url('{{ section.settings.mobile_image  | img_url : "master"}}');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .rockstar-rewards-image-wrapper{
+     display: none;
+    }
+  {% endif %}
+
+  .rockstar-rewards-title {
+    font-size: {{ section.settings.title_font_size_mobile | default: 36 }}px;
+    line-height: 100%;
+  }
+
+  .rockstar-rewards-image-wrapper {
+    min-height: 400px;
+  }
+
+  .rockstar-rewards-section {
+    --section-text-color: {{ section.settings.section_text_color-mobile }};
+  }
+  
+  .rockstar-rewards-button{
+    color:{{ section.settings.button_text_color_mobile }};    
+    background:{{ section.settings.button_background_color_mobile }}; 
+    z-index: 2;   
+  }
+
+  .rockstar-rewards-steps,
+  .rockstar-rewards-intro,
+  .rockstar-rewards-title {
+    z-index: 2;
+  }
+
+  .rockstar-rewards-content{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .rockstar-rewards-content:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: {{  section.settings.overlay_color }};
+    opacity: {{section.settings.overlay_opacity  | times: 0.01 }};
+    z-index: 0;
+    }
+
+  .rockstar-rewards-intro {
+    font-size: {{ section.settings.intro_font_size_mobile | default: 14 }}px;
+  }
+  
+  .rockstar-rewards-step-title {
+    font-size: {{ section.settings.step_title_font_size_mobile | default: 20 }}px;
+  }
+  
+  .rockstar-rewards-step-description {
+    font-size: {{ section.settings.step_description_font_size_mobile | default: 16 }}px;
+    line-height: 1.15;
+    max-width: 157px;
+    
+  }
+  .rockstar-rewards-step{
+    margin-bottom: 29px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  
+  .rockstar-rewards-button {
+    width: 100%;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Custom image with text",
+  "tag": "section",
+  "class": "rockstar-rewards-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal",
+      "label": "Horizontal Padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "section_text_color",
+      "label": "Secton text color (Desktop)",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "section_text_color-mobile",
+      "label": "Secton text color (Mobile)",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "section_full_width",
+      "label": "Enable for full width",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "color",
+      "id": "image_background_color",
+      "label": "Image Background Color",
+      "default": "#F5F5DC"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+    "type": "color",
+    "id": "overlay_color",
+    "label": "Overlay color"
+    },
+    {
+        "type": "range",
+        "id": "overlay_opacity",
+        "label": "Overlay opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0,
+        "unit":"%"
+    },
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Rockstar rewards"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size (Desktop)",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "label": "Title Font Size (Mobile)",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text",
+      "label": "Introductory Text",
+      "default": "Getting started is easy, just create an account online. The program is entirely free to join - there's no minimum spending amount required. So go ahead, get in on those benefits!"
+    },
+    {
+      "type": "range",
+      "id": "intro_font_size",
+      "label": "Intro Text Font Size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "intro_font_size_mobile",
+      "label": "Intro Text Font Size (Mobile)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "content_background_color",
+      "label": "Content Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Join Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color_mobile",
+      "label": "Button Background Color Mobile",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color_mobile",
+      "label": "Button Text Color Mobile",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button Font Size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button Border Radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Step Settings"
+    },
+    {
+      "type": "range",
+      "id": "step_title_font_size",
+      "label": "Step Title Font Size (Desktop)",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "step_title_font_size_mobile",
+      "label": "Step Title Font Size (Mobile)",
+      "min": 6,
+      "max": 32,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "step_description_font_size",
+      "label": "Step Description Font Size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "step_description_font_size_mobile",
+      "label": "Step Description Font Size (Mobile)",
+      "min": 6,
+      "max": 32,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title",
+          "default": "JOIN"
+        },
+        {
+          "type": "textarea",
+          "id": "step_description",
+          "label": "Step Description",
+          "default": "Create an account and start earning."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom image with text",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "step_title": "JOIN",
+            "step_description": "Create an account and start earning."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_title": "EARN",
+            "step_description": "Earn points every time you shop."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_title": "REDEEM",
+            "step_description": "Redeem points for exclusive discounts."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
