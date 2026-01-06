@@ -23,7 +23,6 @@
   id="main-cart-footer"
   data-id="{{ section.id }}"
 >
-  <div class="page-width">
     <div class="cart__footer isolate section-{{ section.id }}-padding">
       {%- if settings.show_cart_note -%}
         <cart-note class="cart__note field">
@@ -38,20 +37,23 @@
         </cart-note>
       {%- endif -%}
 
-      {% if section.cart_heading !=blank %}
-      <div class="cart-heading">
-        {{ section.cart_heading }}
-      </div>
-      {% endif %}
-
-      <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
-        {{- 'general.continue_shopping' | t -}}
-      </a>
+     
+        <div class="heading_and_links">
+          {% if section.cart_heading !=blank %}
+          <div class="cart-heading">
+            {{ section.cart_heading }}
+          </div>
+           {% endif %}
+          <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
+            {{- 'icon-left-shipping.svg' | inline_asset_content -}}
+            {{- 'general.continue_shopping' | t -}}
+          </a>
+        </div>
 
       <div class="cart__blocks">
         <div class="cart-product">
           <p class="cart-items-count">
-            PRODUCT : ({{ cart.items.size }} ITEM)
+            PRODUCT : ({{ cart.item_count }} ITEM)
           </p>
           <p class="totals__total-value">
             {{ cart.total_price | money_with_currency }}
@@ -60,10 +62,10 @@
         <div class="shipping_heading">
             <div class="shipping_text">
               {% if section.shipping_text %}
-               <h5>{{  section.shipping_text }}</h5>
+               <h5 class="shippping">{{  section.shipping_text }}</h5>
               {% endif %}
               {% if section.free_shipping_text %}
-               <h5>{{  section.free_shipping_text }}</h5>
+               <h5 class="shipping_free">{{  section.free_shipping_text }}</h5>
               {% endif %}
             </div>
           </div>
@@ -146,12 +148,13 @@
                     >
                         {{ 'sections.cart.checkout' | t }}
                     </button>
-                </div>
-                <div class="secure_checkout_text">
-                    {% if section.settings.secure_checkout %}
-                        {{ section.settings.secure_checkout }}
+                    <div class="secure_checkout_text">
+                    {% if section.secure_checkout %}
+                        {{ section.secure_checkout }}
                     {% endif %}
                 </div>
+                </div>
+                
 
                 {%- if additional_checkout_buttons -%}
                     <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
@@ -172,5 +175,5 @@
         <div id="cart-errors"></div>
       </div>
     </div>
-  </div>
+
 </div>

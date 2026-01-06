@@ -298,7 +298,7 @@
       "estimated_total": "Subtotal : ",
       "new_estimated_total": "New estimated total",
       "note": "Order special instructions",
-      "checkout": "Add to Cart",
+      "checkout": "Check out now",
       "empty": "Your cart is empty",
       "cart_error": "There was an error while updating your cart. Please try again.",
       "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart.",
@@ -313,8 +313,8 @@
       "headings": {
         "product": "Product",
         "price": "Price",
-        "total": "Total",
-        "quantity": "Quantity",
+        "total": "Price",
+        "quantity": "Qty",
         "image": "Product image"
       },
       "update": "Update",

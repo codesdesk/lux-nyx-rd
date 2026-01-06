@@ -18,9 +18,9 @@
         "cart_heading": "order summary",
         "shipping_text": "Est. Shipping & Handling :",
         "free_shipping_text": "Free U.S. Shipping",
-        "secure_checkout": "<p>securecheckout</p>",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "secure_checkout": "<p>secure checkout</p>",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "cart-footer": {
