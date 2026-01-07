@@ -39,7 +39,7 @@
         "subtotal",
         "buttons"
       ],
-      "disabled": true,
+      "disabled": false,
       "settings": {
         "color_scheme": "scheme-1",
         "cart_heading": "order summary",

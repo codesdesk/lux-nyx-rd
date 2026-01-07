@@ -23,6 +23,8 @@
   data-id="{{ section.id }}"
 >
   <div class="page-width">
+    <div class="cart-footer-main">
+    <div class="cart-footer-top">
     <div class="cart__footer isolate section-{{ section.id }}-padding">
       {%- if settings.show_cart_note -%}
         <cart-note class="cart__note field">
@@ -37,24 +39,28 @@
         </cart-note>
       {%- endif -%}
 
-      {% if section.settings.cart_heading !=blank %}
-      <div class="cart-heading">
-        {{ section.settings.cart_heading }}
-      </div>
-      {% endif %}
-
-      <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
-        {{- 'general.continue_shopping' | t -}}
-      </a>
+       <div class="heading_and_links">
+          {% if section.settings.cart_heading !=blank %}
+          <div class="cart-heading">
+            {{ section.settings.cart_heading }}
+          </div>
+           {% endif %}
+          <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
+            {{- 'icon-left-shipping.svg' | inline_asset_content -}}
+            {{- 'general.continue_shopping' | t -}}
+          </a>
+        </div>
 
       <div class="cart__blocks">
         <div class="cart-product">
           <p class="cart-items-count">
             PRODUCT : ({{ cart.items.size }} ITEM)
           </p>
+          <div class="totals">
           <p class="totals__total-value">
             {{ cart.total_price | money_with_currency }}
           </p>
+          </div>
         </div>
         <div class="shipping_heading">
             <div class="shipping_text">
@@ -170,6 +176,9 @@
         <div id="cart-errors"></div>
       </div>
     </div>
+    </div>
+    </div>
+
   </div>
 </div>
 

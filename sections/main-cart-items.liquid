@@ -842,7 +842,7 @@
               {{ 'accessibility.loading' | t }}
             </p>
           </form>
-          {% render 'main-cart-footer' section:section.settings %}
+         {% render 'main-cart-footer' section:section.settings %}  
         </div>
       </div>
    <div class="collection-right">
@@ -863,7 +863,12 @@
                 <div class="product_detail">
                   <h3>{{product.title}}</h3>   
                 </div>
-                  {%- for option in product.options_with_values -%}
+                <span class="short-description-slide">
+                  {% if product.metafields.custom.product_short_material != blank %}
+                    {{ product.metafields.custom.product_short_material }}
+                  {% endif %}
+                  </span>
+                  {% comment %} {%- for option in product.options_with_values -%}
                     {% assign OptionValue  = null %}
                     {% comment %} {% for Val in options_with_values  %}
                       {%  if Val.available %}
@@ -877,7 +882,7 @@
                       <dd> {{ variant.option1 | replace: '-', ' ' }}</dd>
                     </div>
                     {% endif %}
-                  {%- endfor -%}
+                  {%- endfor -%} {% endcomment %}
                 </div>
               </a>
               
@@ -909,7 +914,12 @@
                 <div class="product_detail">
                   <h3>{{product.title}}</h3>   
                 </div>
-                  {%- for option in product.options_with_values -%}
+                <span class="short-description-slide">
+                  {% if product.metafields.custom.product_short_material != blank %}
+                    {{ product.metafields.custom.product_short_material }}
+                  {% endif %}
+                  </span>
+                  {% comment %} {%- for option in product.options_with_values -%}
                     {% assign OptionValue  = null %}
                     {% comment %} {% for Val in options_with_values  %}
                       {%  if Val.available %}
@@ -923,7 +933,7 @@
                       <dd> {{ variant.option1 | replace: '-', ' ' }}</dd>
                     </div>
                     {% endif %}
-                  {%- endfor -%}
+                  {%- endfor -%} {% endcomment %}
                 </div>
               </a>
               

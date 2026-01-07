@@ -160,6 +160,12 @@
                             {{- item.product.title | escape -}}
                           </a>
 
+                          <span class="short-description">
+                            {% if item.product.metafields.custom.short_description != blank %}
+                              {{ item.product.metafields.custom.short_description }}
+                            {% endif %}
+                          </span>
+
                           {%- if item.original_price != item.final_price -%}
                             <div class="cart-item__discounted-prices">
                               <span class="visually-hidden">
