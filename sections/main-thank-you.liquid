@@ -12,26 +12,33 @@
 {%- endstyle -%}
 <div class="section-{{ section.id }}-padding gradiant color-{{ section.settings.section_color_scheme }} }}">
     <div class="thankyou-custom page-width center">
-        {% if section.settings.heading %}
-            <h1 class="thanks-heading">{{ section.settings.heading }}</h1>
-        {% endif %}
-        <div class="thanks-text-container">
-            {% if section.settings.text %}
-                <div class="thanks-text">{{ section.settings.text }}</div>
-            {% endif %}
-            <div class="paragraph-container">
-                {% if section.settings.para %}
-                    <div class="thanks-para">{{ section.settings.para }}</div>
-                {% endif %}
-                {% if section.settings.sub-para %}
-                    <div class="thanks-para">{{ section.settings.sub-para }}</div>
-                {% endif %}
-                {% if section.settings.button_label != blank %}
-                    <a class="thanks-button" href="{{ section.settings.button_link }}">
-                        {{ section.settings.button_label }}
-                    </a>
+            <div class="thankyou-image-container">
+                {%- if section.settings.thankyou-image != blank -%}
+                    <img src="{{ section.settings.thankyou-image | img_url: 'master' }}" alt="{{ section.settings.thankyou-image.alt }}" class="thanks-image">
                 {% endif %}
             </div>
+        <div class="items-holder-wrapper">
+            {% if section.settings.heading %}
+                <h1 class="thanks-heading">{{ section.settings.heading }}</h1>
+            {% endif %}
+                <div class="thanks-text-container">
+                    {% if section.settings.text %}
+                        <div class="thanks-text">{{ section.settings.text }}</div>
+                    {% endif %}
+                        <div class="paragraph-container">
+                            {% if section.settings.para %}
+                                <div class="thanks-para">{{ section.settings.para }}</div>
+                            {% endif %}
+                            {% if section.settings.sub-para %}
+                                <div class="thanks-para">{{ section.settings.sub-para }}</div>
+                            {% endif %}
+                                {% if section.settings.button_label != blank %}
+                                    <a class="thanks-button" href="{{ section.settings.button_link }}">
+                                        {{ section.settings.button_label }}
+                                    </a>
+                                {% endif %}
+                        </div>
+                </div>
         </div>
     </div>
 </div>
@@ -42,6 +49,11 @@
 {
   "name": "Main Thank You Section",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "thankyou-image",
+      "label": "Thankyou Image"
+    },
     {
       "type": "text",
       "id": "heading",

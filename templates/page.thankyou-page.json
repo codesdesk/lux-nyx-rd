@@ -13,14 +13,15 @@
       "type": "main-thank-you",
       "name": "Main Thank You Section",
       "settings": {
+        "thankyou-image": "shopify://shop_images/thankyou-image.png",
         "heading": "Thank you !",
-        "text": "<h2>We appreciate you, ...Heroes<br/><br/></h2>",
+        "text": "<h2>We appreciate you,      ...Heroes</h2>",
         "para": "<p>Did you know as few as 7% of products marketed towards women are actually designed by women? Did you know of products you know marketed towards women are actually designed. </p>",
         "sub-para": "<p>Did you know as few as 7% of products marketed towards women are actually designed by women? Did you know of products you know marketed towards women are actually designed. </p>",
         "button_label": "Verify for Online Shopping",
         "button_link": "",
-        "padding-top": 173,
-        "padding-bottom": 202
+        "padding-top": 0,
+        "padding-bottom": 0
       }
     },
     "main": {
