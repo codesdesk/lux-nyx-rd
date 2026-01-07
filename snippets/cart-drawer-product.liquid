@@ -26,6 +26,11 @@
                         {% comment %} {% if product.options_with_values.size > 0 %}
                             <span>{{ product.options_with_values[0].name }} : {{ product.options_with_values[0].values[0] }}</span>
                         {% endif %} {% endcomment %}
+                         <span class="short-description-slide">
+                            {% if product.metafields.custom.product_short_material != blank %}
+                              {{ product.metafields.custom.product_short_material }}
+                          {% endif %}
+                          </span>
                         </div>
                         <button
                   class="add_to_cart"
@@ -56,7 +61,7 @@
 
 <script>
     var swiper = new Swiper(".swiper-cart-drawer", {
-      slidesPerView: 1.25,
+      slidesPerView: 1.10,
       spaceBetween: 30,
       pagination: {
         el: ".swiper-pagination",
