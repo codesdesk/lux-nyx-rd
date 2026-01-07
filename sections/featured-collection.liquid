@@ -142,7 +142,7 @@
         {%- else -%}
           {%- for i in (1..section.settings.columns_desktop) -%}
             <li
-              class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in sldie{% endif %}"
               {% if settings.animations_reveal_on_scroll %}
                 data-cascade
                 style="--animation-order: {{ forloop.index }};"
@@ -239,15 +239,15 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  new Swiper(".section-{{ section.id }}", {
+  new Swiper(".section-{{ section.id }}.featured-collection-swiper", {
     slidesPerView: 1,
     spaceBetween: 8,
     loop: false,
 
     
     navigation: {
-      nextEl: ".section-{{ section.id }} .swiper-button-next",
-      prevEl: ".section-{{ section.id }} .swiper-button-prev",
+      nextEl: ".section-{{ section.id }}.featured-collection-swiper .swiper-button-next.custom_swiper_button",
+      prevEl: ".section-{{ section.id }}.featured-collection-swiper .swiper-button-prev.custom_swiper_button",
     },
     breakpoints: {
       0: {

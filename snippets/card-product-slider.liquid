@@ -83,8 +83,8 @@
                         {% endfor %}
                 
                 </div>
-                   <div class="swiper-button-prev">{{- 'icon-left-arrow.svg' | inline_asset_content -}}</div>
-                  <div class="swiper-button-next">{{- 'icon-right-arrow.svg' | inline_asset_content -}}</div> 
+                   <div class="swiper-button-prev card-media-button">{{- 'icon-left-arrow.svg' | inline_asset_content -}}</div>
+                  <div class="swiper-button-next card-media-button">{{- 'icon-right-arrow.svg' | inline_asset_content -}}</div> 
              </div>
             </div>
           </div>
@@ -638,8 +638,8 @@
         clickable: true,
       },
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-collection .swiper-button-next.card-media-button",
+        prevEl: ".swiper-collection .swiper-button-prev.card-media-button",
       },
     });
   </script>
