@@ -1,5 +1,5 @@
 .drawer {
-  --section-height: calc((var(--announcement-height) + var(--header-height)) - 1px);
+  --section-height: calc((var(--announcement-height) + var(--header-height)) - 11px);
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -172,6 +172,7 @@ cart-drawer {
 .cart-drawer__form {
   flex-grow: 1;
   display: flex;
+  margin-bottom: 2.2rem;
   flex-wrap: wrap;
 }
 
