@@ -59,6 +59,40 @@
       line-height: 1.1;
     }
 
+    .custom_multicolumn.multicolumn .title-wrapper-with-link .title {
+      font-size: 18px;
+      line-height: 100%;
+    }
+    .custom_multicolumn.multicolumn .title-wrapper-with-link a {
+      font-size: 16px;
+      line-height: 100%;
+      color: #1F1F1F;
+    }
+    .custom_multicolumn .multicolumn-card__image-wrapper{
+        margin-bottom: 22px;
+    }
+    .custom_multicolumn .multicolumn-list.grid {
+     row-gap: var(--grid-desktop-horizontal-spacing);
+    }
+    .custom_multicolumn.multi_rewards .multicolumn-card__info .rte p {
+     max-width: 170px;
+    }
+    .multi_benefits .title-wrapper-with-link {
+    margin-bottom: 30px;    
+    }
+    .multi_benefits .multicolumn-list .grid__item {
+     max-height: 360px;
+    }
+    .custom_multicolumn.multi_benefits .multicolumn-card__image-wrapper {
+        margin-bottom: 6px;
+    }
+    .custom_multicolumn.multi_benefits .grid__item .multicolumn-card__info {
+    padding: 0rem;
+   }
+   .multi_rewards .multicolumn-list .multicolumn-list__item{
+    max-height: 266px;
+    }
+
     
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
@@ -133,10 +167,52 @@
       text-align: center;
       text-transform: uppercase;
       text-wrap-style: balance;
+      border-bottom: 1px solid #E2E2E2;
+      padding-bottom: 10px;
     }
 
     .custom_multicolumn.multicolumn .title + .link{
       display: none;
+    }
+
+    .border-top.custom_multicolumn {
+        border-top: unset;
+    }
+    .custom_multicolumn .multicolumn-list.grid {
+      row-gap: var(--grid-mobile-vertical-spacing);
+    }
+
+    .title-wrapper-with-link {
+     margin-bottom: 30px;
+    }
+
+    .custom_multicolumn.multicolumn .title-wrapper-with-link .title {
+      font-size: 24px;
+      line-height: 100%;
+      letter-spacing: 0.1rem;
+    }
+
+    .custom_multicolumn.multi_rewards .multicolumn-card__info .rte p {
+      max-width: 100%;
+    }
+
+    .custom_multicolumn .grid__item .multicolumn-card__info {
+     padding: 0px;   
+    }  
+    
+    .custom_multicolumn.multi_rewards .multicolumn-list:not(.slider) .center .multicolumn-card__info {
+      padding-left: 0rem; 
+      padding-right: 0rem; 
+    }
+
+    .multi_benefits.custom_multicolumn .title {
+      padding-bottom: 6px;
+    }
+    .multi_rewards{
+        padding-top: 25px;
+    }
+    .multi_rewards.custom_multicolumn .isolate {
+      padding-bottom: 30px;
     }
 
     {% for block in section.blocks %}
@@ -166,7 +242,7 @@
   endif
 -%}
 
-<div class="multicolumn custom_multicolumn {% if section.settings.enable_top_border %}border-top {%endif%}color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+<div class="multicolumn custom_multicolumn {{ section.settings.add_class }} {% if section.settings.enable_top_border %}border-top {%endif%}color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div
     class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
@@ -330,6 +406,11 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "text",
+      "id": "add_class",
+      "label": "Add class"
+    },
     {
       "type": "inline_richtext",
       "id": "title",

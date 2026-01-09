@@ -50,7 +50,7 @@
       "name": "Custom image with text",
       "settings": {
         "section_padding_top": 0,
-        "section_padding_bottom": 35,
+        "section_padding_bottom": 10,
         "section_padding_horizontal": 0,
         "background_color": "#ffffff",
         "section_text_color": "#1f1f1f",
@@ -66,7 +66,7 @@
         "title_font_size_mobile": 36,
         "intro_text": "Getting started is easy, just create an account online. The program is entirely free to join - there's no minimum spending amount required. So go ahead, get in on those benefits!",
         "intro_font_size": 16,
-        "intro_font_size_mobile": 14,
+        "intro_font_size_mobile": 16,
         "content_background_color": "#ffffff",
         "button_text": "Join Now",
         "button_link": "",
@@ -150,6 +150,7 @@
       ],
       "name": "Custom multicolumn",
       "settings": {
+        "add_class": "multi_rewards",
         "title": "Instant rockstar reward benefits",
         "heading_size": "h2",
         "image_width": "third",
@@ -165,12 +166,12 @@
         "enable_top_border": true,
         "grid_gap": 48,
         "grid_gap_mobile": 25,
-        "desktop_image_width": 80,
+        "desktop_image_width": 86,
         "mobile_image_width": 80,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 12,
-        "padding_bottom": 56
+        "padding_bottom": 48
       }
     },
     "custom_multicolumn_q3NyPj": {
@@ -265,11 +266,12 @@
       ],
       "name": "Custom multicolumn",
       "settings": {
+        "add_class": "multi_benefits",
         "title": "Ways to earn High-Achiever Points",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
-        "button_label": "Button label",
+        "button_label": "Join Now",
         "button_link": "#",
         "columns_desktop": 4,
         "column_alignment": "center",
@@ -284,8 +286,8 @@
         "mobile_image_width": 54,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 12,
+        "padding_bottom": 40
       }
     },
     "rewards_banner_jhn7p8": {
@@ -336,6 +338,7 @@
       ],
       "name": "Rewards Banner",
       "settings": {
+        "custom_class": "rewards_tiers_custom",
         "full_width": true,
         "image": "shopify://shop_images/Rewards_Banner_Image.png",
         "section_bg": "#ffffff",
@@ -350,7 +353,7 @@
         "enable_border_top": true,
         "border_top_color": "#8a938d",
         "intro_size_desktop": 18,
-        "intro_size_mobile": 16,
+        "intro_size_mobile": 24,
         "text_color_desktop": "#1f1f1f",
         "text_color_mobile": "#1f1f1f",
         "button_text": "Join now",
@@ -482,21 +485,22 @@
       ],
       "name": "Rewards Banner",
       "settings": {
+        "custom_class": "rewards_faq",
         "full_width": true,
         "image": "shopify://shop_images/Rewards_Banner_Image.png",
         "section_bg": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 35,
-        "padding_top": 0,
-        "padding_bottom": 34,
-        "title": "How does the reward program work?",
+        "padding_top": 40,
+        "padding_bottom": 60,
+        "title": "Frequently Asked Questions",
         "title_size_desktop": 64,
         "title_size_mobile": 24,
         "intro": "Reward point redemption tiers",
         "enable_border_top": true,
         "border_top_color": "#8a938d",
         "intro_size_desktop": 18,
-        "intro_size_mobile": 16,
+        "intro_size_mobile": 24,
         "text_color_desktop": "#1f1f1f",
         "text_color_mobile": "#1f1f1f",
         "button_text": "Join now",

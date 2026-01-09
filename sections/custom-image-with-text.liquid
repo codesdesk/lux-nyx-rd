@@ -105,7 +105,7 @@
 }
 
 .rockstar-rewards-content {
-  padding: 60px 50px;
+  padding: 80px 60px 50px;
   background-color: {{ section.settings.content_background_color | default: '#FFFFFF' }};
   display: flex;
   flex-direction: column;
@@ -118,7 +118,7 @@
 
 .rockstar-rewards-title {
   font-size: {{ section.settings.title_font_size | default: 48 }}px;
-  font-weight: bold;
+  font-weight:500;
   color: var(--section-text-color);
   margin: 0 0 16px 0;
   line-height: 1.35;
@@ -138,13 +138,13 @@
 }
 
 .rockstar-rewards-steps {
-  margin-bottom: 40px;
+  margin-bottom: 56px;
 }
 
 .rockstar-rewards-step {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 32px;
+  margin-bottom: 42px;
   gap: 20px;
 }
 
@@ -153,26 +153,27 @@
 }
 
 .rockstar-rewards-step-number {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   min-width: 40px;
   border-radius: 50%;
-  border: 2px solid var(--section-text-color);
+  border: 3px solid var(--section-text-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: 500;
   color: var(--section-text-color);
 }
 
 .rockstar-rewards-step-content {
   flex: 1;
+  max-width: 174px;
 }
 
 .rockstar-rewards-step-title {
   font-size: {{ section.settings.step_title_font_size | default: 20 }}px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 1.2;
   color: var(--section-text-color);
   margin: 0 0 4px 0;
@@ -193,9 +194,12 @@
   text-decoration: none;
   border-radius: {{ section.settings.button_border_radius | default: 8 }}px;
   font-size: {{ section.settings.button_font_size | default: 16 }}px;
-  font-weight: {{ section.settings.button_font_weight | default: 'normal' }};
+  font-weight: 500;
   text-align: center;
   transition: opacity 0.3s ease, transform 0.2s ease;
+  max-width: 142px;
+  width: 100%;
+  line-height: 100%;
 }
 
 .rockstar-rewards-button:hover {
@@ -228,6 +232,7 @@
   .rockstar-rewards-title {
     font-size: {{ section.settings.title_font_size_mobile | default: 36 }}px;
     line-height: 100%;
+    text-transform: uppercase;
   }
 
   .rockstar-rewards-image-wrapper {
@@ -241,7 +246,13 @@
   .rockstar-rewards-button{
     color:{{ section.settings.button_text_color_mobile }};    
     background:{{ section.settings.button_background_color_mobile }}; 
-    z-index: 2;   
+    z-index: 2;  
+    max-width: 80%;
+    padding: 19px 35px;
+  }
+  
+  .rockstar-rewards-steps {
+    margin-bottom: 37px;
   }
 
   .rockstar-rewards-steps,
@@ -281,7 +292,11 @@
   .rockstar-rewards-step{
     margin-bottom: 29px;
   }
-
+  .rockstar-rewards-step-number {
+    width: 43px;
+    height: 43px;
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 480px) {
