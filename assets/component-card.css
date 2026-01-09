@@ -75,6 +75,9 @@
 
 .card .card__inner .card__media {
   overflow: hidden;
+  width: 100%;
+  max-width: 418px;
+  object-fit: contain;
   /* Fix for Safari border bug on hover */
   z-index: 0;
   border-radius: calc(var(--border-radius) - var(--border-width) - var(--image-padding));
@@ -604,7 +607,7 @@
 
 .section-featured-collection .custom_col_title .title {
   font-size: 18px;
-  line-height: normal;
+  line-height: 18px;
   letter-spacing: 0.03px;
   text-transform: uppercase;
   margin: 0;
@@ -667,6 +670,7 @@
 .custom_col_title {
     display: flex;
     align-items: center;
+    border-top: 1px solid rgba(138, 147, 141, 1);
     justify-content: space-between;
 }
 .custom_col_title a {

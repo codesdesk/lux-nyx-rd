@@ -145,7 +145,7 @@
       ],
       "name": "Design Ethos",
       "settings": {
-        "addclass": "",
+        "addclass": "design_ethos_custom",
         "section_title": "Design Ethos",
         "header_link_text": "Design Philosophy",
         "header_link": "#"

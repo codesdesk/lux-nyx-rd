@@ -359,7 +359,7 @@
   }
 
   .banner--desktop-transparent .banner__box {
-    padding: 4rem 0;
+    padding: 4rem 0 2rem;
     background: transparent;
     max-width: 89rem;
     border: none;
@@ -493,7 +493,7 @@
 /* 22-12-2025 */
 .banner__heading {
     text-transform: none;
-    line-height: normal;
+    line-height: 37px;
     letter-spacing: -0.1rem;
 }
 .banner__heading em{

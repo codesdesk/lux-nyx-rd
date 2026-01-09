@@ -46,8 +46,12 @@ header .mega-menu__list {
   list-style: none;
   text-transform: capitalize;
 }
-
-.mega-menu__link {
+header .mega-menu-image {
+  width: 278px;
+  height: 353px;
+  object-fit: contain;
+}
+header .mega-menu__link {
   color: #1F1F1F;
   display: block;
   line-height: 1.5rem;
@@ -57,8 +61,9 @@ header .mega-menu__list {
   word-wrap: break-word;
 }
 
-.mega-menu__link--level-2 {
+header .mega-menu__link--level-2 {
   font-weight: bold;
+  text-transform: uppercase;
   line-height: 17px;
   padding: 0px;
   margin-bottom: 1.8rem;
