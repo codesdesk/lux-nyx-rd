@@ -2782,7 +2782,7 @@ cart-drawer .cart-drawer .cart-item {
 .cart-drawer .drawer__inner {
     width: 44.2rem;
     padding: 0 2rem 1.4rem 1.5rem;
-    height:  calc(100vh - calc((var(--announcement-height) + var(--header-height) - -89px)));
+    height:  calc(100vh - calc((var(--announcement-height) + var(--header-height) - 8px)));
 }
 .cart-drawer .drawer__heading {
     font-weight: 500;
@@ -3047,6 +3047,7 @@ cart-drawer .cart-drawer .cart-item {
     justify-self: flex-end;
     display: block;
     margin-top: auto;
+    margin-bottom: 80px;
 } 
 /* end-cart-drawer-css */
 

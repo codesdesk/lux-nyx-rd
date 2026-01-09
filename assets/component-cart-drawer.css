@@ -1,5 +1,5 @@
 .drawer {
-  --section-height: calc((var(--announcement-height) + var(--header-height)) - 11px);
+  --section-height: calc((var(--announcement-height) + var(--header-height)) - 2px);
   position: fixed;
   z-index: 1000;
   left: 0;

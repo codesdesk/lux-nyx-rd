@@ -57,6 +57,7 @@
   gap: 40px;
   height: 100%;
   margin-right: 20px;
+  text-transform: uppercase;
 }
 .rewards-banner--{{ section.id }} .rewards-banner__title {
   font-size: {{ section.settings.title_size_desktop }}px;
@@ -80,6 +81,7 @@
   margin: 0;
   line-height: 100%;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 .rewards-banner--{{ section.id }} .rewards-banner__intro > *:first-child{
     margin-top:0;
@@ -100,6 +102,7 @@
 .rewards-banner--{{ section.id }} .rewards-banner__step span {
   font-size: {{ section.settings.step_font_size_desktop }}px;
   line-height: 1.125;
+  color: #1F1F1F;
 }
 .rewards-banner--{{ section.id }} .rewards-banner__button {
   display: inline-block;
@@ -114,7 +117,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
-    padding: 12px 0 12px 20px;
+    padding: 12px 0 4px 20px;
 }
 
 .rewards-banner--{{ section.id }} .section_top_border{
@@ -130,6 +133,36 @@
 }
 .rewards-banner__steps .accordion__item[open] .minus-wrapper {
   display:inline-flex;
+}
+
+.rewards-banner details.accordion__item {
+    padding: 13px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.rewards-banner details.accordion__item span {
+    font-size: 18px;
+    line-height: 1.125;
+    text-transform: uppercase;
+}
+.rewards-banner.rewards_faq .rewards-banner__title {
+    width: 462px;
+}
+.rewards-banner.rewards_faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rewards-banner.rewards_faq .accordion__item .svg-wrapper  {
+  width: 14px;
+  height: 14px;
+}
+.rewards-banner.rewards_faq .accordion__content p {
+    font-size: 16px;
+    color: #1F1F1F;
+    margin-top: 10px;
+    line-height: 1.1;
+    width: 100%;
+    margin-bottom: 0px;
 }
 {% assign desktopTitle = section.settings.title_size_desktop %}
 
@@ -180,15 +213,50 @@
   .rewards-banner--{{ section.id }} .rewards-banner__intro {
     font-size: {{ section.settings.intro_size_mobile }}px;
     color: {{ section.settings.text_color_mobile }};
+    text-align:center;
+    font-weight:400;
   }
 
   .rewards-banner--{{ section.id }} .rewards-banner__step span {
     font-size: {{ section.settings.step_font_size_mobile }}px;
   }
+
+  .rewards-banner .rewards-banner__button {
+    display: none;
+  }
+
+  .rewards-banner details.accordion__item span {
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: math-auto;
+  }
+  .rewards-banner details.accordion__item {
+    padding: 18px 0px;
+  }
+  .rewards-banner.rewards_faq .rewards-banner__title {
+    width: 100%;
+    font-size: 24px;
+    color: #1f1f1f;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 28px;
+    letter-spacing: 0.2rem;
+  }
+  .rewards-banner.rewards_faq .section-top-content{
+    display: none;
+  }
+  .rewards-banner.rewards_faq .rewards-banner__media {
+    display: none;
+  }
+  .rewards_tiers_custom .rewards-banner__title {
+    display: none;
+  }
+
 }
 {% endstyle %}
 
-<div class="rewards-banner rewards-banner--{{ section.id }} {% if section.settings.full_width %}is-full-width{% endif %}">
+<div class="rewards-banner rewards-banner--{{ section.id }} {{ section.settings.custom_class }} {% if section.settings.full_width %}is-full-width{% endif %}">
   <div class="rewards-banner__media">
     <picture>
       {% if section.settings.mobile_image != blank %}
@@ -267,6 +335,11 @@
 {
   "name": "Rewards Banner",
   "settings": [
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Add class"
+    },
     {
       "type": "checkbox",
       "id": "full_width",
@@ -378,7 +451,7 @@
       "id": "intro_size_mobile",
       "label": "Intro size mobile",
       "min": 12,
-      "max": 20,
+      "max": 24,
       "default": 14
     },
     {
