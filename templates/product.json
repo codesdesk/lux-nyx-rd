@@ -23,8 +23,20 @@
           "type": "title",
           "settings": {}
         },
+        "text_JhiRyr": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.short_description.value }}",
+            "text_style": "body"
+          }
+        },
+        "reviews_EEqmGB": {
+          "type": "reviews",
+          "settings": {}
+        },
         "price": {
           "type": "price",
+          "disabled": true,
           "settings": {}
         },
         "variant_picker": {
@@ -36,35 +48,48 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {}
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
             "share_label": "Share"
+          }
+        },
+        "popup_YUKcyY": {
+          "type": "popup",
+          "settings": {
+            "text": "Pop-up link text",
+            "page": ""
           }
         }
       },
       "block_order": [
         "vendor",
         "title",
+        "text_JhiRyr",
+        "reviews_EEqmGB",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "popup_YUKcyY"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -75,7 +100,7 @@
         "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "hide",
         "media_position": "left",
-        "image_zoom": "lightbox",
+        "image_zoom": "none",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,

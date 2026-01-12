@@ -62,14 +62,14 @@ product-info {
 
 @media screen and (min-width: 990px) {
   .product--large:not(.product--no-media) .product__media-wrapper {
-    max-width: 65%;
-    width: calc(65% - var(--grid-desktop-horizontal-spacing) / 2);
+    max-width: 100%;
+    width: calc((100% - 45.7rem) - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
   .product--large:not(.product--no-media) .product__info-wrapper {
-    padding: 0 0 0 4rem;
-    max-width: 35%;
-    width: calc(35% - var(--grid-desktop-horizontal-spacing) / 2);
+    padding: 0 0 0 2.3rem;
+    max-width: 45.7rem;
+    width: calc(45.7rem - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
   .product--large:not(.product--no-media).product--right .product__info-wrapper {
@@ -144,6 +144,16 @@ product-info {
   display: none;
 }
 
+
+.product__info-wrapper .product-form__submit {
+  font-family: Helvetica Neue;
+  font-weight: 500;
+  font-size: 12.76px;
+  line-height: 1.15;
+  letter-spacing: 0;
+  padding: 10px;
+  min-height: unset;
+}
 /* Product form */
 
 .product-form {
@@ -218,7 +228,7 @@ product-info {
 /* Product info */
 
 .product__info-container > * + * {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .product__info-container iframe {
@@ -252,6 +262,80 @@ a.product__text {
 
 .product__title > * {
   margin: 0;
+}
+
+.product__info-container .product__title>* {
+  font-family: Helvetica Neue;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-wrap-style: balance;
+}
+
+.product__text.caption-with-letter-spacing+.product__title:has(.price--on-sale) .badge {
+  display: none;
+}
+
+.product__info-container .product__title:has(.price) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.product__info-container .product__title:has(.price--on-sale) .price--on-sale .price__sale {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  width: 148px;
+}
+
+.product__info-container .product__title:has(.price--on-sale) .price__container {
+  margin: 0;
+}
+.product__info-container .product__title:has(.price--on-sale) .price__sale span {
+  order: 2;
+  align-self: flex-start;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.product__info-container .product__title:has(.price--on-sale) .price-item.price-item--sale {
+  order: 1;
+}
+
+.product__info-container .product__title:has(.price--on-sale) .price-item{
+  margin: 0;
+}
+
+.product__info-container .product__title:has(.price--on-sale) .price__sale span:has(.price-item--regular) {
+  margin-left: 8px;
+}
+
+.product__info-container .product__title:has(.price--on-sale) .price-item.price-item--regular {
+  font-family: Helvetica Neue;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: line-through;
+}
+
+.product__info-container .product__title:has(.price) .price-item.price-item--sale,
+.product__info-container .product__title:has(.price:not(.price--on-sale)) .price-item {
+  font-family: Helvetica Neue;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  padding: 0 4px;
+  color: #1F1F1F;
+  background: #FFA333;
 }
 
 .product__title > a {
@@ -1477,6 +1561,32 @@ a.product__text {
 .recipient-form .error-message::first-letter {
   text-transform: capitalize;
 }
+
+.product__info-container .bv_avgRating_component_container[itemprop="ratingValue"],
+.product__info-container [data-bv-show="rating_summary"] .bv_main_container .bv_main_container_row_flex:last-child,
+.product__info-container [data-bv-show="rating_summary"] .bv_main_container .bv_avgRating_component_container{
+  display: none !important;
+}
+.product__info-container [data-bv-show="rating_summary"] .bv_main_container{
+  border-top: none !important;
+}
+.product__info-container [data-bv-show="rating_summary"] .bv_main_container .bv_stars_component_container{
+  padding-right: 2px !important;
+  gap: 3px !important;
+}
+.product__info-container [data-bv-show="rating_summary"] .bv_main_container .bv_stars_component_container svg:not(:last-child) {
+    padding-right: 0px !important;
+}
+
+.product__info-container [data-bv-show="rating_summary"] svg, [data-bv-show="rating_summary"] polygon {
+  height: 16px !important;
+  width: 16px !important;
+}
+.product__info-container [data-bv-show="rating_summary"] .bv_main_container .bv_main_rating_button{
+  padding: 0 !important;
+}
+
+
 
 @media screen and (forced-colors: active) {
   .recipient-fields > hr {
