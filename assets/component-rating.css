@@ -40,6 +40,7 @@
     var(--color-rating-star) var(--percent),
     rgba(var(--color-foreground), 0.15) var(--percent)
   );
+  font-size: 21px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

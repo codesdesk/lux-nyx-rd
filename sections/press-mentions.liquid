@@ -60,15 +60,16 @@
 
 .press-label {
     font-size: 18px;
-    line-height: normal;
+    line-height: 14px;
+    padding: 0px 0 4px;
     letter-spacing: 0.03px;
     text-transform: uppercase;
-  color: {{ section.settings.label_color }};
+    color: {{ section.settings.label_color }};
 }
 
 .press-btn {
   font-size: 18px;
-    line-height: normal;
+    line-height: 14px;
     letter-spacing: 0;
     text-align: right;
     text-decoration: underline;
@@ -80,11 +81,12 @@
 
 .press-quote {
   font-size: {{ section.settings.quote_size }}px;
-  line-height: normal;
   font-weight: 500;
+  line-height: 100%;
+  text-indent: 240px;
   margin-bottom: 56px;
-  text-indent: 200px;
   color: #1F1F1F;
+  letter-spacing: -0.6px;
 }
 .press-quote p {
     margin: 0;
@@ -95,14 +97,14 @@
 
 .press-logos {
     display: flex;
-    gap: 40px;
+    gap: 174px;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     max-width: 1133px;
     width: 100%;
     margin: 0 auto;
-    text-indent:80px;
+    text-indent: 80px;
 }
 
 .press-logo img {

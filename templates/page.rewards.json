@@ -50,7 +50,7 @@
       "name": "Custom image with text",
       "settings": {
         "section_padding_top": 0,
-        "section_padding_bottom": 10,
+        "section_padding_bottom": 16,
         "section_padding_horizontal": 0,
         "background_color": "#ffffff",
         "section_text_color": "#1f1f1f",

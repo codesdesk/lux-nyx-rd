@@ -46,7 +46,7 @@
 
 
   
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card-wrapper product-card-wrapper underline-links-hover section-{{ section.id }}">
     <div
       class="
         card card--{{ settings.card_style }}
@@ -61,7 +61,7 @@
     >
       <div
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
-        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+        style="--ratio-percent: {{ 1.32 | divided_by: ratio | times: 100 }}%;"
       >
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
@@ -630,16 +630,16 @@
 
 
 <script>
-    var swiper = new Swiper(".swiper-collection", {
+    var swiper = new Swiper(".section-{{ section.id }} .swiper-collection", {
       slidesPerView: 1,
-      spaceBetween: 30,
+      spaceBetween: 8,
       pagination: {
-        el: ".swiper-pagination",
+        el: ".section-{{ section.id }} .swiper-pagination",
         clickable: true,
       },
       navigation: {
-        nextEl: ".swiper-collection .swiper-button-next.card-media-button",
-        prevEl: ".swiper-collection .swiper-button-prev.card-media-button",
+        nextEl: ".section-{{ section.id }} .swiper-collection .swiper-button-next.card-media-button",
+        prevEl: ".section-{{ section.id }} .swiper-collection .swiper-button-prev.card-media-button",
       },
     });
   </script>

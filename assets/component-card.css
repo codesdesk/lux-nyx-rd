@@ -503,6 +503,7 @@
 
 .card-information .caption {
   letter-spacing: 0.07rem;
+  font-size: 14px;
 }
 
 .card-article-info {
@@ -622,6 +623,7 @@
 
 .section-featured-collection .card__inner {
   background: #f5f1ee;
+  /* height: 522px; */
   padding: 30px;
 }
 
