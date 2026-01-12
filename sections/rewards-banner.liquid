@@ -89,14 +89,14 @@
 .rewards-banner--{{ section.id }} .rewards-banner__intro > *:last-child{
     margin-bottom:0;
 }
-.rewards-banner--{{ section.id }} .rewards-banner__steps {
+ /* .rewards-banner--{{ section.id }} .rewards-banner__steps {
   border-top: 1px solid rgba(0,0,0,0.15);
-}
+} */
 .rewards-banner--{{ section.id }} .rewards-banner__step {
   display: flex;
   justify-content: space-between;
   padding: 12px 20px;
-  border-bottom: 1px solid rgba(0,0,0,0.15);
+  border-top: 1px solid rgba(0,0,0,0.15);
   gap: 20px;
 }
 .rewards-banner--{{ section.id }} .rewards-banner__step span {
@@ -137,7 +137,7 @@
 
 .rewards-banner details.accordion__item {
     padding: 13px 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 .rewards-banner details.accordion__item span {
     font-size: 18px;
@@ -163,6 +163,7 @@
     line-height: 1.1;
     width: 100%;
     margin-bottom: 0px;
+    text-transform: lowercase;
 }
 {% assign desktopTitle = section.settings.title_size_desktop %}
 
@@ -219,15 +220,59 @@
 
   .rewards-banner--{{ section.id }} .rewards-banner__step span {
     font-size: {{ section.settings.step_font_size_mobile }}px;
+    line-height: 1.3em;
   }
 
   .rewards-banner .rewards-banner__button {
     display: none;
   }
 
+  .rewards-banner {
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .rewards-banner.rewards_faq h2.rewards-banner__title {
+    border-top: 1px solid #E2E2E2;
+    padding-top: 50px;
+    padding-bottom: 8px;
+  }
+
+  .rewards-banner.rewards_faq {
+    padding-top: 14px;
+}
+
+  .rewards-banner .rewards-banner__media img {
+    max-height: 305px;
+  }
+
+  .rewards-image-banner .banner__box .banner__buttons {
+    margin-top: 5.2rem;
+  }
+
+  .rewards-image-banner .button.button--primary {
+    padding: 21px 75px;
+  }
+
+  .banner__content h2.banner__heading.inline-richtext {
+    border-top: 1px solid #E2E2E2;
+    padding-top: 42px;
+     text-transform: uppercase;
+  }
+
+  .rewards_tiers_custom .top-content-wrpper {
+    margin-top: 24px;
+  }
+  .rewards_tiers_custom .section-top-content {
+    padding-bottom: 0px;
+  }
+  .rewards_tiers_custom .section-top-content:has(.rewards-banner__intro) {
+      margin-bottom: 1px;
+  }
+
   .rewards-banner details.accordion__item span {
     font-size: 16px;
-    line-height: 20px;
+    line-height: 1.2em;
     text-transform: math-auto;
   }
   .rewards-banner details.accordion__item {
