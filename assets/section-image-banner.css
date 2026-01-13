@@ -229,8 +229,11 @@
   }
 
   .banner:not(.banner--mobile-bottom):not(.email-signup-banner) .banner__box {
-    background: transparent;
-  }
+        background: transparent;
+        top: 185px;
+        max-width: 366px;
+        padding: 31px 7px 0px 7px;
+    }
 
   .banner:not(.banner--mobile-bottom) .banner__box {
     border: none;
@@ -240,6 +243,7 @@
 
   .banner:not(.banner--mobile-bottom) .button--secondary {
     --alpha-button-background: 0;
+    padding: 0 2rem;
   }
 
   .banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
@@ -425,6 +429,9 @@
     max-width: 71rem;
     min-width: 45rem;
   }
+  .banner__heading {
+    line-height: 24px
+  }
 }
 
 @media screen and (min-width: 1400px) {
@@ -445,7 +452,7 @@
   display: inline-flex;
   flex-wrap: wrap;
   gap: 1rem;
-  max-width: 45rem;
+  max-width: 18.3rem;
   word-break: break-word;
 }
 

@@ -2,7 +2,7 @@
   Founder’s Note – Fully Customizable Section
 {% endcomment %}
 
-<section class="founders-note-section">
+<section class="founders-note-section {{ section.settings.addclass }}">
   <div class="founders-note-container">
     <div class="founders-note-wrapper">
         {% if section.settings.eyebrow != blank %}
@@ -73,6 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-top: 0.65px solid rgba(138, 147, 141, 1);
 }
 .founders-note-media {
     display: flex;
@@ -181,21 +182,71 @@
 .founders-note-button:hover svg path {
     fill: #fff;
 }
+.story_show_custom .founders-note-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.story_show_custom .founder_shop_button {
+    font-size: 18px;
+    line-height: 100%;
+    padding-right: 5px;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    color: #1f1f1f;
+}
+.story_show_custom .founders-note-eyebrow {
+    font-size: 18px;
+    line-height: 100%;
+    padding-top: 4px;
+    text-transform: uppercase;
+    margin: 0;
+    color: #1f1f1f;
+}
+.story_show_custom .founders-note-quote {
+    font-size: 56px;
+    line-height: 1.02;
+    font-weight: 500;
+    margin: 0px 0 0px;
+    color: #1f1f1f;
+    border: 0;
+    padding: 0;
+    text-indent: 225px;
+    letter-spacing: -0.02em;
+    font-family: 'Helvetica Neue LT Pro';
+    font-style: normal;
+}
+.story_show_custom .founders-note-supporting {
+    margin-bottom: 12px;
+    margin-top: 0px;
+    letter-spacing: -0.37px;
+}
+.story_show_custom .founders-note-button {
+    line-height: 13px;
+}
 
 /* Mobile */
 @media (max-width: 768px) {
 .founders-note-eyebrow,
 .founder_shop_button {
     font-size: 14px;
+    padding-top: 8px;
 }
 .founders-note-quote{
   font-size:32px;
   text-indent:0;
+  margin-top: 11.2px;
+  line-height: 1.04;
+  margin-bottom: 16px;
 }
 .founders-note-quote p strong {
     font-size: 14px;
     line-height: 90%;
     text-indent: 0;
+    letter-spacing: 0.2px;
+    padding-top: 17px;
     display: block;
 }
 .founders-note-supporting{
@@ -213,6 +264,9 @@
     padding: 43px 0 56px;
     border-bottom: 1px solid #8A938D;
 }
+.founders-note-container {
+    padding: 0 11px 0px 9px;
+}
 }
 </style>
 
@@ -220,6 +274,11 @@
 {
   "name": "Founder's Note",
   "settings": [
+     {
+      "type": "text",
+      "id": "addclass",
+      "label": "AddClass"
+    },
     {
       "type": "text",
       "id": "eyebrow",
@@ -344,16 +403,16 @@
       "type": "range",
       "id": "padding_top",
       "label": "Top padding",
-      "min": 20,
+      "min": 0,
       "max": 160,
-      "step": 10,
+      "step": 2,
       "default": 80
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "label": "Bottom padding",
-      "min": 20,
+      "min": 0,
       "max": 100,
       "step": 1,
       "default": 80

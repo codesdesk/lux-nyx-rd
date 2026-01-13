@@ -17,36 +17,40 @@
     left: 20px;
     background: #fff;
     padding: 20px;
-    max-width: 380px;
+    max-width: 342px;
     width: 100%;
     border-radius: 6px;
     backdrop-filter: blur(26.600000381469727px);
 }
 
 .hero-overlay-card h4 {
+    width: 128px;
     font-size: 14px;
-    line-height: normal;
-    letter-spacing: -0.02px;
+    line-height: 15px;
+    letter-spacing: -0.4px;
     text-transform: uppercase;
-    color: #1F1F1F;
+    color: #1f1f1f;
     margin: 0;
 }
 .hero_card_items {
     display: flex;
-    column-gap: 19px;
+    column-gap: 16px;
 }
 .hero-overlay-card .price {
-   font-size: 14px;
+    font-size: 14px;
     line-height: normal;
-    letter-spacing: -0.02px;
+    flex-basis: 1px;
+    letter-spacing: -.02px;
     text-transform: uppercase;
-    color: #1F1F1F;
+    color: #1f1f1f;
 }
 
 .hero-rating {
-  font-size: 12px;
-  color: #000;
-  margin-bottom: 10px;
+    width: fit-content;
+    font-size: 17px;
+    letter-spacing: 2.1px;
+    color: #1F1F1F;
+    margin-top: 4px;
 }
 
 .hero-btn {
@@ -54,17 +58,17 @@
     padding: 8px 10px;
     border: 1px solid #1F1F1F;
     text-decoration: none;
-    color: #000;
+    color: #1F1F1F;
     transition: 0.3s;
     font-size: 14px;
-    line-height: 115.99999999999999%;
+    line-height: 100%;
     letter-spacing: 0;
     border-radius: 4px;
     height: 100%;
 }
 
 .hero-btn:hover {
-  background: #000;
+  background: #1F1F1F;
   color: #fff;
 }
 
@@ -82,7 +86,7 @@
     padding: 12px 15px 12px 12px;
 }
 .hero_card_items {
-    column-gap: 19px;
+    column-gap: 14px;
     flex-direction: column;
 }
 .hero-overlay-card .price,
@@ -114,7 +118,7 @@
         <div class="hero_card_items">
       <h4>{{ product.title }}
         <div class="hero-rating">
-        ★★★★★ ({{ section.settings.review_count }})
+        ★★★★★({{ section.settings.review_count }})
       </div>
       </h4>
 

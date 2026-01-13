@@ -2557,6 +2557,14 @@ input[type='checkbox'] {
     align-items: center;
     gap: 20px;
 }
+@media only screen and (max-width: 1642px) {  
+  .card-wrapper .title_with_rating {
+    gap: 10px;
+    }
+    .card-wrapper .inner {
+      gap: 10px;
+    }
+}
 .card-wrapper .rating-star {
     --letter-spacing: 0.1 !important;
 }
@@ -4564,7 +4572,7 @@ details-disclosure > details {
     }
     
   .header {
-    padding: 16px 2rem 14.49px !important;
+    padding: 16px 2rem 17px !important;
   }
   .backpacks {
     font-size: 20px;

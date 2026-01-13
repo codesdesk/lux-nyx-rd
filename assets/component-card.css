@@ -633,7 +633,7 @@
 } */
 
 .section-featured-collection .card__content {
-  padding-top: 12px;
+  padding-top: 0px;
 }
 
 .section-featured-collection .card__heading {
@@ -693,5 +693,14 @@
 @media screen and (max-width: 749px) {
   .section-featured-collection .card__inner {
     padding: 20px;
+  }
+}
+
+@media  only screen and (max-width: 1642px) {
+  .section-featured-collection .card__heading {
+    font-size: 12px;
+  }
+  .rating-star:before {
+    font-size: 16px !important;
   }
 }
