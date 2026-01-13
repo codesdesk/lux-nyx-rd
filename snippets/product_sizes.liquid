@@ -1,0 +1,26 @@
+<div class="custom_product-size-wrapper">
+  <div class="custom-item-2">
+    <label>Size :</label>
+    <ul class="custom_product-size">
+    {% assign sizes = product.metafields.custom.product_sizes.value %}
+
+    {% for size in sizes %}
+        {% if size.product != blank %}
+            {% assign sizeProduct = size.product.value %}
+            {% comment %} {{ product.handle }} {% endcomment %}
+            <li class="size-variant {% if sizeProduct.handle == product.handle %}active{% endif %}">
+            <a href="{{ sizeProduct.url }}">
+                {{ size.text }}
+            </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+
+    </ul>
+  </div>
+  {% if product.metafields.size.chart != blank %}
+  <div  class="cdk-item-2 text-right hidden">
+    <a href="javascript:void(0)" id="compare_size_btn">Compare size</a>
+  </div>
+  {% endif %}
+</div>

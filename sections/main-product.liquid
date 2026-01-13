@@ -489,6 +489,8 @@
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+              {% when 'product_sizes' %}
+                {% render 'product_sizes', product: product, block: block %}
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -686,8 +688,154 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
-            {%- endcase -%}
-          {%- endfor -%}
+              {%- endcase -%}
+            {%- endfor -%}
+            {% assign has_bottom_content = false %}
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'what_we_love' %}
+                  {% assign has_bottom_content = true %}
+                {% when 'whats_include' %}
+                  {% assign has_bottom_content = true %}
+                {% when 'dimensions_and_materials' %}
+                  {% assign has_bottom_content = true %}
+              {% endcase %}
+            {% endfor %}
+            {% if has_bottom_content %}
+            <div class="bottom-content">
+              <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+              {%for block in section.blocks %}
+                  {% case block.type %}
+                    {%- when 'what_we_love' -%}
+                        <details id="Details-{{ block.id }}-{{ section.id }}">
+                          <summary>
+                            <div class="summary__title">
+                              <h2 class="h4 accordion__title inline-richtext">WHAT WE LOVE</h2>
+                            </div>
+                            {{- 'icon-plus.svg' | inline_asset_content -}}
+                            {{- 'icon-minus.svg' | inline_asset_content -}}
+                          </summary>
+                          <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                            <div class="product-box detailed-box rotate">
+                              <div class="position-r">
+                                <div class="text" style="height: 63px;">
+                                  {{ product.metafields.custom.what_we_love | metafield_tag  }}
+                                </div>
+                                <div class="overlay clr"></div>
+                              </div>
+                                <div class="show_more slide_details">
+                                  <a href="javascript:void(0)">Show more</a><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve" class="">
+                                  <g>
+                                    <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+                                      c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+                                      c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"></path>
+                                  </g>
+                                  </svg>
+                                </div>
+                            </div>
+                          <div class="custom_image-with-text-wrapper">
+                                  {% comment %} Image 1 with text {% endcomment %}
+                                  {% assign iwt = product.metafields.custom.image_with_text_1.value %}
+                                  {% if iwt %}
+                                    <div class="image-with-text-item">
+                                      {% if iwt.image %}
+                                        <img
+                                          src="{{ iwt.image | image_url: width: 800 }}"
+                                          alt="{{ iwt.heading | escape }}"
+                                        >
+                                      {% endif %}
+                                      {% if iwt.text %}
+                                        <h3>{{ iwt.text | metafield_tag  }}</h3>
+                                      {% endif %}
+                                    </div>
+                                  {% endif %}
+                                  {% comment %} Image 2 with text {% endcomment %}
+                                  {% assign iwt = product.metafields.custom.image_with_text_2.value %}
+                                  {% if iwt %}
+                                    <div class="image-with-text-item">
+                                      {% if iwt.image %}
+                                        <img
+                                          src="{{ iwt.image | image_url: width: 800 }}"
+                                          alt="{{ iwt.heading | escape }}"
+                                        >
+                                      {% endif %}
+                                      {% if iwt.text %}
+                                        <h3>{{ iwt.text | metafield_tag }}</h3>
+                                      {% endif %}
+                                    </div>
+                                  {% endif %}
+                                  {% comment %} Image 3 with text {% endcomment %}
+                                  {% assign iwt = product.metafields.custom.image_with_text_3.value %}
+                                  {% if iwt %}
+                                    <div class="image-with-text-item">
+                                      {% if iwt.image %}
+                                        <img
+                                          src="{{ iwt.image | image_url: width: 800 }}"
+                                          alt="{{ iwt.heading | escape }}"
+                                        >
+                                      {% endif %}
+                                      {% if iwt.text  %}
+                                        <h3>{{ iwt.text | metafield_tag }}</h3>
+                                      {% endif %}
+                                    </div>
+                                  {% endif %}
+                            </div>
+                          </div>
+                        </details>
+                    {% when 'whats_include' %}
+                        <details id="Details-{{ block.id }}-{{ section.id }}">
+                          <summary>
+                            <div class="summary__title">
+                              <h2 class="h4 accordion__title inline-richtext">What’s included:</h2>
+                            </div>
+                            {{- 'icon-plus.svg' | inline_asset_content -}}
+                            {{- 'icon-minus.svg' | inline_asset_content -}}
+                          </summary>
+                          <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                            {% assign includedImage = product.metafields.custom.what_s_included_image %}
+                            {% if includedImage %}
+                              <div class="image-wrapper">
+                                <img src='{{ includedImage.value | img_url : "master" }}'>
+                              </div>
+                            {% endif %}
+                            <div class="product-box detailed-box rotate">
+                            {{  product.metafields.custom.what_s_included_list | metafield_tag }}
+                            </div>
+                          </div>
+                        </details>
+                    {% when 'dimensions_and_materials' %}
+                      <details id="Details-{{ block.id }}-{{ section.id }}">
+                        <summary>
+                          <div class="summary__title">
+                            <h2 class="h4 accordion__title inline-richtext">Dimensions & Materials:</h2>
+                          </div>
+                          {{- 'icon-plus.svg' | inline_asset_content -}}
+                          {{- 'icon-minus.svg' | inline_asset_content -}}
+                        </summary>
+                        <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                          <div class="product-box detailed-box rotate">
+                            {{  product.metafields.custom.dimensions_and_materials | metafield_tag }}
+                          </div>
+                        </div>
+                      </details>
+                    {% when 'shiping_and_return' %}
+                      <details id="Details-{{ block.id }}-{{ section.id }}">
+                        <summary>
+                          <div class="summary__title">
+                            <h2 class="h4 accordion__title inline-richtext">Shipping & returns</h2>
+                          </div>
+                          {{- 'icon-plus.svg' | inline_asset_content -}}
+                          {{- 'icon-minus.svg' | inline_asset_content -}}
+                        </summary>
+                        <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                            {{  block.settings.shiping_text }}
+                        </div>
+                      </details>
+                      {% endcase %}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {% endif %}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
@@ -974,6 +1122,38 @@
           "info": "t:sections.custom-liquid.settings.custom_liquid.info"
         }
       ]
+    },
+    {
+      "type":"what_we_love",
+      "name":"What we love",
+      "limit": 1
+    },
+    {
+      "type":"whats_include",
+      "name":"Whats we include",
+      "limit": 1
+    },
+    {
+      "type":"dimensions_and_materials",
+      "name":"Dimensions and materials",
+      "limit": 1
+    },
+    {
+      "type":"shiping_and_return",
+      "name":"Shipping & returns",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "shiping_text",
+          "label": "Shiping text"
+        }
+      ]
+    },
+    {
+      "type":"product_sizes",
+      "name":"Product Sizes",
+      "limit": 1
     },
     {
       "type": "collapsible_tab",
