@@ -334,7 +334,7 @@ em{
 /* base */
 
 .page-width {
-  max-width: 100%;
+  max-width: 172.8rem;
   margin: 0 auto;
   padding: 0 1.2rem;
 }

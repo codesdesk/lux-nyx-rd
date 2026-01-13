@@ -14,6 +14,7 @@
       "blocks": {
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
@@ -25,8 +26,18 @@
         },
         "text_JhiRyr": {
           "type": "text",
+          "name": "Short description",
           "settings": {
             "text": "{{ product.metafields.custom.short_description.value }}",
+            "text_style": "body"
+          }
+        },
+        "text_YFgdqc": {
+          "type": "text",
+          "name": "Additional text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.metafields.custom.additional_text.value }}",
             "text_style": "body"
           }
         },
@@ -43,8 +54,12 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "square"
           }
+        },
+        "product_sizes_BhPTpr": {
+          "type": "product_sizes",
+          "settings": {}
         },
         "quantity_selector": {
           "type": "quantity_selector",
@@ -63,18 +78,22 @@
           "disabled": true,
           "settings": {}
         },
-        "share": {
-          "type": "share",
-          "disabled": true,
-          "settings": {
-            "share_label": "Share"
-          }
+        "what_we_love_W6GJRz": {
+          "type": "what_we_love",
+          "settings": {}
         },
-        "popup_YUKcyY": {
-          "type": "popup",
+        "whats_include_YFkw7P": {
+          "type": "whats_include",
+          "settings": {}
+        },
+        "dimensions_and_materials_ekwXFW": {
+          "type": "dimensions_and_materials",
+          "settings": {}
+        },
+        "shiping_and_return_chDhdf": {
+          "type": "shiping_and_return",
           "settings": {
-            "text": "Pop-up link text",
-            "page": ""
+            "shiping_text": "<p>test</p>"
           }
         }
       },
@@ -82,14 +101,18 @@
         "vendor",
         "title",
         "text_JhiRyr",
+        "text_YFgdqc",
         "reviews_EEqmGB",
         "price",
         "variant_picker",
+        "product_sizes_BhPTpr",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share",
-        "popup_YUKcyY"
+        "what_we_love_W6GJRz",
+        "whats_include_YFkw7P",
+        "dimensions_and_materials_ekwXFW",
+        "shiping_and_return_chDhdf"
       ],
       "settings": {
         "enable_sticky_info": true,
