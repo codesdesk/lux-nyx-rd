@@ -1,0 +1,30 @@
+{% assign  productsData = product.metafields.custom.color_swatch_product%}
+test--{{ productsData.size }}
+<div class="product-swatches custom_product-swatches">
+  <div class="swatches-block option__type--color">
+    <label {% if option.name == 'default' %}class="label--hidden" {% else %} class="label--hidden color_option__type--color" {% endif %} for="SingleOptionSelector-{{ forloop.index0 }}">
+      Color: <span class="color_name_indicator"></span>
+    </label>
+    <div swatch-type="color" class="swatches-block-box" >
+        <ul class="color-block swatches-item-box" >
+            {% for swatch_product in productsData %}
+                {% assign swatchColor = swatch_product.metafields.custom.product_color%}
+                <li index-no="{{ forloop.index }}" class="custom_swatches-option">
+                    <a href="{{ swatch_product.url }}">
+                    <div style="width:24px; height:24px; border-radius:50%;
+                                {% if swatchColor %}
+                                background: {{ swatchColor }};
+                                {% else %} 
+                                background: url('{{ swatch_product.featured_image | img_url: "master" }}');
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                {% endif%};
+                                border:1px solid #aaa;">
+                    </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+  </div>      
+</div>

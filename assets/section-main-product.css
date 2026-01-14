@@ -272,6 +272,13 @@ a.product__text {
   letter-spacing: 0;
   text-transform: uppercase;
   text-wrap-style: balance;
+  max-width: 22rem;
+}
+.product__info-container .product__title > *:has(.price) {
+    display: inline-block;
+    width: 100%;
+    max-width: fit-content;
+    line-height: 1;
 }
 
 .product__text.caption-with-letter-spacing+.product__title:has(.price--on-sale) .badge {
@@ -281,7 +288,7 @@ a.product__text {
 .product__info-container .product__title:has(.price) {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 15px;
   justify-content: space-between;
@@ -290,7 +297,7 @@ a.product__text {
 .product__info-container .product__title:has(.price--on-sale) .price--on-sale .price__sale {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: flex-start;
   width: 148px;
 }
@@ -1824,7 +1831,8 @@ display: none;
   border: unset;
 }
 
-.custom_product-size {
+.custom_product-size,
+.material_variant-wrapper {
   margin: 0;
   margin: 0;
   margin: 0;
@@ -1844,7 +1852,8 @@ display: none;
   margin-bottom: 0;
 }
 
-.custom_product-size .size-variant a {
+.custom_product-size .size-variant a,
+.material_variant-wrapper .material-variant a {
   display: block;
   text-decoration: none;
   font-family: Helvetica Neue;
@@ -1858,7 +1867,48 @@ display: none;
   border-bottom: 1px solid currentColor;
 }
 
+.material_variant-wrapper .material-variant.has_image a {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.material-variant {
+  display: block;
+  width: 100%;
+  max-width: fit-content;
+  padding: 4px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.material_variant-wrapper .material-variant a{
+  border: none;
+}
+
+.material-variant.active {
+  border-color: #000000;
+  margin: 0;
+}
+
 .custom_product-size .size-variant.active a{
   background-color: rgba(31, 31, 31, 1);
   color: #ffffff;
+}
+
+.custom-item-2 > label,
+.product-material label {
+  font-family: Helvetica Neue;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: #1F1F1F;
+}
+
+.text_wrapper .additional_text {
+  font-family: Helvetica Neue;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0;
 }
