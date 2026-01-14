@@ -98,11 +98,17 @@
                     {{- block.settings.text -}}
                   </p>
                 {% endif %}
+              {% when 'additional_text' %}
+                {%if block.settings.text != blank %}
+                  <div class="text_wrapper  rte" style="color:{{ block.settings.text_color }};">
+                    <p class="additional_text">{{ block.settings.text }}</p>
+                  </div>
+                {% endif %}
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
                     <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                      {%- render 'price',
+                      {%- render 'new-price',
                         product: product,
                         use_variant: true,
                         show_badges: true,
@@ -489,8 +495,12 @@
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+              {%- when 'custom_swatches'-%}
+                {% render 'custom-swatches' product: product, block: block %}
               {% when 'product_sizes' %}
                 {% render 'product_sizes', product: product, block: block %}
+              {% when 'product_material' %}
+                {% render 'product_material' , porduct: product, block: block  %}
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -1137,6 +1147,34 @@
       "type":"dimensions_and_materials",
       "name":"Dimensions and materials",
       "limit": 1
+    },
+    {
+      "type":"product_material",
+      "name":"Product material",
+      "limit": 1
+    },
+    {
+      "type":"custom_swatches",
+      "name":"Custom swatches",
+      "limit": 1
+    },
+    {
+      "type":"additional_text",
+      "name":"Additional text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#000000"
+        }
+      ]
     },
     {
       "type":"shiping_and_return",

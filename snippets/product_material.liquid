@@ -1,0 +1,39 @@
+{% assign selectedProducts = product.metafields.custom.product_material.value %}
+{% if selectedProducts != blank %}
+<div class="product-material product-material-metadata">
+  <div class="product-material_inner">
+    <label>MATERIAL</label>
+    <ul class="material_variant-wrapper"> 
+      {% for material in selectedProducts %}   
+        {% assign materialTitle = material.title %}
+        {% assign materialProduct = material.product.value %}
+        {% assign materialImage = material.image.value %}
+        {% assign materialColor = material.color %}
+        <li class="material-variant{% if materialProduct.handle == product.handle %} active{% endif %}{% if materialImage %} has_image{% endif %}" data-name="{{ materialTitle }}">
+          <a style="background-color:{{ materialColor }}; background-image:url('{{ materialImage | image_url: width: 1000 }}}')" href="{% if materialProduct.url == product.handle %}javascript:void(0){% else %}{{materialProduct.url}}{% endif %} ">
+            {{materialTitle}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
+
+{% if product.handle == 'wine-down-tote' or product.handle == 'wine-tote' %}
+  <style>
+    .product-swatches .swatches-block.option__type--material {
+        display: none;
+    }
+    
+    .product-swatches .swatches-block.option__type--material + .product-material.product-material-metadata {
+        border-top: 0;
+        margin-top: 0;
+        padding-top: 0;
+    }
+  
+    .product-material-metadata{
+      display: block !important;
+    }
+  </style>
+{% endif %}

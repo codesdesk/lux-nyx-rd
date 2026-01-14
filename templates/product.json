@@ -57,9 +57,24 @@
             "swatch_shape": "square"
           }
         },
+        "custom_swatches_zccfG6": {
+          "type": "custom_swatches",
+          "settings": {}
+        },
         "product_sizes_BhPTpr": {
           "type": "product_sizes",
           "settings": {}
+        },
+        "product_material_8M4byW": {
+          "type": "product_material",
+          "settings": {}
+        },
+        "additional_text_9gMn33": {
+          "type": "additional_text",
+          "settings": {
+            "text": "{{ product.metafields.custom.additional_text.value }}",
+            "text_color": "#000000"
+          }
         },
         "quantity_selector": {
           "type": "quantity_selector",
@@ -105,7 +120,10 @@
         "reviews_EEqmGB",
         "price",
         "variant_picker",
+        "custom_swatches_zccfG6",
         "product_sizes_BhPTpr",
+        "product_material_8M4byW",
+        "additional_text_9gMn33",
         "quantity_selector",
         "buy_buttons",
         "description",
@@ -211,6 +229,7 @@
       "type": "founders-note",
       "name": "Founder's Note",
       "settings": {
+        "addclass": "",
         "eyebrow": "FOUNDER’S NOTE",
         "shop_btn_label": "Shop Now",
         "shop_btn_link": "#",

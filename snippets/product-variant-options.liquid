@@ -16,6 +16,16 @@
     picker_type: picker_type
   %}
 {% endcomment %}
+
+{% assign colors = product.metafields.custom.color.value %}
+
+{% for color in colors %}
+  {{ color }}
+{% endfor %}
+
+
+
+
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
 -%}
