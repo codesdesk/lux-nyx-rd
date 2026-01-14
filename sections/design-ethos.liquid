@@ -14,10 +14,14 @@
 
             {% if block.settings.image %}
               <a href="{{ block.settings.overlay_link }}">
-              <img src="{{ block.settings.image | image_url: width: 2000 }}" alt="">
+              <img src="{{ block.settings.image | image_url: width: 2000 }}" alt="" class="smart-design-desktop">
               </a>
             {% endif %}
-
+            {% if block.settings.mobile-design-image %}
+              <a href="{{ block.settings.overlay_link }}">
+              <img src="{{ block.settings.mobile-design-image | image_url: width: 351 }}" alt="" class="smart-design-mobile">
+              </a>
+            {% endif %}
             <!-- Product card -->
             <div class="product-card">
               <div class="product-title">{{ block.settings.product_title }} 
@@ -91,8 +95,8 @@
     text-transform: uppercase;
 }
 .design_ethos_custom .ethos-header h2 {
-  font-size: 18px !important;
-  line-height: 18px !important;
+  font-size: 18px;
+  line-height: 18px;
   letter-spacing: 0;
   margin: 0;
 }
@@ -238,7 +242,9 @@
   width: 100%;
   max-width: calc(100% / 2);
 }
-
+.design_ethos_custom .smart-design-mobile {
+  display: none;
+}
 /* Mobile */
 @media (max-width: 749px) {
   .overlay h3 {
@@ -261,7 +267,7 @@
 .design-ethos {
     padding: 7.8px 11px 56px;
 }
-.ethos-header h2 {
+.design_ethos_custom .ethos-header h2{
     font-size: 14px ;
     letter-spacing: 0;
     line-height: normal;
@@ -296,6 +302,13 @@
   display:block;
   width: 100%;
   max-width: 100%;
+}
+.design_ethos_custom .smart-design-desktop {
+    display: none;
+}
+.design_ethos_custom .smart-design-mobile {
+  display: block;
+  height: 455px;
 }
 }
 
@@ -357,6 +370,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "Main Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile-design-image",
+          "label": "Mobile Image"
         },
         {
           "type": "text",

@@ -2,7 +2,13 @@
   background: {{ section.settings.bg_color }};
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
+
+  @media only screen and (max-width: 750px) {
+  padding-top: {{ section.settings.padding_top-mobile }}px;
+  padding-bottom: {{ section.settings.padding_bottom-mobile }}px;
+  }
 ">
+
   <div class="page-width">
 
     <!-- Top Row -->
@@ -141,7 +147,7 @@
     column-gap: 29.5px;
     text-indent: 0;
     row-gap: 22px;
-    justify-content: center;
+    justify-content: space-around;
 }
   .press-label, .press-btn {
     font-size: 14px;
@@ -254,6 +260,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "default": "#000000"
     },
     {
+      "type": "header",
+      "content": "Padding-Desktop"
+    },
+    {
       "type": "range",
       "id": "padding_top",
       "label": "Padding Top",
@@ -266,9 +276,31 @@ document.addEventListener("DOMContentLoaded", function () {
       "type": "range",
       "id": "padding_bottom",
       "label": "Padding Bottom",
-      "min": 20,
+      "min": 0,
       "max": 120,
-      "step": 4,
+      "step": 2,
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Padding-Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top-mobile",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom-mobile",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
       "default": 60
     }
   ],

@@ -62,6 +62,7 @@
         "quote": "<p>“Too often, bags were either beautiful or practical—rarely both. I created bags <em>for those who refuse to compromise</em>—on presence, on purpose, on how they show up.”<strong>—Lisa Hu, Founder</strong></p>",
         "author": "",
         "image": "shopify://shop_images/Frame_541.png",
+        "mobile-image": "shopify://shop_images/mobile-bag-image.jpg",
         "supporting_text": "Did you know as few as 7% of products marketed towards women are actually designed by women? Did you know of products you know marketed towards women are actually designed.",
         "show_icon": true,
         "button_label": "About Us",
@@ -85,6 +86,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Frame_540.png",
+            "mobile-design-image": "shopify://shop_images/d8df4a1658770d8f09facaad628860e584add609.jpg",
             "overlay_title": "SMART DESIGN",
             "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
             "overlay_button": "Our Design Philosophy",
@@ -99,6 +101,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Frame_541_abf6348d-3b54-4557-b047-7f836176fc4c.png",
+            "mobile-design-image": "shopify://shop_images/Frame_541_abf6348d-3b54-4557-b047-7f836176fc4c.png",
             "overlay_title": "Materials & Craftsmanship",
             "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
             "overlay_button": "Our Design Philosophy",
@@ -113,6 +116,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Frame_540.png",
+            "mobile-design-image": "shopify://shop_images/d8df4a1658770d8f09facaad628860e584add609.jpg",
             "overlay_title": "SMART DESIGN",
             "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
             "overlay_button": "Our Design Philosophy",
@@ -127,6 +131,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Frame_541_abf6348d-3b54-4557-b047-7f836176fc4c.png",
+            "mobile-design-image": "shopify://shop_images/Frame_541_abf6348d-3b54-4557-b047-7f836176fc4c.png",
             "overlay_title": "Materials & Craftsmanship",
             "overlay_content": "From the stitching to the strap, every detail is a choice—intentional and built to move. It’s a foundational choice—measured by action, not volume.",
             "overlay_button": "Our Design Philosophy",
@@ -257,7 +262,7 @@
         "logo_BnPHbQ": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Group_947.png",
+            "logo": "shopify://shop_images/Group_947.jpg",
             "logo_quote": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
           }
         },
@@ -302,7 +307,9 @@
         "label_color": "#1f1f1f",
         "button_color": "#1f1f1f",
         "padding_top": 20,
-        "padding_bottom": 64
+        "padding_bottom": 64,
+        "padding_top-mobile": 4,
+        "padding_bottom-mobile": 20
       }
     },
     "customer_reviews_swiper_8qTRnK": {
