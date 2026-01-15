@@ -2,8 +2,8 @@
   Founder’s Note – Fully Customizable Section
 {% endcomment %}
 
-<section class="founders-note-section {{ section.settings.addclass }}">
-  <div class="founders-note-container">
+<section class="founders-note-section founder-notes-{{ section.id }} {{ section.settings.addclass }}" style="background-color: {{ section.settings.background_color }};">
+  <div class="founders-note-container page-width">
     <div class="founders-note-wrapper">
         {% if section.settings.eyebrow != blank %}
         <p class="founders-note-eyebrow">
@@ -71,31 +71,39 @@
 </section>
 
 <style>
+  
+.founder-notes-{{ section.id }}.founders-note-section {
+  padding:{% comment %} {{ section.settings.padding_top }}px {% endcomment %}{{ section.settings.padding_top }}px  0 {{ section.settings.padding_bottom }}px;
+}
 .founders-note-section {
-   padding:{% comment %} {{ section.settings.padding_top }}px {% endcomment %}14px  0 {{ section.settings.padding_bottom }}px;
   background: {{ section.settings.background_color }};
   border-bottom: 1px solid #8A938D;
+}
+
+.founders-note-section.story_show_custom{
+  border-bottom: unset;
 }
 .founders-note-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    {% comment %} border-top: 0.65px solid rgba(138, 147, 141, 1); {% endcomment %}
 }
 .founders-note-media {
     display: flex;
     flex-wrap:wrap;
     align-items: end;
     justify-content:end;
-    gap:12px;
+    gap:7px;
 }
 .founder_bottom {
     max-width: 411px;
     width: 100%;
 }
 .founders-note-container {
-  max-width: 1729px;
+  {% comment %} max-width: 1729px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px; {% endcomment %}
   {% comment %} display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 60px; {% endcomment %}
@@ -124,7 +132,7 @@
   font-size: {{ section.settings.quote_size }}px;
   line-height: 1.09;
   font-weight: 500;
-  margin: 22px  0 27px;
+  margin: 22px  0 25px;
   color: {{ section.settings.text_color }};
   border:0;
   padding:0;
@@ -211,6 +219,12 @@
     margin: 0;
     color: #1f1f1f;
 }
+
+.story_show_custom .founder_bottom {
+    max-width: 440px;
+    width: 100%;
+    margin-top: -8px;
+}
 .story_show_custom .founders-note-quote {
     font-size: 56px;
     line-height: 1.02;
@@ -237,6 +251,20 @@
 }
 /* Mobile */
 @media (max-width: 768px) {
+
+  .founder-notes-{{ section.id }}.founders-note-section { 
+  padding: 45px 0 56px;
+}
+.home_founder .founders-note-container {
+    border-top: 0.65px solid #8A938D;
+}
+.home_founder .founders-note-eyebrow, .home_founder .founder_shop_button{
+    padding-top: 5px;
+}
+.home_founder .founders-note-media {
+    gap: 19px;
+}
+
 .founders-note-eyebrow,
 .founder_shop_button {
     font-size: 14px;
@@ -274,8 +302,9 @@
     margin-left: 0px;
     line-height: 14px;
 }
-.founders-note-section {
-    padding: 43px 0 56px;
+
+
+.founders-note-section { 
     border-bottom: 1px solid #8A938D;
 }
 .founders-note-container {

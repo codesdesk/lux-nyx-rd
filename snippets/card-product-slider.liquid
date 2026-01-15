@@ -47,6 +47,7 @@
 
   
   <div class="card-wrapper product-card-wrapper underline-links-hover section-{{ section.id }}">
+    <a href="{{ card_product.url }}" class="card-media-link">
     <div
       class="
         card card--{{ settings.card_style }}
@@ -68,6 +69,7 @@
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent">
               <div class="swiper swiper-collection">
+              
                     <div class="swiper-wrapper">
                       {% for media in card_product.media %}
                           {% if media.media_type == 'image' %}
@@ -79,11 +81,12 @@
                                 width="{{ media.width }}"
                                 height="{{ media.height }}"
                               >
-                            </div>
-                          {% endif %}
-                        {% endfor %}
-                
-                </div>
+                              </div>
+                            {% endif %}
+                          {% endfor %}  
+                      </div>
+                        
+                  
                    <div class="swiper-button-prev card-media-button">{{- 'icon-left-arrow.svg' | inline_asset_content -}}</div>
                   <div class="swiper-button-next card-media-button">{{- 'icon-right-arrow.svg' | inline_asset_content -}}</div> 
              </div>
@@ -572,6 +575,7 @@
               </span>
             {% endif %}
     </div>
+  </a>
   </div>
 {%- else -%}
   {%- liquid

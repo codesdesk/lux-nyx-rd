@@ -55,7 +55,7 @@
       "type": "founders-note",
       "name": "Founder's Note",
       "settings": {
-        "addclass": "",
+        "addclass": "home_founder",
         "eyebrow": "FOUNDER’S NOTE",
         "shop_btn_label": "Shop Now",
         "shop_btn_link": "#",
@@ -75,7 +75,7 @@
         "button_border": "#000000",
         "quote_size": 56,
         "image_radius": 0,
-        "padding_top": 20,
+        "padding_top": 12,
         "padding_bottom": 27
       }
     },
@@ -154,13 +154,16 @@
         "addclass": "design_ethos_custom",
         "section_title": "Design Ethos",
         "header_link_text": "Design Philosophy",
-        "header_link": "#"
+        "header_link": "#",
+        "padding_top": 8,
+        "padding_bottom": 96
       }
     },
     "featured_collection_XQfCcM": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
+        "custom_class": "home_featured",
         "collection": "everything2",
         "products_to_show": 25,
         "title": "Explore",
@@ -184,7 +187,7 @@
         "quick_add": "none",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 0,
+        "padding_top": 12,
         "padding_bottom": 20
       }
     },
@@ -250,10 +253,12 @@
       ],
       "name": "Collections Grid",
       "settings": {
-        "addclass": "",
+        "addclass": "collection_grid_home",
         "heading": "Collections",
         "view_all_text": "See more",
-        "view_all_link": "shopify://collections"
+        "view_all_link": "shopify://collections",
+        "padding_top": 30,
+        "padding_bottom": 60
       }
     },
     "press_mentions_LcCkMF": {
@@ -306,8 +311,8 @@
         "bg_color": "#f9f7f6",
         "label_color": "#1f1f1f",
         "button_color": "#1f1f1f",
-        "padding_top": 20,
-        "padding_bottom": 64,
+        "padding_top": 12,
+        "padding_bottom": 66,
         "padding_top-mobile": 4,
         "padding_bottom-mobile": 20
       }
@@ -426,8 +431,8 @@
         "button_border": "#000000",
         "quote_size": 56,
         "image_radius": 0,
-        "padding_top": 12,
-        "padding_bottom": 27
+        "padding_top": 10,
+        "padding_bottom": 0
       }
     },
     "design_ethos_FeGkH4": {
@@ -501,13 +506,16 @@
         "addclass": "homedesign_bottom",
         "section_title": "",
         "header_link_text": "",
-        "header_link": ""
+        "header_link": "",
+        "padding_top": 40,
+        "padding_bottom": 36
       }
     },
     "featured_collection_9rKUkA": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
+        "custom_class": "home_featured bottom_cust",
         "collection": "everything2",
         "products_to_show": 25,
         "title": "Explore",
@@ -531,8 +539,8 @@
         "quick_add": "none",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 44
+        "padding_top": 60,
+        "padding_bottom": 64
       }
     }
   },
