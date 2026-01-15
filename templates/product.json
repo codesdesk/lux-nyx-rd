@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "preorder_text_f3hyww": {
+          "type": "preorder_text",
+          "settings": {}
+        },
         "vendor": {
           "type": "text",
           "disabled": true,
@@ -29,15 +33,6 @@
           "name": "Short description",
           "settings": {
             "text": "{{ product.metafields.custom.short_description.value }}",
-            "text_style": "body"
-          }
-        },
-        "text_YFgdqc": {
-          "type": "text",
-          "name": "Additional text",
-          "disabled": true,
-          "settings": {
-            "text": "{{ product.metafields.custom.additional_text.value }}",
             "text_style": "body"
           }
         },
@@ -113,10 +108,10 @@
         }
       },
       "block_order": [
+        "preorder_text_f3hyww",
         "vendor",
         "title",
         "text_JhiRyr",
-        "text_YFgdqc",
         "reviews_EEqmGB",
         "price",
         "variant_picker",
