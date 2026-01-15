@@ -2,11 +2,6 @@
   background: {{ section.settings.bg_color }};
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
-
-  @media only screen and (max-width: 750px) {
-  padding-top: {{ section.settings.padding_top-mobile }}px;
-  padding-bottom: {{ section.settings.padding_bottom-mobile }}px;
-  }
 ">
 
   <div class="page-width">
@@ -140,13 +135,14 @@
   .press-quote {
     font-size: {{ section.settings.quote_size_mobile }}px;
     text-indent:0;
+    line-height: 31.4px;
     margin-bottom:28px;
   }
 
   .press-logos {
     column-gap: 29.5px;
     text-indent: 0;
-    row-gap: 22px;
+    row-gap: 20px;
     justify-content: space-around;
 }
   .press-label, .press-btn {
@@ -158,8 +154,8 @@
     max-height: 20px !important;
 }
 .press-mentions{
-    padding-top:8px;
-    padding-bottom:57px;
+    padding-top:4px !important;
+    padding-bottom:57px !important;
 }
 }
 </style>

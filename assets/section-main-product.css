@@ -1912,3 +1912,41 @@ display: none;
   line-height: 1;
   letter-spacing: 0;
 }
+
+.product__info-container .product__title:has(.price) .badge {
+  display: none;
+}
+
+.custom_product-swatches  .color-block {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.color-block .custom_swatches-option {
+  display: block;
+  width: 100%;
+  max-width: fit-content;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: #000000;
+  overflow: hidden;
+}
+
+.color-block .custom_swatches-option .custom_swatch--item{
+  width: 46px;
+  height: 24px;
+}
+
+.color-block .custom_swatches-option.active{
+  margin: 0;
+}
+.color-block .custom_swatches-option.active .custom_swatch--item{
+  width: 114px;
+  height: 24px;
+}
+
