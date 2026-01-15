@@ -192,6 +192,20 @@
   text-align: left;
 }
 
+.collection.home_featured .swiper-button-next, .collection.home_featured .swiper-button-prev {
+    top: var(--swiper-navigation-top-offset,56%);
+}
+
+.collection.home_featured .custom_swiper_button {
+    top: var(--swiper-navigation-top-offset, 48%);
+}
+.collection.home_featured .product-card-wrapper .card__content .card__information {
+    padding-top: 10px;
+}
+.home_featured.bottom_cust{
+border-top:unset;
+}
+
 @media screen and (min-width: 990px) {
   .grid--6-col-desktop .card__content quick-add-bulk .quantity {
     width: auto;

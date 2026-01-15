@@ -127,7 +127,7 @@
 
 .review-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 407px 1fr;
   gap: 15px;
   align-items: center;
 }
@@ -136,6 +136,10 @@
   width: 100%;
   display: block;
 }
+
+{% comment %} .review-image {
+  width: 407px;
+} {% endcomment %}
 .review-text {
     margin: 20px 0;
     font-size: 18px;
@@ -241,6 +245,13 @@
 .customer-reviews  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
   margin:0;
 }
+
+@media (max-width: 1440px) {
+  .review-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+}
 @media (max-width: 768px) {
   .customer-reviews .swiper-pagination {
     column-gap:11.75px;
@@ -277,13 +288,20 @@
     margin-top: 24px;
 }
 .customer-reviews {
-    padding: 8px 0 59px;
+    padding: 3px 0 59px;
 }
 .customer-mobile {
     display: block !important;
 }
 .review-image .customer-desktop {
-    display: none;
+    display: block;
+      min-height: 370px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reviews-header {
+    margin-bottom: 22px;
 }
 .customer-reviews .swiper-pagination {
     margin-top: 21.65px !important;
@@ -309,11 +327,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     breakpoints: {
       0: {
-        slidesPerView: 1.2,
+        slidesPerView: 1.01,
         spaceBetween: 20,
       },
       768: {
-        slidesPerView: 2,
+        slidesPerView: 2.07,
         spaceBetween: 55,
       }
     }
