@@ -1,5 +1,5 @@
-{% assign  productsData = product.metafields.custom.color_swatch_product%}
-test--{{ productsData.size }}
+{% assign  productsData = product.metafields.custom.color_swatch_product.value%}
+{% if productsData %}
 <div class="product-swatches custom_product-swatches">
   <div class="swatches-block option__type--color">
     <label {% if option.name == 'default' %}class="label--hidden" {% else %} class="label--hidden color_option__type--color" {% endif %} for="SingleOptionSelector-{{ forloop.index0 }}">
@@ -9,17 +9,16 @@ test--{{ productsData.size }}
         <ul class="color-block swatches-item-box" >
             {% for swatch_product in productsData %}
                 {% assign swatchColor = swatch_product.metafields.custom.product_color%}
-                <li index-no="{{ forloop.index }}" class="custom_swatches-option">
+                <li index-no="{{ forloop.index }}" class="custom_swatches-option {% if product.handle == swatch_product.handle  %} active{% endif %}">
                     <a href="{{ swatch_product.url }}">
-                    <div style="width:24px; height:24px; border-radius:50%;
+                    <div class="custom_swatch--item" style="
                                 {% if swatchColor %}
                                 background: {{ swatchColor }};
                                 {% else %} 
                                 background: url('{{ swatch_product.featured_image | img_url: "master" }}');
                                 background-size: cover;
                                 background-repeat: no-repeat;
-                                {% endif%};
-                                border:1px solid #aaa;">
+                                {% endif%};">
                     </div>
                     </a>
                 </li>
@@ -28,3 +27,4 @@ test--{{ productsData.size }}
     </div>
   </div>      
 </div>
+{% endif %}
