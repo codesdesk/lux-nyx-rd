@@ -2,8 +2,8 @@
   Founder’s Note – Fully Customizable Section
 {% endcomment %}
 
-<section class="founders-note-section {{ section.settings.addclass }}">
-  <div class="founders-note-container">
+<section class="founders-note-section {{ section.settings.addclass }}" style="background-color: {{ section.settings.background_color }};">
+  <div class="founders-note-container page-width">
     <div class="founders-note-wrapper">
         {% if section.settings.eyebrow != blank %}
         <p class="founders-note-eyebrow">
@@ -76,27 +76,31 @@
   background: {{ section.settings.background_color }};
   border-bottom: 1px solid #8A938D;
 }
+
+.founders-note-section.story_show_custom{
+  border-bottom: unset;
+}
 .founders-note-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 0.65px solid rgba(138, 147, 141, 1);
+    {% comment %} border-top: 0.65px solid rgba(138, 147, 141, 1); {% endcomment %}
 }
 .founders-note-media {
     display: flex;
     flex-wrap:wrap;
     align-items: end;
     justify-content:end;
-    gap:12px;
+    gap:7px;
 }
 .founder_bottom {
     max-width: 411px;
     width: 100%;
 }
 .founders-note-container {
-  max-width: 1729px;
+  {% comment %} max-width: 1729px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px; {% endcomment %}
   {% comment %} display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 60px; {% endcomment %}
@@ -125,7 +129,7 @@
   font-size: {{ section.settings.quote_size }}px;
   line-height: 1.09;
   font-weight: 500;
-  margin: 22px  0 27px;
+  margin: 22px  0 25px;
   color: {{ section.settings.text_color }};
   border:0;
   padding:0;

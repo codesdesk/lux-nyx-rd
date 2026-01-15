@@ -154,13 +154,16 @@
         "addclass": "design_ethos_custom",
         "section_title": "Design Ethos",
         "header_link_text": "Design Philosophy",
-        "header_link": "#"
+        "header_link": "#",
+        "padding_top": 24,
+        "padding_bottom": 64
       }
     },
     "featured_collection_XQfCcM": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
+        "custom_class": "home_featured",
         "collection": "everything2",
         "products_to_show": 25,
         "title": "Explore",
@@ -253,7 +256,9 @@
         "addclass": "",
         "heading": "Collections",
         "view_all_text": "See more",
-        "view_all_link": "shopify://collections"
+        "view_all_link": "shopify://collections",
+        "padding_top": 14,
+        "padding_bottom": 48
       }
     },
     "press_mentions_LcCkMF": {
@@ -496,13 +501,16 @@
         "addclass": "homedesign_bottom",
         "section_title": "",
         "header_link_text": "",
-        "header_link": ""
+        "header_link": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "featured_collection_9rKUkA": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
+        "custom_class": "",
         "collection": "everything2",
         "products_to_show": 25,
         "title": "Explore",

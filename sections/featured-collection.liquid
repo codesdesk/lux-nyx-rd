@@ -34,6 +34,17 @@
     padding-left: 20px;
   }
 
+  .section-featured-collection .custom_swiper_button.swiper-button-next {
+    right: 30px;
+}
+  .section-featured-collection .custom_swiper_button.swiper-button-prev {
+    left: 30px;
+}
+
+  .collection.home_featured{ 
+       border-top: 1px solid rgba(138, 147, 141, 1);
+  }
+
     .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper {
       display: flex;
       flex-direction: row;
@@ -109,7 +120,7 @@
   class="color-{{ section.settings.color_scheme }} isolate gradient section-featured-collection"
 >
   <div
-    class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
+    class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %} {{ section.settings.custom_class }}"
     id="collection-{{ section.id }}"
     data-id="{{ section.id }}"
   >
@@ -294,9 +305,10 @@
         0: {
           slidesPerView: {{ mobileSlides }},
           spaceBetween: 4,
+          slidesOffsetBefore: 0, 
         },
         750: {
-          slidesPerView: {{ desktopSlides }},
+          slidesPerView: {{ desktopSlides }} + .1,
           spaceBetween: 4,
         }
       }
@@ -314,6 +326,11 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Add class"
+    },
     {
       "type": "collection",
       "id": "collection",

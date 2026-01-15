@@ -662,6 +662,8 @@
     height: 107px;
     top: 50%;
     transform: translateY(-50%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
 }
 .section-featured-collection .custom_swiper_button svg {
     fill: revert-layer;
@@ -671,7 +673,7 @@
 .custom_col_title {
     display: flex;
     align-items: center;
-    border-top: 1px solid rgba(138, 147, 141, 1);
+    /* border-top: 1px solid rgba(138, 147, 141, 1); */
     justify-content: space-between;
 }
 .custom_col_title a {
