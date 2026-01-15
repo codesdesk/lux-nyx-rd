@@ -35,7 +35,14 @@
         <img
           src="{{ section.settings.image | image_url: width: 800 }}"
           alt="{{ section.settings.author | escape }}"
-          loading="lazy"
+          loading="lazy" class="founders-image-desktop"
+        >
+      {% endif %}
+      {% if section.settings.mobile-image != blank %}
+       <img
+          src="{{ section.settings.mobile-image | image_url: width: 375 }}"
+          alt="{{ section.settings.author | escape }}"
+          loading="lazy" class="founders-image-mobile"
         >
       {% endif %}
       <div class="founder_bottom">
@@ -226,7 +233,9 @@
 .story_show_custom .founders-note-button {
     line-height: 13px;
 }
-
+.founders-image-mobile {
+    display: none;
+}
 /* Mobile */
 @media (max-width: 768px) {
 .founders-note-eyebrow,
@@ -259,6 +268,8 @@
     display: block;
     text-align: center;
     width: 100%;
+    margin-left: 0px;
+    line-height: 14px;
 }
 .founders-note-section {
     padding: 43px 0 56px;
@@ -266,6 +277,12 @@
 }
 .founders-note-container {
     padding: 0 11px 0px 9px;
+}
+.founders-image-desktop {
+    display: none;
+}
+.founders-image-mobile {
+    display: block;
 }
 }
 </style>
@@ -311,6 +328,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "Founder image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile-image",
+      "label": "Founder image Mobile"
     },
     {
       "type": "textarea",
