@@ -2766,6 +2766,7 @@ input[type='checkbox'] {
     line-height: 115.99999999999999%;
     color: #1F1F1F80;
     text-transform: capitalize;
+    padding-right: 50px;
 }
 .facet-filters.sorting .facet-filters__label {
     margin-right: 0px;
@@ -2776,7 +2777,7 @@ input[type='checkbox'] {
 .mobile-facets__open-wrapper span.mobile-facets__close:before {
     content: 'close';
     position: absolute;
-    right: 25px;
+    right: 24px;
     font-weight: 500;
     font-size: 14px;
     line-height: 115.99999999999999%;
@@ -2784,11 +2785,11 @@ input[type='checkbox'] {
     color: #1F1F1F;
 }
  #FacetsWrapperMobile .mobile-facets__header {
-    padding: 20px 0rem 0px;
+    padding: 20px 0rem 12px;
 }
 .mobile-facets__wrapper .mobile-facets__close {
     top: 3.7rem;
-    right: 2rem;
+    right: 1rem;
     width: 1.2rem;
     height: 1.2rem;
 }
@@ -2809,7 +2810,7 @@ input[type='checkbox'] {
     line-height: 115.99999999999999%;
     padding: 6px 12px;
     border-radius: 4px;
-    margin-top: 20px;
+    margin-top: 11px;
     text-transform: capitalize;
     background-color: #fff;
 }
@@ -3931,6 +3932,9 @@ cart-drawer.is-empty .drawer__inner {
   gap:0px;
   margin: 0px;
 }
+facet-filters-form .active-facets__button {
+    margin-top: 0px;
+}
 
 .collection-right .carousel-cell.collection {
     padding: 20px 0px;
@@ -4104,6 +4108,13 @@ padding-top: 0px;
   width: 100%;
   display: inline-block;
   transition: width 0.3s cubic-bezier(0.52, 0, 0.61, 0.99);
+}
+
+menu-drawer .mobile-facets__inner {
+    max-width: 44rem;
+}
+menu-drawer .mobile-facets__heading {
+    text-transform: capitalize;;
 }
 
 @media screen and (max-width: 989px) {
@@ -5668,6 +5679,20 @@ section.image-category-section {
 .product-grid-container .swiper-button-next, .product-grid-container .swiper-button-prev{
     width: 16px;
     height: 16px;
+}
+#FacetsWrapperMobile .mobile-facets__header-inner {
+    padding-bottom: 0px;
+}
+facet-filters-form .active-facets__button {
+    padding: 1px 8px;
+}
+.active-facets .active-facets__button-remove {
+    padding: 0px;
+    padding-top: 8px;
+    padding-bottom: 17px;
+}
+menu-drawer #FacetFiltersFormMobile .mobile-facets__item span.facet-checkbox__text {
+    padding: 3px 8px !important;
 }
 }
 /* Thank You Page */
