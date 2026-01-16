@@ -5590,7 +5590,7 @@ section.image-category-section {
 @media only screen and (max-width:749px) {
   .template-custom .heading-title_wrapper {
     font-size: 144.39px;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
     line-height: 185px;
   }
   .template-custom .not-found-paragraph {
@@ -5626,7 +5626,7 @@ section.image-category-section {
     width: 100%;
     max-width: 290px;
     gap: 4px;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
   }
   .image-category-section .image-grid-item {
     width: 100%;
@@ -5662,6 +5662,7 @@ section.image-category-section {
     gap: 211px;
     flex-direction: row;
     flex-wrap: wrap;
+    background-color: #f9f7f6;
     align-items: center;
     padding: 0px;
 }
@@ -5703,6 +5704,7 @@ section.image-category-section {
 }
 .thankyou-custom p {
     line-height: 16px;
+    font-size: 16px;
     margin: 0;
     color: #1F1F1F;
     font-weight: var(--custom-font-body-weight);
