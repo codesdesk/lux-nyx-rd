@@ -224,8 +224,8 @@
     margin-top:46px;
     width:100% !important;
 }
-.customer-mobile {
-    display: none !important;
+.customer-reviews .customer-mobile {
+    display: none;
 }
 .customer-reviews .swiper-pagination-bullet{
   width:296px;
@@ -258,7 +258,7 @@
   }
   .review-card {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 10px;
   }
     .review-line {
       width: 61px;
@@ -269,11 +269,15 @@
     font-size:14px;
 }
 .review-text {
-    margin: 19px 0;
+    margin: 20px 0 17px;
     font-size: 14px;
     line-height: 14px;
     letter-spacing: 0;
     color: #2F2F2F;
+}
+.review-stars img {
+    width: 100%;
+    max-width: 109px;
 }
 .review-name, .verified {
     font-size: 14px;
@@ -290,18 +294,15 @@
 .customer-reviews {
     padding: 3px 0 59px;
 }
-.customer-mobile {
-    display: block !important;
+.review-image .customer-mobile {
+    display: none;
 }
 .review-image .customer-desktop {
     display: block;
-      min-height: 370px;
-  height: 100%;
-  object-fit: cover;
 }
 
 .reviews-header {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 }
 .customer-reviews .swiper-pagination {
     margin-top: 21.65px !important;
@@ -327,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     breakpoints: {
       0: {
-        slidesPerView: 1.01,
+        slidesPerView: 1.14,
         spaceBetween: 20,
       },
       768: {

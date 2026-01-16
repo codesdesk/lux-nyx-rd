@@ -1,15 +1,11 @@
-{% if section.settings.enable_bar %}
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-/>
+
 
 <style>
 .announcement-wrapper {
   background: {{ section.settings.bg_color }};
   color: {{ section.settings.text_color }};
   font-size: {{ section.settings.font_size }}px;
-  padding: 5px 20px;
+  padding: 5px 0px;
   width: 100%;
   line-height: 17px;
 }
@@ -29,57 +25,27 @@
   font-weight: 600;
 }
 
-/* Mobile */
-.announcement-mobile {
-  display: none;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .announcement-desktop {
-    display: none;
-  }
-  .announcement-mobile {
-    display: block;
-  }
-}
-
 .swiper-slide {
   text-align: center;
 }
 </style>
 
 <div class="announcement-wrapper">
-
-  <!-- Desktop -->
-  <div class="announcement-desktop">
-    <div class="announcement-left">
-      {{ section.settings.desktop_left_text }}
-    </div>
-    <div class="announcement-right">
-      {{ section.settings.desktop_middle_text }}
-    </div>
-    <div class="announcement-right">
-      {{ section.settings.desktop_right_text }}
-    </div>
-  </div>
-
-  <!-- Mobile Slider -->
-  <div class="announcement-mobile">
-    <div class="swiper announcement-swiper">
-      <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          <div class="swiper-slide">
-            {{ block.settings.text }}
-          </div>
-        {% endfor %}
+  <div class="page-width">
+    <div class="announcement-mobile">
+      <div class="swiper announcement-swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              {{ block.settings.text }}
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
-
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -91,12 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
         disableOnInteraction: false,
       },
       speed: 600,
+      slidesPerView: 1
     });
   }
 });
 </script>
 
-{% endif %}
+
 
 {% schema %}
 {
@@ -104,9 +71,9 @@ document.addEventListener('DOMContentLoaded', function () {
   "settings": [
     {
       "type": "checkbox",
-      "id": "enable_bar",
-      "label": "Enable Announcement Bar",
-      "default": true
+      "id": "enable_slider",
+      "label": "Enable Mobile Sliderr",
+      "default": false
     },
     {
       "type": "color",
@@ -128,24 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
       "max": 20,
       "step": 1,
       "default": 14
-    },
-    {
-      "type": "inline_richtext",
-      "id": "desktop_left_text",
-      "label": "Desktop Left Text",
-      "default": "<strong>Get 10% off</strong> your first purchase"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "desktop_middle_text",
-      "label": "Desktop Middle Text",
-      "default": "Free shipping  & return"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "desktop_right_text",
-      "label": "Desktop Right Text",
-      "default": "Get $25 with referrals"
     },
     {
       "type": "range",

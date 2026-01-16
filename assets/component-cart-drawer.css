@@ -425,3 +425,11 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
     margin-left: 0;
   }
 }
+
+
+body:has(.shopify-section-header-hidden) cart-drawer.drawer.animate.active {
+  top: 0;
+}
+body:has(.shopify-section-header-hidden) cart-drawer.drawer.animate.active .drawer__inner {
+  height: 100vh;
+}

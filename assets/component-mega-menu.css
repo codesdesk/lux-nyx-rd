@@ -32,24 +32,31 @@
 .mega-menu[open] .mega-menu__content {
   opacity: 1;
   transform: translateY(0);
-  padding: 12px 20px 11px 20px
+  padding: 11px 20px 12px;
 }
 
 header .mega-menu__list {
-  display: grid;
-  width: 100%;
-  max-width: 904px;
-  gap: 6.4rem;
-  padding: 0px;
-  margin: 0px;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  list-style: none;
-  text-transform: capitalize;
+    display: grid;
+    width: 100%;
+    gap: 6.4rem;
+    padding: 0;
+    flex: 1;
+    margin: 0;
+    grid-template-columns: repeat(5, minmax(0, auto));
+    list-style: none;
+    text-transform: capitalize;
+    max-width: 904px;
 }
 header .mega-menu-image {
-  width: 278px;
-  height: 353px;
-  object-fit: contain;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+header .mega-menu-bag-photo {
+    width: 100%;
+    max-width: calc(100% - (80% - -59.6px));
+    display: block;
 }
 header .mega-menu__link {
   color: #1F1F1F;

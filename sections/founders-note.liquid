@@ -136,7 +136,7 @@
   color: {{ section.settings.text_color }};
   border:0;
   padding:0;
-  text-indent: 240px;
+  text-indent: 246px;
   letter-spacing: -0.01em;
   font-family: 'Helvetica Neue LT Pro';
   font-style:normal;
@@ -152,8 +152,11 @@
     margin: 0;
 }
 .founders-note-quote em {
-  font-family: serif;
+  font-family: PP Editorial New;
   font-style: italic;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: .98;
 }
 
 .founders-note-author {
@@ -253,7 +256,7 @@
 @media (max-width: 768px) {
 
   .founder-notes-{{ section.id }}.founders-note-section { 
-  padding: 45px 0 56px;
+  padding: 43px 0 56px;
 }
 .home_founder .founders-note-container {
     border-top: 0.65px solid #8A938D;
@@ -280,6 +283,23 @@
 .story_show_custom .founders-note-quote {
   font-size: 32px;
   line-height: 1.045;
+}
+.story_show_custom .founders-note-eyebrow {
+    font-size: 14px;
+}
+.story_show_custom .founder_shop_button {
+    font-size: 14px;
+}
+.story_show_custom .founders-note-container {
+    border-top: unset;
+}
+.story_show_custom.founders-note-section {
+    padding: 9px 0 56px;
+}
+.story_show_custom .founders-note-quote {
+    margin: 14px 0 24px;
+    text-indent: 0px;
+    letter-spacing: -0.001em;
 }
 .founders-note-quote p strong {
     font-size: 14px;
@@ -309,6 +329,7 @@
 }
 .founders-note-container {
     padding: 0 11px 0px 9px;
+    border-top: 0.65px solid #8A938D;
 }
 .founders-image-desktop {
     display: none;

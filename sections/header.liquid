@@ -99,6 +99,7 @@ header .uni-women-container {
 header .uni-women-wrapper {
     display: flex;
     color: black;
+    padding-top: 12px;
     justify-content: space-between;
 }
 a.mobile-button {
@@ -113,11 +114,12 @@ a.mobile-button {
     line-height: 17px;
     padding: 6px 30px 6px 30px;
 }
-a.uni-women-link {
+.uni-women-wrapper a.uni-women-link {
     color: black;
+    line-height: 16px;
     text-decoration: none;
 }
-a.uni-women-link:hover {
+.uni-women-wrapper a.uni-women-link:hover {
     text-decoration: underline;
 }
 header .mobile-menu-accordion {
@@ -158,17 +160,19 @@ button.login-button {
     font-family: var(--custom-font-heading-body);
     border-radius: 4px;
     line-height: 13px;
+    cursor: pointer;
     font-size: 14px;
 }
 button.account-button {
     padding: 6px 16px;
     background: white;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.22px;
     border-radius: 4px;
     line-height: 13px;
     font-weight: var(--custom-font-body-weight);
     font-family: var(--custom-font-heading-body);
     font-size: 14px;
+    cursor: pointer;
 }
 header a.support-link {
     font-size: 14px;
@@ -380,7 +384,7 @@ header a.support-link {
                 {{ customer | avatar }}
               {%- else -%}
                 {% comment %} <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span> {% endcomment %}
-                 Login
+                 Log in
               {%- endif -%}
             </account-icon>
           {%- else -%}
