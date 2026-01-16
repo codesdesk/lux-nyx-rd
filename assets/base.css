@@ -712,7 +712,7 @@ table:not([class]) th {
     row-gap: 8px;
   }
   .collection .card-wrapper.product-card-wrapper .card__inner {
-    max-height: 220px;
+    /* max-height: 220px; */
     height: 100%;
   }
   .collection .product-card-wrapper.card-wrapper .card__content .card__information {
@@ -2397,7 +2397,7 @@ input[type='checkbox'] {
   align-items: center;
   padding: 0rem;
   height: 4.4rem;
-  width: 4.4rem;
+  width: 3.4rem;
   background-color: transparent;
 }
 
@@ -2660,7 +2660,8 @@ input[type='checkbox'] {
 }
 .breadcrumb {
     margin-bottom: 0px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    margin-top: 6px;
 }
 .filter_main {
     display: flex;
@@ -3027,7 +3028,8 @@ cart-drawer .cart-drawer .cart-item {
 }
 .cart-drawer .drawer__footer {
     border-top: 1px solid #000;
-    padding: .8rem 0;
+    /* padding: .8rem 0; */
+    padding: 0px;
 }
 .cart-drawer .cart-items-count {
     font-weight: 500;
@@ -3131,7 +3133,7 @@ cart-drawer .cart-drawer .cart-item {
     border: 1px solid #1F1F1F;
     border-radius: 4px;
     background-color: transparent;
-    padding: 8px 16px;
+    padding: 7px 14px;
 }
 .cart-product-collections button.add_to_cart span {
     font-weight: 500;
@@ -3159,7 +3161,7 @@ cart-drawer .cart-drawer .cart-item {
     justify-self: flex-end;
     display: block;
     margin-top: auto;
-    margin-bottom: 80px;
+    margin-bottom: 177px;
 } 
 /* end-cart-drawer-css */
 
@@ -4227,7 +4229,6 @@ details[open] .header__icon-close {
 menu-drawer + .header__search {
   display: none;
 }
-
 .header > .header__search {
   grid-area: left-icons;
   justify-self: start;
@@ -4337,7 +4338,7 @@ header .mega-menu_button_link {
 }
 .mega-menu-image-correction li {
     width: 100%;
-    max-width: 128px;
+    max-width: 133px;
     height: fit-content;
 }
 
@@ -5371,6 +5372,14 @@ header .mega-menu-image-correction {
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 1280px) {
+header .mega-menu-image-correction {
+  gap: 40px;
+}
+header .mega-menu__list {
+  gap: 4rem;
+}
+}
 .header__menu-text {
   text-decoration: none;
 }
@@ -5792,7 +5801,8 @@ section.image-category-section {
   display: none;
 }
 .search_breadcrumbs{
-  padding-top: 15px;
+  /* padding-top: 15px; */
+  padding-top: 0px;
 }
 
 /* ===== Search Drawer (Dawn Override) ===== */
