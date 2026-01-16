@@ -7,9 +7,9 @@
 {% comment %} {% assign preorderText = tag | remove: 'Pre-Order:'  %} {% endcomment %}
 {% endif %}
 {% endfor %}
-{{preorder }}
 
 {% assign preorderText = product.metafields.custom.preorder_text  %}
+{{preorderText }}
 
 <product-info
   id="MainProduct-{{ section.id }}"
@@ -87,6 +87,9 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
+    {% if section.settings.show_breadcrumb %}
+      {% include 'breadcrumbs' %}   
+    {%endif %}
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
@@ -103,7 +106,7 @@
               {%- when '@app' -%}
                 {% render block %}
               {%- when 'text' -%}
-                {% if block.settings.text != blank %}
+                {% if block.settings.text != blank and block.settings.show_bottom_text == false %}
                   <p
                     class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                     {{ block.shopify_attributes }}
@@ -523,9 +526,27 @@
                   show_pickup_availability: true
                 -%}
                 {% when 'preorder_text' %}
-                  {% if preorder == true %}
+                  {% if preorderText != blank %}
                     <div class="preorder_text"><span class="preorder-heading">Preorder:</span><span class="preorder_text">{{preorderText}}</span></div>
                   {% endif %}
+                {% when 'delivery_and_returns' %}
+                  {%assign showSection = false %}
+                  <div class="delivery_and_returns_wrapper">
+                    <div class="delivery_and_return">
+                      <div class="delivery-wrapper">
+                        <div class ="icon-wrapper">
+                          <img src="{{ block.settings.delivery_image  | img_url : 'master'}}">
+                        </div>
+                        <h4 class="delivery_content">{{block.settings.delivery_text }}</h4>
+                      </div>
+                      <div class="return-wrapper">
+                        <div class ="icon-wrapper">
+                          <img src="{{ block.settings.return_image  | img_url : 'master'}}">
+                        </div>
+                        <h4 class="return_content">{{block.settings.return_text }}</h4>
+                      </div>
+                    </div>
+                  </div>
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -726,6 +747,10 @@
                   {% assign has_bottom_content = true %}
                 {% when 'dimensions_and_materials' %}
                   {% assign has_bottom_content = true %}
+                {%- when 'text' -%}
+                  {% if block.settings.show_bottom_text %}
+                    {% assign has_bottom_content = true %}
+                  {% endif %}
               {% endcase %}
             {% endfor %}
             {% if has_bottom_content %}
@@ -733,6 +758,15 @@
               <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
               {%for block in section.blocks %}
                   {% case block.type %}
+                    {%- when 'text' -%}
+                      {% if block.settings.text != blank and block.settings.show_bottom_text %}
+                        <p
+                          class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                          {{ block.shopify_attributes }}
+                        >
+                          {{- block.settings.text -}}
+                        </p>
+                      {% endif %}
                     {%- when 'what_we_love' -%}
                       {% if product.metafields.custom.what_we_love != blank %}
                         <details id="Details-{{ block.id }}-{{ section.id }}">
@@ -971,6 +1005,12 @@
           ],
           "default": "body",
           "label": "t:sections.main-product.blocks.text.settings.text_style.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_bottom_text",
+          "label": "Show text bottom field",
+          "default": false
         }
       ]
     },
@@ -1199,6 +1239,41 @@
         {
           "type": "paragraph",
           "content": "This text comes from a product metafield."
+        }
+      ]
+    },
+    {
+      "type": "delivery_and_returns",
+      "name":"Delivery & returns",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Delivery icon and text"
+        },
+        {
+          "type": "image_picker",
+          "id": "delivery_image",
+          "label": "Delivery Image",
+        },
+        {
+        "type":"text",
+        "id": "delivery_text",
+        "label": "Delivery text"
+        },
+        {
+          "type": "header",
+          "content": "Returns icon and text"
+        },
+        {
+          "type": "image_picker",
+          "id": "return_image",
+          "label": "Return image",
+        },
+        {
+        "type":"text",
+        "id": "return_text",
+        "label": "Return text"
         }
       ]
     },
@@ -2389,6 +2464,12 @@
       "id": "enable_sticky_info",
       "default": true,
       "label": "t:sections.main-product.settings.enable_sticky_info.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumb",
+      "default": true,
+      "label": "Show breadcrumb"
     },
     {
       "type": "color_scheme",

@@ -21,7 +21,8 @@
           "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
+            "text_style": "uppercase",
+            "show_bottom_text": false
           }
         },
         "title": {
@@ -33,7 +34,8 @@
           "name": "Short description",
           "settings": {
             "text": "{{ product.metafields.custom.short_description.value }}",
-            "text_style": "body"
+            "text_style": "body",
+            "show_bottom_text": false
           }
         },
         "reviews_EEqmGB": {
@@ -83,10 +85,27 @@
             "show_gift_card_recipient": true
           }
         },
+        "delivery_and_returns_qTmm9R": {
+          "type": "delivery_and_returns",
+          "settings": {
+            "delivery_image": "shopify://shop_images/Delivery_icon_e19ad5f3-c08b-41e2-b1e1-616b0e8c843b.svg",
+            "delivery_text": "Free US Delivery: $100+",
+            "return_image": "shopify://shop_images/Return_icon_3cbe8029-bc16-4d44-a784-cc759fbaaa0d.svg",
+            "return_text": "Easy returns"
+          }
+        },
         "description": {
           "type": "description",
           "disabled": true,
           "settings": {}
+        },
+        "text_NABNXH": {
+          "type": "text",
+          "settings": {
+            "text": "“Made for presence in motion. Built for clarity and confidence on the daily.” — Lisa Hu, Founder, Lux & Nyx",
+            "text_style": "body",
+            "show_bottom_text": true
+          }
         },
         "what_we_love_W6GJRz": {
           "type": "what_we_love",
@@ -121,7 +140,9 @@
         "additional_text_9gMn33",
         "quantity_selector",
         "buy_buttons",
+        "delivery_and_returns_qTmm9R",
         "description",
+        "text_NABNXH",
         "what_we_love_W6GJRz",
         "whats_include_YFkw7P",
         "dimensions_and_materials_ekwXFW",
@@ -217,7 +238,9 @@
         "addclass": "custom_product_coll_grid",
         "heading": "Product Features",
         "view_all_text": "See more",
-        "view_all_link": ""
+        "view_all_link": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "founders_note_DCrrYP": {
@@ -298,7 +321,9 @@
         "label_color": "#1f1f1f",
         "button_color": "#1f1f1f",
         "padding_top": 20,
-        "padding_bottom": 72
+        "padding_bottom": 72,
+        "padding_top-mobile": 60,
+        "padding_bottom-mobile": 60
       }
     }
   },

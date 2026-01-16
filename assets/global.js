@@ -774,6 +774,14 @@ class SliderComponent extends HTMLElement {
     if (this.currentPageElement && this.pageTotalElement) {
       this.currentPageElement.textContent = this.currentPage;
       this.pageTotalElement.textContent = this.totalPages;
+      
+    }
+    
+     const parent = this.slider.parentElement;
+
+    if (parent && parent.tagName.toLowerCase() === 'slider-component') {
+      parent.style.setProperty('--current-slide', this.currentPage);
+      parent.style.setProperty('--total-slides', this.totalPages);
     }
 
     if (this.currentPage != previousPage) {
