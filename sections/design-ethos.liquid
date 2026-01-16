@@ -1,5 +1,5 @@
 <section class="design-ethos section-{{ section.id }}-padding {{ section.settings.addclass }} ">
-  <div class="page-width">
+  <div class="{% if section.settings.container_width == true %} full-width{% else %} page-width{% endif %}">
   <div class="ethos-header">
     <h2>{{ section.settings.section_title }}</h2>
     <a href="{{ section.settings.header_link }}" class="ethos-link">
@@ -68,9 +68,7 @@
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
-{% comment %} .design-ethos {
-  padding: 7.8px 20px 96px;
-} {% endcomment %}
+
 .homedesign_bottom{
   padding-left:0;
   padding-right:0;
@@ -254,6 +252,10 @@
   display: none;
 }
 
+.design-ethos img.smart-design-mobile {
+    display: none;
+}
+
 @media screen and (max-width: 990px) {
 .design-ethos .overlay h3 {
     font-size: 40px;
@@ -261,6 +263,12 @@
 }
 /* Mobile */
 @media (max-width: 749px) {
+  .design-ethos img.smart-design-mobile {
+    display: block;
+}
+.design-ethos img.smart-design-desktop {
+    display: none;
+}
   .design-ethos.design_ethos_custom {
     padding-bottom: 56px;
 }
@@ -272,7 +280,7 @@
   .product-card{
     display:none;
   }
-  .overlay-btn {
+  .overlay-btn.overlay-btn--border {
     font-size: 8.83px;
     border: 0.68px solid #fff;
     padding: 4px 8px;
@@ -298,7 +306,7 @@
     bottom: 12px;
     right: 12px;
     flex-direction: column;
-    max-width: unset;
+    max-width: 126px;
     width: unset;
     padding: 12px;
 }
@@ -326,6 +334,9 @@
 .design_ethos_custom .smart-design-mobile {
   display: block;
   height: 455px;
+}
+.homedesign_bottom {
+    padding-bottom: 57px;
 }
 }
 
@@ -360,6 +371,12 @@
       "type": "text",
       "id": "addclass",
       "label": "AddClass"
+    },
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Full width",
+      "default": false
     },
     {
       "type": "text",

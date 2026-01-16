@@ -152,6 +152,7 @@
       "name": "Design Ethos",
       "settings": {
         "addclass": "design_ethos_custom",
+        "container_width": false,
         "section_title": "Design Ethos",
         "header_link_text": "Design Philosophy",
         "header_link": "#",
@@ -224,15 +225,6 @@
             "button_text": "Shop now"
           }
         },
-        "small_card_wj9N3H": {
-          "type": "small_card",
-          "settings": {
-            "title": "",
-            "content": "",
-            "link": "shopify://collections/womens-backpacks",
-            "button_text": "Shop All Products"
-          }
-        },
         "large_card_3BKYEz": {
           "type": "large_card",
           "settings": {
@@ -248,7 +240,6 @@
         "small_card_XKyc3w",
         "small_card_ALegpR",
         "small_card_AbxDt8",
-        "small_card_wj9N3H",
         "large_card_3BKYEz"
       ],
       "name": "Collections Grid",
@@ -442,6 +433,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/LUX_AND_NYX__DSC7333_highres.png",
+            "mobile-design-image": "shopify://shop_images/Frame_150_05cd9881-f614-47c9-9c58-75b99651bbfd.png",
             "overlay_title": "",
             "overlay_content": "",
             "overlay_button": "",
@@ -456,6 +448,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/LUX_AND_NYX__DSC7207_highres.png",
+            "mobile-design-image": "shopify://shop_images/LUX_AND_NYX__DSC7207_highres.png",
             "overlay_title": "",
             "overlay_content": "",
             "overlay_button": "",
@@ -470,6 +463,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/LUX_AND_NYX__DSC7333_highres.png",
+            "mobile-design-image": "shopify://shop_images/Frame_150_05cd9881-f614-47c9-9c58-75b99651bbfd.png",
             "overlay_title": "",
             "overlay_content": "",
             "overlay_button": "",
@@ -484,6 +478,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/LUX_AND_NYX__DSC7207_highres.png",
+            "mobile-design-image": "shopify://shop_images/LUX_AND_NYX__DSC7207_highres.png",
             "overlay_title": "",
             "overlay_content": "",
             "overlay_button": "",
@@ -504,6 +499,7 @@
       "name": "Design Ethos",
       "settings": {
         "addclass": "homedesign_bottom",
+        "container_width": true,
         "section_title": "",
         "header_link_text": "",
         "header_link": "",
@@ -539,8 +535,8 @@
         "quick_add": "none",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 60,
-        "padding_bottom": 64
+        "padding_top": 36,
+        "padding_bottom": 68
       }
     }
   },

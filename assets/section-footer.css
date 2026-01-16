@@ -762,6 +762,7 @@
 }
 .custom_footer .footer-block__heading {
     font-size: 32px;
+    letter-spacing: 0px;
 }
 .custom_footer .footer-block  .footer-block__heading {
     font-size: 14px;
