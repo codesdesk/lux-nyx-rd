@@ -1,4 +1,4 @@
-<section class="terms-wrapper" style="
+<div class="terms-wrapper" style="
   background: {{ section.settings.bg_color }};
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -82,7 +82,7 @@
     </div>
 
   </div>
-</section>
+</div>
 {% style %}
 .terms-grid {
   display: grid;
@@ -237,6 +237,7 @@ body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
 {% schema %}
 {
   "name": "Custom page",
+  "tag": "section",
   "settings": [
     {
       "type": "text",

@@ -1,4 +1,4 @@
-<section class="design-ethos section-{{ section.id }}-padding {{ section.settings.addclass }} ">
+<div class="design-ethos section-{{ section.id }}-padding {{ section.settings.addclass }} ">
   <div class="{% if section.settings.container_width == true %} full-width{% else %} page-width{% endif %}">
   <div class="ethos-header">
     <h2>{{ section.settings.section_title }}</h2>
@@ -58,7 +58,7 @@
     </div>
     </div>
   </div>
-</section>
+</div>
 
 
 
@@ -366,6 +366,7 @@
 {% schema %}
 {
   "name": "Design Ethos Section",
+  "tag": "section",
   "settings": [
     {
       "type": "text",
