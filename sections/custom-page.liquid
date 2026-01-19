@@ -1,9 +1,20 @@
-<section class="terms-wrapper" style="
+
+<section class="terms-wrapper">
+{%- style -%}
+  .section-{{ section.id }}-padding {
   background: {{ section.settings.bg_color }};
-  padding-top: {{ section.settings.padding_top }}px;
+  padding-top: {{ section.settings.padding_top  }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
-">
-  <div class="page-width terms-grid">
+  }
+  @media only screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_mobile_top  }}px;
+      padding-bottom: {{ section.settings.padding_mobile_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+  <div class="page-width terms-grid section-{{ section.id }}-padding">
 
     <div class="large-up-hide medium-hide">
         {% render 'breadcrumbs' %}
@@ -104,6 +115,7 @@ body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
 }
 .terms-contet-wrapper {
     margin-bottom: 64px;
+    padding-bottom: 17px;
     max-width:842px;
     width:100%;
 }
@@ -122,31 +134,35 @@ body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
 .terms-sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 16px 0 0 0;
+  margin: 2px 0 0 0;
 }
 
 .terms-sidebar li {
   margin-bottom: 4px;
+  line-height: 19px;
 }
 
 .terms-sidebar a {
-    color: #1F1F1F;
+    color: #1F1F1F80;
     font-family: 'Helvetica Neue LT Pro';
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
     letter-spacing: 0;
     text-transform: uppercase;
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-style: solid;
-    text-decoration-offset: 0;
     text-decoration-thickness: 0;
 }
-
 .terms-sidebar a:hover {
   text-decoration: underline;
+  color: #1F1F1F;
 }
-
+.terms-sidebar a.active {
+    color: #1F1F1F;
+    font-weight: 500;
+    text-decoration: underline;
+}
 .terms-title {
   font-family: var(--custom-font-heading-family);
   font-weight:400;
@@ -154,25 +170,25 @@ body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
   font-size: 72px;
   line-height: normal;
   padding-top: 43px;
+  padding-bottom: 6px;
   letter-spacing: 0;
   color:#1F1F1F;
   text-transform:capitalize;
   margin:0;
 }
 
-.terms-updated,
-.terms-content > p {
+.terms-updated, .terms-content > p {
     color: #1F1F1F;
     font-family: 'Helvetica Neue LT Pro';
     font-weight: 500;
     font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0;
-    margin: 6px 0;
+    line-height: 127%;
+    letter-spacing: 0px;
+    margin: 0px 0 0 92px;
 }
 
 .terms-item {
-    margin-bottom: 46px;
+    margin-bottom: 45px;
     border-top: 1px solid #8A938D;
 }
 
@@ -183,7 +199,7 @@ body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
     line-height: 100%;
     letter-spacing: 0;
     text-transform: uppercase;
-    margin: 8px 0 4px;
+    margin: 8px 0 4px 3px;
 }
 
 .terms-text {
@@ -196,14 +212,32 @@ body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
     padding-left:100px;
 }
 .terms-text ul {
-    padding-inline-start: 16px;
+    padding-inline-start: 31px;
+    letter-spacing: -0.05px;
+    line-height: 118%;
 }
-.terms-text p{
-    margin:4px 0;
+.terms-text p {
+    margin: 4px 0;
+    color: #2F2F2F;
+    font-family: Helvetica Neue LT Pro;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
 }
 .terms-text a {
     color: #2F2F2F;
     text-decoration: none;
+}
+.terms-content a {
+    color: #1F1F1F;
+}
+@media screen and (max-width:1299px){
+  .terms-title {
+  font-size: 65px;
+}
+.terms-grid {
+  gap: 50px;
+}
 }
 /* MOBILE */
 @media screen and (max-width: 990px) {
@@ -211,7 +245,6 @@ body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
     grid-template-columns: 1fr;
     gap:0;
   }
-
   .terms-sidebar {
     position: relative;
     top: auto;
@@ -221,6 +254,7 @@ body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
 @media screen and (max-width:767px){
     .terms-title{
         font-size:32px;
+        padding-top:17px;
     }
     .terms-text{
         padding-left:0;
@@ -229,11 +263,23 @@ body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
     .terms-sidebar {
         margin-bottom: 56px;
     }
+    .terms-contet-wrapper {
+      padding-bottom: 20px;
+    }
     .terms-sidebar ul{
         margin:0;
     }
+    .terms-updated, .terms-content > p  {
+      margin: 0px;
+    }
+    .terms-text ul {
+      padding-inline-start: 26px;
+      margin-top: 15px;
+      margin-bottom: 13px;
+    }
 }
 {% endstyle %}
+
 {% schema %}
 {
   "name": "Custom page",
@@ -297,20 +343,38 @@ body:has(.scrolled-past-header.shopify-section-header-hidden) .terms-sidebar{
       "type": "range",
       "id": "padding_top",
       "label": "Padding Top",
-      "min": 20,
+      "min": 0,
       "max": 150,
-      "step": 5,
+      "step": 2,
       "default": 60
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "label": "Padding Bottom",
-      "min": 20,
+      "min": 0,
       "max": 150,
-      "step": 5,
+      "step": 2,
       "default": 60
-    }
+    },
+    {
+      "type": "range",
+      "id": "padding_mobile_top",
+      "label": "Padding Mobile Top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_mobile_bottom",
+      "label": "Padding Mobile Bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "default": 60
+    },
   ],
   "blocks": [
     {
