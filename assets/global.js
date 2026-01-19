@@ -514,10 +514,11 @@ class MenuDrawer extends HTMLElement {
         this.closeMenuDrawer();
     });
   }
-
   onCloseButtonClick(event) {
-    const detailsElement = event.currentTarget.closest('details');
-    this.closeSubmenu(detailsElement);
+    if (window.innerWidth >= 989) {
+      const detailsElement = event.currentTarget.closest('details');
+      this.closeSubmenu(detailsElement);
+    }
   }
 
   closeSubmenu(detailsElement) {

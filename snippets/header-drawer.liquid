@@ -380,33 +380,43 @@
     const menuText = document.getElementById('menuText');
     const closeText = document.getElementById('closeText');
 
-    if (!menuButton || !menuText || !closeText) return;
+      if (!menuButton || !menuText || !closeText) return;
 
-    menuButton.addEventListener('click', function () {
-      const isMenuVisible = menuText.style.display !== 'none';
+        menuButton.addEventListener('click', function () {
+          const isMenuVisible = menuText.style.display !== 'none';
 
-      if (isMenuVisible) {
-        menuText.style.display = 'none';
-        closeText.style.display = 'flex';
-      } else {
-        menuText.style.display = 'flex';
-        closeText.style.display = 'none';
-      }
-    });
-  });
+          if (isMenuVisible) {
+            menuText.style.display = 'none';
+            closeText.style.display = 'flex';
+          } else {
+            menuText.style.display = 'flex';
+            closeText.style.display = 'none';
+          }
+        });
+      });
 
-  var acc = document.getElementsByClassName("accordion-button");
+      var acc = document.getElementsByClassName("accordion-button");
+        for (var i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function () {
+            for (var j = 0; j < acc.length; j++) {
+          if (acc[j] !== this) {
+            acc[j].classList.remove("active");
+            var otherPanel = acc[j].nextElementSibling;
+            if (otherPanel) {
+              otherPanel.style.maxHeight = null;
+            }
+          }
+        }
 
-  for (var i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
+        // Toggle current accordion
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
 
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
+        if (this.classList.contains("active")) {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } else {
+          panel.style.maxHeight = null;
+        }
     });
   }
 </script>
