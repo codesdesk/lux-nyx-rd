@@ -1,0 +1,97 @@
+<style>
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.mobile_padding_top }}px;
+    padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+}
+
+.review-grid [data-bv-show="reviews"]{
+    display: block;
+}
+
+
+@media screen and (min-width : 750px){
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+}
+
+
+
+
+
+</style>
+
+<div class="review-grid section-{{ section.id }}-padding {{ section.settings.addclass }}">
+  <div class="page-width">
+    <div data-bv-show="reviews" data-bv-product-id="{{ product.id }}"></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product reviews",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "addclass",
+      "label": "AddClass"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Mobile padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile padding bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product reviews"
+    }
+  ]
+}
+{% endschema %}

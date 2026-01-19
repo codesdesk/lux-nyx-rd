@@ -40,4 +40,36 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
     });
+
+    // Collection grid 1 or 2 
+
+    const allProductsBtns = document.querySelectorAll('.icon-product-grid > .all-products');
+    const productsGridBtns = document.querySelectorAll('.icon-product-grid > .products-grid');
+    const productGridContainer = document.querySelector('.main-collection-custom .product-grid-container #product-grid');
+    console.log(productGridContainer.classList);
+    productsGridBtns.forEach(btn => {
+        btn.classList.add("active");
+    });
+    if (productGridContainer) {
+    productsGridBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+        productGridContainer.classList.add('grid--2-col');
+        productGridContainer.classList.remove('grid--1-col');
+        btn.classList.add('active');
+        allProductsBtns.forEach(b => b.classList.remove('active'));
+        });
+    });
+
+    allProductsBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+        productGridContainer.classList.add('grid--1-col');
+        productGridContainer.classList.remove('grid--2-col');
+
+        btn.classList.add('active');
+        productsGridBtns.forEach(b => b.classList.remove('active'));
+        });
+    });
+    }
+
+
 });

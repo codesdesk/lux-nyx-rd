@@ -150,6 +150,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
+        "show_breadcrumb": true,
         "color_scheme": "scheme-1",
         "media_size": "large",
         "constrain_to_viewport": true,
@@ -183,64 +184,58 @@
         "padding_bottom": 28
       }
     },
-    "collections_grid_nW7Mxt": {
-      "type": "collections-grid",
+    "custom_featured_content_KCtxwJ": {
+      "type": "custom-featured-content",
       "blocks": {
-        "small_card_iztrgH": {
+        "small_card_YBjAdq": {
           "type": "small_card",
           "settings": {
             "image": "shopify://shop_images/LUX_AND_NYX__DSC7184_highres.png",
             "title": "Versality in Design",
-            "content": "<p>Subtle, but bold. Own the room the moment you walk in.</p>",
-            "link": "",
-            "button_text": ""
+            "content": "<p>Subtle, but bold. Own the room the moment you walk in.</p>"
           }
         },
-        "small_card_VXVr7n": {
+        "small_card_Qc9y9t": {
           "type": "small_card",
           "settings": {
             "image": "shopify://shop_images/LUX_AND_NYX__DSC7376_highres-s.jpg",
             "title": "Versality in Design",
-            "content": "<p>Subtle, but bold. Own the room the moment you walk in.</p>",
-            "link": "",
-            "button_text": ""
+            "content": "<p>Subtle, but bold. Own the room the moment you walk in.</p>"
           }
         },
-        "small_card_hnAxmr": {
+        "small_card_WKVNe9": {
           "type": "small_card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_786.jpg",
             "title": "Trolley Sleeve",
-            "content": "<p>Just the right amount of compartments to get you through the day—no more, no less.</p>",
-            "link": "",
-            "button_text": ""
+            "content": "<p>Just the right amount of compartments to get you through the day—no more, no less.</p>"
           }
         },
-        "large_card_fTKYPp": {
+        "large_card_KcKy6k": {
           "type": "large_card",
           "settings": {
             "image": "shopify://shop_images/LUX_AND_NYX__DSC7574_highres_1.png",
             "title": "Style Beyond Gender",
-            "description": "We’ve perfected the women’s work bag to provide functional  for all of life’s transitions.",
-            "link": "",
-            "button_text": ""
+            "description": "We’ve perfected the women’s work bag to provide functional  for all of life’s transitions."
           }
         }
       },
       "block_order": [
-        "small_card_iztrgH",
-        "small_card_VXVr7n",
-        "small_card_hnAxmr",
-        "large_card_fTKYPp"
+        "small_card_YBjAdq",
+        "small_card_Qc9y9t",
+        "small_card_WKVNe9",
+        "large_card_KcKy6k"
       ],
-      "name": "Collections Grid",
+      "name": "Custom Featured Content",
       "settings": {
-        "addclass": "custom_product_coll_grid",
-        "heading": "Product Features",
+        "addclass": "",
+        "heading": "product Features",
         "view_all_text": "See more",
         "view_all_link": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 12,
+        "padding_bottom": 60,
+        "mobile_padding_top": 4,
+        "mobile_padding_bottom": 56
       }
     },
     "founders_note_DCrrYP": {
@@ -268,6 +263,49 @@
         "image_radius": 0,
         "padding_top": 20,
         "padding_bottom": 27
+      }
+    },
+    "product_reviews_YEiiDM": {
+      "type": "product-reviews",
+      "name": "Product reviews",
+      "settings": {
+        "addclass": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "mobile_padding_top": 36,
+        "mobile_padding_bottom": 36
+      }
+    },
+    "featured_collection_CaipFJ": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "custom_class": "home_featured",
+        "collection": "everything2",
+        "products_to_show": 25,
+        "title": "Explore",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/everything2",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 12,
+        "padding_bottom": 88
       }
     },
     "press_mentions_LcCkMF": {
@@ -330,8 +368,10 @@
   "order": [
     "main",
     "related-products",
-    "collections_grid_nW7Mxt",
+    "custom_featured_content_KCtxwJ",
     "founders_note_DCrrYP",
+    "product_reviews_YEiiDM",
+    "featured_collection_CaipFJ",
     "press_mentions_LcCkMF"
   ]
 }

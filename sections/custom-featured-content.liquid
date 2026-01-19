@@ -1,0 +1,368 @@
+<style>
+
+.section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+.custom_collections-grid {
+  border-top: 0.75px solid #8A938D;
+}
+.custom_collections-grid .collections-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 21px;
+}
+.custom_collections-grid .collections-header h2 {
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 0.03px;
+  text-transform: uppercase;
+  margin: 0;
+  color: #000000;
+}
+.custom_collections-grid .collections-header a {
+  color: #000;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: right;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
+}
+
+.custom_collections-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.custom_collections-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.custom_collections-layout .custom_left-grid {
+  display: flex;
+  width: 100%;
+  max-width: calc(49.5% - 2px);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4px;
+}
+.custom_collections-layout .collection-card.large-card{
+  display: block;
+  width: 100%;
+  max-width: calc(50.5% - 2px);
+}
+
+.custom_collections-layout .custom_left-grid .collection-card {
+  display: block;
+  width: 100%;
+  max-width: calc(50% - 2px);
+}
+.custom_collections-layout  .collection-card .image-wrapper {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+.custom_collections-layout  .collection-card .image-wrapper img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  transition: all .3s ease-in-out;
+}
+
+.custom_collections-layout .collection-content_wrappper {
+  margin-top: 10px;
+  color:rgb(var(--color-foreground));
+}
+
+.custom_collections-layout .collection-content_wrappper > * {
+  margin: 0;
+}
+
+.custom_collections-layout .collection-content_wrappper > h3 {
+  font-family: Helvetica Neue;
+  font-weight: 500;
+  font-size: 28.58px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  text-transform: unset;
+  display: inline-block;
+}
+
+.custom_collections-layout .collection-content_wrappper .rte p {
+  font-family: Helvetica Neue;
+  font-weight: 500;
+  font-size: 14.29px;
+  line-height: 1.15;
+  letter-spacing: 0;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.custom_collections-layout .collection-content_wrappper .rte > :first-child,
+.custom_collections-layout .collection-content_wrappper .rte > :last-child{
+  margin: 0;
+}
+
+.custom_collections-layout .collection-content_wrappper .rte {
+  margin-top: 10px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .custom_collections-layout .collection-card .image-wrapper img:hover{
+    scale: 1.2
+  }
+}
+
+@media screen and (max-width :989px){
+  .custom_collections-layout {
+    flex-direction: column-reverse;
+    gap: 56px;
+  }
+  .custom_collections-layout .custom_left-grid, .custom_collections-layout .collection-card.large-card {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width :749px){
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.mobile_padding_top }}px;
+    padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  }
+  .custom_collections-layout .custom_left-grid {
+    gap: 56px
+  }
+  .custom_collections-layout .custom_left-grid .collection-card {
+    max-width: 100%;
+  }
+  .custom_collections-grid .collections-header {
+    margin-bottom: 13px;
+    font-size: 13px;
+    line-height: 1.15;
+    letter-spacing: 0;
+  }
+  .custom_collections-layout .collection-content_wrappper {
+    margin-top: 12px;
+  }
+  .custom_collections-layout .collection-content_wrappper > h3 {
+    font-size: 24px;
+    letter-spacing: -0.01em;
+  }
+  .custom_collections-layout .collection-content_wrappper .rte p{
+    line-height: 1.05;
+  }
+  .custom_collections-layout .collection-content_wrappper .rte {
+    margin-top: 8px;
+  }
+}
+
+</style>
+
+<div class="custom_collections-grid section-{{ section.id }}-padding {{ section.settings.addclass }}">
+  <div class="page-width">
+  <div class="collections-header {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <h2>{{ section.settings.heading }}</h2>
+    {% if section.settings.view_all_link != blank %}
+      <a href="{{ section.settings.view_all_link }}">{{ section.settings.view_all_text }}</a>
+    {% endif %}
+  </div>
+
+  <div class="custom_collections-layout {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <!-- LEFT GRID -->
+    <div class="custom_left-grid {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {% for block in section.blocks %}
+        {% if block.type == 'small_card' %}
+          <div class="collection-card {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {% if block.settings.image %}
+            <div class="image-wrapper">
+                <img src="{{ block.settings.image | image_url: width: 800 }}" alt="">
+            </div>
+          {% endif %}
+          <div class="collection-content_wrappper">
+            {% if block.settings.title != blank %}<h3>{{ block.settings.title }}</h3>{% endif %}
+            {% if block.settings.content != blank %} 
+              <div class="collection_content rte">
+                {{ block.settings.content }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  
+  <!-- RIGHT LARGE CARD -->
+  {% for block in section.blocks %}
+    {% if block.type == 'large_card' %}
+      <div class="collection-card large-card {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {% if block.settings.image %}
+            <div class="image-wrapper">
+              <img src="{{ block.settings.image | image_url: width: 1200 }}" alt="">
+            </div>
+          {% endif %}
+          <div class="collection-content_wrappper">
+            {% if block.settings.title != blank %} 
+             <h3>{{ block.settings.title }}</h3>
+            {% endif %}
+             {% if block.settings.description != blank %} 
+              <div class="collection_content rte">
+                <p>{{ block.settings.description }}</p>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom featured content",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "addclass",
+      "label": "AddClass"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Collections"
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View all text",
+      "default": "See more"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View all link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Mobile padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "small_card",
+      "name": "Small Collection Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Collection name"
+        },
+         {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    },
+    {
+      "type": "large_card",
+      "name": "Large Collection Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Belt Bags"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Redefining the way you carry essentials hands-free."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Custom featured content",
+      "blocks": [
+        { "type": "small_card" },
+        { "type": "small_card" },
+        { "type": "small_card" },
+        { "type": "large_card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
