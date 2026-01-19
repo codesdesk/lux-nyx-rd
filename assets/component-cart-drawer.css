@@ -416,6 +416,20 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
   margin-top: 0.2rem;
 }
 
+.cart-item__details > * + *:has(.product-option) {
+    margin-top: 6px;
+}
+.cart-item__details .product-option {
+    font-family: PP Editorial New;
+    font-weight: 400;
+    font-style: Italic;
+    font-size: 14px;
+    line-height: 120%;
+    margin-top: 6px;
+    color: #454545;
+    letter-spacing: 0.01rem;
+}
+
 @media screen and (min-width: 750px) {
   .cart-drawer .cart-item__quantity--info quantity-popover > * {
     padding-left: 0;
