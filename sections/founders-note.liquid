@@ -2,7 +2,7 @@
   Founder’s Note – Fully Customizable Section
 {% endcomment %}
 
-<section class="founders-note-section founder-notes-{{ section.id }} {{ section.settings.addclass }}" style="background-color: {{ section.settings.background_color }};">
+<div class="founders-note-section founder-notes-{{ section.id }} {{ section.settings.addclass }}" style="background-color: {{ section.settings.background_color }};">
   <div class="founders-note-container page-width">
     <div class="founders-note-wrapper">
         {% if section.settings.eyebrow != blank %}
@@ -68,7 +68,7 @@
     </div>
 
   </div>
-</section>
+</div>
 
 <style>
   
@@ -343,6 +343,7 @@
 {% schema %}
 {
   "name": "Founder's Note",
+  "tag": "section",
   "settings": [
      {
       "type": "text",

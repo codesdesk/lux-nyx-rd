@@ -29,53 +29,23 @@
               <a href="/collections/all" class="uni-women-link">WOMEN</a>
               <a href="/collections/all" class="uni-women-link">UNISEX</a>
             </div>
-            <a href="/collections/all" class="mobile-button">Shop All</a>
+             <a href="/collections/all" class="mobile-button">Shop All</a> 
 
              <div class="mobile-menu-accordion">
-            <button class="accordion-button">categories<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
-            <div class="panel">
-                <a href="#" class="category-shop-link">shop all</a>
-                <a href="#" div class="category-items-link">totes</a>
-                <a href="#" div class="category-items-link">backpacks</a>
-                <a href="#" div class="category-items-link">crossbody</a>
-                <a href="#" div class="category-items-link">wallets</a>
-                <a href="#" div class="category-items-link">clutches</a>
-                <a href="#" div class="category-items-link">belt bag</a>
-                <a href="#" div class="category-items-link">accessories</a>
-            </div>
-            <button class="accordion-button">lifestyle<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
-            <div class="panel">
-                <a href="#" class="category-shop-link">shop all</a>
-                <a href="#" div class="category-items-link">totes</a>
-                <a href="#" div class="category-items-link">backpacks</a>
-                <a href="#" div class="category-items-link">crossbody</a>
-                <a href="#" div class="category-items-link">wallets</a>
-                <a href="#" div class="category-items-link">clutches</a>
-                <a href="#" div class="category-items-link">belt bag</a>
-                <a href="#" div class="category-items-link">accessories</a>
-            </div>
-            <button class="accordion-button">functions<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
-            <div class="panel">
-                <a href="#" class="category-shop-link">shop all</a>
-                <a href="#" div class="category-items-link">totes</a>
-                <a href="#" div class="category-items-link">backpacks</a>
-                <a href="#" div class="category-items-link">crossbody</a>
-                <a href="#" div class="category-items-link">wallets</a>
-                <a href="#" div class="category-items-link">clutches</a>
-                <a href="#" div class="category-items-link">belt bag</a>
-                <a href="#" div class="category-items-link">accessories</a>
-            </div>
-            <button class="accordion-button">collections<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
-            <div class="panel">
-                <a href="#" class="category-shop-link">shop all</a>
-                <a href="#" div class="category-items-link">totes</a>
-                <a href="#" div class="category-items-link">backpacks</a>
-                <a href="#" div class="category-items-link">crossbody</a>
-                <a href="#" div class="category-items-link">wallets</a>
-                <a href="#" div class="category-items-link">clutches</a>
-                <a href="#" div class="category-items-link">belt bag</a>
-                <a href="#" div class="category-items-link">accessories</a>
-            </div>
+              {% for link in section.settings.menu.links %}
+               {% if link.links != blank %}
+                  {% for childlink in link.links %} 
+                  <button class="accordion-button">{{childlink.title}}<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
+                  {% if childlink.links != blank %}
+                    <div class="panel">
+                      {% for grandchild in childlink.links %}
+                        <a href="{{grandchild.url}}" class="category-{{grandchild.handle}} {% if grandchild.current  %} active {% endif %}">{{grandchild.title}}</a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %} 
           </div>
           <div class="support-link-wrapper">
             <div class="query-container">
@@ -380,33 +350,43 @@
     const menuText = document.getElementById('menuText');
     const closeText = document.getElementById('closeText');
 
-    if (!menuButton || !menuText || !closeText) return;
+      if (!menuButton || !menuText || !closeText) return;
 
-    menuButton.addEventListener('click', function () {
-      const isMenuVisible = menuText.style.display !== 'none';
+        menuButton.addEventListener('click', function () {
+          const isMenuVisible = menuText.style.display !== 'none';
 
-      if (isMenuVisible) {
-        menuText.style.display = 'none';
-        closeText.style.display = 'flex';
-      } else {
-        menuText.style.display = 'flex';
-        closeText.style.display = 'none';
-      }
-    });
-  });
+          if (isMenuVisible) {
+            menuText.style.display = 'none';
+            closeText.style.display = 'flex';
+          } else {
+            menuText.style.display = 'flex';
+            closeText.style.display = 'none';
+          }
+        });
+      });
 
-  var acc = document.getElementsByClassName("accordion-button");
+      var acc = document.getElementsByClassName("accordion-button");
+        for (var i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function () {
+            for (var j = 0; j < acc.length; j++) {
+          if (acc[j] !== this) {
+            acc[j].classList.remove("active");
+            var otherPanel = acc[j].nextElementSibling;
+            if (otherPanel) {
+              otherPanel.style.maxHeight = null;
+            }
+          }
+        }
 
-  for (var i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
+        // Toggle current accordion
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
 
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
+        if (this.classList.contains("active")) {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } else {
+          panel.style.maxHeight = null;
+        }
     });
   }
 </script>

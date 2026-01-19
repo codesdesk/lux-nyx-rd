@@ -41,4 +41,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     });
 
+        // go to top button
+         const scrollBtn = document.getElementById('scrollToTop');
+        const footer = document.querySelector('footer'); // adjust selector if needed
+
+        window.addEventListener('scroll', () => {
+        const footerTop = footer.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        // Show / hide button
+        if (window.scrollY > 300) {
+            scrollBtn.style.display = 'block';
+        } else {
+            scrollBtn.style.display = 'none';
+        }
+
+        // When footer comes into view
+        if (footerTop < windowHeight) {
+            scrollBtn.style.position = 'static';
+            scrollBtn.classList.add('stay_btn');
+        } else {
+            scrollBtn.style.position = 'fixed';
+            scrollBtn.style.bottom = '80px';
+            scrollBtn.classList.remove('stay_btn');
+        }
+        });
+
+        // Scroll to top on click
+        scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        });
+
 });

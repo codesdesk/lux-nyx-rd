@@ -6,6 +6,33 @@
 {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+
+  #scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 115.99999999999999%;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  display: none;
+  border: unset;
+  background-color: transparent;
+  color: #949494;
+  cursor: pointer;
+  padding: 0px;
+}
+
+#scrollToTop:hover {
+  opacity: 0.8;
+}
+
+.go-to-top {
+    direction: rtl;
+    margin-bottom: 12px;
+}
   .footer {
     margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
   }
@@ -26,6 +53,12 @@
     }
   }
 {%- endstyle -%}
+
+<div class="go-to-top">
+  <div class="page-width">
+  <button id="scrollToTop" aria-label="Scroll to top">Go to Top</button>
+  </div>
+</div>
 
 <footer class="footer {{ section.settings.add_class }} color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid

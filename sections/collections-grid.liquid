@@ -63,8 +63,10 @@
   display: block;
   transition: .5s ease-in-out;
 }
+@media (hover: hover) and (pointer: fine) {
 .collection-card img:hover {
     transform: scale(1.1);
+}
 }
 .collection-overlay {
     position: absolute;
@@ -281,7 +283,7 @@
 
 </style>
 
-<section class="collections-grid section-{{ section.id }}-padding {{ section.settings.addclass }}">
+<div class="collections-grid section-{{ section.id }}-padding {{ section.settings.addclass }}">
   <div class="page-width">
   <div class="collections-header">
     <h2>{{ section.settings.heading }}</h2>
@@ -330,7 +332,7 @@
     {% endfor %}
   </div>
   </div>
-</section>
+</div>
 
 {% schema %}
 {
