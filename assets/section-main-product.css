@@ -2080,15 +2080,25 @@ variant-selects .product-form__input.product-form__input--pill > legend {
   scroll-padding-left: 1rem;
   -webkit-overflow-scrolling: touch;
 }
+
+.product.product--large.product--thumbnail_slider .slider.slide-len-1,
+.product.product--large.product--thumbnail_slider .slider.slide-len-2 {
+    justify-content: center;
+}
 .product.product--large.product--thumbnail_slider slider-component:has(.product__media-list) .scrollbar_wrapper {
   display: none;
 }
 .product:not(.product--columns):is(.product--thumbnail_slider) .product__media-list .product__media-item {
-    display: block;
-    width: 100%;
-    max-width: calc(100% / 2.3 - (8px  / 3) );
-  }
-
+  display: block;
+  width: 100%;
+  max-width: calc(100% / 2.3 - (8px  / 3) );
+}
+.product:not(.product--columns):is(.product--thumbnail_slider) .product__media-list.slide-len-1 .product__media-item {
+  max-width: calc(100% / 1.5);
+}
+.product:not(.product--columns):is(.product--thumbnail_slider) .product__media-list.slide-len-2 .product__media-item {
+  max-width: calc(100% / 2);
+}
 .product:not(.product--columns):is(.product--thumbnail_slider) .product__media-list .product__media-item .product-media-container {
   margin: 0;
   border: unset;
