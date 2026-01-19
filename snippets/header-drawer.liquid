@@ -29,53 +29,23 @@
               <a href="/collections/all" class="uni-women-link">WOMEN</a>
               <a href="/collections/all" class="uni-women-link">UNISEX</a>
             </div>
-            <a href="/collections/all" class="mobile-button">Shop All</a>
+             <a href="/collections/all" class="mobile-button">Shop All</a> 
 
              <div class="mobile-menu-accordion">
-            <button class="accordion-button">categories<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
-            <div class="panel">
-                <a href="#" class="category-shop-link">shop all</a>
-                <a href="#" div class="category-items-link">totes</a>
-                <a href="#" div class="category-items-link">backpacks</a>
-                <a href="#" div class="category-items-link">crossbody</a>
-                <a href="#" div class="category-items-link">wallets</a>
-                <a href="#" div class="category-items-link">clutches</a>
-                <a href="#" div class="category-items-link">belt bag</a>
-                <a href="#" div class="category-items-link">accessories</a>
-            </div>
-            <button class="accordion-button">lifestyle<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
-            <div class="panel">
-                <a href="#" class="category-shop-link">shop all</a>
-                <a href="#" div class="category-items-link">totes</a>
-                <a href="#" div class="category-items-link">backpacks</a>
-                <a href="#" div class="category-items-link">crossbody</a>
-                <a href="#" div class="category-items-link">wallets</a>
-                <a href="#" div class="category-items-link">clutches</a>
-                <a href="#" div class="category-items-link">belt bag</a>
-                <a href="#" div class="category-items-link">accessories</a>
-            </div>
-            <button class="accordion-button">functions<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
-            <div class="panel">
-                <a href="#" class="category-shop-link">shop all</a>
-                <a href="#" div class="category-items-link">totes</a>
-                <a href="#" div class="category-items-link">backpacks</a>
-                <a href="#" div class="category-items-link">crossbody</a>
-                <a href="#" div class="category-items-link">wallets</a>
-                <a href="#" div class="category-items-link">clutches</a>
-                <a href="#" div class="category-items-link">belt bag</a>
-                <a href="#" div class="category-items-link">accessories</a>
-            </div>
-            <button class="accordion-button">collections<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
-            <div class="panel">
-                <a href="#" class="category-shop-link">shop all</a>
-                <a href="#" div class="category-items-link">totes</a>
-                <a href="#" div class="category-items-link">backpacks</a>
-                <a href="#" div class="category-items-link">crossbody</a>
-                <a href="#" div class="category-items-link">wallets</a>
-                <a href="#" div class="category-items-link">clutches</a>
-                <a href="#" div class="category-items-link">belt bag</a>
-                <a href="#" div class="category-items-link">accessories</a>
-            </div>
+              {% for link in section.settings.menu.links %}
+               {% if link.links != blank %}
+                  {% for childlink in link.links %} 
+                  <button class="accordion-button">{{childlink.title}}<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
+                  {% if childlink.links != blank %}
+                    <div class="panel">
+                      {% for grandchild in childlink.links %}
+                        <a href="{{grandchild.url}}" class="category-{{grandchild.handle}} {% if grandchild.current  %} active {% endif %}">{{grandchild.title}}</a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %} 
           </div>
           <div class="support-link-wrapper">
             <div class="query-container">
