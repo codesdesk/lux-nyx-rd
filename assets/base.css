@@ -4743,7 +4743,7 @@ details-disclosure > details {
     }
     
   .header {
-    padding: 16px 1.2rem 17px !important;
+    padding: 18px 1.2rem 15px !important;
   }
   .backpacks {
     font-size: 20px;
@@ -6042,7 +6042,10 @@ details[open] .header__icon--search span.svg-wrapper::before {
    }
   .search_drawer_wrapper {
     justify-content: end;
-    margin-bottom: 22px;
+    margin-bottom: 17px;
+  }
+  .search-drawer .search__input.field__input {
+    padding-left: 0.4rem;
   }
   .search-drawer .field__button {
     width: 1.6rem;
