@@ -2648,6 +2648,20 @@ input[type='checkbox'] {
 .card-wrapper .rating-star::before {
     font-size: 18px;
 }
+
+.menu-drawer__navigation-container .accordion-button:hover {
+    margin-bottom: 0px;
+}
+.menu-drawer__navigation-container .accordion-button.active{
+    margin-bottom: 0px;
+}
+
+.mobile-menu-accordion .accordion-button.active{
+    padding-bottom: 20px;
+}
+/* .mobile-menu-accordion button.accordion-button.active .panel {
+    padding-top: 20px;
+} */
 @media only screen and (max-width: 1642px) {  
   .card-wrapper .title_with_rating {
       gap: 10px;
