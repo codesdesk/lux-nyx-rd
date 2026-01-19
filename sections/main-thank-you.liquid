@@ -4,41 +4,45 @@
         padding-bottom: {{ section.settings.padding-bottom }}px;
     }
     @media only screen and (max-width: 749px) {
-        .section-{{ section.id }}-padding {
-            padding-top: {{ section.settings.padding-top-mobile }}px;
-            padding-bottom: {{ section.settings.padding-bottom-mobile }}px;
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mobile }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mobile }}px;
     }
 }
 {%- endstyle -%}
 <div class="section-{{ section.id }}-padding gradiant color-{{ section.settings.section_color_scheme }} }}">
     <div class="thankyou-custom page-width center">
-            <div class="thankyou-image-container">
+        <div class="thankyou-image-container">
+            <div class="thankyou-image-wrapper">
                 {%- if section.settings.thankyou-image != blank -%}
                     <img src="{{ section.settings.thankyou-image | img_url: 'master' }}" alt="{{ section.settings.thankyou-image.alt }}" class="thanks-image">
                 {% endif %}
             </div>
+        </div>
         <div class="items-holder-wrapper">
-            {% if section.settings.heading %}
-                <h1 class="thanks-heading">{{ section.settings.heading }}</h1>
-            {% endif %}
+            <div class="thankyou_content_wrappper">
+                {% if section.settings.heading != blank %}
+                    <h1 class="thanks-heading">{{ section.settings.heading }}</h1>
+                {% endif %}
                 <div class="thanks-text-container">
-                    {% if section.settings.text %}
+                    {% if section.settings.text != blank %}
                         <div class="thanks-text">{{ section.settings.text }}</div>
                     {% endif %}
-                        <div class="paragraph-container">
-                            {% if section.settings.para %}
-                                <div class="thanks-para">{{ section.settings.para }}</div>
-                            {% endif %}
-                            {% if section.settings.sub-para %}
-                                <div class="thanks-para">{{ section.settings.sub-para }}</div>
-                            {% endif %}
-                                {% if section.settings.button_label != blank %}
-                                    <a class="thanks-button" href="{{ section.settings.button_link }}">
-                                        {{ section.settings.button_label }}
-                                    </a>
-                                {% endif %}
-                        </div>
+                    <div class="paragraph-container">
+                        {% if section.settings.para != blank %}
+                            <div class="thanks-para">{{ section.settings.para }}</div>
+                        {% endif %}
+                        {% if section.settings.sub-para != blank %}
+                            <div class="thanks-para">{{ section.settings.sub-para }}</div>
+                        {% endif %}
+                        {% if section.settings.button_label != blank %}
+                            <a class="thanks-button" href="{{ section.settings.button_link }}">
+                                {{ section.settings.button_label }}
+                            </a>
+                        {% endif %}
+                    </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>

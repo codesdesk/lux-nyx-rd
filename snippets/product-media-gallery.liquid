@@ -33,6 +33,12 @@
     assign hide_mobile_slider = true
   endif
 
+  assign product_items = 0
+
+  for media in product.media
+   assign product_items = forloop.index
+  endfor
+
   if section.settings.media_size == 'large'
     assign media_width = 0.65
   elsif section.settings.media_size == 'medium'
@@ -58,7 +64,7 @@
     </a>
     <ul
       id="Slider-Gallery-{{ section.id }}"
-      class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
+      class="product__media-list contains-media slide-len-{{ product_items }} grid grid--peek list-unstyled slider slider--mobile"
       role="list"
     >
       {%- if product.selected_or_first_available_variant.featured_media != null -%}
@@ -153,10 +159,12 @@
         </span>
       </button>
     </div>
-    <div class="scrollbar_wrapper">
+    {% if media_count > 2 %}
+      <div class="scrollbar_wrapper">
         <span class="scrollbar">
         </span>
-    </div>
+      </div>
+    {% endif %}
   </slider-component>
   {%- if first_3d_model -%}
     <button
@@ -181,7 +189,7 @@
     endif
   -%}
   {%- if is_not_limited_to_single_item
-    and media_count > 1
+    and media_count > 2
     and section.settings.gallery_layout contains 'thumbnail'
     or section.settings.mobile_thumbnails == 'show'
   -%}
@@ -191,7 +199,7 @@
     >
       <ul
         id="Slider-Thumbnails-{{ section.id }}"
-        class="thumbnail-list list-unstyled slider slider--mobile{% if section.settings.gallery_layout == 'thumbnail_slider' %} slider--tablet-up{% endif %}"
+        class="thumbnail-list list-unstyled  slider slider--mobile{% if section.settings.gallery_layout == 'thumbnail_slider' %} slider--tablet-up{% endif %}"
       >
         {%- capture sizes -%}
           (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width | minus: 100 | times: media_width | round }} - 4rem) / 4),
@@ -333,10 +341,12 @@
           </span>
         </button>
       </div>
-      <div class="scrollbar_wrapper">
-        <span class="scrollbar">
-        </span>
+      {% if media_count > 2 %}
+        <div class="scrollbar_wrapper">
+          <span class="scrollbar">
+          </span>
       </div>
+      {% endif %}
       
     </slider-component>
   {%- endif -%}
