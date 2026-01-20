@@ -7,7 +7,7 @@
   <div class="page-width">
 
     <!-- Top Row -->
-    <div class="press-header">
+    <div class="press-header {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <span class="press-label">{{ section.settings.label }}</span>
 
       {% if section.settings.button_text != blank %}

@@ -3234,6 +3234,10 @@ cart-drawer .cart-drawer .cart-item {
     margin-top: auto;
     margin-bottom: 20px;
 } 
+
+quantity-input .quantity__input{
+    pointer-events: none;
+}
 /* end-cart-drawer-css */
 
 /* start-cart-page-css */
@@ -3444,7 +3448,7 @@ cart-drawer.is-empty .drawer__inner {
     max-width: 8.2rem;
 }
 .cart-content-left .quantity__button {
-    width: calc(2.5rem / var(--font-body-scale));
+    width: calc(2.3rem / var(--font-body-scale));
 }
 .cart-content-left .cart-item__quantity .quantity {
     min-height: calc((var(--inputs-border-width) * 2) + 3rem);

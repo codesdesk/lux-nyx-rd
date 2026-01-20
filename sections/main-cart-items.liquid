@@ -37,12 +37,11 @@
               {{- 'general.continue_shopping' | t -}}
             </a> {% endcomment %}
             <div class="cart-product">
-                <p class="cart-items-count">
-                  {{ cart.item_count }} items
-                </p>
-                {{- 'icon-cart.svg' | inline_asset_content -}}
-                
-              </div>
+              <p class="cart-items-count">
+                <span class="js-cart-items-count">{{ cart.item_count }}</span> items
+              </p>
+              {{- 'icon-cart.svg' | inline_asset_content -}}
+            </div>
           </div>
 
           <div class="cart__warnings">
@@ -954,27 +953,92 @@
     </div>
     </div>
   </div>
-
-  {% comment %} <div class="liked_products_cart">
-        <h1 class="cart-title">you may also like</h1>
-        {% render 'cart-drawer-product' %}
-      </div> {% endcomment %}
 </cart-items>
 
 <script>
-    var swiper = new Swiper(".swiper-cart", {
-      slidesPerView: 1.25,
-      spaceBetween: 15,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
+
+  var swiper = new Swiper(".swiper-cart", {
+    slidesPerView: 1.25,
+    spaceBetween: 15,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  function formatMoney(amountInCents) {
+    const currency = Shopify?.currency?.active || 'INR';
+    const amount = amountInCents / 100;
+
+    if (currency === 'INR') {
+      return (
+        'Rs. ' +
+        amount.toLocaleString('en-IN', {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        })
+      );
+    }
+
+    return amount.toLocaleString(undefined, {
+      style: 'currency',
+      currency
     });
-  </script>
+  }
+
+
+  async function updateCartItemCount() {
+    try {
+      const response = await fetch('/cart.js');
+      const cart = await response.json();
+
+      // Item count
+      document.querySelectorAll('.js-cart-items-count').forEach(el => {
+        el.textContent = cart.item_count;
+      });
+
+      // Total price
+      document.querySelectorAll('.js-cart-total-price').forEach(el => {
+        el.textContent = formatMoney(cart.total_price);
+      });
+
+    } catch (error) {
+      console.error('Cart update failed:', error);
+    }
+  }
+
+
+  document.addEventListener('DOMContentLoaded', updateCartItemCount);
+
+
+  document.addEventListener('submit', function (event) {
+    if (event.target?.action?.includes('/cart/add')) {
+      setTimeout(updateCartItemCount, 700);
+    }
+  });
+
+
+  const originalFetch = window.fetch;
+  window.fetch = function (...args) {
+    return originalFetch.apply(this, args).then(response => {
+      const url =
+        typeof args[0] === 'string'
+          ? args[0]
+          : args[0]?.url;
+
+      if (url && url.includes('/cart')) {
+        setTimeout(updateCartItemCount, 300);
+      }
+
+      return response;
+    });
+  };
+</script>
+
 
 {% schema %}
 {

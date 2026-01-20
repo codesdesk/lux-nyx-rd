@@ -100,6 +100,7 @@
               {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                 <input type="hidden" name="contact[tags]" value="newsletter">
+                <input type="hidden" name="return_to" value="/collections/everything">
                 <div class="newsletter-form__field-wrapper">
                   <div class="field">
                     <input
@@ -158,7 +159,6 @@
                       {{- 'icon-success.svg' | inline_asset_content -}}
                     </span>
                     {{- 'newsletter.success' | t }}
-                  </h3>
                 {%- endif -%}
               {%- endform -%}
             </div>
@@ -275,6 +275,7 @@
               {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                 <input type="hidden" name="contact[tags]" value="newsletter">
+                <input type="hidden" name="return_to" value="/collections/everything">
                 <div class="newsletter-form__field-wrapper">
                   <div class="field">
                     <input

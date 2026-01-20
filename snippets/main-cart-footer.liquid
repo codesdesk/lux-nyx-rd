@@ -53,10 +53,10 @@
       <div class="cart__blocks">
         <div class="cart-product">
           <p class="cart-items-count">
-            PRODUCT : ({{ cart.item_count }} ITEM)
+            PRODUCT :  <span class="js-cart-items-count">{{ cart.item_count }}</span> items
           </p>
           <p class="totals__total-value">
-            {{ cart.total_price | money_with_currency }}
+            <span class="js-cart-total-price">{{ cart.total_price | money_with_currency }}</span>
           </p>
         </div>
         <div class="shipping_heading">

@@ -1,4 +1,4 @@
-<div class="design-ethos section-{{ section.id }}-padding {{ section.settings.addclass }} ">
+<div class="design-ethos section-{{ section.id }}-padding {{ section.settings.addclass }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   <div class="{% if section.settings.container_width == true %} full-width{% else %} page-width{% endif %}">
   <div class="ethos-header">
     <h2>{{ section.settings.section_title }}</h2>
