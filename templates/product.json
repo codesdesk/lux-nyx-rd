@@ -70,7 +70,7 @@
           "type": "additional_text",
           "settings": {
             "text": "{{ product.metafields.custom.additional_text.value }}",
-            "text_color": "#000000"
+            "text_color": "#1f1f1f"
           }
         },
         "quantity_selector": {

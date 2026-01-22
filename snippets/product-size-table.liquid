@@ -1,0 +1,64 @@
+{% assign sizes = product.metafields.custom.product_sizes.value %}
+    {% if sizes.size > 1 %}
+    <div class="custom_sizes-popup_wrapper">
+      <div class="custom_sizes_popup">
+        <span class="compare_size_btn">close</span>
+            <div class="popup_main-header">
+                {% for size in sizes %}
+                    <h4 class="popup-image">{{ size.title}}</h4>
+            {% endfor %}
+            </div>
+        <div class="popup_images_wrapper popup_images-{{ sizes.size }}">
+          {% for size in sizes %}
+          <div class="popup-image">
+           <img src="{{ size.popup_image | img_url: 'master' }}">
+          </div>
+          {% endfor %}
+        </div>
+        <table>
+            <tr>
+                <th></th>
+                {% for size in sizes %}
+                <th>{{size.popup_text.value}}</th>
+                {% endfor %}
+            </tr>
+            <tr class="dimension">
+                <td>Dimension</td>
+            {% for size in sizes %}
+                <td>{{size.dimensions.value | replace: ';', ' ;<br>' | newline_to_br }}</td>
+                {% comment %} <td>{{size.dimensions.value}} </td> {% endcomment %}
+                {% endfor %}
+            </tr>
+            <tr class="weight">
+                <td>Weight</td>
+            {% for size in sizes %}
+                <td>{{size.weight.value}}</td>
+                {% endfor %}
+            </tr>
+            <tr class="fits">
+                <td>Fits</td>
+            {% for size in sizes %}
+                <td class="fits_wrapper">
+                    <div class="fits_content_wrapper">
+                        <span class="fits_image"><img src="{{ size.fits_icon | img_url: 'master' }}"></span>
+                        <span class="fits_text">{{ size.fits_text }}</span>
+                    </div>
+                </td>
+                {% endfor %}
+            </tr>
+            <tr class="trolley_zipper">
+                <td>Luggage trolley zipper</td>
+            {% for size in sizes %}
+                <td>{%if size.luggage_trolley_zipper %}{% render 'true_icon'%}{% endif %}</td>
+                {% endfor %}
+            </tr>
+            <tr class="crossbody_strap">
+                <td>Crossbody strap</td>
+            {% for size in sizes %}
+                <td>{%if size.crossbody_strap %}{% render 'true_icon'%}{% endif %}</td>
+                {% endfor %}
+            </tr>
+            </table>
+      </div>
+    </div>
+    {% endif %}

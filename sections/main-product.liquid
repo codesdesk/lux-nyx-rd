@@ -39,9 +39,13 @@
 
   {%- style -%}
     .section-{{ section.id }}-padding {
+      padding-top: 11px;
+      padding-bottom: 75px;
+    }
+    /* .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-    }
+    } */
 
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
@@ -89,61 +93,12 @@
     {% if section.settings.show_breadcrumb %}
       {% include 'breadcrumbs' %}   
     {%endif %}
-    {% assign sizes = product.metafields.custom.product_sizes.value %}
-    {% if sizes.size > 1 %}
-      {{ sizes.size }}
-    <div class="custom_sizes-popup_wrapper">
-      <div class="custom_sizes_popup">
-        <span class="compare_size_btn">close</span>
-        <div class="popup_images_wrapper popup_images-{{ sizes.size }}">
-          {% for size in sizes %}
-          <div class="popup-image">
-           <img src="{{ size.popup_image | img_url: 'master' }}">
-          </div>
-          {% endfor %}
-        </div>
-       <table>
-          <tr>
-            <th></th>
-            {% for size in sizes %}
-              <th>{{size.popup_text.value}}</th>
-            {% endfor %}
-          </tr>
-          <tr>
-            <td>Dimension</td>
-           {% for size in sizes %}
-              <td>{{size.dimensions.value | replace: ';', ' ;<br>' | newline_to_br }}</td>
-              {% comment %} <td>{{size.dimensions.value}} </td> {% endcomment %}
-            {% endfor %}
-          </tr>
-          <tr>
-            <td>Weight</td>
-           {% for size in sizes %}
-              <td>{{size.weight.value}}</td>
-            {% endfor %}
-          </tr>
-          <tr>
-            <td>Fits</td>
-           {% for size in sizes %}
-              <td class="fits_wrapper"><span class="fits_image"><img src="{{ size.fits_icon | img_url: 'master' }}"></span><span class="fits_text">{{ size.fits_text }}</span></td>
-            {% endfor %}
-          </tr>
-          <tr>
-            <td>Luggage trolley zipper</td>
-           {% for size in sizes %}
-              <td>{%if size.luggage_trolley_zipper %}{% render 'true_icon'%}{% endif %}</td>
-            {% endfor %}
-          </tr>
-          <tr>
-            <td>Crossbody strap</td>
-           {% for size in sizes %}
-              <td>{%if size.crossbody_strap %}{% render 'true_icon'%}{% endif %}</td>
-            {% endfor %}
-          </tr>
-        </table>
-      </div>
-    </div>
-    {% endif %}
+    {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'product_sizes' %}
+        {% render 'product-size-table' %}
+      {%endcase %}
+    {% endfor %}
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
@@ -849,53 +804,53 @@
                                   </svg>
                                 </div>
                             </div>
-                          <div class="custom_image-with-text-wrapper">
-                                  {% comment %} Image 1 with text {% endcomment %}
-                                  {% assign iwt = product.metafields.custom.image_with_text_1.value %}
-                                  {% if iwt %}
-                                    <div class="image-with-text-item">
-                                      {% if iwt.image %}
-                                        <img
-                                          src="{{ iwt.image | image_url: width: 800 }}"
-                                          alt="{{ iwt.heading | escape }}"
-                                        >
-                                      {% endif %}
-                                      {% if iwt.text %}
-                                        <h3>{{ iwt.text | metafield_tag  }}</h3>
-                                      {% endif %}
-                                    </div>
+                            {% assign iwt = product.metafields.custom.image_with_text_1.value %}
+                            {% if iwt %}
+                              <div class="custom_image-with-text-wrapper">
+                              {% comment %} Image 1 with text {% endcomment %}                                  
+                                <div class="image-with-text-item">
+                                  {% if iwt.image %}
+                                    <img
+                                      src="{{ iwt.image | image_url: width: 800 }}"
+                                      alt="{{ iwt.heading | escape }}"
+                                    >
                                   {% endif %}
-                                  {% comment %} Image 2 with text {% endcomment %}
-                                  {% assign iwt = product.metafields.custom.image_with_text_2.value %}
-                                  {% if iwt %}
-                                    <div class="image-with-text-item">
-                                      {% if iwt.image %}
-                                        <img
-                                          src="{{ iwt.image | image_url: width: 800 }}"
-                                          alt="{{ iwt.heading | escape }}"
-                                        >
-                                      {% endif %}
-                                      {% if iwt.text %}
-                                        <h3>{{ iwt.text | metafield_tag }}</h3>
-                                      {% endif %}
-                                    </div>
+                                  {% if iwt.text %}
+                                    <h3>{{ iwt.text | metafield_tag  }}</h3>
                                   {% endif %}
-                                  {% comment %} Image 3 with text {% endcomment %}
-                                  {% assign iwt = product.metafields.custom.image_with_text_3.value %}
-                                  {% if iwt %}
-                                    <div class="image-with-text-item">
-                                      {% if iwt.image %}
-                                        <img
-                                          src="{{ iwt.image | image_url: width: 800 }}"
-                                          alt="{{ iwt.heading | escape }}"
-                                        >
-                                      {% endif %}
-                                      {% if iwt.text  %}
-                                        <h3>{{ iwt.text | metafield_tag }}</h3>
-                                      {% endif %}
-                                    </div>
+                                </div>
+                              {% endif %}
+                              {% comment %} Image 2 with text {% endcomment %}
+                              {% assign iwt = product.metafields.custom.image_with_text_2.value %}
+                              {% if iwt %}
+                                <div class="image-with-text-item">
+                                  {% if iwt.image %}
+                                    <img
+                                      src="{{ iwt.image | image_url: width: 800 }}"
+                                      alt="{{ iwt.heading | escape }}"
+                                    >
                                   {% endif %}
-                            </div>
+                                  {% if iwt.text %}
+                                    <h3>{{ iwt.text | metafield_tag }}</h3>
+                                  {% endif %}
+                                </div>
+                              {% endif %}
+                              {% comment %} Image 3 with text {% endcomment %}
+                              {% assign iwt = product.metafields.custom.image_with_text_3.value %}
+                              {% if iwt %}
+                                <div class="image-with-text-item">
+                                  {% if iwt.image %}
+                                    <img
+                                      src="{{ iwt.image | image_url: width: 800 }}"
+                                      alt="{{ iwt.heading | escape }}"
+                                    >
+                                  {% endif %}
+                                  {% if iwt.text  %}
+                                    <h3>{{ iwt.text | metafield_tag }}</h3>
+                                  {% endif %}
+                                </div>
+                              </div>
+                            {% endif %}
                           </div>
                         </details>
                       {% endif %}
