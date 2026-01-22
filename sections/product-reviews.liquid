@@ -23,7 +23,7 @@
 
 </style>
 
-<div class="review-grid section-{{ section.id }}-padding {{ section.settings.addclass }}">
+<div class="review-grid section-{{ section.id }}-padding {{ section.settings.addclass }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   <div class="page-width">
     <div data-bv-show="reviews" data-bv-product-id="{{ product.id }}"></div>
   </div>

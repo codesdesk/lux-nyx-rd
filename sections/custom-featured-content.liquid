@@ -70,7 +70,12 @@
   width: 100%;
   max-width: calc(50% - 2px);
 }
-.custom_collections-layout  .collection-card .image-wrapper {
+
+.custom_collections-layout .custom_left-grid.grid_child-1 .collection-card {
+  max-width: 100%;
+}
+
+  .custom_collections-layout  .collection-card .image-wrapper {
   display: block;
   width: 100%;
   max-width: 100%;
@@ -121,11 +126,32 @@
   margin-top: 10px;
 }
 
-@media (hover: hover) and (pointer: fine) {
+.custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid {
+  max-width: 100%;
+}
+
+.custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid.grid_child-1 .collection-card {
+  max-width: 100%;
+}
+
+.custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid.grid_child-2 .collection-card {
+  max-width: calc((100% / 2) - (4px / 2));
+}
+
+.custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid.grid_child-3 .collection-card {
+  max-width: calc((100% / 3) - (8px / 3));
+}
+
+.custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid .collection-card {
+  max-width: calc((100% / 3) - (8px / 3));
+}
+
+
+{% comment %} @media (hover: hover) and (pointer: fine) {
   .custom_collections-layout .collection-card .image-wrapper img:hover{
     scale: 1.2
   }
-}
+} {% endcomment %}
 
 @media screen and (max-width :989px){
   .custom_collections-layout {
@@ -134,6 +160,19 @@
   }
   .custom_collections-layout .custom_left-grid, .custom_collections-layout .collection-card.large-card {
     max-width: 100%;
+  }
+  
+  .custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid.grid_child-1 .collection-card {
+    max-width: 100%;
+  }
+
+  .custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid.grid_child-2 .collection-card {
+    max-width: calc((100% / 2) - (4px / 2));
+  }
+
+  .custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid.grid_child-3 .collection-card,
+  .custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid .collection-card {
+    max-width: calc((100% / 2) - (4px / 2));
   }
 }
 @media screen and (max-width :749px){
@@ -146,6 +185,11 @@
   }
   .custom_collections-layout .custom_left-grid .collection-card {
     max-width: 100%;
+  }
+  .custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid .collection-card,
+  .custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid.grid_child-2 .collection-card,
+  .custom_collections-layout:not(:has(.collection-card.large-card)) .custom_left-grid.grid_child-3 .collection-card{
+    max-width: calc((100% / 2) - (4px / 2));
   }
   .custom_collections-grid .collections-header {
     margin-bottom: 13px;
@@ -169,6 +213,12 @@
 }
 
 </style>
+{% assign left-child = 0 %}
+{% for block in section.blocks %}
+  {% if block.type == 'small_card' %}
+    {% assign left-child = left-child | plus: 1 %}
+  {% endif %}
+{% endfor %}
 
 <div class="custom_collections-grid section-{{ section.id }}-padding {{ section.settings.addclass }}">
   <div class="page-width">
@@ -181,9 +231,9 @@
 
   <div class="custom_collections-layout {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <!-- LEFT GRID -->
-    <div class="custom_left-grid {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="custom_left-grid grid_child-{{left-child}}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       {% for block in section.blocks %}
-        {% if block.type == 'small_card' %}
+          {% if block.type == 'small_card' %}
           <div class="collection-card {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
             {% if block.settings.image %}
             <div class="image-wrapper">
@@ -206,6 +256,7 @@
   <!-- RIGHT LARGE CARD -->
   {% for block in section.blocks %}
     {% if block.type == 'large_card' %}
+      {% if block.settings.image != blank %}
       <div class="collection-card large-card {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {% if block.settings.image %}
             <div class="image-wrapper">
@@ -223,6 +274,7 @@
             {% endif %}
           </div>
         </div>
+        {% endif %}
       {% endif %}
     {% endfor %}
   </div>

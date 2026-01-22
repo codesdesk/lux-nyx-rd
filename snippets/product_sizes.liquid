@@ -19,9 +19,128 @@
       </ul>
     </div>
     {% if product.metafields.size.chart != blank %}
-    <div  class="cdk-item-2 text-right hidden">
-      <a href="javascript:void(0)" id="compare_size_btn">Compare size</a>
+    <div  class="cdk-item-2 text-right">
+      <a href="javascript:void(0)" class="compare_size_btn">Compare size</a>
     </div>
     {% endif %}
   </div>
 {% endif %}
+
+
+{% style %}
+
+.custom_sizes-popup_wrapper {
+  position: fixed;
+  background: #00000010;
+  inset: 0;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  z-index:  0;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.custom_sizes-popup_wrapper.active{
+  visibility: visible;
+  z-index: 11;
+}
+
+.custom_sizes_popup {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  margin: 0 auto;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 4px 4px #EBEBEB;
+  background: #ffffff;
+}
+
+.popup_images_wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.popup_images-2 .popup-image {
+  display: block;
+  width: 100%;
+  max-width: calc(100% / 2);
+}
+
+.popup_images-3 .popup-image {
+  display: block;
+  width: 100%;
+  max-width: calc(100% / 3);
+  }
+
+.popup_images_wrapper .popup-image img {
+display: block;
+width: 100%;
+object-fit: contain;
+height: auto;
+max-height: 180px;
+}
+
+
+.custom_sizes_popup table {
+  font-family: Helvetica Neue LT Pro;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: normal;
+  letter-spacing: 0;
+  text-align: center;
+  box-shadow: unset;
+  border: 1px solid #EBEBEB;
+}
+
+.custom_sizes_popup table:not([class]) tr:not(:first-child) {
+  height: 100%;
+  height: 83px;
+}
+
+.custom_sizes_popup .compare_size_btn {
+  display: block;
+  width: 100%;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-bottom: 20px;
+  font-family: Helvetica Neue;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 100%;
+  text-decoration: underline;
+  text-transform: capitalize;
+  cursor: pointer
+}
+
+.custom_sizes_popup table:not([class]) td {
+  padding: 22px;
+  border-color: #EBEBEB;
+}
+
+.custom_sizes_popup table:not([class]) th {
+  border-color: #EBEBEB;
+  padding: 10px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 749px){
+
+.custom_sizes_popup {
+  max-width: calc(100% - 40px);
+}
+.custom_sizes_popup table{
+  width: 100%;
+}
+}
+
+{% endstyle %}

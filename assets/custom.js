@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const allProductsBtns = document.querySelectorAll('.icon-product-grid > .all-products');
     const productsGridBtns = document.querySelectorAll('.icon-product-grid > .products-grid');
     const productGridContainer = document.querySelector('.main-collection-custom .product-grid-container #product-grid');
-    console.log(productGridContainer.classList);
     productsGridBtns.forEach(btn => {
         btn.classList.add("active");
     });
@@ -103,6 +102,20 @@ document.addEventListener("DOMContentLoaded", function () {
             top: 0,
             behavior: 'smooth'
         });
+        });
+
+        // comapere sizes btn
+        const compareBtn = document.querySelectorAll(".compare_size_btn");
+        const compareBox = document.querySelector(".custom_sizes-popup_wrapper");
+        compareBtn.forEach(item => {
+            item.addEventListener("click", () => { 
+                if(compareBox.classList.contains('active')){
+                compareBox.classList.remove('active');
+                }
+                else {
+                compareBox.classList.add('active');
+                }
+            });
         });
 
 });
