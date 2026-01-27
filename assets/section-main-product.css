@@ -2258,26 +2258,50 @@ variant-selects fieldset.product-form__input:nth-last-child(2) {
   line-height: 1.24;
 }
 
-.popup_images-2 .popup-image {
+.popup_images-2 .popup-image,
+.popup_images-2 .popup-title {
   display: block;
   width: 100%;
   max-width: calc(100% / 2);
 }
 
-.popup_images-3 .popup-image {
+.popup_images-3 .popup-image, 
+.popup_images-3 .popup-title{
   display: block;
   width: 100%;
-  max-width: calc(100% / 3);
-  }
-
-.popup_images_wrapper .popup-image img {
-display: block;
-width: 100%;
-object-fit: contain;
-height: auto;
-max-height: 180px;
+  max-width: calc(100% / 3);;
 }
 
+.popup_images_wrapper .popup-image img {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  height: auto;
+  max-height: 180px;
+}
+.popup_main-header .popup-title{
+  margin: 0;
+  text-align: center;
+}
+
+.custom_sizes_popup .popup_main-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.popup_main-header .popup-title {
+  font-family: Helvetica Neue LT Pro;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: normal;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0;
+}
 
 .custom_sizes_popup table {
   font-family: Helvetica Neue LT Pro;
