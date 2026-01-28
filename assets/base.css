@@ -785,7 +785,7 @@ table:not([class]) th {
     top: calc(8px + var(--inputs-border-width));
     font-size: 1.2rem;
 }
-.custom_collections-grid .collections-header h2 {
+.custom_collections-grid.product_custom_block .collections-header h2 {
     font-size: 13px;
 }
   
@@ -3653,6 +3653,10 @@ cart-drawer.is-empty .drawer__inner {
 }
 .product_founder .founders-note-supporting {
     margin-bottom: 11px;
+}
+
+.founders-note-section.product_founder {
+    border-top: 1px solid #8A938D;
 }
 
 @media screen and (max-width: 989px) {
