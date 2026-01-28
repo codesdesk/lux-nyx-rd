@@ -305,13 +305,16 @@ a.product__text {
 .product__info-wrapper .product-form__input--pill input[type='radio'] + label {
     border: unset;
     border-radius: 2px;
-    margin: .1rem .4rem .4rem 0;
+    margin: .1rem .4rem .1rem 0;
     padding: .5rem 2rem;
     font-size: 1.2rem;
     letter-spacing: 0px;
     line-height: 116%;
     text-transform: uppercase;
     border-bottom: 1px solid #1F1F1F;
+}
+.product__info-wrapper .custom_product-size .size-variant a {
+    padding-top: 8px;
 }
 .product__info-wrapper .product-form__input--pill input[type='radio'].disabled:checked + label{
     color: #fff;
@@ -2023,7 +2026,7 @@ variant-selects .product-form__input.product-form__input--pill > legend {
   height: 24px;
 }
 .product__info-wrapper .preorder_text {
-    margin-top: 7px;
+    margin-top: 2px;
 }
 
 .product__info-container  > .preorder_text {

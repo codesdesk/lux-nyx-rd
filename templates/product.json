@@ -228,7 +228,7 @@
       ],
       "name": "Custom Featured Content",
       "settings": {
-        "addclass": "",
+        "addclass": "product_custom_block",
         "heading": "product Features",
         "view_all_text": "See more",
         "view_all_link": "",
@@ -242,7 +242,7 @@
       "type": "founders-note",
       "name": "Founder's Note",
       "settings": {
-        "addclass": "",
+        "addclass": "product_founder",
         "eyebrow": "FOUNDER’S NOTE",
         "shop_btn_label": "Shop Now",
         "shop_btn_link": "#",
@@ -261,8 +261,8 @@
         "button_border": "#000000",
         "quote_size": 56,
         "image_radius": 0,
-        "padding_top": 20,
-        "padding_bottom": 27
+        "padding_top": 14,
+        "padding_bottom": 56
       }
     },
     "product_reviews_YEiiDM": {
@@ -358,8 +358,8 @@
         "bg_color": "#f9f7f6",
         "label_color": "#1f1f1f",
         "button_color": "#1f1f1f",
-        "padding_top": 20,
-        "padding_bottom": 72,
+        "padding_top": 14,
+        "padding_bottom": 38,
         "padding_top-mobile": 60,
         "padding_bottom-mobile": 60
       }
