@@ -1,76 +1,117 @@
-{% assign sizes = product.metafields.custom.product_sizes.value %}
-{% if popupVal == Custom_popup %}
-    {% assign sizes = product.metafields.custom.product_sizes.value %}
-{% elsif popupVal  == variablePopup %}  
-    {% assign sizes = product.variants_with_value %}
-{% endif %}
-{% if sizes.size > 1 %}
+{% assign sizes = blank %}
+{{ popupVal }}
+
 {% if popupVal == 'custom' %}
-  <div class="custom_sizes-popup_wrapper custom_popup">
-{% elsif popupVal == 'variable' %}
-  <div class="custom_sizes-popup_wrapper variable_popup">
+
+  {% assign sizes = product.metafields.custom.product_sizes.value %}
+
+{% elsif popupVal == 'variable' %}  
+
+  {% if product.options_with_values != blank %}
+    {% assign sizes = product.variants %}
+  {% endif %}
+
 {% endif %}
-      <div class="custom_sizes_popup">
-        <span class="compare_size_btn">close</span>
-            <div class="popup_main-header popup_images-{{ sizes.size }}">
-                {% for size in sizes %}
-                    {% if size.product_name.value != blank %}<h4 class="popup-title">{{ size.product_name.value}}{% endif %}</h4>
-            {% endfor %}
-            </div>
-        <div class="popup_images_wrapper popup_images-{{ sizes.size }}">
-            {% for size in sizes %}
-                <div class="popup-image">
-                    {% if size.popup_image != blank %}
-                        <img src="{{ size.popup_image | img_url: 'master' }}">
-                    {% endif %}
-                </div>    
-            {% endfor %}
-        </div>
-        <table>
-            <tr>
-                <th></th>
-                {% for size in sizes %}
-                    <th>{% if size.popup_text.value != blank %}{{size.popup_text.value}}{% endif %}</th>
-                {% endfor %}
-            </tr>
-            <tr class="dimension">
-                <td>Dimension</td>
-                {% for size in sizes %}
-                    <td>{% if size.dimensions.value != blank %}{{size.dimensions.value | replace: ';', ' ;<br>' | newline_to_br }}{% endif %}</td>
-                {% endfor %}
-            </tr>
-            <tr class="weight">
-                <td>Weight</td>
-                {% for size in sizes %}
-                       <td>{% if size.weight.value != blank %}{{size.weight.value}}{% endif %}</td>
-                {% endfor %}
-            </tr>
-            <tr class="fits">
-                <td>Fits</td>
-                {% for size in sizes %}
-                    {% if size.fits_text or size.fits_text != blank %}
-                        <td class="fits_wrapper">
-                            <div class="fits_content_wrapper">
-                                <span class="fits_image"><img src="{{ size.fits_icon | img_url: 'master' }}"></span>
-                                <span class="fits_text">{{ size.fits_text }}</span>
-                            </div>
-                        </td>
-                    {% endif %}
-                {% endfor %}
-            </tr>
-            <tr class="trolley_zipper">
-                <td>Luggage trolley zipper</td>
-            {% for size in sizes %}
-                <td>{%if size.luggage_trolley_zipper %}{% render 'true_icon'%}{% endif %}</td>
-                {% endfor %}
-            </tr>
-            <tr class="crossbody_strap">
-                <td>Crossbody strap</td>
-            {% for size in sizes %}
-                <td>{%if size.crossbody_strap %}{% render 'true_icon'%}{% endif %}</td>
-                {% endfor %}
-            </tr>
-            </table>
+
+{% if sizes != blank and sizes.size > 1 %}
+
+  {% if popupVal == 'custom' %}
+    <div class="custom_sizes-popup_wrapper custom_popup">
+  {% elsif popupVal == 'variable' %}
+    <div class="custom_sizes-popup_wrapper variable_popup">
+  {% endif %}
+
+    <div class="custom_sizes_popup">
+      <span class="compare_size_btn">close</span>
+      <!-- HEADER -->
+      <div class="popup_main-header popup_images-{{ sizes.size }}">
+        {% for size in sizes %}
+          {% if popupVal == 'custom' %}
+            {% if size.product_name.value != blank %}
+              <h4 class="popup-title">{{ size.product_name.value }}</h4>
+            {% endif %}
+          {% else %}
+            <pre>{{ size.metafields.custom | json }}</pre>
+            <h4 class="popup-title">{{ size.metafields.custom.popup_text.value }}</h4>
+          {% endif %}
+        {% endfor %}
       </div>
+      <!-- IMAGES -->
+        <div class="popup_images_wrapper popup_images-{{ sizes.size }}">
+          {% for size in sizes %}
+            <div class="popup-image">
+              {% if size.popup_image != blank %}
+                <img src="{{ size.popup_image | img_url: 'master' }}">
+              {% endif %}
+            </div>    
+          {% endfor %}
+        </div>
+      <table>
+        <tr>
+          <th></th>
+          {% for size in sizes %}
+            <th>
+              {% if popupVal == 'custom' and size.popup_text.value != blank %}
+                {{ size.popup_text.value }}
+              {% else %}
+                {{ size }}
+              {% endif %}
+            </th>
+          {% endfor %}
+        </tr>
+        {% if popupVal == 'custom' %}
+        <tr class="dimension">
+          <td>Dimension</td>
+          {% for size in sizes %}
+            <td>{{ size.dimensions.value | replace: ';', ';<br>' }}</td>
+          {% endfor %}
+        </tr>
+        <tr class="weight">
+          <td>Weight</td>
+          {% for size in sizes %}
+            <td>{{ size.weight.value }}</td>
+          {% endfor %}
+        </tr>
+        <tr class="fits">
+          <td>Fits</td>
+          {% for size in sizes %}
+            {% if size.fits_text != blank %}
+              <td class="fits_wrapper">
+                <div class="fits_content_wrapper">
+                  <span class="fits_image">
+                    <img src="{{ size.fits_icon | img_url: 'master' }}">
+                  </span>
+                  <span class="fits_text">{{ size.fits_text }}</span>
+                </div>
+              </td>
+            {% else %}
+              <td></td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr class="trolley_zipper">
+          <td>Luggage trolley zipper</td>
+          {% for size in sizes %}
+            <td>
+              {% if size.luggage_trolley_zipper %}
+                {% render 'true_icon' %}
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        <tr class="crossbody_strap">
+          <td>Crossbody strap</td>
+          {% for size in sizes %}
+            <td>
+              {% if size.crossbody_strap %}
+                {% render 'true_icon' %}
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        {% endif %}
+      </table>
     </div>
-    {% endif %}
+  </div>
+
+{% endif %}
