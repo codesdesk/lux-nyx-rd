@@ -96,9 +96,18 @@
     {% for block in section.blocks %}
       {% case block.type %}
       {% when 'product_sizes' %}
-        {% render 'product-size-table' %}
-      {%endcase %}
-    {% endfor %}
+        {%endcase %}
+      {% endfor %}
+      {% for option in product.options_with_values %}
+          {{forloop.index}}{{option.name }}
+          {%assign optionName = option.name | downcase %}
+          {% if optionName == 'size' %}
+            {% for optionval in option.values %}
+              {{forloop.index}}{{ optionval }}
+            {%endfor %}
+          {% endif %}
+      {%endfor %}
+      {% render 'product-size-table' product:product %}
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
