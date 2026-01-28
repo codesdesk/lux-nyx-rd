@@ -1,8 +1,15 @@
 {% assign sizes = product.metafields.custom.product_sizes.value %}
-{% comment %} {% assign sizes = product.variants %} {% endcomment %}
-
-    {% if sizes.size > 1 %}
-    <div class="custom_sizes-popup_wrapper">
+{% if popupVal == Custom_popup %}
+    {% assign sizes = product.metafields.custom.product_sizes.value %}
+{% elsif popupVal  == variablePopup %}  
+    {% assign sizes = product.variants_with_value %}
+{% endif %}
+{% if sizes.size > 1 %}
+{% if popupVal == 'custom' %}
+  <div class="custom_sizes-popup_wrapper custom_popup">
+{% elsif popupVal == 'variable' %}
+  <div class="custom_sizes-popup_wrapper variable_popup">
+{% endif %}
       <div class="custom_sizes_popup">
         <span class="compare_size_btn">close</span>
             <div class="popup_main-header popup_images-{{ sizes.size }}">

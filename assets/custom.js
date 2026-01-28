@@ -105,14 +105,41 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // comapere sizes btn
-        const compareBtn = document.querySelectorAll(".compare_size_btn");
-        const compareBox = document.querySelector(".custom_sizes-popup_wrapper");
+       // VARIABLE POPUP
+        const compareBtns = document.querySelectorAll(".option-size .compare_size_btn");
+        const compareBox = document.querySelector(".custom_sizes-popup_wrapper.variable_popup");
+        const closeCompareBtns = compareBox ? compareBox.querySelectorAll(".compare_size_btn") : [];
 
-        compareBtn.forEach(item => {
-            item.addEventListener("click", () => {
-                compareBox.classList.toggle('active');
-            });
+        compareBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            compareBox?.classList.toggle("active");
         });
+        });
+
+        closeCompareBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            compareBox?.classList.toggle("active");
+        });
+        });
+
+
+        // CUSTOM POPUP
+        const customCompareBtns = document.querySelectorAll(".custom_product-size-wrapper .compare_size_btn");
+        const customCompareBox = document.querySelector(".custom_sizes-popup_wrapper.custom_popup");
+        const customCloseCompareBtns = customCompareBox ? customCompareBox.querySelectorAll(".compare_size_btn") : [];
+
+        customCompareBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            customCompareBox?.classList.toggle("active");
+        });
+        });
+
+        customCloseCompareBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            customCompareBox?.classList.toggle("active");
+        });
+        });
+
 
 
 });

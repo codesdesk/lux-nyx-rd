@@ -69,6 +69,24 @@
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
+  {% comment %} custom popup {% endcomment %}
+  {%assign  Custom_popup  = false %}
+  {% for block in section.blocks %}
+    {% case block.type %}
+    {% when 'product_sizes' %}
+      {%assign  Custom_popup  = true %}
+      {%endcase %}
+    {% endfor %}
+    
+    {% comment %} variable popup {% endcomment %}
+    {%assign  variablePopup  = false %}
+    {% for option in product.options_with_values %}
+      {%assign optionName = option.name | downcase %}
+      {% if optionName == 'size' %}
+          {%assign  variablePopup  = true %}
+          {% endif %}
+      {%endfor %}
+
   {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
   {%- if first_3d_model -%}
     {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
@@ -93,21 +111,16 @@
     {% if section.settings.show_breadcrumb %}
       {% include 'breadcrumbs' %}   
     {%endif %}
-    {% for block in section.blocks %}
-      {% case block.type %}
-      {% when 'product_sizes' %}
-        {%endcase %}
-      {% endfor %}
-      {% for option in product.options_with_values %}
-          {{forloop.index}}{{option.name }}
-          {%assign optionName = option.name | downcase %}
-          {% if optionName == 'size' %}
-            {% for optionval in option.values %}
-              {{forloop.index}}{{ optionval }}
-            {%endfor %}
-          {% endif %}
-      {%endfor %}
-      {% render 'product-size-table' product:product %}
+    {% comment %} {{Custom_popup }}, {{variablePopup }} {% endcomment %}
+      {% if Custom_popup %}
+        {% render 'product-size-table' popupVal:'custom' %}
+      {% endif %}
+
+      {% if variablePopup %}
+        {% render 'product-size-table' popupVal:'variable' %}
+      {% endif %}
+
+
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
