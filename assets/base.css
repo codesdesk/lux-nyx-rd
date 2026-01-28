@@ -3635,7 +3635,19 @@ cart-drawer.is-empty .drawer__inner {
     color: #000;
 }
 
-
+.product_custom_block .custom_left-grid .ccollection_content.rte {
+    margin-top: 3px;
+}
+.product_custom_block .custom_left-grid {
+    row-gap: 23px;
+}
+.product_founder .founders-note-quote {
+    margin: 12px  0 35px;
+    text-indent: 240px;
+}
+.product_founder .founders-note-supporting {
+    margin-bottom: 11px;
+}
 
 @media screen and (max-width: 989px) {
   .cart-main {
