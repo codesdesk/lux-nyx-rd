@@ -107,15 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // comapere sizes btn
         const compareBtn = document.querySelectorAll(".compare_size_btn");
         const compareBox = document.querySelector(".custom_sizes-popup_wrapper");
+
         compareBtn.forEach(item => {
-            item.addEventListener("click", () => { 
-                if(compareBox.classList.contains('active')){
-                compareBox.classList.remove('active');
-                }
-                else {
-                compareBox.classList.add('active');
-                }
+            item.addEventListener("click", () => {
+                compareBox.classList.toggle('active');
             });
         });
+
 
 });

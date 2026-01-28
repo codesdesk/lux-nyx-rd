@@ -6098,3 +6098,8 @@ body:has(.custom_sizes-popup_wrapper.active) {
     overflow: hidden;
 }
 
+.product-form__input--pill.option-Sizes .cdk-item-2:has(.compare_size_btn) {
+  top: 0;
+  transform: translateY(-50%);
+}
+

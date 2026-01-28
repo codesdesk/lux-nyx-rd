@@ -43,8 +43,14 @@
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill">
+        <fieldset class="js product-form__input product-form__input--pill option-{{ option.name }}">
           <legend class="form__label">{{ option.name }}</legend>
+          {% assign lableDowncase = option.name | downcase %}
+          {% if lableDowncase == 'sizes' %}
+            <div  class="cdk-item-2 text-right">
+              <a href="javascript:void(0)" class="compare_size_btn">Compare size</a>
+            </div>
+          {% endif %}
           {% render 'product-variant-options',
             product: product,
             option: option,

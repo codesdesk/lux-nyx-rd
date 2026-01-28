@@ -1,4 +1,6 @@
 {% assign sizes = product.metafields.custom.product_sizes.value %}
+{% comment %} {% assign sizes = product.variants %} {% endcomment %}
+
     {% if sizes.size > 1 %}
     <div class="custom_sizes-popup_wrapper">
       <div class="custom_sizes_popup">
