@@ -3667,10 +3667,6 @@ cart-drawer.is-empty .drawer__inner {
     background-color: #fff;
   }
 
-  .header__search .search-drawer.modal__content{
-      top: 71px;
-  }
-
 
 }
 /* end-cart-page-css */
@@ -5953,13 +5949,14 @@ menu-drawer #FacetFiltersFormMobile .mobile-facets__item span.facet-checkbox__te
 /* ===== Search Drawer (Dawn Override) ===== */
 
 .header__search .search-drawer {
-    position: fixed;
-    top: 83px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    background: rgb(0,0,0,0.1);
+  --section-height: calc((var(--announcement-height) + var(--header-height)) );
+  position: fixed;
+  top: var(--section-height);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: #0000001a;
 }
 
 .search-drawer__overlay {
@@ -6060,9 +6057,6 @@ details[open] .header__icon--search span.svg-wrapper::before {
   .search-drawer__content {
     width: 100%;
   }
- .header__search .search-drawer.modal__content.gradient{
-    top: 83px;
-  }
    .search-drawer__content{
     padding: 13px;
    }
@@ -6085,3 +6079,4 @@ details[open] .header__icon--search span.svg-wrapper::before {
 body:has(.custom_sizes-popup_wrapper.active) {
     overflow: hidden;
 }
+

@@ -746,6 +746,40 @@ class SliderComponent extends HTMLElement {
     this.slider.addEventListener('scroll', this.update.bind(this));
     this.prevButton.addEventListener('click', this.onButtonClick.bind(this));
     this.nextButton.addEventListener('click', this.onButtonClick.bind(this));
+    let isDragging = false;
+    let startX, scrollLeft;
+    this.slider.addEventListener("mouseover", (e) => {
+      this.slider.style.cursor = "grab";
+    });
+    this.slider.addEventListener("mousedown", (e) => {
+      e.preventDefault(); // Prevent default image drag behavior
+      isDragging = true;
+      this.slider.classList.add("dragging");
+      this.slider.style.cursor = "grabbing";
+      startX = e.pageX - this.slider.offsetLeft;
+      scrollLeft = this.slider.scrollLeft;
+    });
+
+    this.slider.addEventListener("mouseleave", () => {
+      isDragging = false;
+      this.slider.style.cursor = "auto";
+      this.slider.classList.remove("dragging");
+    });
+
+    this.slider.addEventListener("mouseup", () => {
+      isDragging = false;
+      this.slider.style.cursor = "auto";
+      this.slider.classList.remove("dragging");
+    });
+
+    this.slider.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      this.slider.style.cursor = "grabbing";
+      const x = e.pageX - this.slider.offsetLeft;
+      const walk = (x - startX) * 2; // Adjust multiplier for sensitivity
+      this.slider.scrollLeft = scrollLeft - walk;
+    });
   }
 
   initPages() {
@@ -781,8 +815,27 @@ class SliderComponent extends HTMLElement {
      const parent = this.slider.parentElement;
 
     if (parent && parent.tagName.toLowerCase() === 'slider-component') {
-      parent.style.setProperty('--current-slide', this.currentPage);
-      parent.style.setProperty('--total-slides', this.totalPages);
+
+      if (!this.totalPages || this.totalPages <= 0) {
+        parent.style.setProperty('--current-slide', 0);
+        parent.style.setProperty('--total-slides', 0);
+        return;
+      }
+
+      const total = this.totalPages;
+      const current = Math.min(Math.max(1, this.currentPage), total);
+      parent.style.setProperty('--current-slide', current);
+      parent.style.setProperty('--total-slides', total);
+
+      // 🔥 SYNC thumbnails with main slider
+      const thumb = parent
+        .closest('media-gallery')
+        ?.querySelector('slider-component.thumbnail-slider');
+      
+      if (thumb) {
+        thumb.style.setProperty('--current-slide', current);
+        thumb.style.setProperty('--total-slides', total);
+      }
     }
 
     if (this.currentPage != previousPage) {
