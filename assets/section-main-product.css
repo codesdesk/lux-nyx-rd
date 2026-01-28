@@ -296,11 +296,17 @@ a.product__text {
   margin: 10px 0 3px;
 }
 
+.product__info-container [data-bv-show=rating_summary] .bv_main_container {
+  outline: unset;
+  outline-offset: unset;
+  box-shadow: unset;
+}
+
 .product__info-wrapper .product-form__input--pill input[type='radio'] + label {
     border: unset;
     border-radius: 2px;
-    margin: 0.4rem 0.4rem 0.4rem 0;
-    padding: 0.5rem 3.6rem;
+    margin: .1rem .4rem .4rem 0;
+    padding: .5rem 2rem;
     font-size: 1.2rem;
     letter-spacing: 0px;
     line-height: 116%;
@@ -1966,7 +1972,7 @@ variant-selects .product-form__input.product-form__input--pill > legend {
   letter-spacing: 0;
   color: #1F1F1F;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 0px;
 }
 
 .delivery-wrapper .delivery_content, .text_wrapper .additional_text, .return-wrapper .return_content {
@@ -2016,7 +2022,7 @@ variant-selects .product-form__input.product-form__input--pill > legend {
   width: 114px;
   height: 24px;
 }
-.preorder_text {
+.product__info-wrapper .preorder_text {
     margin-top: 7px;
 }
 
@@ -2140,14 +2146,29 @@ variant-selects .product-form__input.product-form__input--pill > legend {
 }
 
 variant-selects fieldset.product-form__input {
-  padding-top: 4px;
-  margin-bottom: 17px;
-  position: relative;
+  margin-top: 4px;
+    padding-bottom: 17px;
+    margin-bottom: 4px;
+    position: relative;
+}
+
+.product__info-wrapper .product__info-container .custom_product-size-wrapper {
+    padding-top: 3px;
+}
+.product__info-wrapper .custom_product-size-wrapper a.compare_size_btn {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+variant-selects .product-form__input:not(:last-child) {
+    border-bottom: .75px solid #8A938D;
 }
 
 variant-selects fieldset.product-form__input:nth-last-child(2) {
   margin-bottom: 0;
-  border-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: unset;
 }
 variant-selects{
     border-top: 1px solid #8A938D;
