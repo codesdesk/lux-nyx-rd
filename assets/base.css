@@ -785,6 +785,9 @@ table:not([class]) th {
     top: calc(8px + var(--inputs-border-width));
     font-size: 1.2rem;
 }
+.custom_collections-grid .collections-header h2 {
+    font-size: 13px;
+}
   
 }
 
@@ -3635,10 +3638,13 @@ cart-drawer.is-empty .drawer__inner {
     color: #000;
 }
 
-.product_custom_block .custom_left-grid .ccollection_content.rte {
+.product_custom_block .custom_left-grid .collection_content.rte {
     margin-top: 3px;
 }
-.product_custom_block .custom_left-grid {
+.product_custom_block .custom_collections-layout .collection-content_wrappper .rte {
+    margin-top: 0px;
+}
+.product_custom_block .custom_collections-layout .custom_left-grid {
     row-gap: 23px;
 }
 .product_founder .founders-note-quote {
