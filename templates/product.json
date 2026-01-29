@@ -162,7 +162,7 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 0,
-        "padding_bottom": 12
+        "padding_bottom": 76
       }
     },
     "related-products": {
@@ -249,6 +249,7 @@
         "quote": "<p>“Too often, bags were either beautiful or practical—rarely both. I created bags <em>for those who refuse to compromise</em>—on presence, on purpose, on how they show up.”<strong>—Lisa Hu, Founder</strong></p>",
         "author": "",
         "image": "shopify://shop_images/Frame_541.png",
+        "mobile-image": "shopify://shop_images/Frame_508.png",
         "supporting_text": "Did you know as few as 7% of products marketed towards women are actually designed by women? Did you know of products you know marketed towards women are actually designed.",
         "show_icon": true,
         "button_label": "About Us",
@@ -280,7 +281,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "custom_class": "home_featured",
+        "custom_class": "home_featured product_slide_coll",
         "collection": "everything2",
         "products_to_show": 25,
         "title": "Explore",
@@ -348,6 +349,7 @@
       ],
       "name": "Press Mentions",
       "settings": {
+        "add_class": "product_press",
         "label": "PRESS MENTIONS",
         "quote": "<p>“<em>We use ethically-sourced materials</em> and uplift communities through both design and giving back.”</p>",
         "button_text": "Shop Now",

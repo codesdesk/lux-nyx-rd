@@ -1669,7 +1669,7 @@ a.product__text {
   line-height: 1.15;
   letter-spacing: 0;
   color: #ffffff;
-  padding: 0 3.4rem;
+  padding: 0 1.6rem;
   text-transform: uppercase;
 }
 
@@ -2158,7 +2158,7 @@ variant-selects .product-form__input.product-form__input--pill > legend {
 
 variant-selects fieldset.product-form__input {
   margin-top: 4px;
-    padding-bottom: 17px;
+    padding-bottom: 7px;
     margin-bottom: 4px;
     position: relative;
 }
@@ -2221,7 +2221,7 @@ variant-selects{
 .product:not(.product--columns):is(.product--thumbnail_slider) .product__media-list .product__media-item {
   display: block;
   width: 100%;
-  max-width: calc(100% / 2.3 - (8px  / 3) );
+  max-width: calc(100% / 2.134 - (8px  / 3) );
 }
 .product:not(.product--columns):is(.product--thumbnail_slider) .product__media-list.slide-len-1 .product__media-item {
   max-width: calc(100% / 1.5);
@@ -2412,6 +2412,10 @@ variant-selects{
   height: 83px;
 }
 
+.button_wrapper .slider-button .icon {
+    height: 1.6rem;
+}
+
 .custom_sizes_popup .compare_size_btn {
   display: block;
   width: 100%;
@@ -2496,6 +2500,21 @@ variant-selects .option-size label {
     margin: 13px 0 6px;
   }
 
+  .product_custom_block .custom_collections-layout .custom_left-grid {
+    row-gap: 52px;
+  }
+
+  .product__info-container .product__title:has(.price) {
+    margin-bottom:0px;
+  }
+  variant-selects fieldset.product-form__input {
+    padding-bottom: 9px;
+  }
+
+  .product__info-container .preorder_text {
+    display: none;
+  }
+
   .product__info-container .product__title>*,
   .product__info-container .product__title:has(.price) .price-item.price-item--sale,
   .product__info-container .product__title:has(.price:not(.price--on-sale)) .price-item {
@@ -2524,8 +2543,10 @@ variant-selects .option-size label {
   }
 
   .product__info-container>.text_wrapper:has(+div .product-form__buttons) {
-    margin-top: 14px;
+    margin-top: 13px;
   }
+
+  
 
   .product__info-container>div:has(.product-form__buttons) product-form.product-form{
     margin: 8px 0  13px;

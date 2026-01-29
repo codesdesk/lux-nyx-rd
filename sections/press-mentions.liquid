@@ -1,4 +1,4 @@
-<div class="press-mentions" style="
+<div class="press-mentions {{ section.settings.add_class }}" style="
   background: {{ section.settings.bg_color }};
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -128,6 +128,12 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+  .press-mentions.product_press {
+    padding-top: 6px !important;
+}
+.press-mentions.product_press .press-quote em {
+    line-height: 100%;
+}
   .press-header {
     gap: 12px;
     margin-bottom: 33px;
@@ -188,6 +194,11 @@ document.addEventListener("DOMContentLoaded", function () {
 {
   "name": "Press Mentions",
   "settings": [
+    {
+      "type": "text",
+      "id": "add_class",
+      "label": "Add class"
+    },
     {
       "type": "text",
       "id": "label",
