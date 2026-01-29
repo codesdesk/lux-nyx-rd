@@ -19,7 +19,7 @@
 <style>
   header-drawer {
     justify-self: start;
-    {% comment %} margin-left: -1.2rem;  {% endcomment %}
+    margin-left: 0;
   }
 
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
@@ -45,162 +45,189 @@
     padding: 0;
     margin: 0;
   }
-  @media only screen and (max-width: 989px) {
-    .list-menu {
-      display: flex;
-      text-transform: uppercase;
-      flex-direction: column;
-}
-  }
-  header .list-menu--inline {
+
+  .list-menu--inline {
     display: inline-flex;
-    flex-wrap: nowrap;
-    gap: 52px;
-    text-transform: uppercase;
+    flex-wrap: wrap;
   }
-  header .custom-no-1 {
-    text-decoration: underline;
-  }
+
   summary.list-menu__item {
-    padding-right: 0px;
+    padding-right: 2.7rem;
   }
 
   .list-menu__item {
     display: flex;
     align-items: center;
     line-height: calc(1 + 0.3 / var(--font-body-scale));
-    text-decoration: none;
-    color: #454545;
-    line-height: 16px;
-    padding: 0px;
-  }
-  @media only screen and (max-width: 989px) {
-   .list-menu__item{
-      color: #1f1f1f;
-      font-size: 1.4rem;
-      line-height: 15px;
-    }
   }
 
   .list-menu__item--link {
     text-decoration: none;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
     line-height: calc(1 + 0.8 / var(--font-body-scale));
   }
-  {% comment %} New {% endcomment %}
-header .uni-women-container {
-    display: flex;
-    padding: 0px 12px;
-    gap: 20px;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-header .uni-women-wrapper {
-    display: flex;
-    color: black;
-    padding-top: 12px;
-    justify-content: space-between;
-}
-a.mobile-button {
-    cursor: pointer;
-    line-height: 13px;
-    border-radius: 4px;
+  .header-mega__menu .promo_bar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  .header-mega__menu .mega-menu__wrapper {
+    display: grid;
+    grid-template-columns: 2.298fr 1fr;
+    gap: 18.2rem;
+  }
+  .header-mega__menu .heading_menu_wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 8rem;
+    row-gap: 4rem;
+  }
+  .header-mega__menu .menu_heading>* {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #333333;
+    text-decoration: none;
+    display: block;
+  }
+  .header-mega__menu .heading_menu_wrapper .header__menu-item.list-menu__item {
+    font-weight: 400;
     font-size: 1.4rem;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background-color: #1f1f1f;
-    line-height: 17px;
-    padding: 6px 30px 6px 30px;
-}
-.uni-women-wrapper a.uni-women-link {
-    color: black;
-    line-height: 16px;
-    text-decoration: none;
-}
-.uni-women-wrapper a.uni-women-link:hover {
-    text-decoration: underline;
-}
-header .mobile-menu-accordion {
+    line-height: 140%;
+    letter-spacing: 0;
+    padding: 0;
+  }
+  .header-mega__menu .heading_menu_wrapper .list-menu {
     display: flex;
     flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2.2rem;
+  }
+  .mega-menu__content {
+    background: #F9F9F9;
+    padding: 26.75px 0;
+  }
+  .header_bottom_links {
+    background: #F9F9F9;
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+  }
+  nav.header__inline-menu.header-mega__menu {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-}
-
-header .support-link-wrapper {
-    display: flex;
-    width: 100%;
-    max-width: calc(100% - 3px);
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-content: center;
-    margin-top: 23px;
-}
-header .query-container {
-    width: 100%;
-    max-width: 115px;
-    display: flex;
-    height: fit-content;
-    flex-direction: column;
-}
-header .login-options-container {
-    width:100%;
-    max-width: 151px;
-    display: flex;
-    gap: 4px;
-    flex-direction: column;
-}
-button.login-button {
-    width: 100%;
-    background: white;
-    max-width: 69px;
-    padding: 6px 16px;
-    font-weight: var(--custom-font-body-weight);
-    font-family: var(--custom-font-heading-body);
-    border-radius: 4px;
-    line-height: 13px;
-    cursor: pointer;
-    font-size: 14px;
-}
-button.account-button {
-    padding: 6px 16px;
-    background: white;
-    letter-spacing: -0.22px;
-    border-radius: 4px;
-    line-height: 13px;
-    font-weight: var(--custom-font-body-weight);
-    font-family: var(--custom-font-heading-body);
-    font-size: 14px;
-    cursor: pointer;
-}
-header a.support-link {
-    font-size: 14px;
-    color: #1F1F1F;
+    justify-content: center;
+    align-items: center;
+  }
+  header.header.header--middle-center .header__inline-menu.header-mega__menu {
+    justify-content: flex-start;
+  }
+  .header__inline-menu .header__menu-item {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    padding: 0;
+  }
+  .header__inline-menu .list-menu--inline {
+    gap: 3rem;
+    justify-content: center;
+  }
+  .header-mega__menu .mega-menu .header__menu-item {
+    padding-right: 2.4rem;
+  }
+  .header .header__icon .icon.icon-search {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+  {%- if section.settings.logo_position == 'top-center' -%}
+    @media only screen and (min-width: 990px) {
+      .header details-modal.header__search, 
+      .header details-modal.header__search details {
+        width: 100%;
+      }
+      .header details-modal.header__search details .header__icon--search {
+        width: 100%;
+        max-width: 32.6rem;
+        padding: 1.3rem 2rem;
+        background: #F6F6F6;
+        border-radius: 5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.2rem;
+        text-decoration: none;
+      }
+      .header details-modal.header__search details .header__icon>* {
+        justify-content: flex-start;
+      }
+      .header__search .header__icon {
+        height: unset;
+        width: unset;
+      }
+      .header__search .header__icon .svg-wrapper {
+        width: unset;
+        height: unset;
+      }
+    }
+  {% endif %}
+  .header__search .search__content>* {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 140%;
+    letter-spacing: 0;
     text-decoration: none;
-    line-height: 17px;
-}
-  @media screen and (min-width: 750px) {
-    .list-menu__item--link {
-      padding-bottom: 0.5rem;
-      padding-top: 0.5rem;
+    margin: 0;
+    border: 0;
+  }
+  @media screen and (max-width: 1280px) {
+    .header__search .search__content>* {
+      font-size: 1.4rem;
+    }
+    .header-mega__menu .mega-menu__wrapper {
+      gap: 3rem;
+    }
+    .header-mega__menu .heading_menu_wrapper {
+      gap: 3rem;
+    }
+    .header-mega__menu .menu_heading>* {
+      font-size: 1.4rem;
+    }
+    .header-mega__menu .heading_menu_wrapper .header__menu-item.list-menu__item {
+      font-size: 1.2rem;
+    }
+    .header__inline-menu .header__menu-item {
+      font-size: 1.4rem;
     }
   }
-
-
-  
+  @media screen and (max-width: 989px) {
+    .header_bottom_links {
+      display: none;
+    }
+    .header__search .search__content>* {
+      display: none;
+    }
+  }
 </style>
 
 {%- style -%}
   .header {
-    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
+    padding: 1.3rem 2rem 1.3rem 2rem;
   }
 
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
-
+  .header__icon--menu .icon.icon-hamburger {
+    width: 2.4rem;
+    height: 1.6rem;
+  }
   @media screen and (min-width: 750px) {
     .section-header {
       margin-bottom: {{ section.settings.margin_bottom }}px;
@@ -211,6 +238,7 @@ header a.support-link {
     .header {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+      column-gap: 3rem;
     }
   }
 {%- endstyle -%}
@@ -294,17 +322,17 @@ header a.support-link {
         </h1>
       {%- endif -%}
     {%- endif -%}
-
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
+    {%- if section.settings.logo_position != 'top-center' -%}
+      {%- liquid
+        if section.settings.menu != blank
+          if section.settings.menu_type_desktop == 'dropdown'
+            render 'header-dropdown-menu'
+          elsif section.settings.menu_type_desktop != 'drawer'
+            render 'header-mega-menu'
+          endif
         endif
-      endif
-    %}
-
+      %}
+    {% endif %}
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
@@ -318,7 +346,7 @@ header a.support-link {
             {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
             {{
               settings.logo
-              | image_url: width: 800
+              | image_url: width: 600
               | image_tag:
                 class: 'header__heading-logo',
                 widths: widths,
@@ -339,78 +367,32 @@ header a.support-link {
     {%- endif -%}
 
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
-      <div class="desktop-localization-wrapper">
-        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          <localization-form class="small-hide medium-hide" data-prevent-hide>
-            {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
-              <div>
-                <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {% endif %}
+      {% if section.settings.enable_country_selector or section.settings.enable_language_selector %}
+        <div class="desktop-localization-wrapper">
+          {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+            <localization-form class="small-hide medium-hide" data-prevent-hide>
+              {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+                <div>
+                  <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                  {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+                </div>
+              {%- endform -%}
+            </localization-form>
+          {% endif %}
 
-        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <localization-form class="small-hide medium-hide" data-prevent-hide>
-            {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
-              <div>
-                <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
-                {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-      </div>
-      <div class="custom_menu_right">
-        <div class="custom_menu_right_wrap">
-          <ul>
-            <li>
-              <a href="#">About us</a>
-            </li>
-            <li>
-              <a href="#">Help</a>
-            </li>
-            <li>
-               {%- if shop.customer_accounts_enabled -%}
-        <a
-          href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-          class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
-          rel="nofollow"
-        >
-          {%- if section.settings.enable_customer_avatar -%}
-            <account-icon>
-              {%- if customer and customer.has_avatar? -%}
-                {{ customer | avatar }}
-              {%- else -%}
-                {% comment %} <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span> {% endcomment %}
-                 Log in
-              {%- endif -%}
-            </account-icon>
-          {%- else -%}
-            {% comment %} <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span> {% endcomment %}
-             Login
+          {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+            <localization-form class="small-hide medium-hide" data-prevent-hide>
+              {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+                <div>
+                  <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+                  {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
+                </div>
+              {%- endform -%}
+            </localization-form>
           {%- endif -%}
-          <span class="visually-hidden">
-            {%- liquid
-              if customer
-                echo 'customer.account_fallback' | t
-              else
-                echo 'customer.log_in' | t
-              endif
-            -%}
-          </span>
-        </a>
-      {%- endif -%}
-
-            </li>
-          </ul>
         </div>
-      </div>
-      <div class="header_icon-container">
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
-
-      {% comment %} {%- if shop.customer_accounts_enabled -%}
+      {% endif %}
+      {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
           class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
@@ -437,12 +419,15 @@ header a.support-link {
             -%}
           </span>
         </a>
-      {%- endif -%} {% endcomment %}
+      {%- endif -%}
+      {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}
             {% render block %}
+          {% when 'Mega menu' %}
+            {% render 'header-mega-menu' %}
         {%- endcase -%}
       {%- endfor -%}
 
@@ -462,9 +447,23 @@ header a.support-link {
           </div>
         {%- endif -%}
       </a>
-      </div>
     </div>
   </header>
+  {%- if section.settings.logo_position == 'top-center' -%}
+    <div class="header_bottom_links">
+      <div class="page-width">
+        {%- liquid
+          if section.settings.menu != blank
+            if section.settings.menu_type_desktop == 'dropdown'
+              render 'header-dropdown-menu'
+            elsif section.settings.menu_type_desktop != 'drawer'
+              render 'header-mega-menu'
+            endif
+          endif
+        %}
+      </div>
+    </div>
+  {% endif %}
 </{{ header_tag }}>
 
 {%- if settings.cart_type == 'notification' -%}
@@ -481,7 +480,6 @@ header a.support-link {
     }
 
     connectedCallback() {
-      
       this.header = document.querySelector('.section-header');
       this.headerIsAlwaysSticky =
         this.getAttribute('data-sticky-type') === 'always' ||
@@ -509,19 +507,9 @@ header a.support-link {
       this.createObserver();
     }
 
-    getAnnouncementHeight() {
-      const announcementBar = document.querySelector('.announcement-wrapper');
-      return announcementBar ? announcementBar.offsetHeight : 0;
-    }
     setHeaderHeight() {
-      const announcementHeight = this.getAnnouncementHeight();
-      document.documentElement.style.setProperty('--announcement-height',`${announcementHeight}px`);
       document.documentElement.style.setProperty('--header-height', `${this.header.offsetHeight}px`);
     }
-
-
-
-
 
     disconnectedCallback() {
       this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
@@ -643,7 +631,7 @@ header a.support-link {
 {
   "name": "t:sections.header.name",
   "class": "section-header",
-  "max_blocks": 3,
+  "max_blocks": 10,
   "settings": [
     {
       "type": "select",
@@ -784,6 +772,11 @@ header a.support-link {
       "info": "t:sections.header.settings.enable_customer_avatar.info"
     },
     {
+      "type": "richtext",
+      "id": "content",
+      "label": "Search content"
+    },
+    {
       "type": "header",
       "content": "t:sections.all.spacing"
     },
@@ -806,7 +799,7 @@ header a.support-link {
       "id": "padding_top",
       "min": 0,
       "max": 36,
-      "step": 4,
+      "step": 1,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
       "default": 20
@@ -816,29 +809,159 @@ header a.support-link {
       "id": "padding_bottom",
       "min": 0,
       "max": 36,
-      "step": 4,
+      "step": 1,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 20
-    },
-     {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Image"
-        }
+    }
   ],
   "blocks": [
-    {
-      "type": "@app"
-    },
-    {
-      "type": "image",
-      "name": "Image",
-      "settings": [  
-       
+		{
+      "type": "column",
+      "name": "Mega menu",
+      "settings": [
+				{
+					"type": "text",
+					"id": "mega_menu_trigger",
+					"label": "Trigger",
+					"info": "Write the exact name of the link from the menu."
+				},
+        {
+          "type": "header",
+          "content": "Submenu 1"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "heading_link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "main-menu",
+          "label": "t:sections.header.settings.menu.label"
+        },
+        {
+          "type": "header",
+          "content": "Submenu 2"
+        },
+        {
+          "id": "heading_1",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "heading_link_1",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_1",
+          "default": "main-menu",
+          "label": "t:sections.header.settings.menu.label"
+        },
+        {
+          "type": "header",
+          "content": "Submenu 3"
+        },
+        {
+          "id": "heading_2",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "heading_link_2",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_2",
+          "default": "main-menu",
+          "label": "t:sections.header.settings.menu.label"
+        },
+        {
+          "type": "header",
+          "content": "Submenu 4"
+        },
+        {
+          "id": "heading_3",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "heading_link_3",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_3",
+          "default": "main-menu",
+          "label": "t:sections.header.settings.menu.label"
+        },
+        {
+          "type": "header",
+          "content": "Submenu 5"
+        },
+        {
+          "id": "heading_4",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "heading_link_4",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_4",
+          "default": "main-menu",
+          "label": "t:sections.header.settings.menu.label"
+        },
+        {
+          "type": "header",
+          "content": "Submenu 6"
+        },
+        {
+          "id": "heading_5",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "heading_link_5",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_5",
+          "default": "main-menu",
+          "label": "t:sections.header.settings.menu.label"
+        },
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        }
       ]
     }
-  ]
+	],
 }
 {% endschema %}
-
