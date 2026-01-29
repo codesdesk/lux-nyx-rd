@@ -1,0 +1,126 @@
+{% assign color_option = product.options_with_values | where: "name", "Color" | first %}
+{% if color_option %}
+  {% assign color_values = color_option.values %}
+{% else %}
+  {% assign color_values = empty %}
+{% endif %}
+
+{% assign variants = product.variants %}
+{% for color in color_values %}
+  {% assign tableCount = 0 %}
+  {% assign hidden_tabs = false %}
+  {% for variant in product.variants %}
+    {% if variant.option1 == color %}
+      {% assign tableCount = tableCount | plus: 1 %}
+      {% if variant.metafields.custom.popup_text.value != blank %}
+        {% assign hidden_tabs = true %}
+      {% endif %}
+        {% endif %}
+      {% endfor %}
+  {%- comment -%} ===== POPUP ===== {%- endcomment -%}
+  <div class="custom_sizes-popup_wrapper variable_popup popup_{{ color | replace: ' ', '_' | downcase }} {% if hidden_tabs == false %} hidden {% endif %}">
+    <div class="custom_sizes_popup">
+      <span class="compare_size_btn">close</span>
+      <!-- HEADER -->
+      <div class="popup_main-header  popup_images-{{ tableCount }}">
+        {% for variant in variants %}
+          {% if variant.metafields.custom.product_name != blank %}
+            {% if variant.option1 == color %}
+              <h4 class="popup-title">
+                {{ variant.metafields.custom.product_name }}
+              </h4>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <!-- IMAGES -->
+      <div class="popup_images_wrapper popup_images-{{ tableCount }}">
+        {% for variant in variants %}
+          {% if variant.option1 == color %}
+            {% if variant.metafields.custom.popup_image != blank %}
+              <div class="popup-image">
+                  <img src="{{ variant.metafields.custom.popup_image | img_url: 'master' }}">
+              </div>    
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% comment %} table {% endcomment %}
+       <table>
+        <tr>
+          <th></th>
+          {% for variant in variants %}
+            {% if variant.option1 == color %}
+              <th>
+                {% if variant.metafields.custom.popup_text.value != blank %}
+                  {{ variant.metafields.custom.popup_text.value }}
+                {% endif %}
+              </th>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr class="dimension">
+          <td>Dimension</td>
+          {% for variant in variants %}
+            {% if variant.option1 == color %}
+            <td>{{ variant.metafields.custom.dimensions.value | replace: ';', ';<br>' }}</td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr class="weight">
+          <td>Weight</td>
+          {% for variant in variants %}
+            {% if variant.option1 == color %}
+            <td>{{ variant.metafields.custom.weight.value }}</td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr class="fits">
+          <td>Fits</td>
+         {% for variant in variants %}
+            {% if variant.option1 == color %}
+              {% if variant.metafields.custom.fits_text != blank %}
+                <td class="fits_wrapper">
+                  <div class="fits_content_wrapper">
+                    <span class="fits_image">
+                      <img src="{{ variant.metafields.custom.fits_icon | img_url: 'master' }}">
+                    </span>
+                    <span class="fits_text">{{ variant.metafields.custom.fits_text }}</span>
+                  </div>
+                </td>
+              {% else %}
+                <td></td>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr class="trolley_zipper">
+          <td>Luggage trolley zipper</td>
+          {% for variant in variants %}
+            {% if variant.option1 == color %}
+              <td>
+                {% if variant.metafields.custom.luggage_trolley_zipper %}
+                  {% render 'true_icon' %}
+                {% endif %}
+              </td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr class="crossbody_strap">
+          <td>Crossbody strap</td>
+          {% for variant in variants %}
+            {% if variant.option1 == color %}
+              <td>
+                {% if variant.metafields.custom.crossbody_strap %}
+                  {% render 'true_icon' %}
+                {% endif %}
+              </td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+{% endfor %}

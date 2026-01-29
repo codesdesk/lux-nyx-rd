@@ -1,17 +1,5 @@
-{% assign sizes = blank %}
-{{ popupVal }}
 
-{% if popupVal == 'custom' %}
-
-  {% assign sizes = product.metafields.custom.product_sizes.value %}
-
-{% elsif popupVal == 'variable' %}  
-
-  {% if product.options_with_values != blank %}
-    {% assign sizes = product.variants %}
-  {% endif %}
-
-{% endif %}
+{% assign sizes = product.metafields.custom.product_sizes.value %}
 
 {% if sizes != blank and sizes.size > 1 %}
 

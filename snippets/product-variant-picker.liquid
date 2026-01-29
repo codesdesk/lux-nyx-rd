@@ -28,7 +28,7 @@
         endif
       -%}
       {%- if picker_type == 'swatch' -%}
-        <fieldset class="js product-form__input product-form__input--swatch {{ option.name }}">
+        <fieldset class="js product-form__input product-form__input--swatch option-{{ option.name  | downcase}}">
           <legend class="form__label">
             {{ option.name }}:
             <span data-selected-value>
@@ -48,7 +48,7 @@
           <legend class="form__label">{{ option.name }}</legend>
           {% if lableDowncase == 'size' %}
             <div  class="cdk-item-2 text-right">
-              <a href="javascript:void(0)" class="compare_size_btn">Compare size</a>
+              <a href="javascript:void(0)" class="compare_size_btn ">Compare size</a>
             </div>
           {% endif %}
           {% render 'product-variant-options',

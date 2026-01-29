@@ -106,21 +106,71 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // comapere sizes btn
        // VARIABLE POPUP
-        const compareBtns = document.querySelectorAll(".option-size .compare_size_btn");
-        const compareBox = document.querySelector(".custom_sizes-popup_wrapper.variable_popup");
-        const closeCompareBtns = compareBox ? compareBox.querySelectorAll(".compare_size_btn") : [];
+        const compareBox = document.querySelectorAll(".custom_sizes-popup_wrapper.variable_popup");
+        if (!compareBox || compareBox.length === 0) return;
 
-        compareBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            compareBox?.classList.toggle("active");
+        function getActiveSlug() {
+            const checkActive = document.querySelector('.option-color [data-selected-value]');
+            if (!checkActive) return null;
+            return checkActive.innerText.trim().toLowerCase().replace(/\s+/g, '_');
+        }
+
+        // Function to update button visibility based on slug
+        function updateCompareButtons() {
+        const slug = getActiveSlug();
+        if (!slug) return;
+
+        const updatedSlug = `popup_${slug}`;
+        console.log(`updatedSlug`);
+        // Loop through all compare buttons
+        document.querySelectorAll(".option-size .compare_size_btn").forEach(btn => {
+            // Find matching popup container
+            const container = Array.from(compareBox).find(c => c.classList.contains(updatedSlug));
+
+            if (!container || container.classList.contains('hidden')) {
+                btn.classList.add('hidden'); // hide button if no container or container is hidden
+            } else {
+                btn.classList.remove('hidden'); // show button
+            }
         });
+    }
+
+    // Call on page load
+    updateCompareButtons();
+
+    // Call when variant changes (Shopify)
+    document.addEventListener('change', (e) => {
+        if (e.target.matches('select[name="id"]')) {
+            setTimeout(updateCompareButtons, 50); // wait for Shopify to update DOM
+        }
+    });
+
+        // Event delegation for main compare buttons
+        document.addEventListener("click", (e) => {
+            const btn = e.target.closest(".option-size .compare_size_btn");
+            if (!btn) return;
+
+            const slug = getActiveSlug();
+            if (!slug) return;
+
+            const updatedSlug = `popup_${slug}`;
+            compareBox.forEach(container => {
+                if (container.classList.contains(updatedSlug)) {
+                    container.classList.toggle("active");
+                }
+            });
         });
 
-        closeCompareBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            compareBox?.classList.toggle("active");
+        // Event delegation for close buttons inside popup
+        document.addEventListener("click", (e) => {
+            const btn = e.target.closest(".custom_sizes-popup_wrapper.variable_popup .compare_size_btn");
+            if (!btn) return;
+
+            compareBox.forEach(container => {
+                container.classList.remove("active");
+            });
         });
-        });
+
 
 
         // CUSTOM POPUP
