@@ -81,26 +81,44 @@
       ],
       "name": "Announcement Bar Custom",
       "settings": {
-        "enable_bar": true,
+        "enable_slider": false,
         "bg_color": "#111111",
         "text_color": "#ffffff",
         "font_size": 14,
-        "desktop_left_text": "Get 10% off your first purchase",
-        "desktop_middle_text": "<em>Free shipping  & return</em>",
-        "desktop_right_text": "Get $25 with referrals",
         "autoplay_speed": 2000
       }
     },
     "header": {
       "type": "header",
       "blocks": {
-        "image_7CtUmF": {
-          "type": "image",
-          "settings": {}
+        "column_cTnPxE": {
+          "type": "column",
+          "settings": {
+            "mega_menu_trigger": "",
+            "heading": "",
+            "heading_link": "",
+            "menu": "main-menu",
+            "heading_1": "",
+            "heading_link_1": "",
+            "menu_1": "main-menu",
+            "heading_2": "",
+            "heading_link_2": "",
+            "menu_2": "main-menu",
+            "heading_3": "",
+            "heading_link_3": "",
+            "menu_3": "main-menu",
+            "heading_4": "",
+            "heading_link_4": "",
+            "menu_4": "main-menu",
+            "heading_5": "",
+            "heading_link_5": "",
+            "menu_5": "main-menu",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "image_7CtUmF"
+        "column_cTnPxE"
       ],
       "settings": {
         "logo_position": "middle-center",
@@ -116,8 +134,7 @@
         "enable_customer_avatar": true,
         "margin_bottom": 0,
         "padding_top": 12,
-        "padding_bottom": 12,
-        "logo": "shopify://shop_images/Frame_482_1_70360444-0bb1-4c96-8be8-8d2752e6cacd.jpg"
+        "padding_bottom": 12
       }
     }
   },

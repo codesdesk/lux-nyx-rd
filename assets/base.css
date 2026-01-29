@@ -4259,9 +4259,10 @@ header .header__icons {
     display: flex;
     grid-area: icons;
     justify-self: end;
-    padding-right: 1.43rem;
+    padding-right: 0;
     line-height: 16px;
     align-items: center;
+    gap: 4.4rem;
 }
 header .header_icon-container {
     display: flex;
@@ -4343,10 +4344,6 @@ details .header__icon-close {
 
 details[open] .header__icon-close {
   display: inline-block;
-}
-
-.header account-icon {
-  margin-right: 52px;
 }
 
 /* Search */
@@ -5500,9 +5497,6 @@ header .custom_menu_right_wrap ul li{
     width: 100%;
     max-width: fit-content;
     padding-right: 0px;
-  }
-  .header account-icon {
-    margin-right: 25px;
   }
 }
 /* Mega-menu */
