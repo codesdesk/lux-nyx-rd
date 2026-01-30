@@ -15,7 +15,7 @@
         "heading_8aR3px": {
           "type": "heading",
           "settings": {
-            "heading": "Carry what <em>matters</em>, beautifully.",
+            "heading": "Carry what <em>matters,</em> beautifully.",
             "heading_size": "h0"
           }
         },
@@ -292,6 +292,7 @@
       ],
       "name": "Press Mentions",
       "settings": {
+        "add_class": "",
         "label": "PRESS MENTIONS",
         "quote": "<p>“<em>We use ethically-sourced materials</em> and uplift communities through both design and giving back.”</p>",
         "button_text": "Shop Now",

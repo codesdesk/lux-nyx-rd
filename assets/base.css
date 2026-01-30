@@ -3140,7 +3140,7 @@ cart-drawer .cart-drawer .cart-item {
     min-height: calc((var(--inputs-border-width) * 2) + 3rem);
 }
 .cart-drawer .quantity__button {
-    width: calc(2.5rem / var(--font-body-scale));
+    width: calc(2rem / var(--font-body-scale));
 }
  .cart-drawer .cart-item__price-wrapper {
     display: none;
@@ -3638,6 +3638,7 @@ cart-drawer.is-empty .drawer__inner {
     color: #000;
 }
 
+
 .product_custom_block .custom_left-grid .collection_content.rte {
     margin-top: 3px;
 }
@@ -3673,6 +3674,65 @@ slider-component .button_wrapper button.slider-button.slider-button--prev {
     position: absolute;
 }
 
+/* header-css */
+.uni-women-container a.uni-women-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    COLOR: #454545;
+}
+.uni-women-container .uni-women-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.uni-women-container .mobile-button {
+    font-family: Helvetica Neue;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    color: #fff;
+    background-color: #000;
+    display: block;
+    text-align: center;
+    padding: 6px 0px;
+    border-radius: 4px;
+    margin: 20px 0px;
+    text-decoration: none;
+}
+.uni-women-container .query-container a.support-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    color: #1F1F1F;
+    display: block;
+    text-decoration: none;
+}
+.uni-women-container .login-options-container {
+    display: inline-grid;
+    align-items: center;
+    justify-items: start;
+}
+.uni-women-container .support-link-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.uni-women-container .login-options-container button{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    color: #1F1F1F;
+    background-color: transparent;
+    border: 1px solid #1F1F1F;
+    border-radius: 4px;
+}
+/* end-header-css */
 
 @media screen and (max-width: 989px) {
   .cart-main {

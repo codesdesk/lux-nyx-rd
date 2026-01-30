@@ -2234,7 +2234,7 @@ variant-selects{
   border: unset;
 }
 .product.product--large.product--thumbnail_slider .slider.thumbnail-list .slider__slide {
-  width: calc(100% / 11);
+  width: calc(100% / 11 - 8px);
   height: auto;
 }
 

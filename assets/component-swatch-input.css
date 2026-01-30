@@ -73,15 +73,20 @@
 .swatch-input__input:disabled + .swatch-input__label > .swatch::after,
 .swatch-input__input.visually-disabled + .swatch-input__label > .swatch::after {
   /* Diagonal of a square = length of the side * sqrt(2)  */
-  --diagonal--size: calc(var(--swatch-input--size) * 1.414);
-  --crossed-line--size: 0.1rem;
-  content: '';
-  position: absolute;
-  bottom: calc(var(--crossed-line--size) * -0.5);
-  left: 0;
-  width: var(--diagonal--size);
-  height: var(--crossed-line--size);
-  background-color: rgb(var(--color-foreground));
-  transform: rotate(-45deg);
-  transform-origin: left;
-}
+    --diagonal--size: 150%;
+    --crossed-line--size: .1rem;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: var(--diagonal--size);
+    height: var(--crossed-line--size);
+    background-color: rgb(var(--color-foreground));
+    transform: rotate(-30deg);
+    transform-origin: left bottom;
+  }
+  
+  .swatch-input__input:disabled:is(:checked) + .swatch-input__label > .swatch::after,
+  .swatch-input__input.visually-disabled:is(:checked) + .swatch-input__label > .swatch::after {  
+    transform: rotate(-10deg);
+  }
