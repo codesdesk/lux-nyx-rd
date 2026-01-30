@@ -1,10 +1,6 @@
-{% comment %}
-  Renders a megamenu for the header
-  Triggered ONLY by menu item handle
-{% endcomment %}
-<nav class="header__inline-menu header-mega__menu">
+<nav class="header__inline-menu header-mega__menu right_side-menu">
   <ul class="list-menu list-menu--inline" role="list">
-    {%- for link in section.settings.menu.links -%}
+    {%- for link in settings.menu.links -%}
       <li>
         {% assign is_mega = nil %}
         {% assign link_name = link.title | escape | downcase | replace: ' ', '-' %}
