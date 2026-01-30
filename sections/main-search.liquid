@@ -62,8 +62,10 @@
     }
   }
 {%- endstyle -%}
-<div class="search_breadcrumbs">
-{% include 'breadcrumbs' %}  
+<div class="page-width">
+  <div class="search_breadcrumbs">
+  {% include 'breadcrumbs' %}  
+  </div>
 </div>
 {% paginate search.results by 24 %}
   <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">

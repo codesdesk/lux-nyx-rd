@@ -2462,15 +2462,15 @@ input[type='checkbox'] {
   position: absolute;
   background-color: rgb(var(--color-button));
   color: rgb(var(--color-button-text));
-  height: 1.7rem;
-  width: 1.7rem;
+  height: 1.4rem;
+  width: 1.4rem;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   bottom: 0.8rem;
-  left: 1.2rem;
+  left: .8rem;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 
@@ -4319,7 +4319,7 @@ header .header__icons {
     display: flex;
     grid-area: icons;
     justify-self: end;
-    padding-right: 0;
+    padding-right: 6px;
     line-height: 16px;
     align-items: center;
     gap: 4.4rem;
@@ -6187,4 +6187,6 @@ body:has(.custom_sizes-popup_wrapper.active) {
   top: 0;
   transform: translateY(-50%);
 }
-
+html:has(.terms-grid) {
+  scroll-behavior: smooth;
+}

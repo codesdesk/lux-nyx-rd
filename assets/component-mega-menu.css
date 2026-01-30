@@ -32,7 +32,7 @@
 .mega-menu[open] .mega-menu__content {
   opacity: 1;
   transform: translateY(0);
-  padding: 11px 20px 12px;
+  padding: 12px 20px 12px;
 }
 
 header .mega-menu__list {

@@ -34,6 +34,18 @@
     ]
   },
   {
+    "name": "Header right side menu",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "default": "main-menu",
+        "label": "Header right side menu",
+        "info": "The right-side menu only appears when the logo position is set to the middle center and the menu type is set to Mega Menu."
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
