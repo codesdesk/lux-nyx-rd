@@ -23,12 +23,19 @@
               <img src="{{ block.settings.mobile-design-image | image_url: width: 351 }}" alt="" class="smart-design-mobile">
               </a>
             {% endif %}
+            {% assign product_url = block.settings.product_link %}
+
+            {% if product_url contains '/products/' %}
+              {% assign handle = product_url | split: '/products/' | last | split: '?' | first %}
+              {% assign product = all_products[handle] %}
+            {% endif %}
+
             <!-- Product card -->
             <div class="product-card">
               <div class="product-title">{{ block.settings.product_title }} 
-                <p class="product-rating">★★★★★(17)</p>
-                 <div class="product-rating-wrapper"><div data-bv-show="inline_rating" data-bv-product-id="{{ product.id }}" data-bv-redirect-url="{{ shop.secure_url }}{{ product.url }}" data-bv-seo="false"></div></div>
-
+                {% comment %} <p class="product-rating">★★★★★(17)</p> {% endcomment %}
+                <div class="product-rating-wrapper"><div data-bv-show="inline_rating" data-bv-product-id="{{ product.id }}" data-bv-redirect-url="{{ shop.secure_url }}{{ product.url }}" data-bv-seo="false"></div></div>
+                
             </div>
              
               <p class="product-price">{{ block.settings.product_price }}</p>
@@ -104,6 +111,33 @@
   line-height: 18px;
   letter-spacing: 0;
   margin: 0;
+}
+
+.ethos-item .product-card .bv_sub_container .bv_averageRating_component_container {
+  display: none !important;
+}
+
+.ethos-item [data-bv-show="inline_rating"] svg {
+  max-width: 12px !important;
+  max-height: 12px !important;
+}
+
+.ethos-item [data-bv-show=inline_rating] .bv_main_container .bv_stars_svg_no_wrap {
+  gap: 3px !important;
+}
+
+.ethos-item [data-bv-show=inline_rating] .bv_main_container .bv_text {
+  font-family: Helvetica Neue !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: uppercase !important;
+  padding: 0;
+}
+
+.ethos-item [data-bv-show=inline_rating] .bv_main_container.bv_inline_rating_container_left .bv_stars_component_container {
+  padding-right: 3px!important;
 }
 
 .ethos-swiper {
