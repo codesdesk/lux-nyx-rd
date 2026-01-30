@@ -14,7 +14,8 @@
 
 
 body:has(.scrolled-past-header) .cart-drawer .drawer__inner {
-    height: calc(100vh - calc(var(--header-height) - 1px));
+  height: calc(100vh - var(--header-height));
+  border: unset;
 }
 
 body:has(.scrolled-past-header) .drawer,

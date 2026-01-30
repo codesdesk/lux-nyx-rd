@@ -104,74 +104,91 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         });
 
-        // comapere sizes btn
-       // VARIABLE POPUP
+/*------------------      VARIABLE POPUP        ----------------------*/
+       
         const compareBox = document.querySelectorAll(".custom_sizes-popup_wrapper.variable_popup");
-        if (!compareBox || compareBox.length === 0) return;
+    if (!compareBox || compareBox.length === 0) return;
 
-        function getActiveSlug() {
-            const checkActive = document.querySelector('.option-color [data-selected-value]');
-            if (!checkActive) return null;
-            return checkActive.innerText.trim().toLowerCase().replace(/\s+/g, '_');
-        }
+    function getActiveSlug() {
+        const checkActive = document.querySelector('.option-color [data-selected-value]');
+        if (!checkActive) return null;
+        return checkActive.innerText.trim().toLowerCase().replace(/\s+/g, '_');
+    }
 
-        // Function to update button visibility based on slug
-        function updateCompareButtons() {
+    function updateCompareButtons() {
         const slug = getActiveSlug();
         if (!slug) return;
 
         const updatedSlug = `popup_${slug}`;
-        console.log(`updatedSlug`);
-        // Loop through all compare buttons
-        document.querySelectorAll(".option-size .compare_size_btn").forEach(btn => {
-            // Find matching popup container
-            const container = Array.from(compareBox).find(c => c.classList.contains(updatedSlug));
 
-            if (!container || container.classList.contains('hidden')) {
-                btn.classList.add('hidden'); // hide button if no container or container is hidden
-            } else {
-                btn.classList.remove('hidden'); // show button
-            }
+        const container = Array.from(compareBox).find(c =>
+            c.classList.contains(updatedSlug)
+        );
+
+        const hideBtn = !container || container.classList.contains('hidden');
+
+        document.querySelectorAll(".option-size .compare_size_btn").forEach(btn => {
+            btn.classList.toggle('hidden', hideBtn);
         });
     }
 
-    // Call on page load
-    updateCompareButtons();
+    /* ---------------- SLUG CHANGE WATCHER ---------------- */
 
-    // Call when variant changes (Shopify)
-    document.addEventListener('change', (e) => {
-        if (e.target.matches('select[name="id"]')) {
-            setTimeout(updateCompareButtons, 50); // wait for Shopify to update DOM
+    let lastSlug = null;
+
+    function watchSlug() {
+        const currentSlug = getActiveSlug();
+        if (currentSlug !== lastSlug) {
+            lastSlug = currentSlug;
+            updateCompareButtons();
         }
+    }
+
+    setInterval(watchSlug, 250);
+
+    /* ---------------- DOM UPDATE WATCHER ---------------- */
+
+    const observer = new MutationObserver(() => {
+        updateCompareButtons();
     });
 
-        // Event delegation for main compare buttons
-        document.addEventListener("click", (e) => {
-            const btn = e.target.closest(".option-size .compare_size_btn");
-            if (!btn) return;
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['class']
+    });
 
-            const slug = getActiveSlug();
-            if (!slug) return;
+    /* ---------------- BUTTON CLICK HANDLER ---------------- */
 
-            const updatedSlug = `popup_${slug}`;
-            compareBox.forEach(container => {
-                if (container.classList.contains(updatedSlug)) {
-                    container.classList.toggle("active");
-                }
-            });
+    document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".option-size .compare_size_btn");
+        if (!btn) return;
+
+        const slug = getActiveSlug();
+        if (!slug) return;
+
+        const updatedSlug = `popup_${slug}`;
+
+        compareBox.forEach(container => {
+            container.classList.toggle("active", container.classList.contains(updatedSlug));
         });
+    });
 
-        // Event delegation for close buttons inside popup
-        document.addEventListener("click", (e) => {
-            const btn = e.target.closest(".custom_sizes-popup_wrapper.variable_popup .compare_size_btn");
-            if (!btn) return;
+    /* ---------------- POPUP CLOSE HANDLER ---------------- */
 
-            compareBox.forEach(container => {
-                container.classList.remove("active");
-            });
+    document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".custom_sizes-popup_wrapper.variable_popup .compare_size_btn");
+        if (!btn) return;
+
+        compareBox.forEach(container => {
+            container.classList.remove("active");
         });
+    });
 
+    /* ---------------- INITIAL RUN ---------------- */
 
+    updateCompareButtons();
 
         // CUSTOM POPUP
         const customCompareBtns = document.querySelectorAll(".custom_product-size-wrapper .compare_size_btn");

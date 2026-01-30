@@ -506,8 +506,14 @@
 
       this.createObserver();
     }
+    getAnnouncementHeight() {
+      const announcementBar = document.querySelector('.announcement-wrapper');
+      return announcementBar ? announcementBar.offsetHeight : 0;
+    }
 
     setHeaderHeight() {
+       const announcementHeight = this.getAnnouncementHeight();
+      document.documentElement.style.setProperty('--announcement-height',`${announcementHeight}px`);
       document.documentElement.style.setProperty('--header-height', `${this.header.offsetHeight}px`);
     }
 
