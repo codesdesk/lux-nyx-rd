@@ -707,6 +707,7 @@ table:not([class]) th {
   .product-grid-container .grid--2-col-tablet-down .grid__item {
     width: calc(50% - var(--grid-desktop-vertical-spacing) / 2);
   }
+  
   .product-grid-container .product-grid {
     column-gap: 8px;
     row-gap: 8px;
@@ -1482,10 +1483,20 @@ summary::-webkit-details-marker {
   .grid--2-col-tablet-down .grid__item {
     width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
+  .collection .grid--2-col-tablet-down .grid__item{
+    width: 100%;
+    max-width: calc(33.3% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
+  }
 
   .grid--1-col-tablet-down.grid--peek .grid__item {
     width: calc(100% - var(--grid-desktop-horizontal-spacing) - 3rem);
   }
+   
+  .collection .grid--2-col-tablet-down .grid-item{
+    width: 100%;
+    max-width: calc(33.3% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
+  }
+ 
 }
 
 /* component-media */
