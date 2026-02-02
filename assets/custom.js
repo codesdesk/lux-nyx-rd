@@ -42,33 +42,49 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Collection grid 1 or 2 
+const allProductsBtns = document.querySelectorAll('.icon-product-grid > .all-products');
+const productsGridBtns = document.querySelectorAll('.icon-product-grid > .products-grid');
+const productGrid = document.querySelector('#product-grid');
+productsGridBtns.forEach((item) => {
+    item.classList.add('active')
+});
+if (!productGrid) return;
 
-    const allProductsBtns = document.querySelectorAll('.icon-product-grid > .all-products');
-    const productsGridBtns = document.querySelectorAll('.icon-product-grid > .products-grid');
-    const productGridContainer = document.querySelector('.main-collection-custom .product-grid-container #product-grid');
-    productsGridBtns.forEach(btn => {
-        btn.classList.add("active");
-    });
-    if (productGridContainer) {
-    productsGridBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-        productGridContainer.classList.add('grid--2-col');
-        productGridContainer.classList.remove('grid--1-col');
-        btn.classList.add('active');
-        allProductsBtns.forEach(b => b.classList.remove('active'));
-        });
-    });
+// Save original classes ONCE
+const DEFAULT_CLASSES = productGrid.className;
 
-    allProductsBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-        productGridContainer.classList.add('grid--1-col');
-        productGridContainer.classList.remove('grid--2-col');
+// Classes for "all-products"
+const ALL_PRODUCTS_CLASSES = `
+ grid--3-col-desktop
+ grid--2-col-tablet
+ grid--1-col
+ grid product-grid
+`.trim();
 
-        btn.classList.add('active');
-        productsGridBtns.forEach(b => b.classList.remove('active'));
-        });
-    });
-    }
+function enableAllProducts() {
+  productGrid.className = ALL_PRODUCTS_CLASSES;
+
+  allProductsBtns.forEach(b => b.classList.add('active'));
+  productsGridBtns.forEach(b => b.classList.remove('active'));
+}
+
+function disableAllProducts() {
+  productGrid.className = DEFAULT_CLASSES;
+
+  allProductsBtns.forEach(b => b.classList.remove('active'));
+  productsGridBtns.forEach(b => b.classList.add('active'));
+}
+
+/* ---- events ---- */
+allProductsBtns.forEach(btn =>
+  btn.addEventListener('click', enableAllProducts)
+);
+
+productsGridBtns.forEach(btn =>
+  btn.addEventListener('click', disableAllProducts)
+);
+
+
 
         // go to top button
          const scrollBtn = document.getElementById('scrollToTop');
