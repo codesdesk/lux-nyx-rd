@@ -11,7 +11,6 @@
       {% for block in section.blocks %}
         <div class="swiper-slide">
           <div class="ethos-item">
-
             {% if block.settings.image %}
               <a href="{{ block.settings.overlay_link }}">
               <img src="{{ block.settings.image | image_url: width: 2000 }}" alt="" class="smart-design-desktop">
@@ -32,10 +31,12 @@
             <!-- Product card -->
             <div class="product-card">
               <div class="product-title">{{ block.settings.product_title }} 
-                {% comment %} <p class="product-rating">★★★★★(17)</p> {% endcomment %}
-                <div class="product-rating-wrapper"><div data-bv-show="inline_rating" data-bv-product-id="{{ product.id }}" data-bv-redirect-url="{{ shop.secure_url }}{{ product.url }}" data-bv-seo="false"></div></div>
-                
-            </div>
+                {% if block.settings.product_link  != blank %}
+                  <div class="product-rating-wrapper">
+                    <div data-bv-show="inline_rating" data-bv-product-id="{{ product.id }}" data-bv-redirect-url="{{ shop.secure_url }}{{ product.url }}" data-bv-seo="false"></div>
+                  </div>
+                {% endif %}
+              </div>
              
               <p class="product-price">{{ block.settings.product_price }}</p>
               <a href="{{ block.settings.product_link }}" class="product-btn">
@@ -175,7 +176,7 @@
   font-weight: 500;
   font-size: 68px;
   line-height: normal;
-  letter-spacing: -0.2rem;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   margin-bottom: 10px;
   color:#fff;
@@ -332,9 +333,6 @@
     line-height: 115.99999999999999%;
     border-radius: 2.72px;
 }
-{% comment %} .design-ethos {
-    padding: 7.8px 11px 56px;
-} {% endcomment %}
 .design_ethos_custom .ethos-header h2{
     font-size: 14px ;
     letter-spacing: 0;

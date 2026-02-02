@@ -515,7 +515,7 @@ class MenuDrawer extends HTMLElement {
     });
   }
   onCloseButtonClick(event) {
-    if (window.innerWidth >= 989) {
+    if (window.innerWidth >= 990) {
       const detailsElement = event.currentTarget.closest('details');
       this.closeSubmenu(detailsElement);
     }

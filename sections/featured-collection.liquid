@@ -36,37 +36,39 @@
 
   .section-featured-collection .custom_swiper_button.swiper-button-next {
     right: 30px;
-}
-  .section-featured-collection .custom_swiper_button.swiper-button-prev {
-    left: 30px;
-}
-
+  } 
+    .section-featured-collection .custom_swiper_button.swiper-button-prev {
+      left: 30px;
+  }
+  .section-featured-collection .custom_swiper_button[aria-disabled="true"] {
+      display: none;
+  }
   .collection.home_featured{ 
        border-top: 1px solid rgba(138, 147, 141, 1);
   }
 
+  .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px; 
+    box-sizing: border-box;
+  }
+  
+  .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide{
+    display:block;
+    width: 100%;
+    max-width: calc(100% / {{ section.settings.columns_mobile | plus: 0 | plus: 0.25 }});
+  }
+  
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
     .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      gap: 8px; 
-      box-sizing: border-box;
+      gap: 4px; 
     }
-    
-    .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide{
-      display:block;
-      width: 100%;
-      max-width: calc(100% / {{ section.settings.columns_mobile | plus: 0 | plus: 0.25 }});
-    }
-    
-    @media screen and (min-width: 750px) {
-      .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
-      }
-      .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper {
-        gap: 4px; 
-      }
 
     .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide{
       display:block;

@@ -200,7 +200,7 @@
     top: var(--swiper-navigation-top-offset, 48%);
 }
 .collection.home_featured .product-card-wrapper .card__content .card__information {
-    padding-top: 10px;
+    padding-top: 7px;
 }
 .home_featured.bottom_cust{
 border-top:unset;
