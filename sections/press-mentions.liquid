@@ -28,12 +28,12 @@
   {% for block in section.blocks %}
     {% if block.settings.logo != blank %}
       <button
-        class="press-logo {% if forloop.first %}active{% endif %}"
+        class="press-logo block-{{ block.id }} {% if forloop.first %}active{% endif %}"
         data-quote="{{ block.settings.logo_quote | escape }}"
         {{ block.shopify_attributes }}
       >
         <img
-          src="{{ block.settings.logo | image_url: width: 300 }}"
+          src="{{ block.settings.logo | image_url: width: 2000 }}"
           alt="Press logo"
           loading="lazy"
         >
@@ -46,7 +46,15 @@
   </div>
 </div>
 
+
+
 <style>
+  {% for block in section.blocks %}
+  .press-logos .press-logo.block-{{ block.id }} img {
+      width: {{ block.settings.logo_width }}px;
+    }
+  {% endfor %}
+
 .press-mentions {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -107,10 +115,15 @@
     margin: 0 auto;
     {% comment %} text-indent: 80px; {% endcomment %}
 }
-
-.press-logo img {
-  max-height: {{ section.settings.logo_height }}px;
-}
+{% if section.settings.height == 'custom' %}
+  .press-logo img {
+    max-height: {{ section.settings.logo_height }}px;
+  }
+  {% else %}
+  .press-logo img {
+    max-height: auto;
+  }
+{% endif %}
 .press-logo {
   background: none;
   border: 0;
@@ -127,7 +140,12 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 749px) {
+    {% for block in section.blocks %}
+      .press-logos .press-logo.block-{{ block.id }} img {
+          width: {{ block.settings.logo_width_mobile }}px;
+        }
+      {% endfor %}
   .press-mentions.product_press {
     padding-top: 6px !important;
 }
@@ -241,13 +259,30 @@ document.addEventListener("DOMContentLoaded", function () {
       "default": 26
     },
     {
+      "type": "select",
+      "id": "height",
+      "label": "Logo Height",
+      "options": [
+        {
+          "value": "custom",
+          "label": "Custom"
+        },
+        {
+          "value": "auto",
+          "label": "Auto"
+        }
+      ],
+      "default": "custom"
+    },
+    {
       "type": "range",
       "id": "logo_height",
       "label": "Logo Height",
       "min": 20,
       "max": 80,
       "step": 2,
-      "default": 40
+      "default": 40,
+      "visible_if": "{{ section.settings.height == 'custom' }}"
     },
     {
       "type": "color",
@@ -322,6 +357,18 @@ document.addEventListener("DOMContentLoaded", function () {
         "id": "logo",
         "label": "Logo Image"
       },
+      {
+        "type": "number",
+        "id": "logo_width",
+        "label": "Logo width",
+        "default": 40
+       },
+       {
+        "type": "number",
+        "id": "logo_width_mobile",
+        "label": "Logo width Mobile",
+        "default": 40
+       },
       {
         "type": "richtext",
         "id": "logo_quote",

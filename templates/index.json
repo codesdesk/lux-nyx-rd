@@ -260,6 +260,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Group_947.jpg",
+            "logo_width": 190,
+            "logo_width_mobile": 125,
             "logo_quote": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
           }
         },
@@ -267,6 +269,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Group_2.png",
+            "logo_width": 96,
+            "logo_width_mobile": 63,
             "logo_quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led.</em></p>"
           }
         },
@@ -274,6 +278,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Group_3.png",
+            "logo_width": 153,
+            "logo_width_mobile": 100,
             "logo_quote": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
           }
         },
@@ -281,6 +287,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Vector_5.png",
+            "logo_width": 170,
+            "logo_width_mobile": 112,
             "logo_quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led.</em></p>"
           }
         }
@@ -300,8 +308,9 @@
         "button_link": "#",
         "quote_size": 56,
         "quote_size_mobile": 32,
+        "height": "auto",
         "logo_height": 30,
-        "bg_color": "#f9f7f6",
+        "bg_color": "#ffffff",
         "label_color": "#1f1f1f",
         "button_color": "#1f1f1f",
         "padding_top": 12,

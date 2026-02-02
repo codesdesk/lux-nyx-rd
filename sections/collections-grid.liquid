@@ -8,7 +8,9 @@
     /* padding: 12px 20px 62px; */
     border-top: 0.75px solid #8A938D;
 }
-
+.collections-grid .image-wrapper {
+    height: 100%;
+}
 .collections-header {
   display: flex;
   justify-content: space-between;
@@ -19,7 +21,7 @@
 .collections-header h2 {
     font-size: 18px;
     line-height: normal;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
     margin: 0;
     color: #000000;
@@ -63,6 +65,13 @@
   display: block;
   transition: .5s ease-in-out;
 }
+
+.collection-overlay .text_with_button {
+    display: flex;
+    gap: 60px;
+}
+
+
 @media (hover: hover) and (pointer: fine) {
 .collection-card img:hover {
     transform: scale(1.1);
@@ -80,6 +89,8 @@
     border-top: 1px solid #FFFFFF;
     padding-top: 12px;
 }
+
+
 
 .collection-overlay h3 {
     margin: 0 0 6px;
@@ -146,6 +157,15 @@
 }
 
 /* Responsive */
+
+@media(max-width: 1200px) {
+.collection-overlay {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+}
+
 @media(max-width: 900px) {
   .collections-layout {
     grid-template-columns: 1fr;
@@ -155,7 +175,7 @@
     grid-template-columns: 1fr;
   }
 }
-@media(max-width: 768px) {
+@media(max-width: 749px) {
 
   {% comment %} .collections-grid {
     padding: 7.8px 12px 56px;
@@ -324,8 +344,10 @@
               {% endif %}
               <div class="collection-overlay">
                 <h3>{{ block.settings.title }}</h3>
-                <p>{{ block.settings.description }}</p>
-                <a href="{{ block.settings.link }}">{{ block.settings.button_text }}</a>
+                <div class="text_with_button">
+                  <p>{{ block.settings.description }}</p>
+                  <a href="{{ block.settings.link }}">{{ block.settings.button_text }}</a>
+                </div>
               </div>
             </div>
           {% endif %}

@@ -73,7 +73,7 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 749px) {
  .hero-product-overlay .hero-overlay-card {
     position: absolute;
     margin: 0;
@@ -123,7 +123,7 @@
   {% if section.settings.desktop_image %}
     <picture>
       {% if section.settings.mobile_image %}
-        <source media="(max-width: 768px)" srcset="{{ section.settings.mobile_image | image_url: width: 800 }}">
+        <source media="(max-width: 749px)" srcset="{{ section.settings.mobile_image | image_url: width: 800 }}">
       {% endif %}
       <img src="{{ section.settings.desktop_image | image_url: width: 2000 }}" alt="Hero Image">
     </picture>
@@ -135,8 +135,8 @@
         <div class="hero_card_items">
       <h4>{{ product.title }}
         <div class="hero-rating">
-        ★★★★★({{ section.settings.review_count }})
-      </div>
+          <div data-bv-show="inline_rating" data-bv-product-id="{{ product.id }}" data-bv-redirect-url="{{ shop.secure_url }}{{ product.url }}" data-bv-seo="false"></div>
+        </div>
       </h4>
 
       <div class="price">
