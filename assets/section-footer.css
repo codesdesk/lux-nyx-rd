@@ -36,9 +36,12 @@
     text-transform: math-auto;
     letter-spacing: -0.56px;
     margin-bottom: 1.5rem;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 56px;
     line-height: 100%;
+}
+.custom_footer .footer_newsletter_heading em {
+    font-weight: 400;;
 }
 .custom_footer .newsletter-form__button {
     width: 7.9rem;
