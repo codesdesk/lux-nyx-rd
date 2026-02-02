@@ -753,6 +753,16 @@ a.active-facets__button.focused .active-facets__button-inner {
   pointer-events: none;
 }
 
+.mobile-facets.sort-filter {
+  position: unset;
+  background: unset;
+  pointer-events: unset;
+}
+
+.mobile-facets.sort-filter .mobile-facets__inner {
+  border: unset;
+}
+
 .mobile-facets__disclosure {
   display: flex;
 }

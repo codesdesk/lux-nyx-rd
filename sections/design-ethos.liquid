@@ -290,6 +290,8 @@
 
 .design-ethos:has(.page-width) .ethos-swiper:not(.swiper-initialized) .swiper-wrapper {
   padding-left: 20px;
+  width: 100%;
+  max-width: calc( 100% - 20px)
 }
 .design-ethos:has(.page-width) .ethos-swiper:not(.swiper-initialized) .swiper-wrapper .swiper-slide {
   max-width: calc(100% / {{section.settings.slide_show}});
@@ -306,8 +308,14 @@
   .design-ethos img.smart-design-mobile {
     display: block;
 }
+.design-ethos:has(.page-width) .ethos-swiper:not(.swiper-initialized) .swiper-wrapper {
+  padding-left: 12px;
+  width: 100%;
+  max-width: calc( 100% - 12px);
+  box-sizing: border-box;
+}
 .design-ethos:has(.page-width) .ethos-swiper:not(.swiper-initialized) .swiper-wrapper .swiper-slide {
-  max-width: calc( 100% - (4px + 12px));
+  max-width: calc( 100% - (5px / 2));
 }
 .design-ethos img.smart-design-desktop {
     display: none;

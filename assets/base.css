@@ -6201,3 +6201,8 @@ body:has(.custom_sizes-popup_wrapper.active) {
 html:has(.terms-grid) {
   scroll-behavior: smooth;
 }
+.section-{{ section.id }} .swiper-collection:not(.swiper-initialized) >  .swiper-slide {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}

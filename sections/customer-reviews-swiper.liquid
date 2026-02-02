@@ -1,4 +1,8 @@
-<div class="customer-reviews">
+{% assign BlockVal = 0  %}
+{% for block in section.blocks %}
+  {% assign BlockVal = BlockVal | plus: 1  %}
+{% endfor %}
+<div class="customer-reviews customer-{{ section-id }}">
   <div class="page-width">
     <div class="reviews-header">
       <h2>{{ section.settings.heading }}</h2>
@@ -8,7 +12,7 @@
         </a>
       {% endif %}
     </div>
-
+    </div>
     <div class="swiper reviews-swiper">
       <div class="swiper-wrapper">
         {% for block in section.blocks %}
@@ -61,9 +65,6 @@
                     </span>
                   {% endif %}
                 </div>
-
-                
-
                 {% if section.settings.more_reviews_link != blank %}
                   <a href="{{ section.settings.more_reviews_link }}"
                      class="more-reviews-btn small-hide">
@@ -75,18 +76,8 @@
           </div>
         {% endfor %}
       </div>
-
-      {% comment %} <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>{% endcomment %}
       <div class="swiper-pagination"></div> 
     </div>
-    <!-- BOTTOM LINES -->
-    {% comment %} <div class="review-lines">
-        {% for block in section.blocks %}
-            <span class="review-line{% if forloop.first %} active{% endif %}"></span>
-        {% endfor %}
-        </div> {% endcomment %}
-  </div>
 </div>
 <style>
 .customer-reviews {
@@ -94,9 +85,9 @@
   background: {{ section.settings.bg_color }};
 }
 .review-content-items {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .reviews-header {
   display: flex;
@@ -106,79 +97,70 @@
 }
 
 .reviews-header h2 {
-    font-size: 18px;
-    line-height: normal;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    margin: 0;
-    color:#000000;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 0;
+  color:#000000;
 }
 .shop-link {
-    font-size: 16px;
-    line-height: normal;
-    letter-spacing: 0;
-    text-align: right;
-    text-decoration: underline;
-    text-decoration-style: solid;
-    text-decoration-offset: 0%;
-    text-decoration-thickness: 0%;
-    color: #000000;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0;
+  text-align: right;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
+  color: #000000;
 }
-
 .review-card {
   display: grid;
   grid-template-columns: 407px 1fr;
   gap: 15px;
   align-items: center;
 }
-
 .review-image img {
   width: 100%;
   display: block;
 }
-
-{% comment %} .review-image {
-  width: 407px;
-} {% endcomment %}
 .review-text {
-    margin: 20px 0;
-    font-size: 18px;
-    line-height: normal;
-    letter-spacing: 0;
-    color:#1F1F1F;
+  margin: 20px 0;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 0;
+  color:#1F1F1F;
 }
 .review-name,
 .verified {
-    font-size: 18px;
-    line-height: normal;
-    letter-spacing: 0;
-    color:#2C2C2C;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 0;
+  color:#2C2C2C;
 }
 .review-meta {
     display: flex;
     gap: 19px;
     align-items: baseline;
 }
-
-
-
 .review-date {
-    font-size: 14px;
-    line-height: normal;
-    letter-spacing: 0;
-    color: #2F2F2F;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #2F2F2F;
 }
 .more-reviews-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 8px 20px;
-    border: 1px solid #000;
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 100%;
-    letter-spacing: 0;
-    color: #1F1F1F;
-    border-radius: 4px;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  border: 1px solid #000;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #1F1F1F;
+  border-radius: 4px;
 }
 .more-reviews-btn:hover{
   background: #000;
@@ -190,9 +172,9 @@
   text-align: left;
 }
 .review-stars img {
-    display: block;
-    width: 100%;
-    max-width: 124px;
+  display: block;
+  width: 100%;
+  max-width: 124px;
 }
 .review-lines {
   display: flex;
@@ -200,41 +182,41 @@
   margin-top: 40px;
   justify-content: center;
 }
-
 .review-line {
   width: 296px;
   height: 1px;
   background: #e5e5e5;
 }
-
 .review-line.active {
   background: #000;
 }
 .customer-reviews .swiper-pagination {
-    position: unset;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    column-gap:52px;
-    left: unset;
-    right: unset;
-    margin: 0;
-    transform: unset !important;
-    margin: 0 auto;
-    margin-top:46px;
-    width:100% !important;
+  position: unset;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap:52px;
+  left: unset;
+  right: unset;
+  margin: 0;
+  transform: unset !important;
+  margin: 0 auto;
+  margin-top:46px;
+  width:100% !important;
+  max-width: calc(100% - 40px);
 }
 .customer-reviews .customer-mobile {
-    display: none;
+  display: none;
 }
 .customer-reviews .swiper-pagination-bullet{
-  width:296px;
   height:2px;
   border-radius:0;
   position: unset !important;
+  background:#1F1F1F;
+  width: 100%;
+  max-width: calc(100% / {{ BlockVal | minus :1 }})
 }
 .customer-reviews .swiper-pagination-bullet-active{
-  background:#1F1F1F;
 }
 .customer-reviews .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next,
 .customer-reviews .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev,
@@ -245,14 +227,16 @@
 .customer-reviews  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
   margin:0;
 }
-
-.reviews-swiper:not(.swiper-initialized) .swiper-slide {
-  display: none;
+.reviews-swiper:not(.swiper-initialized) .swiper-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
-.reviews-swiper:not(.swiper-initialized) .swiper-slide:first-child {
-    display: block;
-    width: 100%;
-    max-width: 100%;
+.reviews-swiper:not(.swiper-initialized) .swiper-slide {
+  display: block;
+  width: 100%;
+  max-width: calc((100% / 2.07));
+  box-sizing: border-box;
 }
 
 @media (max-width: 1440px) {
@@ -261,7 +245,15 @@
   grid-template-columns: 1fr 1fr;
 }
 }
-@media (max-width: 768px) {
+@media (max-width: 749px) {
+  .reviews-swiper:not(.swiper-initialized) .swiper-wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 20px;
+  }
+  .reviews-swiper:not(.swiper-initialized) .swiper-slide {
+    max-width: calc((100% / 1.14));
+  }
   .customer-reviews .swiper-pagination {
     column-gap:11.75px;
   }
@@ -276,71 +268,79 @@
   .reviews-header h2,
   .shop-link{
     font-size:14px;
-}
-.review-text {
-    margin: 20px 0 17px;
-    font-size: 14px;
-    line-height: 14px;
-    letter-spacing: 0;
-    color: #2F2F2F;
-}
-.review-stars img {
-    width: 100%;
-    max-width: 109px;
-}
-.review-name, .verified {
-    font-size: 14px;
-    color: #2F2F2F;
-}
-.verified svg {
-    width: 17px;
-    height: 17px;
-}
-.review-lines {
-    gap: 11.75px;
-    margin-top: 24px;
-}
-.customer-reviews {
-    padding: 3px 0 59px;
-}
-.review-image .customer-mobile {
-    display: none;
-}
-.review-image .customer-desktop {
-    display: block;
-}
+  }`
+  .review-text {
+      margin: 20px 0 17px;
+      font-size: 14px;
+      line-height: 14px;
+      letter-spacing: 0;
+      color: #2F2F2F;
+  }
+  .review-stars img {
+      width: 100%;
+      max-width: 109px;
+  }
+  .review-name, .verified {
+      font-size: 14px;
+      color: #2F2F2F;
+  }
+  .verified svg {
+      width: 17px;
+      height: 17px;
+  }
+  .review-lines {
+      gap: 11.75px;
+      margin-top: 24px;
+  }
+  .customer-reviews {
+      padding: 3px 0 59px;
+  }
+  .review-image .customer-mobile {
+      display: none;
+  }
+  .review-image .customer-desktop {
+      display: block;
+  }
 
-.reviews-header {
-    margin-bottom: 24px;
-}
-.customer-reviews .swiper-pagination {
+  .reviews-header {
+      margin-bottom: 24px;
+  }
+  .customer-reviews .swiper-pagination {
     margin-top: 21.65px !important;
-}
+    max-width: calc(100% - 24px)
+  }
+  
 }
 </style>
 
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  new Swiper(".reviews-swiper", {
-    loop: true,
+  new Swiper(".customer-{{ section-id }} .reviews-swiper", {
+    loop: false,
     spaceBetween: 30,
+    slidesOffsetBefore: 0,
+    slidesOffsetAfter:0, 
     pagination: {
-        el: '.swiper-pagination',
+        el: '.customer-{{ section-id }} .swiper-pagination',
         clickable: true,
         dynamicBullets: true
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".customer-{{ section-id }} .swiper-button-next",
+      prevEl: ".customer-{{ section-id }} .swiper-button-prev",
     },
 
     breakpoints: {
       0: {
+        slidesOffsetBefore: 12,
+        slidesOffsetAfter:12, 
         slidesPerView: 1.14,
         spaceBetween: 20,
       },
-      768: {
+      750: {
+        slidesOffsetBefore: 20,
+        slidesOffsetAfter:20, 
         slidesPerView: 2.07,
         spaceBetween: 55,
       }

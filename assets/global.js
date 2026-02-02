@@ -435,7 +435,7 @@ class MenuDrawer extends HTMLElement {
       summary.addEventListener('click', this.onSummaryClick.bind(this))
     );
     this.querySelectorAll(
-      'button:not(.localization-selector):not(.country-selector__close-button):not(.country-filter__reset-button)'
+      'button:not(.localization-selector):not(.country-selector__close-button):not(.country-filter__reset-button):not(.accordion-button)'
     ).forEach((button) => button.addEventListener('click', this.onCloseButtonClick.bind(this)));
   }
 
@@ -515,11 +515,9 @@ class MenuDrawer extends HTMLElement {
     });
   }
   onCloseButtonClick(event) {
-    if (window.innerWidth >= 989) {
       const detailsElement = event.currentTarget.closest('details');
       this.closeSubmenu(detailsElement);
     }
-  }
 
   closeSubmenu(detailsElement) {
     const parentMenuElement = detailsElement.closest('.submenu-open');

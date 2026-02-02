@@ -30,7 +30,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
   
-  .section-{{ section.id }}.featured-collection-swiper > .swiper-wrapper{
+  .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-wrapper{
     padding-left: 20px;
   }
 
@@ -56,7 +56,7 @@
     .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide{
       display:block;
       width: 100%;
-      max-width: calc(100% / {{ section.settings.columns_mobile | plus: 0 | plus: 0.25 }});
+      max-width: calc(100% / {{ section.settings.columns_mobile | plus: 0 | plus: 0.16 }});
     }
     
     @media screen and (min-width: 750px) {
@@ -67,8 +67,11 @@
       .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper {
         gap: 4px; 
       }
+      .section-{{ section.id }}.featured-collection-swiper.swiper-initialized > .swiper-wrapper {
+        padding: 0px; 
+      }
 
-    .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide{
+    .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized)  .swiper-wrapper > .swiper-slide{
       display:block;
       width: 100%;
       max-width: calc(100% / {{ section.settings.columns_desktop }});
@@ -76,7 +79,7 @@
 
   }
   @media screen and (max-width: 749px){
-    .section-{{ section.id }}.featured-collection-swiper{
+    .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper{
       padding-left: 12px;
     }
     .section-{{ section.id }}.featured-collection-swiper > .swiper-wrapper{
@@ -291,11 +294,13 @@
 
 <script>
   {% assign desktopSlides = section.settings.columns_desktop | plus: 0 | plus: 0.10 | json %}
-  {% assign mobileSlides =  section.settings.columns_mobile | plus: 0 | plus: 0.25  | json %}
+  {% assign mobileSlides =  section.settings.columns_mobile | plus: 0 | plus: 0.11  | json %}
   document.addEventListener("DOMContentLoaded", function () {
     new Swiper(".section-{{ section.id }}.featured-collection-swiper", {
       slidesPerView: {{ mobileSlides }},
       spaceBetween: 4,
+      slidesOffsetBefore: 12,
+      slidesOffsetAfter:12, 
       loop: false,
       navigation: {
         nextEl: ".section-{{ section.id }}.featured-collection-swiper .swiper-button-next.custom_swiper_button",
@@ -304,10 +309,14 @@
       breakpoints: {
         0: {
           slidesPerView: {{ mobileSlides }},
-          spaceBetween: 4,
+          spaceBetween: 8,
           slidesOffsetBefore: 0, 
+          slidesOffsetBefore: 12,
+          slidesOffsetAfter:12, 
         },
         750: {
+          slidesOffsetBefore: 20,
+          slidesOffsetAfter:20, 
           slidesPerView: {{ desktopSlides }} + .02,
           spaceBetween: 4,
         }
