@@ -182,6 +182,10 @@ cart-drawer {
   margin: 0 2.5rem 1.5rem;
 }
 
+.drawer__inner-empty .cart-drawer__collection {
+  margin-inline: 0;
+}
+
 .cart-drawer .drawer__cart-items-wrapper {
   flex-grow: 1;
 }

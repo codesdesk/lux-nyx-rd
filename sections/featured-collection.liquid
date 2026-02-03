@@ -41,10 +41,19 @@
       left: 30px;
   }
   .section-featured-collection .custom_swiper_button[aria-disabled="true"] {
-      display: none;
+    scale: 0;
   }
   .collection.home_featured{ 
-       border-top: 1px solid rgba(138, 147, 141, 1);
+    border-top: 1px solid rgba(138, 147, 141, 1);
+  }
+
+  .collection .featured-collection-swiper .custom_swiper_button {
+    scale: 0;
+    transition: all .3s ease-in-out;
+  }
+
+  .collection:has(.featured-collection-swiper):hover .featured-collection-swiper .custom_swiper_button{
+    scale: 1;
   }
 
   .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper {

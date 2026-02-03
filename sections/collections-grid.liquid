@@ -177,9 +177,6 @@
 }
 @media(max-width: 749px) {
 
-  {% comment %} .collections-grid {
-    padding: 7.8px 12px 56px;
-  } {% endcomment %}
 
   .collections-grid {
     padding-top: 5px;
@@ -190,7 +187,7 @@
   .collections-header a {
     font-size: 14px;
     color: #1F1F1F;
-}
+  }
 
   .collections-layout {
     grid-template-columns: 1fr;
@@ -221,13 +218,15 @@
   /* Text alignment */
   .collection-overlay {
     bottom: 12px;
-    left: 12px;
-    right: 12px;
+    left: 10px;
+    right: 10px;
     justify-content: center;
+    padding-top: 7px;
   }
 
   .collection-overlay h3 {
     font-size: 14px;
+    line-height: 1;
   }
 
   .collection-overlay p {
@@ -263,9 +262,9 @@
     letter-spacing: 0;
     color: #1F1F1F;
     border: 1px solid #1F1F1F;
-}
+  }
 
-.collection-card:nth-child(4) .collection-overlay {
+  .collection-card:nth-child(4) .collection-overlay {
     bottom: unset;
     top: 47%;
     transform: translateY(-50%);
@@ -274,31 +273,33 @@
     margin: 0 auto;
     text-align: center;
     justify-content: center;
-}
-.custom_product_coll_grid .collection-card .image-wrapper {
+  }
+  .custom_product_coll_grid .collection-card .image-wrapper {
     display: block;
     width: 100%;
     overflow: hidden;
-}
-.left-grid .collection-card a {
+  }
+  .left-grid .collection-card a {
     display: block;
-}
-.left-grid .collection-card .collection-overlay a {
+  }
+  .left-grid .collection-card .collection-overlay a {
     display: none;
-}
-.left-grid .collection-card:nth-child(4) a{
+  }
+  .left-grid .collection-card:nth-child(4) a{
     display: block;
     padding: 6px 12px;
-}
-.collection-card.large-card .collection-overlay p {
-    display: none;
-}
-.collection-card.large-card .collection-overlay {
+  }
+  .collection-card.large-card .collection-overlay p {
+      display: none;
+  }
+  .collection-card.large-card .collection-overlay {
     justify-content: space-between;
-}
-.collection-card {
-  height: auto;
-}
+    flex-direction: row;
+    gap: 12px
+  }
+  .collection-card {
+    height: auto;
+  }
 }
 
 </style>

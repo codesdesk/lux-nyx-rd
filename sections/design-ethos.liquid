@@ -395,7 +395,7 @@
     const slidesDesktop = {{ section.settings.slide_show | times: 1 }};
     console.log(slidesDesktop)
     new Swiper('.section-{{ section.id }}-padding .ethos-swiper', {
-      spaceBetween: 5,
+      spaceBetween: 12,
       loop: false,
       {% if section.settings.container_width == false %}
         slidesOffsetBefore: 0,

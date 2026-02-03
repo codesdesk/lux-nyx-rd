@@ -95,9 +95,9 @@
           "type": "column",
           "settings": {
             "mega_menu_trigger": "Shop",
-            "show_menu_btn": true,
-            "btn_text": "View All",
-            "btn_link": "shopify://collections",
+            "show_menu_btn": false,
+            "btn_text": "",
+            "btn_link": "",
             "heading": "Categories",
             "heading_link": "",
             "menu": "categories",

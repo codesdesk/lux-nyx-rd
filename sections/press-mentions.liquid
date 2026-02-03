@@ -31,7 +31,7 @@
         {{ block.shopify_attributes }}
       >
         <img
-          src="{{ block.settings.logo | image_url: width: 2000 }}"
+          src="{{ block.settings.logo | img_url: 'master' }}"
           alt="Press logo"
           loading="lazy"
         >
@@ -98,7 +98,7 @@
   text-indent: 240px;
   margin-bottom: 56px;
   color: #1F1F1F;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.01em;
 }
 .press-quote p {
     margin: 0;
@@ -179,12 +179,12 @@
     text-indent: 0;
     row-gap: 15px;
     justify-content: space-around;
-}
+  }
   .press-label, .press-btn {
     font-size: 14px;
     line-height: normal;
     letter-spacing: 0;
-}
+  }
 
 }
 </style>

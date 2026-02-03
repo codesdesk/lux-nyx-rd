@@ -308,6 +308,9 @@
   max-width: calc((100% / 2.07));
   box-sizing: border-box;
 }
+.reviews-swiper:not(.swiper-initialized) .swiper-slide .review-card {
+  margin-right: 55px;
+}
 
 @media (max-width: 1440px) {
   .review-card {
@@ -355,12 +358,19 @@
   }
   .review-card {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 15px;
   }
-    .review-line {
-      width: 61px;
-      height:2px;
-    }
+  .review-line {
+    width: 61px;
+    height:2px;
+  }
+  .review-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0;
+    margin: 19px 0;
+  }
   .reviews-header h2,
   .shop-link{
     font-size:14px;
@@ -402,8 +412,19 @@
       margin-bottom: 22px;
   }
   .customer-reviews .swiper-pagination {
-    margin-top: 21.65px !important;
+    margin-top: 24px;
     max-width: calc(100% - 24px)
+  }
+  .reviews-swiper:not(.swiper-initialized) .swiper-wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .reviews-swiper:not(.swiper-initialized) .swiper-slide {
+    max-width: calc((100% / 1.14));
+  }
+
+  .reviews-swiper:not(.swiper-initialized) .swiper-slide .review-card {
+    margin-right: 12px;
   }
   
 }
