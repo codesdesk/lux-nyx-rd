@@ -57,9 +57,14 @@
           </div>
           {%- if settings.cart_drawer_collection != blank -%}
             <div class="cart-drawer__collection">
-              {% render 'card-collection', card_collection: settings.cart_drawer_collection, columns: 1 %}
+              {% comment %} {% render 'card-collection', card_collection: settings.cart_drawer_collection, columns: 1 %} {% endcomment %}
+              <div class="liked_products_cart">
+                <h4 class="cart-title">you may also like</h4>
+                {% render 'cart-drawer-product' %}
+              </div>
             </div>
-          {%- endif -%}
+          {%- endif -%} 
+          
         </div>
       {%- endif -%}
       <div class="drawer__header">

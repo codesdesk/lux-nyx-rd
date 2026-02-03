@@ -33,7 +33,7 @@
         {{ block.shopify_attributes }}
       >
         <img
-          src="{{ block.settings.logo | image_url: width: 2000 }}"
+          src="{{ block.settings.logo | img_url: 'master' }}"
           alt="Press logo"
           loading="lazy"
         >
@@ -95,7 +95,7 @@
   text-indent: 240px;
   margin-bottom: 56px;
   color: #1F1F1F;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.01em;
 }
 .press-quote p {
     margin: 0;
@@ -141,17 +141,17 @@
 
 /* Mobile */
 @media (max-width: 749px) {
-    {% for block in section.blocks %}
-      .press-logos .press-logo.block-{{ block.id }} img {
-          width: {{ block.settings.logo_width_mobile }}px;
-        }
-      {% endfor %}
+  {% for block in section.blocks %}
+  .press-logos .press-logo.block-{{ block.id }} img {
+      width: {{ block.settings.logo_width_mobile }}px;
+    }
+  {% endfor %}
   .press-mentions.product_press {
     padding-top: 6px !important;
-}
-.press-mentions.product_press .press-quote em {
+  }
+  .press-mentions.product_press .press-quote em {
     line-height: 100%;
-}
+  }
   .press-header {
     gap: 12px;
     margin-bottom: 33px;
@@ -169,19 +169,20 @@
     text-indent: 0;
     row-gap: 20px;
     justify-content: space-around;
-}
+  }
   .press-label, .press-btn {
     font-size: 14px;
     line-height: normal;
     letter-spacing: 0;
-}
-.press-logo img {
-    max-height: 20px !important;
-}
-.press-mentions{
-    padding-top:4px !important;
-    padding-bottom:57px !important;
-}
+    padding-bottom: 0;
+  }
+  .press-logo img {
+      max-height: 20px !important;
+  }
+  .press-mentions{
+      padding-top:4px !important;
+      padding-bottom:57px !important;
+  }
 }
 </style>
 

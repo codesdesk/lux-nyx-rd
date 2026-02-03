@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
         productsGridBtns.forEach(item => item.classList.add('active'));
 
         // Grid classes to toggle
+
+        const DEFAULT_CLASSES = [...productGrid.classList];
         const ALL_PRODUCTS_CLASSES = [
             'grid--3-col-desktop',
             'grid--2-col-tablet',
@@ -60,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
             'grid',
             'product-grid'
         ];
-
+        console.log(`Here is our default classes ${DEFAULT_CLASSES}`);
         function enableAllProducts() {
             ALL_PRODUCTS_CLASSES.forEach(cls => productGrid.classList.add(cls));
 
@@ -70,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function disableAllProducts() {
             ALL_PRODUCTS_CLASSES.forEach(cls => productGrid.classList.remove(cls));
+            DEFAULT_CLASSES.forEach(cls => productGrid.classList.add(cls));
 
             allProductsBtns.forEach(b => b.classList.remove('active'));
             productsGridBtns.forEach(b => b.classList.add('active'));
