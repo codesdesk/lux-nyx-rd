@@ -5804,6 +5804,14 @@ section.image-category-section {
   display: none;
 }
 
+.breadcrumb .path.search {
+  text-wrap-mode: wrap;
+  display: block;
+  width: 100%;
+  animation: unset;
+  overflow: hidden;
+}
+
 @media only screen and (max-width:749px) {
 
 

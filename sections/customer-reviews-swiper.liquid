@@ -36,10 +36,25 @@
               <div class="review-content">
                 <div class="review-content-items">
                 {% if block.settings.star_image != blank %}
-                <div class="review-stars">
-                  <img src="{{ block.settings.star_image | img_url:"master" }}">
-                </div>
+                  <div class="review-stars">
+
+                    {% assign rating = block.settings.rating %}
+                    {% assign max_rating = 5 %}
+                    {% assign percentage = rating | times: 100 | divided_by: max_rating %}
+
+                    <div class="star-rating" aria-label="Rating: {{ rating }} out of {{ max_rating }}">
+                      <div class="stars-outer">
+                        <div class="stars-inner" style="width: {{ percentage }}%;"></div>
+                      </div>
+
+                      {% if block.settings.show_rating_text %}
+                        <span class="rating-text">{{ rating }} / {{ max_rating }}</span>
+                      {% endif %}
+                    </div>
+
+                  </div>
                 {% endif %}
+
                 {% if block.settings.date != blank %}
                   <div class="review-date">
                     {{ block.settings.date }}
@@ -80,6 +95,58 @@
     </div>
 </div>
 <style>
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.stars-outer {
+  position: relative;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+}
+
+.stars-outer .stars-inner:empty {
+  display: block;
+}
+.stars-outer::before {
+  content: "";
+  background-image: url('{{ "star-icon-empty.svg" | asset_url }}');
+  width: 109px;
+  background-repeat: repeat-x;
+  display: inline-block;
+  height: 18px;
+  background-size: 22px 18px;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.stars-inner::before {
+  content: "";
+  background-image: url('{{ "star-icon.svg" | asset_url }}');
+  background-repeat: repeat-x;
+  width: 109px;
+  background-repeat: repeat-x;
+  display: inline-block;
+  height: 18px;
+  background-size: 22px 18px;
+}
+
+.rating-text {
+  font-size: 14px;
+  color: #555;
+}
+
+
+
 .customer-reviews {
   padding: 12px 0 73px;
   background: {{ section.settings.bg_color }};
@@ -248,6 +315,13 @@
   grid-template-columns: 1fr 1fr;
 }
 }
+
+@media (max-width: 1200px) {
+  .review-name, .verified {
+      font-size: 14px;
+  }
+}
+}
 @media (max-width: 749px) {
   .reviews-swiper:not(.swiper-initialized) .swiper-wrapper {
     padding-left: 12px;
@@ -414,6 +488,15 @@ document.addEventListener("DOMContentLoaded", function () {
           "type": "image_picker",
           "id": "mobile-review-image",
           "label": "Customer  Mobile Image"
+        },
+         {
+          "type": "range",
+          "id": "rating",
+          "label": "Star rating",
+          "min": 0,
+          "max": 5,
+          "step": 0.5,
+          "default": 5
         },
         {
           "type": "textarea",

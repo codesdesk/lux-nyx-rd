@@ -38,7 +38,7 @@
     <span class="path">{{ article.title }}</span>
     {% else %}
     <span aria-hidden="true" class="divide">/</span>
-    <span class="path">{{ page_title }}</span>
+    <span class="path {{ template.name | replace : ' ', "_" }}">{{ page_title }}</span>
     {% endif %}
   </nav>
 {% endunless %}
