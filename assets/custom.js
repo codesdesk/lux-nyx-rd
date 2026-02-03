@@ -42,52 +42,54 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Collection grid 1 or 2 
-const allProductsBtns = document.querySelectorAll('.icon-product-grid > .all-products');
-const productsGridBtns = document.querySelectorAll('.icon-product-grid > .products-grid');
-const productGrid = document.querySelector('#product-grid');
-productsGridBtns.forEach((item) => {
-    item.classList.add('active')
-});
-if (!productGrid) return;
+    const allProductsBtns = document.querySelectorAll('.icon-product-grid > .all-products');
+    const productsGridBtns = document.querySelectorAll('.icon-product-grid > .products-grid');
+    const productGrid = document.querySelector('#product-grid');
 
-// Save original classes ONCE
-const DEFAULT_CLASSES = productGrid.className;
+    // Guard — do NOT return
+    if (productGrid && (allProductsBtns.length || productsGridBtns.length)) {
 
-// Classes for "all-products"
-const ALL_PRODUCTS_CLASSES = `
- grid--3-col-desktop
- grid--2-col-tablet
- grid--1-col
- grid product-grid
-`.trim();
+        // Default state
+        productsGridBtns.forEach(item => item.classList.add('active'));
 
-function enableAllProducts() {
-  productGrid.className = ALL_PRODUCTS_CLASSES;
+        // Grid classes to toggle
+        const ALL_PRODUCTS_CLASSES = [
+            'grid--3-col-desktop',
+            'grid--2-col-tablet',
+            'grid--1-col',
+            'grid',
+            'product-grid'
+        ];
 
-  allProductsBtns.forEach(b => b.classList.add('active'));
-  productsGridBtns.forEach(b => b.classList.remove('active'));
-}
+        function enableAllProducts() {
+            ALL_PRODUCTS_CLASSES.forEach(cls => productGrid.classList.add(cls));
 
-function disableAllProducts() {
-  productGrid.className = DEFAULT_CLASSES;
+            allProductsBtns.forEach(b => b.classList.add('active'));
+            productsGridBtns.forEach(b => b.classList.remove('active'));
+        }
 
-  allProductsBtns.forEach(b => b.classList.remove('active'));
-  productsGridBtns.forEach(b => b.classList.add('active'));
-}
+        function disableAllProducts() {
+            ALL_PRODUCTS_CLASSES.forEach(cls => productGrid.classList.remove(cls));
 
-/* ---- events ---- */
-allProductsBtns.forEach(btn =>
-  btn.addEventListener('click', enableAllProducts)
-);
+            allProductsBtns.forEach(b => b.classList.remove('active'));
+            productsGridBtns.forEach(b => b.classList.add('active'));
+        }
 
-productsGridBtns.forEach(btn =>
-  btn.addEventListener('click', disableAllProducts)
-);
+        // Events
+        allProductsBtns.forEach(btn =>
+            btn.addEventListener('click', enableAllProducts)
+        );
+
+        productsGridBtns.forEach(btn =>
+            btn.addEventListener('click', disableAllProducts)
+        );
+    }
+
 
 
 
         // go to top button
-         const scrollBtn = document.getElementById('scrollToTop');
+        const scrollBtn = document.getElementById('scrollToTop');
         const footer = document.querySelector('footer'); // adjust selector if needed
 
         window.addEventListener('scroll', () => {
