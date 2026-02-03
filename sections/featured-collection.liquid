@@ -55,7 +55,7 @@
     box-sizing: border-box;
   }
   
-  .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide{
+  .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide.grid__item{
     display:block;
     width: 100%;
     max-width: calc(100% / {{ section.settings.columns_mobile | plus: 0 | plus: 0.25 }});
@@ -68,32 +68,16 @@
     }
     .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper {
       gap: 4px; 
+      padding-left: 20px;
     }
-    
-    .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide{
+    .section-{{ section.id }}.featured-collection-swiper.swiper-initialized > .swiper-wrapper {
+      padding: 0px; 
+    }
+    .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized)  .swiper-wrapper > .swiper-slide.grid__item{
       display:block;
       width: 100%;
-      max-width: calc(100% / {{ section.settings.columns_mobile | plus: 0 | plus: 0.16 }});
+      max-width: calc((100% - 40px ) / {{ section.settings.columns_desktop }});
     }
-    
-    @media screen and (min-width: 750px) {
-      .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
-      }
-      .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper {
-        gap: 4px; 
-      }
-      .section-{{ section.id }}.featured-collection-swiper.swiper-initialized > .swiper-wrapper {
-        padding: 0px; 
-      }
-
-    .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized)  .swiper-wrapper > .swiper-slide{
-      display:block;
-      width: 100%;
-      max-width: calc(100% / {{ section.settings.columns_desktop }});
-    }
-
   }
   @media screen and (max-width: 749px){
     .section-{{ section.id }}.featured-collection-swiper:not(.swiper-initialized) > .swiper-wrapper{

@@ -193,14 +193,18 @@
 }
 
 .collection.home_featured .swiper-button-next, .collection.home_featured .swiper-button-prev {
-    top: var(--swiper-navigation-top-offset,56%);
+  top: var(--swiper-navigation-top-offset,56%);
+}
+
+.collection.home_featured .featured-collection:not(.swiper-initialized) .custom_swiper_button{
+  display: none;
 }
 
 .collection.home_featured .custom_swiper_button {
-    top: var(--swiper-navigation-top-offset, 48%);
+  top: var(--swiper-navigation-top-offset, 48%);
 }
 .collection.home_featured .product-card-wrapper .card__content .card__information {
-    padding-top: 7px;
+  padding-top: 7px;
 }
 .home_featured.bottom_cust{
 border-top:unset;
@@ -310,6 +314,11 @@ border-top:unset;
   object-fit: cover;
   object-position: center center;
   width: 100%;
+}
+.swiper.swiper-collection img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
 }
 
 .card__inner:not(.ratio) > .card__content {

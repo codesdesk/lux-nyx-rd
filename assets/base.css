@@ -2775,13 +2775,13 @@ input[type='checkbox'] {
     top: var(--swiper-navigation-top-offset,56%);
 }
 .product-grid-container .card__inner:has(.swiper-initialized) .card__media {
-    z-index: 2;
+  z-index: 2;
 }
 .product-grid-container s.price-item.price-item--regular {
-    display: none;
+  display: none;
 }
 .card-wrapper .card__content .card__information {
-    padding: 0px 8px 6px;
+  padding: 0px 8px 6px;
 }
 .swiper-collection:not(.swiper-initialized) .swiper-wrapper {
   display: flex;
@@ -2789,52 +2789,46 @@ input[type='checkbox'] {
   overflow: hidden;
   flex: unset;
 }
+.swiper-collection .swiper-slide{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+.swiper-cart-drawer:not(.swiper-initialized) .swiper-slide,
 .swiper-collection:not(.swiper-initialized) .swiper-slide {
   display: none;
 }
+.swiper-cart-drawer:not(.swiper-initialized) .swiper-slide:first-child,
 .swiper-collection:not(.swiper-initialized) .swiper-slide:first-child {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-}
-.swiper-collection .swiper-slide{
-    display: block;
-    width: 100%;
-    max-width: 100%;
-}
-.swiper-cart-drawer:not(.swiper-initialized) .swiper-slide {
-  display: none;
-}
-.swiper-cart-drawer:not(.swiper-initialized) .swiper-slide:first-child {
-    display: block;
-    width: 100%;
-    max-width: 100%;
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 #FacetsWrapperMobile {
-    padding:34px 19px;
+  padding:34px 19px;
 }
 #FacetsWrapperMobile summary.mobile-facets__summary {
-    padding: 8px 0px;
-    border-top: 0.75px solid #000;
+  padding: 8px 0px;
+  border-top: 0.75px solid #000;
 }
 #FacetsWrapperMobile .mobile-facets__summary span {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 100%;
-    color: #1F1F1F;
-    text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: #1F1F1F;
+  text-transform: uppercase;
 }
  #FacetsWrapperMobile .mobile-facets__header-inner {
-    display: flex;
-    padding-bottom: 12px;
+  display: flex;
+  padding-bottom: 12px;
 }
  #FacetsWrapperMobile p.mobile-facets__count {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 115.99999999999999%;
-    color: #1F1F1F80;
-    text-transform: capitalize;
-    padding-right: 50px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 115.99999999999999%;
+  color: #1F1F1F80;
+  text-transform: capitalize;
+  padding-right: 50px;
 }
 .facet-filters.sorting .facet-filters__label {
     margin-right: 0px;
