@@ -158,7 +158,7 @@
         "header_link": "#",
         "slide_show": 2,
         "padding_top": 8,
-        "padding_bottom": 96
+        "padding_bottom": 100
       }
     },
     "featured_collection_XQfCcM": {
@@ -249,7 +249,7 @@
         "heading": "Collections",
         "view_all_text": "See more",
         "view_all_link": "shopify://collections",
-        "padding_top": 30,
+        "padding_top": 33,
         "padding_bottom": 60
       }
     },
@@ -313,7 +313,7 @@
         "bg_color": "#ffffff",
         "label_color": "#1f1f1f",
         "button_color": "#1f1f1f",
-        "padding_top": 12,
+        "padding_top": 14,
         "padding_bottom": 66,
         "padding_top-mobile": 4,
         "padding_bottom-mobile": 54
