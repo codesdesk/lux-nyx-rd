@@ -777,21 +777,24 @@ table:not([class]) th {
     height: 30px;
 }
 .footer.custom_footer{
-  padding-top:7px;
+  padding-top:8px;
 }
 .custom_footer.footer h5.news_letter {
     font-size: 14px;
     letter-spacing: 0px;
+    padding-bottom: 24px;
 }
-.custom_footer.footer .newsletter-form {
-    margin-top: -4px;
-}
+
 .custom_footer .newsletter-form__field-wrapper .field__input{
-    height: 3.5rem;
+    height: unset;
+    min-height: unset;
+            line-height: normal;
 }
 .custom_footer.footer .newsletter-form__field-wrapper .field__label {
     top: calc(8px + var(--inputs-border-width));
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: normal;
 }
 .custom_collections-grid.product_custom_block .collections-header h2 {
     font-size: 13px;
@@ -4893,8 +4896,8 @@ details-disclosure > details {
    .card-wrapper .inner {
     gap: 10px;
     align-items: flex-start;
-    justify-content: center;
-    width: fit-content;
+    justify-content: space-between;
+    width: 100%;
   }
     .card-wrapper .title_with_rating{
     gap: 10px;
@@ -5815,6 +5818,7 @@ section.image-category-section {
     variant-selects fieldset.product-form__input {
     padding-bottom: 9px;
     }
+
   .template-custom .heading-title_wrapper {
     font-size: 144.39px;
     margin-bottom: 25px;

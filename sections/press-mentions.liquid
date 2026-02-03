@@ -1,7 +1,5 @@
 <div class="press-mentions {{ section.settings.add_class }}" style="
   background: {{ section.settings.bg_color }};
-  padding-top: {{ section.settings.padding_top }}px;
-  padding-bottom: {{ section.settings.padding_bottom }}px;
 ">
 
   <div class="page-width">
@@ -55,6 +53,11 @@
     }
   {% endfor %}
 
+  .press-mentions{
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
 .press-mentions {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -99,9 +102,11 @@
 }
 .press-quote p {
     margin: 0;
+    letter-spacing: -0.01em;
 }
 .press-quote em {
   font-style: italic;
+  letter-spacing: -0.01em;
 }
 
 .press-logos {
@@ -146,12 +151,17 @@
           width: {{ block.settings.logo_width_mobile }}px;
         }
       {% endfor %}
-  .press-mentions.product_press {
-    padding-top: 6px !important;
-}
-.press-mentions.product_press .press-quote em {
-    line-height: 100%;
-}
+
+    .press-mentions{
+      padding-top: {{ section.settings.padding_top-mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom-mobile }}px;
+    }
+    .press-mentions.product_press {
+        padding-top: 6px !important;
+    }
+    .press-mentions.product_press .press-quote em {
+        line-height: 100%;
+    }
   .press-header {
     gap: 12px;
     margin-bottom: 33px;
@@ -167,7 +177,7 @@
   .press-logos {
     column-gap: 29.5px;
     text-indent: 0;
-    row-gap: 20px;
+    row-gap: 15px;
     justify-content: space-around;
 }
   .press-label, .press-btn {
@@ -175,13 +185,7 @@
     line-height: normal;
     letter-spacing: 0;
 }
-.press-logo img {
-    max-height: 20px !important;
-}
-.press-mentions{
-    padding-top:4px !important;
-    padding-bottom:57px !important;
-}
+
 }
 </style>
 

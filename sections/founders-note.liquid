@@ -254,10 +254,20 @@
     display: none;
 }
 /* Mobile */
+
+@media (max-width: 1500px) {
+
+  .story_show_custom .founder_bottom {
+    margin-top: 16px;
+}
+}
 @media (max-width: 749px) {
 
   .founder-notes-{{ section.id }}.founders-note-section { 
-  padding: 46px 0 56px;
+  padding: 45px 0 56px;
+}
+.founders-note-section .founder_bottom svg {
+    margin-right: 3px;
 }
 .founders-note-quote {
     margin-left: 0px;
@@ -269,7 +279,7 @@
     padding-top: 5px;
 }
 .home_founder .founders-note-media {
-    gap: 19px;
+    gap: 16px;
 }
 
 .collection.home_featured.product_slide_coll {
@@ -287,7 +297,7 @@
   text-indent:0;
   margin-top: 11.2px;
   line-height: 1.04;
-  margin-bottom: 16px;
+  margin-bottom: 19px;
 }
 .story_show_custom .founders-note-quote {
   font-size: 32px;
@@ -306,7 +316,7 @@
     padding: 9px 0 56px;
 }
 .story_show_custom .founders-note-quote {
-    margin: 14px 0 24px;
+    margin: 14px 0 0px;
     text-indent: 0px;
     letter-spacing: -0.001em;
 }

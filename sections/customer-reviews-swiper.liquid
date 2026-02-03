@@ -320,9 +320,28 @@
   .review-name, .verified {
       font-size: 14px;
   }
+
+.review-content {
+    width: 100%;
+    max-width: 100%; 
+}
+}
+@media (max-width: 990px) {
+.review-content-items {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
 }
 }
 @media (max-width: 749px) {
+  .review-content-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: unset;
+}
+
   .reviews-swiper:not(.swiper-initialized) .swiper-wrapper {
     padding-left: 12px;
     padding-right: 12px;
@@ -370,7 +389,7 @@
       margin-top: 24px;
   }
   .customer-reviews {
-      padding: 3px 0 59px;
+      padding: 6px 0 59px;
   }
   .review-image .customer-mobile {
       display: none;
@@ -380,7 +399,7 @@
   }
 
   .reviews-header {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
   }
   .customer-reviews .swiper-pagination {
     margin-top: 21.65px !important;
