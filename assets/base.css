@@ -2663,6 +2663,11 @@ input[type='checkbox'] {
 .card-wrapper .card-information {
     width: unset; 
 }
+
+.hero-product-overlay [data-bv-show="inline_rating"] svg{
+      max-width: 12px !important;
+    max-height: 12px !important;
+}
 /* .card-wrapper .card-information {
     width: 100%;
     display: flex;
