@@ -697,6 +697,9 @@ table:not([class]) th {
 }
 
 @media screen and (max-width: 749px) {
+  .menu-drawer__navigation-container .mobile-menu-accordion .accordion-button.active{
+    padding-top: 8px;
+  }
   .small-hide {
     display: none !important;
   }
@@ -3759,7 +3762,6 @@ slider-component .button_wrapper button.slider-button.slider-button--prev {
 }
 .uni-women-container .support-link-wrapper {
     display: flex;
-    gap:82px;
     justify-content: space-between;
 }
 .uni-women-container .login-options-container .login-button,
@@ -3773,8 +3775,11 @@ slider-component .button_wrapper button.slider-button.slider-button--prev {
     background-color: transparent;
     border: 1px solid #1F1F1F;
     border-radius: 4px;
-    padding: 5px 16px;
+    padding: 5px 10px;
         text-decoration: none;
+}
+.uni-women-container .query-container a.active {
+    margin-bottom: 0px;
 }
 
 @media screen and ( max-width :749px ){ 
@@ -5852,7 +5857,7 @@ section.image-category-section {
 
 .breadcrumb .path.search {
   text-wrap-mode: wrap;
-  display: block;
+  display: none;
   width: 100%;
   animation: unset;
   overflow: hidden;
@@ -6150,6 +6155,11 @@ menu-drawer #FacetFiltersFormMobile .mobile-facets__item span.facet-checkbox__te
     left: 0;
     backdrop-filter: blur(10px);
 }
+
+
+cart-drawer{
+    backdrop-filter: blur(10px);
+} 
 
 .search-drawer__content {
   position: absolute;
