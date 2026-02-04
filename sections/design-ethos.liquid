@@ -1,10 +1,12 @@
 <div class="design-ethos section-{{ section.id }}-padding {{ section.settings.addclass }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-  <div class="ethos-header {% if section.settings.container_width == true %}full-width{% else %}page-width{% endif %}">
-    <h2>{{ section.settings.section_title }}</h2>
-    <a href="{{ section.settings.header_link }}" class="ethos-link">
-      {{ section.settings.header_link_text }}
-    </a>
-  </div>
+  {% if section.settings.section_title != blank %}
+    <div class="ethos-header {% if section.settings.container_width == true %}full-width{% else %}page-width{% endif %}">
+      <h2>{{ section.settings.section_title }}</h2>
+      <a href="{{ section.settings.header_link }}" class="ethos-link">
+        {{ section.settings.header_link_text }}
+      </a>
+    </div>
+  {% endif %}
 
   <div class="swiper ethos-swiper">
     <div class="swiper-wrapper">

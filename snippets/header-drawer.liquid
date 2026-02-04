@@ -26,7 +26,7 @@
           {% comment %} <nav class="menu-drawer__navigation">    {% endcomment %}
             <div class="uni-women-container">
             <div class="uni-women-wrapper">
-              <a href="/collections/all" class="uni-women-link">WOMEN</a>
+              <a href="/collections/all" class="uni-women-link ">WOMEN</a>
               <a href="/collections/all" class="uni-women-link">UNISEX</a>
             </div>
              <a href="/collections/all" class="mobile-button">Shop All</a> 
@@ -39,7 +39,7 @@
                   {% if childlink.links != blank %}
                     <div class="panel">
                       {% for grandchild in childlink.links %}
-                        <a href="{{grandchild.url}}" class="category-{{grandchild.handle}} {% if grandchild.current  %} active {% endif %}">{{grandchild.title}}</a>
+                        <a href="{{grandchild.url}}" class="drawer-menu-link category-{{grandchild.handle}} {% if grandchild.active%} active {% endif %}">{{grandchild.title}}</a>
                       {% endfor %}
                     </div>
                   {% endif %}
@@ -54,8 +54,9 @@
               <a href="#" class="support-link">Ask us a question</a>
             </div>
             <div class="login-options-container">
-              <button class="login-button">Login</button>
-              <button class="account-button">Create an account</button>
+              <a class="login-button" href='{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}'>Login</a>
+              <a href="{{ routes.account_register_url }}" class="account-button {% if request.path == routes.account_register_url %}active{% endif %}"> Create an account
+              </a>
             </div>
           </div>
           </div>
