@@ -26,33 +26,37 @@
           {% comment %} <nav class="menu-drawer__navigation">    {% endcomment %}
             <div class="uni-women-container">
             <div class="uni-women-wrapper">
-              <a href="/collections/all" class="uni-women-link ">WOMEN</a>
-              <a href="/collections/all" class="uni-women-link">UNISEX</a>
+               {% for link in section.settings.mobile_menu_top_links.links %}
+                {% if link.url !=  blank %}                  
+                  <a href="{{link.url}}" class="header-top-link {% if link.active%}active{% endif %}">{{ link.title }}</a>
+                {% endif %}
+              {% endfor %}
             </div>
-             <a href="/collections/all" class="mobile-button">Shop All</a> 
-
+            {% if section.settings.mobile_menu_btn_link != blank %}<a href="{{ section.settings.mobile_menu_btn_link  }}" class="mobile-button">{{section.settings.mobile_menu_btn_text}}</a>{% endif %}
+            {% if section.settings.mobile_menu_middle_links != blank %}
              <div class="mobile-menu-accordion">
-              {% for link in section.settings.menu.links %}
-               {% if link.links != blank %}
-                  {% for childlink in link.links %} 
-                  <button class="accordion-button">{{childlink.title}}<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
-                  {% if childlink.links != blank %}
+                {% for link in section.settings.mobile_menu_middle_links.links %}
+                  {%  if link.links != blank %}
+                    <button class="accordion-button">{{link.title}}<span class="plus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/plus-icon_svg.svg?v=1767081032></span><span class="minus"><img src=https://cdn.shopify.com/s/files/1/2984/4850/files/minus-icon_svg.svg?v=1767081049></span></button>
                     <div class="panel">
-                      {% for grandchild in childlink.links %}
-                        <a href="{{grandchild.url}}" class="drawer-menu-link category-{{grandchild.handle}} {% if grandchild.active%} active {% endif %}">{{grandchild.title}}</a>
+                      {% for childlink in link.links %} 
+                          {% if childlink.url != blank %}
+                            <a href="{{childlink.url}}" class="drawer-menu-link category-{{childlink.handle}} {% if childlink.active%} active {% endif %}">{{childlink.title}}</a>
+                          {% endif %}
                       {% endfor %}
                     </div>
                   {% endif %}
-                  {% endfor %}
-                {% endif %}
-              {% endfor %} 
-          </div>
+                {% endfor %} 
+              </div>
+            {% endif %}
           <div class="support-link-wrapper">
-            <div class="query-container">
-              <a href="#" class="support-link">About Us</a>
-              <a href="/pages/faq" class="support-link">FAQ</a>
-              <a href="#" class="support-link">Ask us a question</a>
-            </div>
+            {% if section.settings.mobile_menu_bottom_links != blank %}
+              <div class="query-container">
+                {% for link in section.settings.mobile_menu_bottom_links.links %}
+                  <a href="{{link.url}}" class="support-link{% if link.active %} active{% endif %}">{{link.title}}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
             <div class="login-options-container">
               <a class="login-button" href='{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}'>Login</a>
               <a href="{{ routes.account_register_url }}" class="account-button {% if request.path == routes.account_register_url %}active{% endif %}"> Create an account
