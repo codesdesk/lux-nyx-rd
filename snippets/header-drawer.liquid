@@ -53,7 +53,7 @@
             {% if section.settings.mobile_menu_bottom_links != blank %}
               <div class="query-container">
                 {% for link in section.settings.mobile_menu_bottom_links.links %}
-                  <a href="{{link.url}}" class="support-link{% if link.active %} active{% endif %}">{{link.title}}</a>
+                  <a href="{{link.url}}" class="support-link{% if request.path contains link.handle %} active{% endif %}">{{link.title}}</a>
                 {% endfor %}
               </div>
             {% endif %}
