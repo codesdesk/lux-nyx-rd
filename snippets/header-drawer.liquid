@@ -54,7 +54,7 @@
               <a href="#" class="support-link">Ask us a question</a>
             </div>
             <div class="login-options-container">
-              <a class="login-button" href='{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}'>Login</a>
+              <a class="login-button {% if request.path == routes.account_login_url or request.path == routes.account_url %} active {% endif %}" href='{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}'>Login</a>
               <a href="{{ routes.account_register_url }}" class="account-button {% if request.path == routes.account_register_url %}active{% endif %}"> Create an account
               </a>
             </div>

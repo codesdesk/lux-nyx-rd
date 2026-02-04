@@ -2697,9 +2697,15 @@ input[type='checkbox'] {
   text-decoration: none;
 }
 
-.drawer-menu-link.active {
+.mobile-menu-accordion .panel .drawer-menu-link.active {
   margin: 0;
   text-decoration: underline;
+}
+
+.uni-women-container .login-options-container a.active {
+    background-color: #1F1F1F;
+    color: #fff;
+    margin-bottom: 0px;
 }
 
 .mobile-menu-accordion .panel .category-shop-all, 
@@ -3755,7 +3761,9 @@ slider-component .button_wrapper button.slider-button.slider-button--prev {
     gap:82px;
     justify-content: space-between;
 }
-.uni-women-container .login-options-container button{
+.uni-women-container .login-options-container .login-button,
+.uni-women-container .login-options-container .account-button 
+{
     font-weight: 500;
     font-size: 14px;
     line-height: normal;
@@ -3764,7 +3772,8 @@ slider-component .button_wrapper button.slider-button.slider-button--prev {
     background-color: transparent;
     border: 1px solid #1F1F1F;
     border-radius: 4px;
-    padding: 5px 17px;
+    padding: 5px 16px;
+        text-decoration: none;
 }
 /* end-header-css */
 
@@ -4052,6 +4061,10 @@ slider-component .button_wrapper button.slider-button.slider-button--prev {
 }
 
 /* Main Header Layout */
+.header__search details[open] .header__icon--search {
+    border-bottom: 1px solid #000;
+     padding-bottom: 0.3rem;
+}
 .header-wrapper {
   display: block;
   position: relative;
