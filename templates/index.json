@@ -199,7 +199,7 @@
         "small_card_XKyc3w": {
           "type": "small_card",
           "settings": {
-            "image": "shopify://shop_images/LUX_AND_NYX__DSC6448_highres.png",
+            "image": "shopify://shop_images/LUX_AND_NYX__DSC6448_highres_d8973823-7c24-45ba-9333-6865dc75e0d9.png",
             "title": "Crossbody Bags",
             "content": "",
             "link": "shopify://collections/womens-crossbody-bags",
@@ -520,7 +520,7 @@
         "header_link_text": "",
         "header_link": "",
         "slide_show": 2,
-        "padding_top": 67,
+        "padding_top": 65,
         "padding_bottom": 36
       }
     },

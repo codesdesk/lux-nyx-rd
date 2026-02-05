@@ -382,6 +382,7 @@
             }
           }
         }
+        
 
         // Toggle current accordion
         this.classList.toggle("active");
@@ -393,5 +394,13 @@
           panel.style.maxHeight = null;
         }
     });
+
+        if (acc.length > 0) {
+      acc[0].classList.add("active");
+      var firstPanel = acc[0].nextElementSibling;
+      if (firstPanel) {
+        firstPanel.style.maxHeight = firstPanel.scrollHeight + "px";
+      }
+    }
   }
 </script>

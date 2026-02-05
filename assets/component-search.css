@@ -73,3 +73,13 @@ input::-webkit-search-decoration {
 .template-search__results {
   position: relative;
 }
+
+@media screen and (min-width: 750px) {
+.template-search__search .search__button.field__button {
+    background-color: var(--gradient-background);
+    right: -1px;
+}
+.template-search__search .reset__button:not(:focus):after {
+    content: unset;
+}
+}

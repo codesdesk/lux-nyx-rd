@@ -749,11 +749,14 @@
 }
 .custom_footer .inner_menus {
     column-gap: 14px;
-        margin-top: 32px;
+        margin-top: 30px;
         row-gap: 22px;
 }
 .custom_footer .newsletter-form__field-wrapper .field__input{
    margin: 0px;
+}
+.custom_footer .newsletter-form__field-wrapper .field__input {
+    padding: 0.9rem 2.2rem;
 }
 
 

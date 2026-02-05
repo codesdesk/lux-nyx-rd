@@ -2659,6 +2659,7 @@ input[type='checkbox'] {
     gap: 6px;
     align-items: center;
     justify-content: space-between;
+    align-items: flex-start;
 }
 .card-wrapper .card-information {
     width: unset; 
@@ -2687,8 +2688,9 @@ input[type='checkbox'] {
 }
 .card-wrapper .title_with_rating{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
+    justify-content: center;
 }
 .card-wrapper .rating-star::before {
     font-size: 18px;

@@ -129,7 +129,7 @@
   grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
   padding: 1rem;
   width: 100%;
-  flex-grow: 1;
+  flex-grow: inherit;
 }
 
 .card__content--auto-margins {
@@ -255,6 +255,10 @@ border-top:unset;
     .card__information-volume-pricing-note--button
     + .global-settings-popup.quantity-popover__info {
     width: 100%;
+  }
+
+  .collection.bottom_cust{
+    padding-bottom: 60px;
   }
 
   .grid--2-col-tablet-down

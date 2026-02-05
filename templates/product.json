@@ -266,12 +266,65 @@
         "padding_bottom": 56
       }
     },
+    "product_custom_slider_r9reqe": {
+      "type": "product-custom-slider",
+      "blocks": {
+        "product_image_XezgQX": {
+          "type": "product-image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_50_20e0917c-c525-4490-a6cb-3188d982e948.png"
+          }
+        },
+        "product_image_WwjmLU": {
+          "type": "product-image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_52.png"
+          }
+        },
+        "product_image_fKLtfa": {
+          "type": "product-image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_50_b1a49ce2-1a91-489e-8366-bad9cbb76fe6.png"
+          }
+        },
+        "product_image_nNmCLn": {
+          "type": "product-image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_51.png"
+          }
+        },
+        "product_image_mbJUXh": {
+          "type": "product-image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_50_20e0917c-c525-4490-a6cb-3188d982e948.png"
+          }
+        }
+      },
+      "block_order": [
+        "product_image_XezgQX",
+        "product_image_WwjmLU",
+        "product_image_fKLtfa",
+        "product_image_nNmCLn",
+        "product_image_mbJUXh"
+      ],
+      "name": "Product image slider",
+      "settings": {
+        "heading": "Curated selections",
+        "bg_color": "#ffffff",
+        "shop_link": "shopify://collections/all",
+        "shop_text": "View all",
+        "padding_top": 34,
+        "padding_bottom": 50,
+        "padding_top-mobile": 8,
+        "padding_bottom-mobile": 58
+      }
+    },
     "product_reviews_YEiiDM": {
       "type": "product-reviews",
       "name": "Product reviews",
       "settings": {
         "addclass": "",
-        "padding_top": 36,
+        "padding_top": 20,
         "padding_bottom": 36,
         "mobile_padding_top": 36,
         "mobile_padding_bottom": 36
@@ -316,6 +369,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Group_947.png",
+            "logo_width": 190,
+            "logo_width_mobile": 125,
             "logo_quote": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
           }
         },
@@ -323,6 +378,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Group.png",
+            "logo_width": 96,
+            "logo_width_mobile": 63,
             "logo_quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led.</em></p>"
           }
         },
@@ -330,6 +387,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Group_89e2c09c-8aca-4293-a63c-4981a6506fc5.png",
+            "logo_width": 152,
+            "logo_width_mobile": 100,
             "logo_quote": "<p><em>We use ethically-sourced materials</em> and uplift communities.</p>"
           }
         },
@@ -337,6 +396,8 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/Vector_2a749187-05ac-468e-a6b5-967aff074d37.png",
+            "logo_width": 170,
+            "logo_width_mobile": 112,
             "logo_quote": "<p>We design <em>elevated, high-function bags—crafted from a women-led.</em></p>"
           }
         }
@@ -356,6 +417,7 @@
         "button_link": "#",
         "quote_size": 56,
         "quote_size_mobile": 32,
+        "height": "auto",
         "logo_height": 30,
         "bg_color": "#f9f7f6",
         "label_color": "#1f1f1f",
@@ -372,6 +434,7 @@
     "related-products",
     "custom_featured_content_KCtxwJ",
     "founders_note_DCrrYP",
+    "product_custom_slider_r9reqe",
     "product_reviews_YEiiDM",
     "featured_collection_CaipFJ",
     "press_mentions_LcCkMF"
