@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(`Here is our default classes ${DEFAULT_CLASSES}`);
         function enableAllProducts() {
             ALL_PRODUCTS_CLASSES.forEach(cls => productGrid.classList.add(cls));
-
             allProductsBtns.forEach(b => b.classList.add('active'));
             productsGridBtns.forEach(b => b.classList.remove('active'));
         }

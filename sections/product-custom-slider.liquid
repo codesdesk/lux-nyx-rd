@@ -40,7 +40,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .product-images-header h2 {
@@ -50,9 +50,10 @@
   text-transform: uppercase;
   margin: 0;
   color:#000000;
+  letter-spacing: 0.03em
 }
 .customer-product-images .shop-link {
-  font-size: 16px;
+  font-size: 18px;
   line-height: normal;
   letter-spacing: 0;
   text-align: right;
@@ -61,6 +62,7 @@
   text-decoration-offset: 0%;
   text-decoration-thickness: 0%;
   color: #000000;
+  letter-spacing: 0.03em
 }
 .customer-product-images .product-image img {
     display: block;
@@ -68,7 +70,7 @@
     object-fit: cover;
 }
 
-..customer-product-images .product-images-swiper:not(.swiper-initialized) .swiper-wrapper{
+.customer-product-images .product-images-swiper:not(.swiper-initialized) .swiper-wrapper{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -176,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
     breakpoints: {
       0: {
         slidesPerView: 1.14,
-        spaceBetween: 20,
+        spaceBetween: 12,
       },
       750: {
         slidesPerView: 4,

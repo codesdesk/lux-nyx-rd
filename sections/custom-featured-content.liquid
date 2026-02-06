@@ -11,12 +11,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 21px;
+  margin-bottom: 19px;
 }
 .custom_collections-grid .collections-header h2 {
   font-size: 18px;
   line-height: normal;
-  letter-spacing: 0.03px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   margin: 0;
   color: #000000;
@@ -105,6 +105,11 @@
   letter-spacing: -0.02em;
   text-transform: unset;
   display: inline-block;
+  margin-bottom: 8px;
+}
+
+.custom_collections-grid .collection-card.large-card .collection_content.rte {
+    max-width: 414px;
 }
 
 .custom_collections-layout .collection-content_wrappper .rte p {
@@ -180,6 +185,9 @@
     padding-top: {{ section.settings.mobile_padding_top }}px;
     padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
   }
+  .custom_collections-grid .collection-card.large-card .collection_content.rte {
+    max-width: 100%;
+}
   .custom_collections-layout .custom_left-grid {
     gap: 56px
   }

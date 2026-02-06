@@ -1085,6 +1085,12 @@ input.mobile-facets__checkbox {
 
 .mobile-facets__sort label {
   flex-shrink: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 115.99999999999999%;
+  color: #1F1F1F;
+  margin-left: 2px;
+  letter-spacing: -0.01em;
 }
 
 .mobile-facets__sort .select {

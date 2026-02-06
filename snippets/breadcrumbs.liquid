@@ -22,6 +22,9 @@
     {% else %}
     <span class="path">{{ collection.title }}</span>
     {% endif %}
+    {% elsif template == 'search' %}
+    <span class="divide">/</span>
+    <a href="/collections/all" class="path">All Products</a>
     {% elsif template == 'blog' %}
     <span aria-hidden="true" class="divide">/</span>
     {% if current_tags %}

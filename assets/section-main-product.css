@@ -10,6 +10,10 @@ product-info {
   gap: 0;
 }
 
+.product.grid {
+  overflow: hidden;
+}
+
 .product--no-media {
   max-width: 57rem;
   margin: 0 auto;
@@ -314,7 +318,7 @@ a.product__text {
     border-bottom: 1px solid #1F1F1F;
 }
 .product__info-wrapper .custom_product-size .size-variant a {
-    padding-top: 8px;
+    padding-top: 6px;
 }
 .product__info-wrapper .product-form__input--pill input[type='radio'].disabled:checked + label{
     color: #fff;
@@ -2168,9 +2172,12 @@ variant-selects fieldset.product-form__input {
 }
 .product__info-wrapper .custom_product-size-wrapper a.compare_size_btn {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 100%;
-    letter-spacing: 0px;
+    letter-spacing: 0.02em;
+}
+.custom_product-size {
+   margin-top: 3px;
 }
 variant-selects .product-form__input:not(:last-child) {
     border-bottom: .75px solid #8A938D;

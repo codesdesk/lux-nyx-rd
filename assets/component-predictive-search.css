@@ -34,6 +34,12 @@
     top: 100%;
   }
 
+  .search-drawer predictive-search[open] .predictive-search,
+  .search-drawer predictive-search[loading] .predictive-search {
+    position: unset;
+    margin-top: 30px;
+}
+
   .predictive-search__results-groups-wrapper {
     flex-direction: column;
   }
